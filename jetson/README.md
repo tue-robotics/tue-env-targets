@@ -1,3 +1,15 @@
+installing firmware on Jetson with Orbitty Carrier:
+* download the manual: http://www.connecttech.com/pdf/CTIM-ASG003_Manual.pdf
+* download and install JetPack 3.2.0 on desktop pc:
+	* download https://developer.nvidia.com/embedded/jetpack
+	* follow steps on https://docs.nvidia.com/jetpack-l4t/index.html#developertools/mobile/jetpack/l4t/3.2/install.htm
+* download and install L4T Board Support Packages
+	* Download L4T R28.2
+    http://www.connecttech.com/ftp/Drivers/CTI-L4T-V115.tgz
+	* Follow steps on CTI-L4T BSPs for TX2 and TX2i [L4T V28.2 and Higher](CTI-L4T-V1XX)
+    http://connecttech.com/resource-center/cti-l4t-nvidia-jetson-board-support-package-release-notes/
+
+
 login with ubuntu user:
 
 ```
