@@ -1,6 +1,6 @@
 installing firmware on Jetson with Orbitty Carrier:
 * download the manual: http://www.connecttech.com/pdf/CTIM-ASG003_Manual.pdf
-* download and install JetPack 3.2.0 on desktop pc:
+* download and install JetPack 3.1.0 on desktop pc (we do require CUDA 8):
 	* download https://developer.nvidia.com/embedded/jetpack
 	* follow steps on https://docs.nvidia.com/jetpack-l4t/index.html#developertools/mobile/jetpack/l4t/3.2/install.htm
 * download and install L4T Board Support Packages
@@ -23,11 +23,18 @@ sudo reboot
 
 login with amigo user:
 
+First fix the CA cerfiticates:
+```
+sudo apt-get install ca-cacert
+sudo c_rehash /etc/ssl/certs
+sudo update-ca-certificates
+```
+
 ```
 ssh-keygen
 source <(wget -O- https://raw.githubusercontent.com/tue-robotics/tue-env/master/installer/scripts/bootstrap-ros-kinetic)
 tue-get install ros
-tue-get install openpose
+tue-get install openpose  # this command will fail due to git submodules: `git submodule update --init` in the ~/openpose dir
 tue-get install ros-openpose_ros
 tue-make
 source ~/.bashrc
