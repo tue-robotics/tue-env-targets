@@ -45,7 +45,7 @@
 
 - type: target
   name: sergio-user
-  
+
 - type: target
   name: sergio-start
 
@@ -59,19 +59,15 @@
 
 # HSR commands
 - type: target
-  name: hsr-user
+  name: hero-user
 
 # Handy shit
 - type: target
   name: terminator
 - type: target
   name: vim
-- type: target
-  name: gitsu
 
 - type: system
   name: htop
-- type: system
-  name: ccache
 - type: system
   name: meld
