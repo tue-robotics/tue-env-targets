@@ -2,11 +2,9 @@
   source:
     type: system
     name: freenect-launch
-- type: ros
-  source:
-    type: system
-    name: image-transport
-- type: ros
-  source:
-    type: system
-    name: compressed-image-transport
+
+- type: target
+  name: ros-image_transport
+
+- type: target
+  name: ros-compressed_image_transport
