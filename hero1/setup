@@ -1,0 +1,5 @@
+#!/bin/bash
+
+alias hero-sync-ubuntu-ntp="sudo ntpdate ntp.ubuntu.com"
+
+alias hero-restart="sudo systemctl restart hero-start.service"
