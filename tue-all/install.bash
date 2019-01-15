@@ -1,4 +1,4 @@
-targets=`ls $TUE_DIR/installer/targets`
+targets=`ls $TUE_ENV_TARGETS_DIR`
 for target in $targets
 do
     if [[ $target != "tue-all" ]]
