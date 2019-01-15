@@ -47,7 +47,7 @@ alias sshamigo1='until ssh -qo ConnectTimeout=1 amigo@amigo1.local; do echo wait
 alias sshamigo2='until ssh -qo ConnectTimeout=1 amigo@amigo2.local; do echo waiting for amigo2 to come online...; sleep 2; done'
 function connect-to-amigo-subnet
 {
-    command="sudo ifconfig $(route | grep '^default' | grep -o '[^ ]*$'):0 $(grep -m1 $(hostname) $TUE_DIR/installer/targets/hosts/hosts | awk '{print $1}') up"
+    command="sudo ifconfig $(route | grep '^default' | grep -o '[^ ]*$'):0 $(grep -m1 $(hostname) $TUE_ENV_TARGETS_DIR/hosts/hosts | awk '{print $1}') up"
     echo $command
     eval $command
 }
