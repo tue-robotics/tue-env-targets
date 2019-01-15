@@ -10,7 +10,7 @@ sudo reboot
 login with amigo user:
 
 ssh-keygen
-source <(wget -O- https://raw.githubusercontent.com/tue-robotics/tue-env/master/installer/scripts/bootstrap-ros-kinetic)
+source <(wget -O- https://raw.githubusercontent.com/tue-robotics/tue-env/master/installer/scripts/bootstrap.bash)
 tue-get install ros
 tue-get install openpose
 tue-get install ros-image_recognition_openpose
@@ -29,7 +29,7 @@ Make sure the hosts can be found ping from amigo1 to jetson and from jetson to a
 
 optionally: instsall service:
 
-sudo install $TUE_DIR/installer/targets/ros-image_recognition_openpose/image_recognition_openpose.service /etc/systemd/system/
+sudo install $TUE_ENV_TARGETS_DIR/ros-image_recognition_openpose/image_recognition_openpose.service /etc/systemd/system/
 sudo systemctl enable image_recognition_openpose
 sudo systemctl start image_recognition_openpose
 
