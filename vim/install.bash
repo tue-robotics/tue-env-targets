@@ -3,9 +3,9 @@
 # .vimrc
 if [ ! -f ~/.vimrc ]
 then
-	echo "installing a basic vimrc..."
+    echo "installing a basic vimrc..."
     # install a TU/e .vimrc
-	cp $TUE_DIR/installer/targets/vim/vimrc ~/.vimrc
+    cp $(dirname "${BASH_SOURCE[0]}")/vimrc ~/.vimrc
 fi
 
 # install pathogen for automatic vim plugin loading
