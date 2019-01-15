@@ -6,5 +6,5 @@ hash git-su 2> /dev/null || sudo gem install gitsu
 if [ ! -f ~/.gitsu ]
 then
     echo "linking ~/.gitsu"
-    ln -s $TUE_DIR/installer/targets/gitsu/gitsu.txt ~/.gitsu
+    ln -s $(dirname "${BASH_SOURCE[0]}")/gitsu.txt ~/.gitsu
 fi
