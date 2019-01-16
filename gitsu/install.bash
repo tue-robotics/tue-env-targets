@@ -14,7 +14,7 @@ then
       rm $gitsu_file
       ln -s $(dirname "${BASH_SOURCE[0]}")/gitsu.txt $gitsu_file
    fi
-elif [ -e ${my_link} ]
+elif [ -e $gitsu_file ]
 then
    tue-install-debug "gistu file: it is not a link"
 else
