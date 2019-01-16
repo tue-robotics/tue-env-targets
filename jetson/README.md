@@ -10,14 +10,14 @@ sudo reboot
 login with amigo user:
 
 ssh-keygen
-source <(wget -O- https://raw.githubusercontent.com/tue-robotics/tue-env/master/installer/scripts/bootstrap.bash)
+source <(wget -O- https://raw.githubusercontent.com/tue-robotics/tue-env/master/installer/bootstrap.bash)
 tue-get install ros
 tue-get install openpose
 tue-get install ros-image_recognition_openpose
 tue-make
 source ~/.bashrc
 roscd image_recognition_openpose
-ln -s ~/openpose 
+ln -s ~/openpose
 tue-make --pre-clean image_recognition_openpose
 
 test with:
@@ -27,7 +27,7 @@ rosrun image_recognition_openpose image_recognition_openpose_node _net_input_wid
 
 Make sure the hosts can be found ping from amigo1 to jetson and from jetson to amigo1 should work based on hostnames, not IP
 
-optionally: instsall service:
+optionally: install service:
 
 sudo install $TUE_ENV_TARGETS_DIR/ros-image_recognition_openpose/image_recognition_openpose.service /etc/systemd/system/
 sudo systemctl enable image_recognition_openpose
