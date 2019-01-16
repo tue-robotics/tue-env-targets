@@ -6,7 +6,7 @@ alias amigo-core='export ROS_MASTER_URI=http://amigo1.local:11311'
 
 # ----------------------------------------------------------------------------
 # - Add scripts directory to PATH
-export PATH=$(dirname "${BASH_SOURCE[0]}")/scripts${PATH:=:${PATH}}
+export PATH=$(dirname "${BASH_SOURCE[0]}")/scripts${PATH:+:${PATH}}
 
 ####################
 #
