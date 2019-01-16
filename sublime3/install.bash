@@ -1,5 +1,6 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
+script_dir=$(dirname "${BASH_SOURCE[0]}")
 source /etc/lsb-release
 
 if [[ $DISTRIB_CODENAME = trusty ]]
@@ -9,7 +10,7 @@ then
     then
         sudo add-apt-repository ppa:webupd8team/sublime-text-3
         sudo apt-get update
-        $(dirname "${BASH_SOURCE[0]}")/sublime-package-control.py
+        $script_dir/sublime-package-control.py
     fi
 
 elif [[ $DISTRIB_CODENAME = xenial ]]
@@ -19,7 +20,7 @@ then
     then
         sudo add-apt-repository ppa:webupd8team/sublime-text-3
         sudo apt-get update
-        $(dirname "${BASH_SOURCE[0]}")/sublime-package-control.py
+        $script_dir/sublime-package-control.py
     fi
 
 else
