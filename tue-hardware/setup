@@ -1,1 +1,2 @@
-export PATH=$TUE_DIR/installer/targets/tue-hardware/scripts:$PATH
+#! /usr/bin/env bash
+export PATH=$(dirname "${BASH_SOURCE[0]}")/scripts{PATH:+:${PATH}}
