@@ -1,11 +1,11 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/sergio_bringup
 alias sergio-core='export ROS_MASTER_URI=http://sergio1.local:11311'
 
 # ----------------------------------------------------------------------------
 # - Add scripts directory to PATH
-export PATH=$TUE_DIR/installer/targets/sergio-user/scripts:$PATH
+export PATH=$(dirname "${BASH_SOURCE[0]}")/scripts${PATH:+:${PATH}}
 
 ####################
 #
