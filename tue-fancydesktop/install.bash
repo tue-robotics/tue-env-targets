@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-source /etc/lsb-release
-
 # copying shortcuts to desktop
 tue-install-cp shortcuts/.*.desktop ~/Desktop
 if [ ! -f ~/.local/share/applications/AMIGO\ Dashboard.desktop ]
@@ -13,22 +11,13 @@ then
 fi
 
 # copying shortcuts to desktop
-if [ ! -d /usr/share/pixmaps/tue ]
-then
-    sudo mkdir -p /usr/share/pixmaps/tue
-    tue-install-cp icons/*.png /usr/share/pixmaps/tue/
-fi
+tue-install-cp icons/*.png /usr/share/pixmaps/tue/
 
 # copying terminator config file
-mkdir -p ~/.config/terminator
 [ -f ~/.config/terminator/config ] && cp ~/.config/terminator/config ~/.config/terminator/configbackup
 tue-install-cp configs/terminator/config ~/.config/terminator/config
 
 
 # copying variety config file
-if [ -f ~/.config/variety/variety.conf ]; then
-    cp ~/.config/variety/variety.conf ~/.config/variety/variety.conf.backup
-else
-    mkdir -p ~/.config/variety/
-fi
+[ -f ~/.config/variety/variety.conf ] && cp ~/.config/variety/variety.conf ~/.config/variety/variety.conf.backup
 tue-install-cp configs/variety/variety.conf ~/.config/variety/variety.conf
