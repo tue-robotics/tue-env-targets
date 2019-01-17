@@ -1,4 +1,5 @@
-#!/bin/bash
+#! /usr/bin/env bash
+
 source /etc/lsb-release
 
 # copying shortcuts to desktop

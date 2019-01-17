@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#! /usr/bin/env bash
 export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/amigo_bringup
 
 alias amigo-get-and-view-pdf-from-amigo1.local-home='mkdir -p ~/amigo1pdf && cd ~/amigo1pdf && scp amigo1.local:~/*.pdf . && evince *.pdf'
@@ -7,7 +6,7 @@ alias amigo-core='export ROS_MASTER_URI=http://amigo1.local:11311'
 
 # ----------------------------------------------------------------------------
 # - Add scripts directory to PATH
-export PATH=$TUE_DIR/installer/targets/amigo-user/scripts:$PATH
+export PATH=$(dirname "${BASH_SOURCE[0]}")/scripts${PATH:+:${PATH}}
 
 ####################
 #
@@ -47,7 +46,7 @@ alias sshamigo1='until ssh -qo ConnectTimeout=1 amigo@amigo1.local; do echo wait
 alias sshamigo2='until ssh -qo ConnectTimeout=1 amigo@amigo2.local; do echo waiting for amigo2 to come online...; sleep 2; done'
 function connect-to-amigo-subnet
 {
-    command="sudo ifconfig $(route | grep '^default' | grep -o '[^ ]*$'):0 $(grep -m1 $(hostname) $TUE_DIR/installer/targets/hosts/hosts | awk '{print $1}') up"
+    command="sudo ifconfig $(route | grep '^default' | grep -o '[^ ]*$'):0 $(grep -m1 $(hostname) $TUE_ENV_TARGETS_DIR/hosts/hosts | awk '{print $1}') up"
     echo $command
     eval $command
 }
