@@ -5,7 +5,7 @@
 # Clone kaldi fork from tue-robotics (only latest commit)
 KALDI_REPO="https://github.com/tue-robotics/kaldi.git"
 KALDI_HOME=~/src/kaldi_speech
-KALDI_REPO_BRANCH="techunited"
+KALDI_REPO_BRANCH="develop"
 
 # By default, set the previous commit to -1, which will trigger a 'make'
 prev="-1"
