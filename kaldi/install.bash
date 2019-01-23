@@ -14,20 +14,20 @@ prev="-1"
 if [ -d "$KALDI_HOME" ]
 then
     cd "$KALDI_HOME"
-    REMOTE=$(git config --get remote.origin.url) # get the remote
+    current_remote=$(git config --get remote.origin.url) # get the remote
 
     # If the kaldi_speech is pointing to the wrong Remote, correct it
-    if [ "$REMOTE" != "$KALDI_REPO" ]
+    if [ "$current_remote" != "$KALDI_REPO" ]
     then
         tue-install-debug "Updated kaldi_speech remote from $REMOTE to $KALDI_REPO"
         git remote set-url origin "$KALDI_REPO"
     fi
 
     # Get current branch
-    BRANCH=$(git symbolic-ref --short HEAD)
+    current_branch=$(git symbolic-ref --short HEAD)
 
     # Change to the techunited branch
-    if [ "$BRANCH" != "$KALDI_REPO_BRANCH" ]
+    if [ "$current_branch" != "$KALDI_REPO_BRANCH" ]
     then
         git checkout "$KALDI_REPO_BRANCH"
     fi
