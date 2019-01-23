@@ -17,10 +17,6 @@
   name: ros-emergency_speakup
 
 # Copied from the target amigo2
-
-- type: target
-  name: amigo-chrony-client-pc
-
 - type: target
   name: megatools
 
