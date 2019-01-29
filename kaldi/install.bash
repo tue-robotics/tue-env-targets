@@ -10,6 +10,12 @@ KALDI_REPO_BRANCH="develop"
 # By default, set the previous commit to -1, which will trigger a 'make'
 prev="-1"
 
+# Install dependencies
+# TODO: Change this to tue-install-targets --now $name_of_targets
+tue-install-system-now zlib-devel zlib1g-dev automake autoconf patch grep \
+    bzip2 gzip wget sox libtool subversion gawk python python3 libatlas3-base \
+    swig zip p7zip-full
+
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
 then
