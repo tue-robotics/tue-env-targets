@@ -48,6 +48,18 @@ tue-install-git "$KALDI_REPO" "$KALDI_HOME" "$KALDI_REPO_BRANCH"
 # Build toolkit if needed
 cd "$KALDI_HOME"
 if [ "$prev" != "$(git rev-list HEAD -n 1)" ]; then
+    tue-install-debug "Checking g++ version"
+    gpp_version=$(g++ --version | grep ^g++ | sed 's/^.* //g')
+    tue-install-debug "g++ version found: $gpp_version"
+
+    gpp_version_num=$(echo $gpp_version | sed 's/\./ /g' | xargs printf "%d%02d%02d")
+    if [ $gpp_version_num -gt 70000 ]
+    then
+        tue-install-debug "Unsupported g++ version. Need g++ < 7.0.*"
+        export CXX=g++-5
+        tue-install-debug "Changed g++ version to 5.5.0"
+    fi
+
     tue-install-debug "Building kaldi_speech"
     ./install.bash --build || tue-install-error "Kaldi build error."
 else
