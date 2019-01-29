@@ -8,22 +8,4 @@
   name: audio
 
 - type: target
-  name: ros-urg_node
-
-- type: target
   name: ros-laser_filters
-
-- type: target
-  name: ros-emergency_speakup
-
-# Copied from the target amigo2
-- type: target
-  name: megatools
-
-# Middleware
-- type: target
-  name: tue-middleware
-
-# RoboCup
-- type: target
-  name: tue-robocup-at-home
