@@ -12,9 +12,9 @@ prev="-1"
 
 # Install dependencies
 # TODO: Change this to tue-install-targets --now $name_of_targets
-tue-install-system-now zlib-devel zlib1g-dev automake autoconf patch grep \
+tue-install-system-now zlib1g-dev automake autoconf patch grep \
     bzip2 gzip wget sox libtool subversion gawk python python3 libatlas3-base \
-    swig zip p7zip-full
+    swig zip p7zip-full python-six python-numpy
 
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
