@@ -57,13 +57,14 @@ if [ "$prev" != "$(git rev-list HEAD -n 1)" ]; then
     then
         tue-install-debug "Unsupported g++ version. Need g++ < 7.0.*"
         export CXX=g++-5
-        tue-install-debug "Changed g++ version to 5.*"
+        gpp_version=$($CXX -dumpversion)
+        tue-install-debug "Changed g++ version to $gpp_version"
     else
         export CXX=g++
     fi
 
     tue-install-debug "Building kaldi_speech"
-    ./install.bash --build || tue-install-error "Kaldi build error."
+    ./install.bash --tue || tue-install-error "Kaldi build error."
 else
     tue-install-debug "kaldi_speech not updated, so not rebuilding"
 fi
