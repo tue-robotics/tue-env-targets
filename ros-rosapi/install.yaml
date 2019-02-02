@@ -2,6 +2,3 @@
   source:
     type: system
     name: rosapi
-    #type: git
-    #url: https://github.com/tue-robotics/rosbridge_suite.git
-    #sub-dir: rosapi
