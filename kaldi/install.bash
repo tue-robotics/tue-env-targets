@@ -14,7 +14,9 @@ prev="-1"
 # TODO: Change this to tue-install-targets --now $name_of_targets
 tue-install-system-now zlib1g-dev automake autoconf patch grep \
     bzip2 gzip wget sox libtool subversion gawk python python3 libatlas3-base \
-    swig zip p7zip-full python-six python-numpy
+    swig zip p7zip-full python-six python-numpy gstreamer1.0-pulseaudio \
+    gstreamer1.0-plugins-base gstreamer1.0-plugins-bad \
+    gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
 
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
