@@ -14,7 +14,9 @@ prev="-1"
 # TODO: Change this to tue-install-targets --now $name_of_targets
 tue-install-system-now zlib1g-dev automake autoconf patch grep \
     bzip2 gzip wget sox libtool subversion gawk python python3 libatlas3-base \
-    swig zip p7zip-full python-six python-numpy
+    swig zip p7zip-full python-six python-numpy gstreamer1.0-pulseaudio \
+    gstreamer1.0-plugins-base gstreamer1.0-plugins-bad \
+    gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
 
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
@@ -49,7 +51,7 @@ tue-install-git "$KALDI_REPO" "$KALDI_HOME" "$KALDI_REPO_BRANCH"
 cd "$KALDI_HOME"
 if [ "$prev" != "$(git rev-list HEAD -n 1)" ]; then
     tue-install-debug "Checking g++ version"
-    gpp_version=$(g++ --version | grep ^g++ | sed 's/^.* //g')
+    gpp_version=$(g++ -dumpversion)
     tue-install-debug "g++ version found: $gpp_version"
 
     gpp_version_num=$(echo $gpp_version | sed 's/\./ /g' | xargs printf "%d%02d%02d")
@@ -57,11 +59,14 @@ if [ "$prev" != "$(git rev-list HEAD -n 1)" ]; then
     then
         tue-install-debug "Unsupported g++ version. Need g++ < 7.0.*"
         export CXX=g++-5
-        tue-install-debug "Changed g++ version to 5.5.0"
+        gpp_version=$($CXX -dumpversion)
+        tue-install-debug "Changed g++ version to $gpp_version"
+    else
+        export CXX=g++
     fi
 
     tue-install-debug "Building kaldi_speech"
-    ./install.bash --build || tue-install-error "Kaldi build error."
+    ./install.bash --tue || tue-install-error "Kaldi build error."
 else
     tue-install-debug "kaldi_speech not updated, so not rebuilding"
 fi
