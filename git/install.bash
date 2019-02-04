@@ -7,11 +7,16 @@ then
     cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install
 fi
 
-# Always overwrite global ignore file
-global_git_ignore=$(dirname "${BASH_SOURCE[0]}")/gitignore_global
-if [[ $(git config --global core.excludesfile)!=$global_git_ignore ]]
+# Unset old path, targets have moved
+if [[ $(git config --global core.excludesfile)=="$TUE_DIR/installer/targets/git/gitignore_global" ]]
 then
-    git config --global core.excludesfile $global_git_ignore
+    git config --global --unset core.excludesfile
+fi
+
+# Set global ignore file
+if [[ ! $(git config --global core.excludesfile) ]]
+then
+    git config --global core.excludesfile $(dirname "${BASH_SOURCE[0]}")/gitignore_global
 fi
 
 # Set lg alias
