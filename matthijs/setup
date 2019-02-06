@@ -10,4 +10,6 @@ function sb
 source ~/.bashrc
 }
 
-export CURRENT_CMAKE_BUILD_DIR="$(catkin locate --workspace $TUE_SYSTEM_DIR --build)"
+alias ag='ag -fi'
+
+alias ccat='pygmentize -g -O style=colorful'
