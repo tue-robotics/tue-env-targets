@@ -21,7 +21,7 @@ then
         sudo apt-get purge libcudnn*
         sudo apt-get purge libcudnn*-dev
         install_cuda=true
-fi
+    fi
 else
     install_cuda=true
 fi
