@@ -18,6 +18,9 @@ tue-install-system-now zlib1g-dev automake autoconf patch grep \
     gstreamer1.0-plugins-base gstreamer1.0-plugins-bad \
     gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
 
+# The latest version of numpy is required
+sudo -H pip install -U numpy
+
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
 then
