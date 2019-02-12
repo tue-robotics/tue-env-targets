@@ -1,3 +1,3 @@
-alias hero-core='export ROS_MASTER_URI=http://hsrb.local:11311'
+alias hero-core='export ROS_MASTER_URI=http://hero1.local:11311'
 
 alias sshhero='ssh hsr-user@hsrb.local'
