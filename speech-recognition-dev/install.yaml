@@ -6,3 +6,9 @@
 
 - type: target
   name: ros-speech_recognition
+
+- type: target
+  name: ros-hmi
+
+- type: target
+  name: ros-hmi_msgs
