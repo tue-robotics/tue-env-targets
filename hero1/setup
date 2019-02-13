@@ -1,5 +1,10 @@
 #!/bin/bash
 
-alias hero-sync-ubuntu-ntp="sudo ntpdate ntp.ubuntu.com"
+# Load Toyota version variables
+cat /etc/opt/tmc/robot/version | while read line; do
+    export $line
+done
 
+
+alias hero-sync-ubuntu-ntp="sudo ntpdate ntp.ubuntu.com"
 alias hero-restart="sudo systemctl restart hero-start.service"
