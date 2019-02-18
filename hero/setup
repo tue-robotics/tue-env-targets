@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/hero_bringup
+
+alias hero='export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/hero_bringup'
