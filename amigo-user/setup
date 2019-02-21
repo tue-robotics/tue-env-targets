@@ -118,15 +118,6 @@ alias reset-audio="amixer -- sset 'Master' -5dB && amixer -- sset 'Mic Boost' 10
 
 alias amigo-action-server="rosrun action_server main.py amigo __ns:=amigo"
 
-function depcheck
-{
-  type -P $1 &>/dev/null && return
-  echo "Installing $2"
-  sudo apt-get -y install $2 && return
-  echo "Error installing $2"
-  exit 1
-}
-
 # --------------------------------------------------------------------------------
 
 function amigo-head-move {

@@ -101,15 +101,6 @@ alias reset-audio="amixer -- sset 'Master' -5dB && amixer -- sset 'Mic Boost' 10
 
 alias sergio-action-server="rosrun action_server main.py sergio __ns:=sergio"
 
-function depcheck
-{
-  type -P $1 &>/dev/null && return
-  echo "Installing $2"
-  sudo apt-get -y install $2 && return
-  echo "Error installing $2"
-  exit 1
-}
-
 # --------------------------------------------------------------------------------
 
 function sergio-head-move {
@@ -130,7 +121,7 @@ function sergio-torso-move-joints {
         echo "Note: knee-joint is calculated with use of the ankle_joint."
         return
     fi
-    
+
     ( rostopic pub /sergio/torso/references sensor_msgs/JointState "{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: ''}, name: ['ankle_joint', 'knee_joint', 'hip_joint'], position: [$1, $(echo "1.874*$1+0.1323" |bc) , $2], velocity: [0], effort: [0]}"  --once  &> /dev/null & )
 }
 
