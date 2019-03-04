@@ -19,7 +19,7 @@ tue-install-system-now zlib1g-dev automake autoconf patch grep \
     gstreamer1.0-plugins-base gstreamer1.0-plugins-bad \
     gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
 
-# The latest version of numpy is required
+# Numpy later than 1.15.0 is required
 pip install --user numpy>=1.15.0
 
 # If the directory already exists
