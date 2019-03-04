@@ -1,3 +1,9 @@
+if [[ -n "$CI" ]]
+then
+    # Skip this target in CI. As models aren't used, but takes a lot of time to download them.
+    return 0
+fi
+
 tue-install-system-now mercurial
 
 model_path=$HOME/data/gazebo_models
