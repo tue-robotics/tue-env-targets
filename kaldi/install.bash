@@ -53,7 +53,17 @@ tue-install-git "$KALDI_REPO" "$KALDI_HOME" "$KALDI_REPO_BRANCH"
 
 # Build toolkit if needed
 cd "$KALDI_HOME"
-if [ "$prev" != "$(git rev-list HEAD -n 1)" ]; then
+kaldi_exists=true
+{ status="$(cat STATUS)" && [ "$status" == "ALL OK" ]; } || kaldi_exists=false
+
+# If executing in Docker and Kaldi build exists, do nothing
+if [ -n "$DOCKER" -a "$kaldi_exists" == "true" ]
+then
+    return 0
+fi
+
+if [ "$prev" != "$(git rev-list HEAD -n 1)" ]
+then
     tue-install-debug "Checking g++ version"
     gpp_version=$(g++ -dumpversion)
     tue-install-debug "g++ version found: $gpp_version"
