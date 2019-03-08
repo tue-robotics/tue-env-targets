@@ -1,2 +1,2 @@
-- type: system
-  name: python-mock
+- type: pip
+  name: mock
