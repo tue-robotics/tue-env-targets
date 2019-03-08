@@ -14,9 +14,13 @@ prev="-1"
 # TODO: Change this to tue-install-targets --now $name_of_targets
 tue-install-system-now zlib1g-dev automake autoconf patch grep \
     bzip2 gzip wget sox libtool subversion gawk python python3 libatlas3-base \
-    swig zip p7zip-full python-six python-numpy gstreamer1.0-pulseaudio \
+    swig zip p7zip-full python-six libglib2.0-dev \
+    libgstreamer1.0-dev gstreamer1.0-tools gstreamer1.0-pulseaudio \
     gstreamer1.0-plugins-base gstreamer1.0-plugins-bad \
     gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
+
+# Numpy later than 1.15.0 is required
+pip install --user "numpy>=1.15.0"
 
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
@@ -49,7 +53,17 @@ tue-install-git "$KALDI_REPO" "$KALDI_HOME" "$KALDI_REPO_BRANCH"
 
 # Build toolkit if needed
 cd "$KALDI_HOME"
-if [ "$prev" != "$(git rev-list HEAD -n 1)" ]; then
+kaldi_exists=true
+{ status="$(cat STATUS)" && [ "$status" == "ALL OK" ]; } || kaldi_exists=false
+
+# If executing in Docker and Kaldi build exists, do nothing
+if [ -n "$DOCKER" -a "$kaldi_exists" == "true" ]
+then
+    return 0
+fi
+
+if [ "$prev" != "$(git rev-list HEAD -n 1)" ]
+then
     tue-install-debug "Checking g++ version"
     gpp_version=$(g++ -dumpversion)
     tue-install-debug "g++ version found: $gpp_version"
