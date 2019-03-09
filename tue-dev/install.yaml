@@ -64,8 +64,6 @@
 # Handy shit
 - type: target
   name: terminator
-- type: target
-  name: vim
 
 - type: system
   name: htop

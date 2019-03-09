@@ -35,7 +35,7 @@
 - type: target
   name: ros-dashboard
 
-# HSR 
+# HERO
 - type: target
   name: hero-user
 
@@ -53,9 +53,6 @@
 # Handy stuff
 - type: target
   name: terminator
-- type: target
-  name: vim
-
 - type: system
   name: htop
 - type: system

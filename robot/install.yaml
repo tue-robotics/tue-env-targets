@@ -4,3 +4,5 @@
   name: gitsu
 - type: target
   name: networking
+- type: target
+  name: vim
