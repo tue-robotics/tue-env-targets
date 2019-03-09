@@ -1,5 +1,26 @@
-alias hero-core='export ROS_MASTER_URI=http://hsrb.local:11311'
+#! /usr/bin/env bash
+export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/hero_bringup
 
-alias hero-rviz='rosrun rviz rviz  -d `rospack find hsrb_common_launch`/config/hsrb_display_simple.rviz'
+alias hero='export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/hero_bringup'
 
-alias sshhero='ssh hsr-user@hsrb.local'
+alias hero-core='export ROS_MASTER_URI=http://hero1.local:11311'
+
+####################
+#
+# SSH
+#
+####################
+alias sshhero1='until ssh -qAo ConnectTimeout=1 administrator@hero1.local; do echo waiting for hero1 to come online...; sleep 2; done'
+alias sshhero2='until ssh -qAo ConnectTimeout=1 amigo@hero2.local; do echo waiting for hero2 to come online...; sleep 2; done'
+alias hero-copy-my-id="ssh-copy-id administrator@hero1.local; ssh-copy-id amigo@hero2.local"
+
+
+alias hero-show-kinect='rosrun rgbd multitool --rgbd /hero/head_rgbd_sensor/rgbd'
+
+alias hero-say='rostopic pub --once /hero/text_to_speech/input std_msgs/String'
+
+function hero-hear() {
+    msg=$@
+    echo "Sending trigger: $msg"
+    rostopic pub --once /hero/hmi/string std_msgs/String "data: '$msg'";
+}
