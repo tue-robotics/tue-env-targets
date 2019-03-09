@@ -1,23 +1,28 @@
 - type: target
   name: tue-dev
+- type: target
+  name: hero-dev
 
 # Handy shit
-- type: target
-  name: ack
 - type: target
   name: chrome-dev
 - type: target
   name: qtcreator
 - type: target
   name: pycharm
-  
+
 - type: system
   name: geany
 - type: system
   name: gedit
 
+- type: system
+  name: silversearcher-ag
+
+# swri
 - type: target
   name: ros-swri_console
 
+# Save gmapping map
 - type: target
   name: tue-save-map
