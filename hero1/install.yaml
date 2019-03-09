@@ -6,3 +6,8 @@
 
 - type: target
   name: ros-laser_filters
+
+- type: ros
+  source:
+      type: system
+      name: hsrb-full
