@@ -4,6 +4,8 @@
   name: gitsu
 - type: target
   name: networking
+- type: target
+  name: vim
 
 # Tele-operation
 - type: target
