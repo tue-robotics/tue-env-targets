@@ -4,8 +4,5 @@
 - type: target
   name: hero-start
 
-#- type: target
-#  name: audio
-
 - type: target
   name: ros-laser_filters
