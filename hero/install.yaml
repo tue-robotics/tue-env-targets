@@ -1,0 +1,8 @@
+- type: target
+  name: robot
+
+- type: target
+  name: ros-hero_bringup
+
+- type: target
+  name: hero-user

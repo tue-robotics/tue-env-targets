@@ -1,8 +1,6 @@
 # Simulation
 - type: target
-  name: ros-fast_simulator
-- type: target
-  name: ros-fast_simulator_data
+  name: ros-tmc-desktop-full
 
 # Middleware
 - type: target
@@ -37,17 +35,12 @@
 - type: target
   name: ros-dashboard
 
+# HERO
 - type: target
-  name: amigo-user
+  name: hero-user
 
 - type: target
-  name: amigo-start
-
-- type: target
-  name: sergio-user
-
-- type: target
-  name: sergio-start
+  name: hero-start
 
 # Console
 - type: target
@@ -57,15 +50,11 @@
 - type: target
   name: ros-ed_rviz_plugins
 
-# HSR commands
-- type: target
-  name: hero-user
-
-# Handy shit
+# Handy stuff
 - type: target
   name: terminator
-
 - type: system
   name: htop
 - type: system
   name: meld
+
