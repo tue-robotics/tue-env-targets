@@ -21,5 +21,3 @@
 # Taken from amigo4
 - type: target
   name: ros-image_recognition_openpose
-
-#ADD a ros-hero_hardware?
