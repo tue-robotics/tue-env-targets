@@ -13,4 +13,5 @@ then
 else
     cd $model_path
     hg pull -f
+    hg update
 fi
