@@ -13,4 +13,6 @@ then
     mkdir -p "$dest"
     tue-install-debug "wget -c -q $url -O - | tar -xz -C $dest/"
     wget -c -q "$url" -O - | tar -xz -C "$dest/"
+    # Create/Update symbolic link to model directory
+    ln -sfn "$dest"/model/ ~/data/speech_models/model
 fi
