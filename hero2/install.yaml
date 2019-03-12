@@ -15,9 +15,16 @@
 - type: target
   name: tue-robocup-at-home
 
-- type: target
-  name: audio
   
-# Taken from amigo4
+# Openpose
 - type: target
   name: ros-image_recognition_openpose
+
+- type: target
+  name: cuda
+
+# Dekstop tools
+- type: system
+  name: geany
+- type: target
+  name: chrome
