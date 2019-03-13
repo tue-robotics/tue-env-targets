@@ -1,7 +1,6 @@
 ubuntu_version=$(lsb_release -rs)
 ubuntu_version="${ubuntu_version//./}"
 cuda_version="9.2.148-1"
-cuda_version_local=$(cat /usr/local/cuda/version.txt | cut -d ' ' -f 3-)
 install_cuda=false
 
 if [ $(uname -p) == "x86_64" ]
@@ -13,7 +12,8 @@ fi
 
 if [ -e /usr/local/cuda ]
 then
-    if [ $cuda_version_local == cuda_version ]
+    cuda_version_local=$(cat /usr/local/cuda/version.txt | cut -d ' ' -f 3-)
+    if [ $cuda_version_local == $cuda_version ]
     then
         return
     else
