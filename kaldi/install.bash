@@ -7,6 +7,16 @@ KALDI_REPO="https://github.com/tue-robotics/kaldi.git"
 KALDI_HOME=~/src/kaldi_speech
 KALDI_REPO_BRANCH="develop"
 
+# If executing in Docker and Kaldi build exists, do nothing
+kaldi_exists=true
+{ status="$(cat $KALDI_HOME/STATUS)" && [ "$status" == "ALL OK" ]; } || kaldi_exists=false
+
+if [ -n "$DOCKER" -a "$kaldi_exists" == "true" ]
+then
+    tue-install-debug "Kaldi installation in Docker exists. Doing nothing."
+    return 0
+fi
+
 # By default, set the previous commit to -1, which will trigger a 'make'
 prev="-1"
 
@@ -53,15 +63,6 @@ tue-install-git "$KALDI_REPO" "$KALDI_HOME" "$KALDI_REPO_BRANCH"
 
 # Build toolkit if needed
 cd "$KALDI_HOME"
-kaldi_exists=true
-{ status="$(cat STATUS)" && [ "$status" == "ALL OK" ]; } || kaldi_exists=false
-
-# If executing in Docker and Kaldi build exists, do nothing
-if [ -n "$DOCKER" -a "$kaldi_exists" == "true" ]
-then
-    return 0
-fi
-
 if [ "$prev" != "$(git rev-list HEAD -n 1)" ]
 then
     tue-install-debug "Checking g++ version"
