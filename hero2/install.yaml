@@ -15,7 +15,15 @@
 - type: target
   name: tue-robocup-at-home
 
-  
+# Telegram
+- type: target
+  name: ros-telegram_ros
+
+- type: ros
+  source:
+    type: system
+    name: hsrb-full
+
 # Openpose
 - type: target
   name: ros-image_recognition_openpose
