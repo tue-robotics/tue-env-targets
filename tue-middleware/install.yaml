@@ -60,3 +60,6 @@
 
 - type: target
   name: ros-people_detector
+
+- type: target
+  name: ros-conversation_engine
