@@ -22,7 +22,7 @@
 - type: ros
   source:
     type: system
-    name: hsrb-full
+    name: hsrb-description
 
 # Openpose
 - type: target
