@@ -28,6 +28,9 @@
   name: ros-ed
 
 - type: target
+  name: ros-ed_object_models
+
+- type: target
   name: ros-ed_perception
 
 - type: target
