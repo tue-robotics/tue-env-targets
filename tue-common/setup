@@ -104,24 +104,6 @@ function rosenv {
 }
 
 ##############################################################################################
-#   TOOL OPENING QT-CREATOR FROM TERMINAL
-##############################################################################################
-
-function openproject {
-
-  if ! alias qtcreator > /dev/null; then
-    echo "Create a qtcreator alias with the path to the executable like 'alias qtcreator=~/QtSdk/QtCreator/qtcreator. The alias should be set _before_ this function is loaded.'";
-    return
-  fi
-
- if [ -f CMakeLists.txt ]; then
-  ( qtcreator CMakeLists.txt $1 &> /dev/null & )
-  else
-   echo "Cannot open project: no CMakeLists.txt found"
-  fi
-}
-
-##############################################################################################
 #   SET-UP
 ##############################################################################################
 

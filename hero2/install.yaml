@@ -19,10 +19,9 @@
 - type: target
   name: ros-telegram_ros
 
-- type: ros
-  source:
-    type: system
-    name: hsrb-description
+# Robot Model for in ED
+- type: target
+  name: ros-hsrb_description
 
 # Openpose
 - type: target
@@ -32,6 +31,8 @@
   name: cuda
 
 # Dekstop tools
+- type: target
+  name: terminator
 - type: system
   name: geany
 - type: target

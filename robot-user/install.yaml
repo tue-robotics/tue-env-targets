@@ -6,6 +6,8 @@
   name: networking
 - type: target
   name: vim
+- type: system
+  name: htop
 
 # Tele-operation
 - type: target
