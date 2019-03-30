@@ -2,8 +2,8 @@
 
 if [ -z "$TUE_ROS_DISTRO" ]
 then
-    echo "[tue ros install] TUE_ROS_DISTRO was not set"
-    return
+    tue-install-error "TUE_ROS_DISTRO was not set"
+    return 1
 fi
 
 if [ ! -d /opt/ros/$TUE_ROS_DISTRO ]
@@ -21,6 +21,7 @@ then
     tue-install-system-now ros-$TUE_ROS_DISTRO-ros build-essential python-catkin-tools
 
     sudo rosdep init || true # make sure it always succeeds, even if rosdep init was already called
+    touch /tmp/rosdep_update
 
 fi
 
