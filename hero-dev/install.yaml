@@ -17,23 +17,15 @@
   name: megasync
 
 # Diagnostics
-- type: ros
-  source:
-    type: system
-    name: viz
-
 - type: target
-  name: spot
+  name: ros-viz
 
 # -------------------- ROBOCUP --------------------
 
 - type: target
   name: tue-robocup-at-home
 
-# -------------------- ROBOTS --------------------
-
-- type: target
-  name: ros-dashboard
+# -------------------- ROBOTS ---------------------
 
 # HERO
 - type: target
@@ -53,8 +45,8 @@
 # Handy stuff
 - type: target
   name: terminator
-- type: system
-  name: htop
+- type: target
+  name: spot
 - type: system
   name: meld
 

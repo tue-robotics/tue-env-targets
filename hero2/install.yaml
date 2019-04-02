@@ -5,7 +5,7 @@
   name: hero-chrony-client-pc
 
 - type: target
-  name: megatools
+  name: megasync
 
 # Middleware
 - type: target
@@ -15,6 +15,14 @@
 - type: target
   name: tue-robocup-at-home
 
+# Telegram
+- type: target
+  name: ros-telegram_ros
+
+# Robot Model for in ED
+- type: target
+  name: ros-hsrb_description
+
 # Openpose
 - type: target
   name: ros-image_recognition_openpose
@@ -23,6 +31,8 @@
   name: cuda
 
 # Dekstop tools
+- type: target
+  name: terminator
 - type: system
   name: geany
 - type: target
