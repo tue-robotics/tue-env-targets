@@ -9,6 +9,7 @@ fi
 TUE_SYSTEM_DIR=$TUE_ENV_DIR/system
 TUE_DEV_DIR=$TUE_ENV_DIR/dev
 
+unset CMAKE_PREFIX_PATH
 source $TUE_DEV_DIR/devel/setup.bash
 
 export ROSCONSOLE_FORMAT='[${severity}][${node}][${time}]: ${message}'
