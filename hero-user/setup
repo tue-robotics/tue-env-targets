@@ -17,6 +17,12 @@ alias hero-copy-my-id="ssh-copy-id administrator@hero1.local; ssh-copy-id amigo@
 
 alias hero-show-kinect='rosrun rgbd multitool --rgbd /hero/head_rgbd_sensor/rgbd'
 
+####################
+#
+# HERO ACTIONS
+#
+####################
+
 alias hero-say='rostopic pub --once /hero/text_to_speech/input std_msgs/String'
 
 function hero-hear() {
@@ -24,3 +30,5 @@ function hero-hear() {
     echo "Sending trigger: $msg"
     rostopic pub --once /hero/hmi/string std_msgs/String "data: '$msg'";
 }
+
+alias hero-teleop='rosrun tue_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/hero/base/references'
