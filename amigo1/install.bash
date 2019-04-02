@@ -10,7 +10,7 @@ fi
 
 # If clephas (the author) is not in the config, it's probably not the correct one
 # Hence: copy
-if ! cmp /etc/chrony/chrony.conf $(dirname "${BASH_SOURCE[0]}")/chrony.conf --quiet
+if ! cmp /etc/chrony/chrony.conf "$(dirname "${BASH_SOURCE[0]}")/chrony.conf" --quiet
 then
     tue-install-info "Chrony config is probably not correct, will copy"
 
