@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 ubuntu_version=$(lsb_release -rs)
 ubuntu_version="${ubuntu_version//./}"
 cuda_version="9.2.148-1"

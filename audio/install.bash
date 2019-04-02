@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 sudo adduser amigo audio
 sudo adduser amigo pulse
 sudo adduser amigo pulse-access

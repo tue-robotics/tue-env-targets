@@ -1,6 +1,8 @@
+#! /usr/bin/env bash
+
 # Install vbox if not installed
 if ! dpkg -s virtualbox-4.3 &> /dev/null
-then 
+then
     URL='http://download.virtualbox.org/virtualbox/4.3.20/virtualbox-4.3_4.3.20-96996~Ubuntu~precise_amd64.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
 fi
 

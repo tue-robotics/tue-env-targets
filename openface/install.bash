@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [ ! -d ~/openface ]; then
     pushd .
     mkdir ~/openface

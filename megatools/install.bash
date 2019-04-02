@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 # Get script dir
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 

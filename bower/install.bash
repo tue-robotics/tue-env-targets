@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 if ! hash bower &> /dev/null
 then

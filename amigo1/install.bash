@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+
 ## Chrony
 # If config file does not exist, chrony is probably not installed
 if [ ! -f /etc/chrony/chrony.conf ]
