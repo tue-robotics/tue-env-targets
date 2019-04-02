@@ -30,7 +30,7 @@ fi
 vimdir="/usr/bin/vim.basic"
 if [ -f $vimdir ] # only if vim is installed
 then
-    current=$(update-alternatives --query editor | grep Value | awk '{print2}')
+    current=$(update-alternatives --query editor | grep Value | awk '{printf $2}')
     if [ "$current" = "/bin/nano" ]
     then
         echo -e "\nYou are using nano, let's setup vim\n"
