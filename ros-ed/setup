@@ -19,7 +19,7 @@ Possible commands:
     if [ "$1" == "run" ]
     then
         shift
-        rosrun ed ed_server $@
+        rosrun ed ed_server "$@"
     elif [ "$1" == "reset" ]
     then
         rosservice call /ed/reset
