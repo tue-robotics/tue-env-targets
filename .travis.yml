@@ -1,8 +1,6 @@
 language: shell
-addons:
-  apt:
-    packages:
-      - yamllint
+before_script:
+  - sudo apt-get install -y yamllint
 script:
   - bash -c 'shopt -s globstar; shellcheck **/install.bash **/setup'
   - bash -c 'find ./ -iname '*.yaml' -or -iname '*.yml' | xargs yamllint'
