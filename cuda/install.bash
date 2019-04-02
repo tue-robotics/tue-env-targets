@@ -28,7 +28,7 @@ else
     install_cuda=true
 fi
 
-if [[ $install_cuda==true ]]
+if [[ $install_cuda == true ]]
 then
     tue-install-debug "Installing cuda with following configuration:\nUbuntu version: ${ubuntu_version}\nCuda version: ${cuda_version}\nArchitecture: ${architecture}"
 
