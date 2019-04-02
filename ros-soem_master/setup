@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 function fix_permissions() {
     sudo setcap cap_net_raw+ep `which deployer-gnulinux`
     sudo setcap cap_net_raw+ep `which rttscript-gnulinux`
