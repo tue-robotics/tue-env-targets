@@ -79,7 +79,7 @@ then
         then
             tue-install-debug "Unsupported g++ version. Need g++ < 7.0.*"
             export CXX=g++-5
-            gpp_version=$($CXX -dumpversion)
+            gpp_version=$($CXX -dumpversion) || { tue-install-error "Required g++ version not found"; }
             tue-install-debug "Changed g++ version to $gpp_version"
         else
             export CXX=g++
