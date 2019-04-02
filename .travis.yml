@@ -1,6 +1,7 @@
 language: shell
 addons:
-  - apt:
+  apt:
+    packages:
       - yamllint
 script:
   - bash -c 'shopt -s globstar; shellcheck **/install.bash **/setup'
