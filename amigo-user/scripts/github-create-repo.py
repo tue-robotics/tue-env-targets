@@ -8,8 +8,8 @@ import getpass, sys
 # argument parsing
 args = sys.argv
 if len(args) != 2:
-	print 'usage: %s <repo name>' % args[0]
-	exit()
+    print('usage: %s <repo name>' % args[0])
+    exit()
 repo_name = args[1]
 
 # prompt for username + password
@@ -24,5 +24,5 @@ user, password = login()
 g = Github(user, password)
 org = g.get_organization('tue-robotics')
 
-print "I'm going to create a repository named '%s' in '%s'" % (repo_name, org.name)
+print("I'm going to create a repository named '%s' in '%s'" % (repo_name, org.name))
 org.create_repo(name=repo_name)
