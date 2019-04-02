@@ -21,8 +21,6 @@ then
     tue-install-system-now ros-$TUE_ROS_DISTRO-ros build-essential python-catkin-tools
 
     sudo rosdep init || true # make sure it always succeeds, even if rosdep init was already called
-    touch /tmp/rosdep_update
-
 fi
 
 if [ ! -f /tmp/rosdep_update ]
