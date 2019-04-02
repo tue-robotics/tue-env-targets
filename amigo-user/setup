@@ -89,7 +89,7 @@ alias amigo-continui-gpsr='rosrun hmi_server continue_gui.py $TUE_SYSTEM_DIR/src
 
 alias amigo-say='rostopic pub --once /amigo/text_to_speech/input std_msgs/String'
 function amigo-zeg() {
-        rosservice call /amigo/text_to_speech/speak "{language: 'nl', voice: 'david', character: 'default', emotion: 'neutral', sentence: '$@', blocking_call: false}"
+        rosservice call /amigo/text_to_speech/speak "{language: 'nl', voice: 'david', character: 'default', emotion: 'neutral', sentence: '$*', blocking_call: false}"
 }
 
 function amigo-hear() {

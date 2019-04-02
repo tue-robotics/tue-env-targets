@@ -81,7 +81,7 @@ alias sergio-continui-gpsr='rosrun hmi_server continue_gui.py $TUE_SYSTEM_DIR/sr
 
 alias sergio-say='rostopic pub --once /sergio/text_to_speech/input std_msgs/String'
 function sergio-zeg() {
-        rosservice call /sergio/text_to_speech/speak "{language: 'nl', voice: 'david', character: 'default', emotion: 'neutral', sentence: '$@', blocking_call: false}"
+        rosservice call /sergio/text_to_speech/speak "{language: 'nl', voice: 'david', character: 'default', emotion: 'neutral', sentence: '$*', blocking_call: false}"
 }
 
 function sergio-hear() {
