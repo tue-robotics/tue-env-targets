@@ -67,7 +67,7 @@ tue-install-git "$KALDI_REPO" "$KALDI_HOME" "$KALDI_REPO_BRANCH"
 cd "$KALDI_HOME"
 if [ "$prev" != "$(git rev-list HEAD -n 1)" ]
 then
-    # Set g++ version restrictions only for Ubuntu 16.04
+    # Set g++ version restrictions only for Ubuntu 16.04 due to limitations by CUDA
     if [ $DISTRIB_RELEASE == "16.04" ]
     then
         tue-install-debug "Checking g++ version"
