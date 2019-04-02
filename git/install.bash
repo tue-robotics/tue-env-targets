@@ -8,7 +8,7 @@ then
 fi
 
 # Unset old path, targets have moved
-if [[ $(git config --global core.excludesfile)=="$TUE_DIR/installer/targets/git/gitignore_global" ]]
+if [[ $(git config --global core.excludesfile) == "$TUE_DIR/installer/targets/git/gitignore_global" ]]
 then
     git config --global --unset core.excludesfile
 fi
