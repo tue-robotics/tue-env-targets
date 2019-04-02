@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 set -e
 
 function echo_and_run() { echo "$@" ; "$@" ; }

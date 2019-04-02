@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 # check for git-extras
 if [ ! -f /usr/local/bin/git-extras ]

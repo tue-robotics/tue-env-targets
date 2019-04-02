@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-#
+
 # Bash script to install target kaldi
 
 # Clone kaldi fork from tue-robotics (only latest commit)

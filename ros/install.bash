@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 if [ -z "$TUE_ROS_DISTRO" ]
 then
