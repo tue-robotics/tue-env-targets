@@ -28,6 +28,9 @@
   name: ros-ed
 
 - type: target
+  name: ros-ed_object_models
+
+- type: target
   name: ros-ed_perception
 
 - type: target
@@ -60,3 +63,6 @@
 
 - type: target
   name: ros-people_detector
+
+- type: target
+  name: ros-conversation_engine
