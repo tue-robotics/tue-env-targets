@@ -1,3 +1,4 @@
 language: shell
 script:
   - bash -c 'shopt -s globstar; shellcheck **/install.bash **/setup'
+  - bash -c 'find ./ -iname '*.yaml' -or -iname '*.yml' | xargs yamllint'
