@@ -19,7 +19,7 @@ alias hero-show-kinect='rosrun rgbd multitool --rgbd /hero/head_rgbd_sensor/rgbd
 
 ####################
 #
-# AMIGO ACTIONS
+# HERO ACTIONS
 #
 ####################
 
