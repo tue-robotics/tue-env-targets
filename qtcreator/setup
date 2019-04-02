@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 alias qtcreator='/opt/Qt/Tools/QtCreator/bin/qtcreator.sh'
 
 # Make sure packages can be build by QT
