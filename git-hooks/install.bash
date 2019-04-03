@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+
 # install the global hooks
 git config --global core.hooksPath $(dirname "${BASH_SOURCE[0]}")/git_hooks/
 

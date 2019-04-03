@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 alias git-logout='git config --global --get user.name > /dev/null && git config --global --remove user'
 

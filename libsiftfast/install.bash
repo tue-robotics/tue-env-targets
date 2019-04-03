@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [ ! -f /usr/local/lib/libsiftfast.so ]
 then
     svn co http://svn.code.sf.net/p/libsift/code/trunk /tmp/libsiftfast

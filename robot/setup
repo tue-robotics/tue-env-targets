@@ -1,2 +1,4 @@
+#! /usr/bin/env bash
+
 # Robot real
 export ROBOT_REAL=true

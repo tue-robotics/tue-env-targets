@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [ ! -f /etc/apt/sources.list.d/gazebo-stable.list ]
 then
     tue-install-debug "Adding Gazebo source to apt-get"

@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [ ! -f /etc/apt/sources.list.d/gazebo-latest.list ]
 then
     # Setup your computer to accept software from packages.osrfoundation.org.

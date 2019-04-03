@@ -37,4 +37,3 @@
   name: ros-cb_planner_msgs_srvs
 - type: target
   name: ros-ed_perception
-

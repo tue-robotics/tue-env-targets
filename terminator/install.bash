@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [ ! -d ~/.config/terminator ]
 then
     tue-install-debug "creating ~/.config/terminator, because not existing yet"

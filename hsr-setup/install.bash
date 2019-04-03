@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [ ! -f "/etc/apt/sources.list.d/tmc.list" ]
 then
     tue-install-debug "Adding HSR sources to apt-get"

@@ -3,7 +3,7 @@
 
 - type: target
   name: sergio-start
-  
+
 - type: target
   name: ros-amigo_hardware
 

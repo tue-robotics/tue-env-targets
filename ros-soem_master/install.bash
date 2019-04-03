@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 SUDO_PAM_LIMITS="session    required   pam_limits.so"
 PAM_SUDO_FILE="/etc/pam.d/sudo"
 

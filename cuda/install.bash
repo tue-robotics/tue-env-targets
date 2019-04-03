@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 ubuntu_version=$(lsb_release -rs)
 ubuntu_version="${ubuntu_version//./}"
 cuda_version="9.2.148-1"
@@ -26,7 +28,7 @@ else
     install_cuda=true
 fi
 
-if [[ $install_cuda==true ]]
+if [[ $install_cuda == true ]]
 then
     tue-install-debug "Installing cuda with following configuration:\nUbuntu version: ${ubuntu_version}\nCuda version: ${cuda_version}\nArchitecture: ${architecture}"
 

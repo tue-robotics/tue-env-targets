@@ -1,4 +1,4 @@
-## Chrony
+#! /usr/bin/env bash
 set -e
 
 # If config file does not exist, chrony is probably not installed

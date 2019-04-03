@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 alias trunk='cd $TUE_ENV_DIR/system/src'
 alias dev='cd $TUE_ENV_DIR/dev/src'
 
