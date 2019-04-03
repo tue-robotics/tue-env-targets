@@ -1,12 +1,6 @@
 #! /usr/bin/env bash
 
-## Chrony
-# If config file does not exist, chrony is probably not installed
-if [ ! -f /etc/chrony/chrony.conf ]
-then
-    echo "I guess chrony is not installed"
-    tue-install-system-now chrony
-fi
+tue-install-system-now chrony
 
 # If clephas (the author) is not in the config, it's probably not the correct one
 # Hence: copy
