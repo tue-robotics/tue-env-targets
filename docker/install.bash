@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [ ! -f /etc/apt/sources.list.d/docker.list ]
 then
 	wget https://get.docker.com -O /tmp/docker-install && sudo sh /tmp/docker-install

@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 DATA_DIR="$HOME/MEGA"
 if [ ! -d "$DATA_DIR" ]; then
     # Download mega sync

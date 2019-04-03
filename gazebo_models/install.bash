@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [[ -n "$CI" ]]
 then
     # Skip this target in CI. As models aren't used, but takes a lot of time to download them.

@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 alias cmdgen-spr="mono ~/src/GPSRCmdGen/bin/Release/SPRTest.exe"
 

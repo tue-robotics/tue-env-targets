@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [ ! -f /usr/local/lib/libzmq.so.4 ]
 then
 	wget http://download.zeromq.org/zeromq-4.1.0-rc1.tar.gz -O /tmp/zeromq-4.1.0-rc1.tar.gz

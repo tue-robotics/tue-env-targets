@@ -1,1 +1,3 @@
+#! /usr/bin/env bash
+
 alias robot-console="rosrun nl_robot_console console.py"

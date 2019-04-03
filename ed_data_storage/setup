@@ -1,1 +1,3 @@
+#! /usr/bin/env bash
+
 export ED_PLUGIN_PATH=~/ros/$TUE_ROS_DISTRO/dev/devel/lib:~/ros/$TUE_ROS_DISTRO/system/devel/lib

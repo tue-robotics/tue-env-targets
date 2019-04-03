@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+
 model_path=$HOME/data/gazebo_models
 
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH:+${GAZEBO_MODEL_PATH}:}$model_path

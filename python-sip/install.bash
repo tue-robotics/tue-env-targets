@@ -1,6 +1,6 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
-local SIP_version="4.15.5"
+SIP_version="4.15.5"
 
 if [ $(lsb_release -sc) == "trusty" ]
 then
@@ -24,9 +24,9 @@ else
     then
         url="https://downloads.sourceforge.net/project/pyqt/sip/sip-$SIP_version/sip-$SIP_version.tar.gz"
         tue-install-error "Download $url and place it in $(dirname "${BASH_SOURCE[0]}")/"
-        return -1
+        return 1
     fi
-    
+
     tue-install-info "Installing SIP version: $SIP_version"
     cp $SIP_file /tmp/sip.tar.gz
 

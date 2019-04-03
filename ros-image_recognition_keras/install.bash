@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 url="https://github.com/yu4u/age-gender-estimation/releases/download/v0.5/weights.28-3.73.hdf5"
 old_dest=~/src/keras_models/age_gender
 dest=~/data/keras_models/age_gender

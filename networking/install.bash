@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 # Install config file (mdns4_minimal is normally missing and should be present)
 
 # Replace nsswitch config file
