@@ -1,11 +1,13 @@
 #! /usr/bin/env bash
 
-export ED_PLUGIN_PATH=$TUE_ENV_DIR/dev/devel/lib:$TUE_ENV_DIR/system/devel/lib
+ED_PLUGIN_PATH=$TUE_ENV_DIR/dev/devel/lib:$TUE_ENV_DIR/system/devel/lib
+export ED_PLUGIN_PATH
 
 function ed
 {
     if [ -z "$1" ]
     then
+        # shellcheck disable=SC1078,SC1079
         echo """Usage: ed COMMAND [ARG1 ARG2 ... ]
 
 Possible commands:
