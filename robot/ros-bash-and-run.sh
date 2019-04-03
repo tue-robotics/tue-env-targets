@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /usr/bin/env sh
 
 cmd=""
 for arg in "$@"
