@@ -5,7 +5,9 @@ alias sergio-core='export ROS_MASTER_URI=http://sergio1.local:11311'
 
 # ----------------------------------------------------------------------------
 # - Add scripts directory to PATH
-export PATH=$(dirname "${BASH_SOURCE[0]}")/scripts${PATH:+:${PATH}}
+# shellcheck disable=SC2123
+PATH=$(dirname "${BASH_SOURCE[0]}")/scripts${PATH:+:${PATH}}
+export PATH
 
 ####################
 #
@@ -33,7 +35,7 @@ function sergio-audio-play
         return
     fi
 
-    rosrun text_to_speech play.py $1 /sergio/audio_player/play
+    rosrun text_to_speech play.py "$1" /sergio/audio_player/play
 }
 
 ####################
@@ -85,7 +87,7 @@ function sergio-zeg() {
 }
 
 function sergio-hear() {
-    msg=$@
+    msg=$*
     echo "Sending trigger: $msg"
     rostopic pub --once /sergio/hmi/string std_msgs/String "data: '$msg'";
 }
@@ -143,13 +145,13 @@ alias sergio-case='sergio-torso-move-joints 0.45 1.5'
 function sergio-top-kinect-record-avi {
     filename=$1
 
-    if [ -z $filename ]
+    if [ -z "$filename" ]
     then
-        filename=sergio_top_kinect-`date +"%Y-%m-%d-%H-%M-%S"`.avi
+        filename=sergio_top_kinect-$(date +"%Y-%m-%d-%H-%M-%S").avi
     fi
 
     # Lossless codec: FFV1
-    rosrun rgbd record_to_video rgb:=/sergio/top_kinect/rgb/image _fps:=30 _format:=DIVX _filename:=$filename _size:=1
+    rosrun rgbd record_to_video rgb:=/sergio/top_kinect/rgb/image _fps:=30 _format:=DIVX _filename:="$filename" _size:=1
 }
 
 alias sergio-copy-my-id="ssh-copy-id amigo@sergio1.local; ssh-copy-id amigo@sergio2.local"
