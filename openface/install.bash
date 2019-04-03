@@ -1,23 +1,22 @@
 #! /usr/bin/env bash
 
-if [ ! -d ~/openface ]; then
-    pushd .
+if [ ! -d ~/openface ]
+then
     mkdir ~/openface
-    cd ~/openface
+    cd ~/openface || tue-install-error "Missing directory: ~/openface"
     git clone https://github.com/cmusatyalab/openface.git  ~/openface --recursive
     tue-install-system-now python-numpy python-pandas python-scipy python-sklearn python-skimage
 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-    source $DIR/dlib.bash
+    # shellcheck disable=SC1090
+    source "$DIR"/dlib.bash
+    # shellcheck disable=SC1090
+    source "$DIR"/torch.bash
 
-    source $DIR/torch.bash
-
-    cd ~/openface
+    cd ~/openface || tue-install-error "Missing directory: ~/openface"
     sudo python2 setup.py install
 
     models/get-models.sh
-
-    popd
 
     if [[ $(python -c "import dlib") -eq 1 ]]; then
         echo "DLIB is not properly installed"
