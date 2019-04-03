@@ -1,6 +1,9 @@
-pushd .
+#! /usr/bin/env bash
 
-echo "Installing Torch"
+# shellcheck disable=SC2164
+pushd . > /dev/null
+
+tue-install-info "Installing Torch"
 if [ -n "$TUE_CUDA" ]
 then
     tue-install-debug "Installing torch with CUDA capabilities"
@@ -8,12 +11,14 @@ then
 fi
 
 git clone https://github.com/torch/distro.git ~/torch --recursive
-cd ~/torch
+cd ~/torch || tue-install-error "Missing directory: ~/torch"
 bash install-deps
 ./install.sh
 
 # One time sourcing doesn't work. Why? Unknown.
+# shellcheck disable=SC1090
 source ~/.bashrc
+# shellcheck disable=SC1090
 source ~/.bashrc
 
 luarocks install dpnn
@@ -30,4 +35,7 @@ luarocks install tds #(only for training a DNN)
 luarocks install torchx #(only for training a DNN)
 luarocks install optnet #(optional, only for training a DNN)
 
-popd
+tue-install-info "torch.bash finished"
+
+# shellcheck disable=SC2164
+popd > /dev/null
