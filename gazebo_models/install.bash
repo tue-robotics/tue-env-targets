@@ -8,12 +8,13 @@ fi
 
 tue-install-system-now mercurial
 
-model_path=$HOME/data/gazebo_models
-if [ ! -d $model_path ]
+model_path="$HOME/data/gazebo_models"
+if [ ! -d "$model_path" ]
 then
-    hg clone https://bitbucket.org/osrf/gazebo_models $model_path
+    hg clone "https://bitbucket.org/osrf/gazebo_models" "$model_path"
 else
-    cd $model_path
+    # shellcheck disable=SC2164
+    cd "$model_path"
     hg pull -f
     hg update
 fi
