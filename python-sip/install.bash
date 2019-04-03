@@ -2,7 +2,7 @@
 
 SIP_version="4.15.5"
 
-if [ $(lsb_release -sc) == "trusty" ]
+if [ "$(lsb_release -sc)" == "trusty" ]
 then
     tue-install-system python-sip-dev
 else
@@ -28,10 +28,10 @@ else
     fi
 
     tue-install-info "Installing SIP version: $SIP_version"
-    cp $SIP_file /tmp/sip.tar.gz
+    cp "$SIP_file" /tmp/sip.tar.gz
 
     tar xvzf /tmp/sip.tar.gz -C /tmp
-    cd /tmp/sip-$SIP_version
+    cd /tmp/sip-"$SIP_version" || tue-install-error "Missing directory: /tmp/sip-$SIP_version "
     python ./configure.py
     make
     sudo make install
