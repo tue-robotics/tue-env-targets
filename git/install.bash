@@ -16,7 +16,7 @@ fi
 # Set global ignore file
 if [[ ! $(git config --global core.excludesfile) ]]
 then
-    git config --global core.excludesfile $(dirname "${BASH_SOURCE[0]}")/gitignore_global
+    git config --global core.excludesfile "$(dirname "${BASH_SOURCE[0]}")"/gitignore_global
 fi
 
 # Set lg alias
