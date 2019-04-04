@@ -10,8 +10,9 @@ then
     export TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__"
 fi
 
-git clone https://github.com/torch/distro.git ~/torch --recursive
-cd ~/torch || tue-install-error "Missing directory: ~/torch"
+tue-install-git https://github.com/torch/distro.git ~/torch
+# shellcheck disable=SC2164
+cd ~/torch
 bash install-deps
 ./install.sh
 
