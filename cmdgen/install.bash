@@ -30,10 +30,6 @@ tue-install-git $github_url "$dest"
 hash mono 2> /dev/null || tue-install-system-now mono-complete
 
 # make if needed
-if [ ! -d "$dest" ]
-then
-    tue-install-error "Folder $dest doesn't exist, but it should be cloned"
-fi
 # shellcheck disable=SC2164
 cd "$dest"
 if [ "$prev" != "$(git rev-list HEAD -n 1)" ]; then
