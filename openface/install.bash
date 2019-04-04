@@ -3,7 +3,8 @@
 if [ ! -d ~/openface ]
 then
     mkdir ~/openface
-    cd ~/openface || tue-install-error "Missing directory: ~/openface"
+    # shellcheck disable=SC2164
+    cd ~/openface
     git clone https://github.com/cmusatyalab/openface.git  ~/openface --recursive
     tue-install-system-now python-numpy python-pandas python-scipy python-sklearn python-skimage
 
@@ -13,7 +14,8 @@ then
     # shellcheck disable=SC1090
     source "$DIR"/torch.bash
 
-    cd ~/openface || tue-install-error "Missing directory: ~/openface"
+    # shellcheck disable=SC2164
+    cd ~/openface
     sudo python2 setup.py install
 
     models/get-models.sh
