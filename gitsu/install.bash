@@ -14,12 +14,12 @@ then
    else
       tue-install-debug "gistu file: link is broken and will be replaced"
       rm $gitsu_file
-      ln -s $(dirname "${BASH_SOURCE[0]}")/gitsu.txt $gitsu_file
+      ln -s "$(dirname "${BASH_SOURCE[0]}")"/gitsu.txt $gitsu_file
    fi
 elif [ -e $gitsu_file ]
 then
     tue-install-debug "gistu file: it is not a link"
 else
     tue-install-debug "gistu file: link doesn't exist, but will be created"
-    ln -s $(dirname "${BASH_SOURCE[0]}")/gitsu.txt $gitsu_file
+    ln -s "$(dirname "${BASH_SOURCE[0]}")"/gitsu.txt $gitsu_file
 fi

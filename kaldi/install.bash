@@ -11,13 +11,14 @@ KALDI_REPO_BRANCH="develop"
 kaldi_exists=true
 { status="$(cat $KALDI_HOME/STATUS)" && [ "$status" == "ALL OK" ]; } || kaldi_exists=false
 
-if [ -n "$DOCKER" -a "$kaldi_exists" == "true" ]
+if [ -n "$DOCKER" ] && [ "$kaldi_exists" == "true" ]
 then
     tue-install-debug "Kaldi installation in Docker exists. Doing nothing."
     return 0
 fi
 
 # Get the version of Ubuntu
+# shellcheck disable=SC1091
 source /etc/lsb-release
 
 # By default, set the previous commit to -1, which will trigger a 'make'
@@ -37,6 +38,7 @@ pip install --user "numpy>=1.15.0"
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
 then
+    # shellcheck disable=SC2164
     cd "$KALDI_HOME"
     current_remote=$(git config --get remote.origin.url) # get the remote
 
@@ -64,18 +66,19 @@ fi
 tue-install-git "$KALDI_REPO" "$KALDI_HOME" "$KALDI_REPO_BRANCH"
 
 # Build toolkit if needed
+# shellcheck disable=SC2164
 cd "$KALDI_HOME"
 if [ "$prev" != "$(git rev-list HEAD -n 1)" ]
 then
     # Set g++ version restrictions only for Ubuntu 16.04 due to limitations by CUDA
-    if [ $DISTRIB_RELEASE == "16.04" ]
+    if [ "$DISTRIB_RELEASE" == "16.04" ]
     then
         tue-install-debug "Checking g++ version"
         gpp_version=$(g++ -dumpversion)
         tue-install-debug "g++ version found: $gpp_version"
 
-        gpp_version_num=$(echo $gpp_version | sed 's/\./ /g' | xargs printf "%d%02d%02d")
-        if [ $gpp_version_num -gt 70000 ]
+        gpp_version_num=$(echo "$gpp_version" | sed 's/\./ /g' | xargs printf "%d%02d%02d")
+        if [ "$gpp_version_num" -gt 70000 ]
         then
             tue-install-debug "Unsupported g++ version. Need g++ < 7.0.*"
             export CXX=g++-5

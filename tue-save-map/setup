@@ -6,17 +6,20 @@
 # do not use this yaml parser for anything else. Working can't be guaranteed
 function _parse_yaml_map_server {
    local prefix=$2
-   local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
+   local s w fs
+   s='[[:space:]]*'
+   w='[a-zA-Z0-9_]*'
+   fs=$(echo @|tr @ '\034')
    sed -ne "s|^\($s\):|\1|" \
         -e "s|^\($s\)\($w\)$s:${s}[\"']\(.*\)[\"']$s\$|\1$fs\2$fs\3|p" \
-        -e "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p"  $1 |
-   awk -F$fs '{
+        -e "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p"  "$1" |
+   awk -F"$fs" '{
       indent = length($1)/2;
       vname[indent] = $2;
       for (i in vname) {if (i > indent) {delete vname[i]}}
       if (length($3) > 0) {
          vn=""; for (i=0; i<indent; i++) {vn=(vn)(vname[i])("_")}
-         printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);
+         printf("%s%s%s=\"%s\"\n", "'"$prefix"'",vn, $2, $3);
       }
    }'
 }
@@ -29,8 +32,8 @@ The map will be stored in the package ed_object_models, in folder models/MAP_NAM
         return
     fi
 
-    MODELS_DIR=`rospack find ed_object_models`/models
-    MODEL_DIR=$MODELS_DIR/$1
+    MODELS_DIR=$(rospack find ed_object_models)/models
+    MODEL_DIR="$MODELS_DIR"/$1
 
     if [ -d "$MODEL_DIR" ]; then
         echo "$1 already exists"
@@ -54,10 +57,10 @@ The map will be stored in the package ed_object_models, in folder models/MAP_NAM
     IFS=', ' read -r -a origin <<< "$origin"
 
     # create the map directory structure (MAP_NAME/walls) in ed_object_models/models
-    mkdir -p $MODEL_DIR/walls/shape
+    mkdir -p "$MODEL_DIR"/walls/shape
 
     # create main model.yaml
-    cat > $MODEL_DIR/model.yaml <<EOL
+    cat > "$MODEL_DIR"/model.yaml <<EOL
 composition:
 - type: "$1/walls"
   id: "walls"
@@ -68,7 +71,7 @@ composition:
 EOL
 
     # create walls model.yaml
-    cat > $MODEL_DIR/walls/model.yaml <<EOL
+    cat > "$MODEL_DIR"/walls/model.yaml <<EOL
 type: walls
 shape:
     path: shape/heightmap.pgm
@@ -101,6 +104,6 @@ EOF
     } &> /dev/null # because of gimp warnings
 
     # copy the pgm and xcf to the walls/shape folder
-    cp /tmp/temp_map.pgm $MODEL_DIR/walls/shape/heightmap.pgm
-    cp /tmp/temp_map.xcf $MODEL_DIR/walls/shape/heightmap.xcf
+    cp /tmp/temp_map.pgm "$MODEL_DIR"/walls/shape/heightmap.pgm
+    cp /tmp/temp_map.xcf "$MODEL_DIR"/walls/shape/heightmap.xcf
 }

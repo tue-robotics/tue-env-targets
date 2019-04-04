@@ -1,12 +1,15 @@
 #! /usr/bin/env bash
 
 github_url="https://github.com/tue-robotics/GPSRCmdGen.git"
+dest="$HOME/src/GPSRCmdGen"
 
 # by default, set the previous commit to -1, which will trigger a 'make'
 prev="-1"
 
-if [ -d ~/src/GPSRCmdGen ]; then # if the directory already exists
-    cd ~/src/GPSRCmdGen
+if [ -d "$dest" ]
+then
+    # shellcheck disable=SC2164
+    cd "$dest"
     current_url=$(git config --get remote.origin.url) # get the remote
 
     # if the GSPRCmdGen is pointing to the wrong remote, correct it
@@ -21,13 +24,14 @@ if [ -d ~/src/GPSRCmdGen ]; then # if the directory already exists
 fi
 
 # tue-install-git will decide if clone or pull is needed
-tue-install-git $github_url ~/src/GPSRCmdGen
+tue-install-git $github_url "$dest"
 
 # install mono if not yet installed
 hash mono 2> /dev/null || tue-install-system-now mono-complete
 
 # make if needed
-cd ~/src/GPSRCmdGen
+# shellcheck disable=SC2164
+cd "$dest"
 if [ "$prev" != "$(git rev-list HEAD -n 1)" ]; then
     tue-install-debug "Making GPSRCmdGen"
     make

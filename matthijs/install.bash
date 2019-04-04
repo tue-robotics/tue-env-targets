@@ -15,5 +15,5 @@ do
         option=${item%=*}
         value=${item#*=}
         tue-install-debug "git config --global --replace-all $option $value"
-        git config --global --replace-all $option $value
+        git config --global --replace-all "$option" "$value"
 done
