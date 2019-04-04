@@ -6,7 +6,8 @@ pushd . > /dev/null
 tue-install-info "Installing DLib"
 
 mkdir -p /tmp/dlib
-cd /tmp/dlib || tue-install-error "Missing directory: /tmp/dlib"
+# shellcheck disable=SC2164
+cd /tmp/dlib
 wget https://github.com/davisking/dlib/releases/download/v18.16/dlib-18.16.tar.bz2
 tar xf dlib-18.16.tar.bz2
 cd dlib-18.16/python_examples || tue-install-error "Missing directory: /tmp/dlib/dlib-18.16/python_examples"
