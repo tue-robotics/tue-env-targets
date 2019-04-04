@@ -7,7 +7,7 @@ then
     return 1
 fi
 
-if [ ! -d "/opt/ros/$TUE_ROS_DISTRO" ]
+if [ ! -d /opt/ros/"$TUE_ROS_DISTRO" ]
 then
 
     tue-install-system-now lsb wget
