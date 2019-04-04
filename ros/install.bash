@@ -31,7 +31,7 @@ then
     touch /tmp/rosdep_update
 fi
 
-source "/opt/ros/$TUE_ROS_DISTRO/setup.bash"
+source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
 
 # shellcheck disable=SC2034,SC2153
 TUE_SYSTEM_DIR="$TUE_ENV_DIR"/system
