@@ -38,7 +38,8 @@ pip install --user "numpy>=1.15.0"
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
 then
-    cd "$KALDI_HOME" || tue-install-error "Missing directory: $KALDI_HOME"
+    # shellcheck disable=SC2164
+    cd "$KALDI_HOME"
     current_remote=$(git config --get remote.origin.url) # get the remote
 
     # If the kaldi_speech is pointing to the wrong Remote, correct it
@@ -65,7 +66,8 @@ fi
 tue-install-git "$KALDI_REPO" "$KALDI_HOME" "$KALDI_REPO_BRANCH"
 
 # Build toolkit if needed
-cd "$KALDI_HOME" || tue-install-error "Missing directory: $KALDI_HOME"
+# shellcheck disable=SC2164
+cd "$KALDI_HOME"
 if [ "$prev" != "$(git rev-list HEAD -n 1)" ]
 then
     # Set g++ version restrictions only for Ubuntu 16.04 due to limitations by CUDA
