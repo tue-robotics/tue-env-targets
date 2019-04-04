@@ -2,10 +2,7 @@
 
 if [ ! -d ~/openface ]
 then
-    mkdir ~/openface
-    # shellcheck disable=SC2164
-    cd ~/openface
-    git clone https://github.com/cmusatyalab/openface.git  ~/openface --recursive
+    tue-install-git https://github.com/cmusatyalab/openface.git  ~/openface
     tue-install-system-now python-numpy python-pandas python-scipy python-sklearn python-skimage
 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
