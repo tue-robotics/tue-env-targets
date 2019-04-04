@@ -11,14 +11,14 @@ if [ "$DISTRIB_RELEASE" == "14.04" ]
 then
     if ! [ -L /usr/lib/libudev.so.0 ]
     then
-        echo "I'm going to symlink libudev.so.1.3.5 to libudev.so.0"
+        tue-install-info "I'm going to symlink libudev.so.1.3.5 to libudev.so.0"
         sudo ln -s /lib/x86_64-linux-gnu/libudev.so.1.3.5 /usr/lib/libudev.so.0
     fi
 elif [ "$DISTRIB_RELEASE" == "16.04" ]
 then
     if ! [ -L /lib/x86_64-linux-gnu/libudev.so.0 ]
     then
-        echo "I'm going to symlink libudev.so.1 to libudev.so.0"
+        tue-install-info "I'm going to symlink libudev.so.1 to libudev.so.0"
         sudo ln -s /lib/x86_64-linux-gnu/libudev.so.1 /lib/x86_64-linux-gnu/libudev.so.0
     fi
 fi
