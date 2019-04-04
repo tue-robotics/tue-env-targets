@@ -21,10 +21,10 @@ function robot-trigger-command
     then
         local sentence="continue"
     else
-        local sentence="${@:2}"
+        local sentence="${*:2}"
     fi
 
-    ( rostopic pub --once /$robot/trigger std_msgs/String "$sentence" &> /dev/null & )
+    ( rostopic pub --once /"$robot"/trigger std_msgs/String "$sentence" &> /dev/null & )
 }
 
 alias amigo-trigger-command="robot-trigger-command amigo"
@@ -36,9 +36,9 @@ alias sergio-trigger-command="robot-trigger-command sergio"
 
 function rsettings
 {
-    rsettings_file=$TUE_DIR/.rsettings
+    rsettings_file="$TUE_DIR"/.rsettings
 
-    if [ ! -f $rsettings_file ]
+    if [ ! -f "$rsettings_file" ]
     then
         echo "[rsettings] Settings file cannot be found: '$rsettings_file'"
         return
@@ -47,7 +47,8 @@ function rsettings
     if [ "$1" == "-s" ]
     then
         # only source the file
-        source $rsettings_file
+        # shellcheck disable=SC1090
+        source "$rsettings_file"
 
         export SIM_GAZEBO=false
         export SIM_FAST=false
@@ -74,7 +75,8 @@ function rsettings
         RSETTINGS_EDITOR=$EDITOR
     fi
 
-    $RSETTINGS_EDITOR $rsettings_file
+    $RSETTINGS_EDITOR "$rsettings_file"
+    # shellcheck disable=SC1090
     source ~/.bashrc
 }
 

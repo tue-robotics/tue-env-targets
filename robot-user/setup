@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+# shellcheck disable=SC2034
 
 alias local-core='export ROS_MASTER_URI=http://localhost:11311'
 
@@ -11,6 +12,7 @@ alias local-core='export ROS_MASTER_URI=http://localhost:11311'
 alias topic-monitor='rosrun robot_launch_files topic_monitor */scan */rgbd */joint_states */base/measurements'
 
 ####################
+#
 # git prompt
 #
 ####################
@@ -29,7 +31,8 @@ GIT_PS1_SHOWUPSTREAM="auto git"
 
 
 function ROS_MASTER_NAME {
-    ROS_MASTER=$(echo $ROS_MASTER_URI | sed 's#http://\(.*\):.*#\1#')
+    # shellcheck disable=SC2001
+    ROS_MASTER=$(echo "$ROS_MASTER_URI" | sed 's#http://\(.*\):.*#\1#')
     if [ "$ROS_MASTER" == "localhost" ] || [ "$ROBOT_REAL" == "true" ]; then
         echo ""
     else
@@ -37,6 +40,7 @@ function ROS_MASTER_NAME {
     fi
 }
 
+# shellcheck disable=SC2154
 PS1='[\[\033[01;34m\]\w\[\033[00m\]]$(__git_ps1)\n'\
 '$(ROS_MASTER_NAME)${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \$ '
 
@@ -49,4 +53,5 @@ alias scores='scp amigo@athome10.local:/home/amigo/database/per_challenge/scores
 ####################
 
 # Append '.local' to hostname for local resolving of hostnames
-export ROS_HOSTNAME=`hostname`.local
+ROS_HOSTNAME=$(hostname).local
+export ROS_HOSTNAME

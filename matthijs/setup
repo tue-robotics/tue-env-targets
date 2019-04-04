@@ -7,7 +7,8 @@ bind '"\e[D": backward-char'
 
 function sb
 {
-source ~/.bashrc
+    # shellcheck disable=SC1090
+    source ~/.bashrc
 }
 
 alias ag='ag -fi'

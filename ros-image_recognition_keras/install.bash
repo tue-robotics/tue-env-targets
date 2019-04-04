@@ -7,11 +7,11 @@ dest=~/data/keras_models/age_gender
 # move old dir to new destination
 if [ -d $old_dest ]
 then
-    mkdir -p $(dirname $dest)
-    mv $old_dest $dest
-    if [ -z "$(ls -A $(dirname $old_dest))" ]
+    mkdir -p "$(dirname $dest)"
+    mv "$old_dest" "$dest"
+    if [ -z "$(ls -A "$(dirname $old_dest)")" ]
     then
-        rm -r $(dirname $old_dest)
+        rm -r "$(dirname $old_dest)"
     fi
 fi
 
