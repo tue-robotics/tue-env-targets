@@ -1,7 +1,8 @@
 #! /usr/bin/env bash
 
 DATA_DIR="$HOME/MEGA"
-if [ ! -d "$DATA_DIR" ]; then
+if [ ! -d "$DATA_DIR" ]
+then
     # Download mega sync
     UBUNTU_VERSION=$(lsb_release -r | sed 's/Release:\s*\(.*\)/\1/')
     tue-install-debug "Ubuntu version: $UBUNTU_VERSION"
