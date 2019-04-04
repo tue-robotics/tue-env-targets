@@ -18,11 +18,11 @@ alias topic-monitor='rosrun robot_launch_files topic_monitor */scan */rgbd */joi
 ####################
 
 # source ~/Documents/tools/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=0
-GIT_PS1_SHOWSTASHSTATE=0
-GIT_PS1_SHOWUNTRACKEDFILES=0
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
 # Explicitly unset color (default anyhow). Use 1 to set it.
-GIT_PS1_SHOWCOLORHINTS=0
+GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="auto git"
 
