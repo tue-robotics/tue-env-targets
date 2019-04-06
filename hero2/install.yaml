@@ -27,8 +27,8 @@
 - type: target
   name: ros-image_recognition_openpose
 
-- type: target
-  name: cuda
+  #- type: target
+  #  name: cuda
 
 # Dekstop tools
 - type: target
