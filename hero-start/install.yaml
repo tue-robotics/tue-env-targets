@@ -1,4 +1,7 @@
 - type: target
+  name: ros-dragonfly_speech_recognition
+
+- type: target
   name: ros-hmi
 
 - type: target
