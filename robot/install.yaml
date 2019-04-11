@@ -3,6 +3,8 @@
 - type: target
   name: gitsu
 - type: target
+  name: git-hooks
+- type: target
   name: networking
 - type: target
   name: vim
