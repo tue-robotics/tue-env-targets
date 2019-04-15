@@ -5,5 +5,5 @@ addons:
     packages:
       - yamllint
 script:
-  - bash -c 'shopt -s globstar; shellcheck **/*.bash **/*.sh **/setup'
+  - bash -c 'shopt -s globstar; shellcheck -x **/*.bash **/*.sh **/setup'
   - bash -c 'find ./ -iname '*.yaml' -or -iname '*.yml' | xargs yamllint'
