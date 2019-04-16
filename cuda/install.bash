@@ -2,7 +2,7 @@
 
 ubuntu_version=$(lsb_release -rs)
 ubuntu_version="${ubuntu_version//./}"
-cuda_version="9.2.148-1"
+cuda_version="8.0.61-1"
 install_cuda=false
 
 if [ "$(uname -p)" == "x86_64" ]
@@ -32,7 +32,6 @@ if [[ $install_cuda == true ]]
 then
     tue-install-debug "Installing cuda with following configuration:\nUbuntu version: ${ubuntu_version}\nCuda version: ${cuda_version}\nArchitecture: ${architecture}"
 
-    return
     cuda_file="cuda-repo-ubuntu${ubuntu_version}_${cuda_version}_${architecture}.deb"
     cuda_url="""https://developer.download.nvidia.com/compute/cuda/repos/ubuntu${ubuntu_version}/$(uname -p)/${cuda_file}"
 
