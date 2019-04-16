@@ -15,7 +15,7 @@ then
     fi
 fi
 
-if [ ! -d $dest ]
+if [ ! -f $dest/"$(basename "$url")" ]
 then
     tue-install-debug "wget $url -P $dest"
     wget $url -P $dest
