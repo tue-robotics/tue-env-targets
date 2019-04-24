@@ -7,6 +7,10 @@
 - type: target
   name: megasync
 
+# Laptop Battery Status
+- type: target
+  name: ros-upower_ros
+
 # Middleware
 - type: target
   name: tue-middleware
