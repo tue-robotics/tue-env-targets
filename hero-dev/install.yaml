@@ -27,7 +27,9 @@
 
 # -------------------- ROBOTS ---------------------
 
-# HERO
+- type: target
+  name: hero-dashboard
+
 - type: target
   name: hero-user
 
