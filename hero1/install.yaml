@@ -7,6 +7,10 @@
 - type: target
   name: ros-laser_filters
 
+# Odometer
+- type: target
+  name: ros-test_tools
+
 - type: ros
   source:
     type: system
