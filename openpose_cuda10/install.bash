@@ -10,7 +10,7 @@ then
     echo_and_run sudo apt purge opencv* libopencv* # Explicitly ask for confirmation
 fi
 
-tue-install-system-now ros-kinetic-opencv3 libopenblas-dev
+tue-install-system-now ros-kinetic-opencv3 libopenblas-dev libgoogle-glog-dev
 
 symlink /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so /usr/lib/libopencv_core.so
 symlink /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so /usr/lib/libopencv_highgui.so
