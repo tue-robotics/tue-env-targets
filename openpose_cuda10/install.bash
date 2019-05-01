@@ -45,8 +45,8 @@ then
     then
         mkdir -p ~/openpose/build
         cd ~/openpose/build
-        cmake -DBUILD_PYTHON=ON ..
-        make -j $(nproc)
+        cmake -DBUILD_PYTHON=ON .. || tue-install-error "CMake configuration error"
+        make -j $(nproc) || tue-install-error "Build error"
         roscd image_recognition_openpose
         ln -s ~/openpose
     fi
