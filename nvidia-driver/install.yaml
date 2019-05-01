@@ -1,0 +1,8 @@
+- type: ppa
+  name: ppa:graphics-drivers/ppa
+
+- type: system
+  name: nvidia-driver-418
+
+- type: system
+  name: nvidia-settings
