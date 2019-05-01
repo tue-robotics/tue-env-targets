@@ -10,15 +10,15 @@ then
     echo_and_run sudo apt purge opencv* libopencv* # Explicitly ask for confirmation
 fi
 
-tue-install-system-now ros-kinetic-opencv3 libopenblas-dev libgoogle-glog-dev \
+tue-install-system-now ros-"$TUE_ROS_DISTRO"-opencv3 libopenblas-dev libgoogle-glog-dev \
     protobuf-compiler libatlas-base-dev
 
-symlink /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so /usr/lib/libopencv_core.so
-symlink /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so /usr/lib/libopencv_highgui.so
-symlink /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so /usr/lib/libopencv_imgcodecs.so
-symlink /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so /usr/lib/libopencv_imgproc.so
-symlink /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so /usr/lib/libopencv_videoio.so
-symlink /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2 /usr/include/opencv2
+symlink /opt/ros/"$TUE_ROS_DISTRO"/lib/x86_64-linux-gnu/libopencv_core3.so /usr/lib/libopencv_core.so
+symlink /opt/ros/"$TUE_ROS_DISTRO"/lib/x86_64-linux-gnu/libopencv_highgui3.so /usr/lib/libopencv_highgui.so
+symlink /opt/ros/"$TUE_ROS_DISTRO"/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so /usr/lib/libopencv_imgcodecs.so
+symlink /opt/ros/"$TUE_ROS_DISTRO"/lib/x86_64-linux-gnu/libopencv_imgproc3.so /usr/lib/libopencv_imgproc.so
+symlink /opt/ros/"$TUE_ROS_DISTRO"/lib/x86_64-linux-gnu/libopencv_videoio3.so /usr/lib/libopencv_videoio.so
+symlink /opt/ros/"$TUE_ROS_DISTRO"/include/opencv-3.3.1-dev/opencv2 /usr/include/opencv2
 
 if cd ~/openpose
 then
