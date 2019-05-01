@@ -11,7 +11,7 @@ then
 fi
 
 tue-install-system-now ros-kinetic-opencv3 libopenblas-dev libgoogle-glog-dev \
-    protobuf-compiler
+    protobuf-compiler libatlas-base-dev
 
 symlink /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so /usr/lib/libopencv_core.so
 symlink /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so /usr/lib/libopencv_highgui.so
@@ -47,8 +47,8 @@ then
         mkdir -p ~/openpose/build
         cd ~/openpose/build
         cmake -DBUILD_PYTHON=ON .. || tue-install-error "CMake configuration error"
-        make -j $(nproc) || tue-install-error "Build error"
+        make -j "$(nproc)" || tue-install-error "Build error"
         roscd image_recognition_openpose
-        ln -s ~/openpose
+        ln -s ~/openpose .
     fi
 fi
