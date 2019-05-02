@@ -62,7 +62,7 @@
   name: ros-action_server
 
 - type: target
-  name: ros-people_detector
+  name: ros-people_detection_3d
 
 - type: target
   name: ros-conversation_engine
