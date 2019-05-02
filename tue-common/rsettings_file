@@ -2,9 +2,10 @@
 
 # Robot environment
 #export ROBOT_ENV=reo2016
-export ROBOT_ENV=robotics_testlabs
+#export ROBOT_ENV=robotics_testlabs
 #export ROBOT_ENV=rgo2017
 #export ROBOT_ENV=rgo2018
+export ROBOT_ENV=rgo2019
 #export ROBOT_ENV=rwc2017
 #export ROBOT_ENV=rwc2018
 
@@ -32,6 +33,13 @@ elif [ $ROBOT_ENV == rgo2017 ]; then
     export ROBOT_INIT_PHI=0.0
 
 elif [ $ROBOT_ENV == rgo2018 ]; then
+
+    # Robot initial pose
+    export ROBOT_INIT_X=-1.0
+    export ROBOT_INIT_Y=0.0
+    export ROBOT_INIT_PHI=0.0
+
+elif [ $ROBOT_ENV == rgo2019 ]; then
 
     # Robot initial pose
     export ROBOT_INIT_X=-1.0
