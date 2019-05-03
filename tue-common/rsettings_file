@@ -42,7 +42,7 @@ elif [ $ROBOT_ENV == rgo2018 ]; then
 elif [ $ROBOT_ENV == rgo2019 ]; then
 
     # Robot initial pose
-    export ROBOT_INIT_X=-1.0
+    export ROBOT_INIT_X=-0.6
     export ROBOT_INIT_Y=0.0
     export ROBOT_INIT_PHI=0.0
 
