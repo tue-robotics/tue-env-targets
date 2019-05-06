@@ -1,4 +1,4 @@
 - type: ros
   source:
-      type: system
-      name: roslint
+    type: system
+    name: roslint
