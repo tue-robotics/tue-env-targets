@@ -2,5 +2,5 @@
   source:
     type: git
     url: https://github.com/tue-robotics/image_recognition.git
-    sub-dir: image_recognition_people_detector
+    sub-dir: image_recognition_people_detection
     version: rgo2019
