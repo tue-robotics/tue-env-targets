@@ -1,0 +1,6 @@
+- type: ros
+  source:
+    type: git
+    url: https://github.com/tue-robotics/people_recognition.git
+    sub-dir: people_recognition_msgs
+    version: rgo2019
