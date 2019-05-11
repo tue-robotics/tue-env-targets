@@ -52,10 +52,7 @@
   name: ros-ed_sensor_integration
 
 - type: target
-  name: ros-ed_sensor_integration
-
-- type: target
-  name: ros-ed_people_detector
+  name: ros-ed_people_detection
 
 # Execution
 - type: target
