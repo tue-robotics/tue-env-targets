@@ -59,7 +59,7 @@
   name: ros-action_server
 
 - type: target
-  name: ros-people_recognition_3d
+  name: ros-people_recognition
 
 - type: target
   name: ros-conversation_engine
