@@ -9,7 +9,7 @@ else
     tue-install-debug "geany config does exists, so not copying matthijs config"
 fi
 
-git_config_items="pull.ff=true color.ui=always"
+git_config_items="pull.ff=true color.ui=always merge.tool=meld"
 for item in $git_config_items
 do
         option=${item%=*}
