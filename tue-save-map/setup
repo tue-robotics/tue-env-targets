@@ -25,18 +25,21 @@ function _parse_yaml_map_server {
 }
 
 function tue-save-map {
-    if [ -z "$1" ]; then
-        echo "Usage: tue-save-map MAP_NAME
+    if [ -z "$2" ]; then
+        echo "Usage: tue-save-map ROBOT_NAME MAP_NAME
 
 The map will be stored in the package ed_object_models, in folder models/MAP_NAME/walls."
         return
     fi
+    
+    robot_name=$1
+    map_name=$2
 
     MODELS_DIR=$(rospack find ed_object_models)/models
-    MODEL_DIR="$MODELS_DIR"/$1
+    MODEL_DIR="$MODELS_DIR"/$map_name
 
     if [ -d "$MODEL_DIR" ]; then
-        echo "$1 already exists"
+        echo "$map_name already exists"
         return
     fi
 
@@ -48,7 +51,7 @@ The map will be stored in the package ed_object_models, in folder models/MAP_NAM
 
 
     # store the map in /tmp
-    rosrun map_server map_saver -f /tmp/temp_map /map:=/hero/gmapping/map
+    rosrun map_server map_saver -f /tmp/temp_map /map:=/$robot_name/gmapping/map
 
     # parse yaml from gmapping
     eval "$(_parse_yaml_map_server /tmp/temp_map.yaml)"
