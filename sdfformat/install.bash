@@ -13,4 +13,9 @@ else
     tue-install-debug "Gazebo source has already been added"
 fi
 
-tue-install-system libsdformat4-dev
+if [ "$(lsb_release -sc)" == "xenial" ]
+then
+    tue-install-system libsdformat4-dev
+else
+    tue-install-system libsdformat6-dev
+fi

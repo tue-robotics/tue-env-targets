@@ -19,7 +19,20 @@ fi
 
 # Generate ssh keys when not on CI and file does not exist yet
 if [[ "$CI" != "true" && ! -f ~/.ssh/id_rsa ]]
-  then
+then
     tue-install-debug "Generating ssh keys"
     ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 fi
+
+# Enable persistent connection multiplexing
+ssh_config=~/.ssh/config
+if [ ! -f $ssh_config ]
+then
+    touch $ssh_config
+fi
+ssh_controlmasters_dir=~/.ssh/controlmasters
+if [ ! -d $ssh_controlmasters_dir ]
+then
+    mkdir -p $ssh_controlmasters_dir
+fi
+tue-install-add-text ssh_persistent_connection_lines $ssh_config
