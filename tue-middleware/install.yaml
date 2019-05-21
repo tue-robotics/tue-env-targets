@@ -52,17 +52,17 @@
   name: ros-ed_sensor_integration
 
 - type: target
-  name: ros-head_ref_ed_client
+  name: ros-ed_people_recognition
 
+# Execution
 - type: target
   name: ros-image_recognition
 
-# Execution
 - type: target
   name: ros-action_server
 
 - type: target
-  name: ros-people_detector
+  name: ros-people_recognition
 
 - type: target
   name: ros-conversation_engine

@@ -1,5 +1,11 @@
 #! /usr/bin/env bash
 
+if [ "$CI" == "true" ]
+then
+    tue-install-info "Not installing OpenFace in CI"
+    return 0
+fi
+
 if [ ! -d ~/openface ]
 then
     tue-install-git https://github.com/cmusatyalab/openface.git  ~/openface
