@@ -1,6 +1,4 @@
 - type: ros
   source:
-    type: git
-    url: https://github.com/ros/kdl_parser.git
-    version: kinetic-devel
-    sub-dir: kdl_parser
+    type: system
+    name: kdl-parser
