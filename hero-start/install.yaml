@@ -23,9 +23,6 @@
   name: ros-node_alive
 
 - type: target
-  name: ros-tue_manipulation
-
-- type: target
   name: ros-head_ref
 
 # Additional message definitions required for websocket calls
