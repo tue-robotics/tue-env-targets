@@ -16,7 +16,7 @@ function _vbox_sleep
     i=0
     while [[ $i -lt 30 ]]
     do
-        if [[ -z $(lsmod | grep vbox) ]]
+        if ! lsmod | grep -q vbox
         then
             echo "All vbox modules stopped"
             return 0
