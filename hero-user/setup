@@ -32,4 +32,36 @@ function hero-hear() {
     rostopic pub --once /hero/hmi/string std_msgs/String "data: '$msg'";
 }
 
+alias hero-close-gripper='rostopic pub --once /hero/left_arm/gripper/action/goal tue_manipulation_msgs/GripperCommandActionGoal "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+goal_id:
+  stamp:
+    secs: 0
+    nsecs: 0
+  id: ''
+goal:
+  command:
+    direction: 1
+    max_torque: 1.0"'
+
+alias hero-open-gripper='rostopic pub --once /hero/left_arm/gripper/action/goal tue_manipulation_msgs/GripperCommandActionGoal "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+goal_id:
+  stamp:
+    secs: 0
+    nsecs: 0
+  id: ''
+goal:
+  command:
+    direction: -1
+    max_torque: 0.0"'
+
 alias hero-teleop='rosrun tue_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/hero/base/references'
