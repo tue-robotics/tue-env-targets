@@ -32,6 +32,12 @@ function hero-hear() {
     rostopic pub --once /hero/hmi/string std_msgs/String "data: '$msg'";
 }
 
+function hero-telegram() {
+    msg=$*
+    echo "Sending telegram msg to HERO: $msg"
+    rostopic pub --once /hero/message_to_ros std_msgs/String "data: '$msg'";
+}
+
 alias hero-close-gripper='rostopic pub --once /hero/left_arm/gripper/action/goal tue_manipulation_msgs/GripperCommandActionGoal "header:
   seq: 0
   stamp:
