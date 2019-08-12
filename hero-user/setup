@@ -38,6 +38,7 @@ function hero-telegram() {
     rostopic pub --once /hero/message_to_ros std_msgs/String "data: '$msg'";
 }
 
+# shellcheck disable=SC1078,SC1079
 alias hero-close-gripper='rostopic pub --once /hero/left_arm/gripper/action/goal tue_manipulation_msgs/GripperCommandActionGoal "header:
   seq: 0
   stamp:
@@ -54,6 +55,7 @@ goal:
     direction: 1
     max_torque: 1.0"'
 
+# shellcheck disable=SC1078,SC1079
 alias hero-open-gripper='rostopic pub --once /hero/left_arm/gripper/action/goal tue_manipulation_msgs/GripperCommandActionGoal "header:
   seq: 0
   stamp:
