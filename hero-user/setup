@@ -32,4 +32,44 @@ function hero-hear() {
     rostopic pub --once /hero/hmi/string std_msgs/String "data: '$msg'";
 }
 
+function hero-telegram() {
+    msg=$*
+    echo "Sending telegram msg to HERO: $msg"
+    rostopic pub --once /hero/message_to_ros std_msgs/String "data: '$msg'";
+}
+
+# shellcheck disable=SC1078,SC1079
+alias hero-close-gripper='rostopic pub --once /hero/left_arm/gripper/action/goal tue_manipulation_msgs/GripperCommandActionGoal "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+goal_id:
+  stamp:
+    secs: 0
+    nsecs: 0
+  id: ''
+goal:
+  command:
+    direction: 1
+    max_torque: 1.0"'
+
+# shellcheck disable=SC1078,SC1079
+alias hero-open-gripper='rostopic pub --once /hero/left_arm/gripper/action/goal tue_manipulation_msgs/GripperCommandActionGoal "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+goal_id:
+  stamp:
+    secs: 0
+    nsecs: 0
+  id: ''
+goal:
+  command:
+    direction: -1
+    max_torque: 0.0"'
+
 alias hero-teleop='rosrun tue_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/hero/base/references'
