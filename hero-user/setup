@@ -16,7 +16,7 @@ alias sshhero2='until ssh -qAo ConnectTimeout=1 amigo@hero2.local; do echo waiti
 alias hero-copy-my-id="ssh-copy-id administrator@hero1.local; ssh-copy-id amigo@hero2.local"
 
 
-alias hero-show-kinect='rosrun rgbd multitool --rgbd /hero/head_rgbd_sensor/rgbd'
+alias hero-show-rgbd='rosrun rgbd multitool --rgbd /hero/head_rgbd_sensor/rgbd'
 
 ####################
 #
