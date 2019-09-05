@@ -42,7 +42,7 @@ source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
 
 if [ ! -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
 then
-    mkdir -p "$TUE_SYSTEM_DIR"/src
+    mkdir -p "$TUE_SYSTEM_DIR"
     hash g++ 2> /dev/null || tue-install-system-now g++
     tue-make
     source "$TUE_SYSTEM_DIR"/devel/setup.bash
@@ -50,7 +50,7 @@ fi
 
 if [ ! -f "$TUE_DEV_DIR"/devel/setup.bash ]
 then
-    mkdir -p "$TUE_DEV_DIR"/src
+    mkdir -p "$TUE_DEV_DIR"
     hash g++ 2> /dev/null || tue-install-system-now g++
     tue-make-dev
     source "$TUE_DEV_DIR"/devel/setup.bash
