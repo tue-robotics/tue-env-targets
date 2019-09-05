@@ -40,19 +40,11 @@ fi
 
 source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
 
-# shellcheck disable=SC2034,SC2153
-TUE_SYSTEM_DIR="$TUE_ENV_DIR"/system
-TUE_DEV_DIR="$TUE_ENV_DIR"/dev
-
 if [ ! -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
 then
     mkdir -p "$TUE_SYSTEM_DIR"/src
     hash g++ 2> /dev/null || tue-install-system-now g++
-    # shellcheck disable=SC2164
-    cd "$TUE_SYSTEM_DIR"
-    catkin init
-    mkdir -p src
-    catkin build
+    tue-make
     source "$TUE_SYSTEM_DIR"/devel/setup.bash
 fi
 
@@ -60,10 +52,6 @@ if [ ! -f "$TUE_DEV_DIR"/devel/setup.bash ]
 then
     mkdir -p "$TUE_DEV_DIR"/src
     hash g++ 2> /dev/null || tue-install-system-now g++
-    # shellcheck disable=SC2164
-    cd "$TUE_DEV_DIR"
-    catkin init
-    mkdir -p src
-    catkin build
+    tue-make-dev
     source "$TUE_DEV_DIR"/devel/setup.bash
 fi
