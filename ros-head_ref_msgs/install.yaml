@@ -2,4 +2,4 @@
   source:
     type: git
     url: https://github.com/tue-robotics/head_ref.git
-    sub_dir: head_ref
+    sub_dir: head_ref_msgs
