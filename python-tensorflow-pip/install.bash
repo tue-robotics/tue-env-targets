@@ -2,7 +2,7 @@
 
 if [ -n "$TUE_CUDA" ]
 then
-    tue-install-pip 'tensorflow-gpu>=1.7.0,<=1.11'
+    tue-install-pip 'tensorflow-gpu'
 else
-    tue-install-pip 'tensorflow>=1.7.0,<=1.11'
+    tue-install-pip 'tensorflow'
 fi
