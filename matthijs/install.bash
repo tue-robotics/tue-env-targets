@@ -23,4 +23,4 @@ done
 # Shortcuts
 tue-install-cp shortcuts/pycharm-community.desktop ~/Desktop
 tue-install-cp shortcuts/qtcreator.desktop ~/Desktop
-tue-install-cp shortcuts/terminator.desktop ~/.local/share/applications
+tue-install-cp shortcuts/terminator.desktop /usr/share/applications
