@@ -10,14 +10,32 @@
   name: qtcreator
 - type: target
   name: pycharm
+- type: target
+  name: terminator
+- type: target
+  name: vim
 
 - type: system
   name: geany
 - type: system
   name: gedit
-
 - type: system
   name: silversearcher-ag
+
+# Styling
+- type: ppa
+  name: ppa:noobslab/themes
+- type: ppa
+  name: ppa:noobslab/icons
+- type: system
+  name: flatabulous-theme
+- type: system
+  name: ultra-flat-theme
+- type: system
+  name: ultra-flat-icons-orange
+
+- type: system
+  name: unity-tweak-tool
 
 # swri
 - type: target
