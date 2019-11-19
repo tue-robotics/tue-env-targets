@@ -29,11 +29,10 @@ prev="-1"
 tue-install-system-now zlib1g-dev automake autoconf patch grep \
     bzip2 gzip wget sox libtool subversion gawk python python3 libatlas3-base \
     swig zip p7zip-full python-six libglib2.0-dev \
-    libgstreamer1.0-dev gstreamer1.0-tools gstreamer1.0-pulseaudio \
-    gstreamer1.0-plugins-good flac graphviz
+    flac graphviz
 
 # Numpy later than 1.15.0 is required
-pip install --user "numpy>=1.15.0"
+pip2 install --user "numpy>=1.15.0"
 
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
