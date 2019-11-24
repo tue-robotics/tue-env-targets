@@ -17,7 +17,7 @@ then
     TAG=$(echo "$LATEST" | awk '{print $1}')
     URL=$(echo "$LATEST" | awk '{print $2}')
 
-    if [[ -f "$TUE_BIN/hero_dashboard/$TAG" ]]
+    if [[ -f "$TUE_BIN/hero_dashboard.d/$TAG" ]]
     then
         echo -e "hero-dashboard:\t\tno updates found"
     else
@@ -34,7 +34,7 @@ then
     TAG=$(echo "$LATEST_ALPHA" | awk '{print $1}')
     URL=$(echo "$LATEST_ALPHA" | awk '{print $2}')
 
-    if [[ -f "$TUE_BIN/hero_dashboard_alpha/$TAG" ]]
+    if [[ -f "$TUE_BIN/hero_dashboard_alpha.d/$TAG" ]]
     then
         echo -e "hero-dashboard-alpha:\tno updates found"
     else
