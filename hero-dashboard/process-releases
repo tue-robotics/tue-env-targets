@@ -45,15 +45,3 @@ then
         touch "$TUE_BIN/hero_dashboard_alpha.d/$TAG"
     fi
 fi
-
-# cleanup of old localhost files for testing
-if [[ -d "$TUE_BIN/hero_dashboard" ]]
-then
-    mv "$TUE_BIN/hero_dashboard" "$TUE_BIN/hero_dashboard.d"
-fi
-
-# cleanup of old localhost files for testing
-if [[ -d "$TUE_BIN/hero_dashboard_localhost" ]]
-then
-    rm -rf "$TUE_BIN/hero_dashboard_localhost"
-fi
