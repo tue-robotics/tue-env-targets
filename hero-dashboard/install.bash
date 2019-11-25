@@ -20,7 +20,6 @@ then
     fi
 fi
 
-
 # Remove old localhost files for testing
 if [[ -d "$TUE_BIN/hero_dashboard_localhost" ]]
 then
