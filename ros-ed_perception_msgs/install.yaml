@@ -2,4 +2,4 @@
   source:
     type: git
     url: https://github.com/tue-robotics/ed_perception.git
-    sub-dir: ed_perception
+    sub-dir: ed_perception_msgs
