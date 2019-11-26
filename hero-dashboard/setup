@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+alias hero-dashboard='hero_dashboard hero1.local'
