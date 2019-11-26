@@ -2,4 +2,4 @@
   source:
     type: git
     url: https://github.com/tue-robotics/ed_sensor_integration.git
-    sub-dir: ed_sensor_integration
+    sub-dir: ed_sensor_integration_msgs
