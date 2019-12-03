@@ -7,6 +7,10 @@
 - type: target
   name: ros-laser_filters
 
+# RGBD server
+- type: target
+  name: ros-rgbd
+
 # Odometer
 - type: target
   name: ros-test_tools
