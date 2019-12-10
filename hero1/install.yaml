@@ -7,6 +7,9 @@
 - type: target
   name: ros-laser_filters
 
+- type: target
+  name: ros-dragonfly_speech_recognition
+
 # RGBD server
 - type: target
   name: ros-rgbd
