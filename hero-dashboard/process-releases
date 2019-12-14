@@ -4,44 +4,44 @@ set -e
 STDIN=$(cat -)
 
 RELEASES=$(echo "$STDIN" | awk 'match($1, /^v[0-9]+.[0-9]+.[0-9]+$/) {print $0}')
-RELEASES_LOCALHOST=$(echo "$STDIN" | awk 'match($1, /^v[0-9]+.[0-9]+.[0-9]+-localhost+$/) {print $0}')
+RELEASES_ALPHA=$(echo "$STDIN" | awk 'match($1, /^v[0-9]+.[0-9]+.[0-9]+-alpha+$/) {print $0}')
 
 readarray -t lines < <(echo "$RELEASES")
 LATEST="${lines[0]}"
 
-readarray -t lines < <(echo "$RELEASES_LOCALHOST")
-LATEST_LOCALHOST="${lines[0]}"
+readarray -t lines < <(echo "$RELEASES_ALPHA")
+LATEST_ALPHA="${lines[0]}"
 
 if [[ -n "$LATEST" ]]
 then
     TAG=$(echo "$LATEST" | awk '{print $1}')
     URL=$(echo "$LATEST" | awk '{print $2}')
 
-    if [[ -f "$TUE_BIN/hero_dashboard/$TAG" ]]
+    if [[ -f "$TUE_BIN/hero_dashboard.d/$TAG" ]]
     then
         echo -e "hero-dashboard:\t\tno updates found"
     else
         echo -e "hero-dashboard:\t\tnew version $TAG found"
-        mkdir -p "$TUE_BIN/hero_dashboard"
-        wget "$URL" -O- | tar -xzv --directory "$TUE_BIN/hero_dashboard"
-        ln -sf "$TUE_BIN/hero_dashboard/hero-dashboard" "$TUE_BIN/hero-dashboard"
-        touch "$TUE_BIN/hero_dashboard/$TAG"
+        mkdir -p "$TUE_BIN/hero_dashboard.d"
+        wget "$URL" -O- | tar -xzv --directory "$TUE_BIN/hero_dashboard.d"
+        ln -sf "$TUE_BIN/hero_dashboard.d/hero-dashboard" "$TUE_BIN/hero_dashboard"
+        touch "$TUE_BIN/hero_dashboard.d/$TAG"
     fi
 fi
 
-if [[ -n "$LATEST_LOCALHOST" ]]
+if [[ -n "$LATEST_ALPHA" ]]
 then
-    TAG=$(echo "$LATEST_LOCALHOST" | awk '{print $1}')
-    URL=$(echo "$LATEST_LOCALHOST" | awk '{print $2}')
+    TAG=$(echo "$LATEST_ALPHA" | awk '{print $1}')
+    URL=$(echo "$LATEST_ALPHA" | awk '{print $2}')
 
-    if [[ -f "$TUE_BIN/hero_dashboard_localhost/$TAG" ]]
+    if [[ -f "$TUE_BIN/hero_dashboard_alpha.d/$TAG" ]]
     then
-        echo -e "hero-dashboard-localhost:\tno updates found"
+        echo -e "hero-dashboard-alpha:\tno updates found"
     else
-        echo -e "hero-dashboard-localhost:\tnew version $TAG found"
-        mkdir -p "$TUE_BIN/hero_dashboard_localhost"
-        wget "$URL" -O- | tar -xzv --directory "$TUE_BIN/hero_dashboard_localhost"
-        ln -sf "$TUE_BIN/hero_dashboard_localhost/hero-dashboard" "$TUE_BIN/hero-dashboard-localhost"
-        touch "$TUE_BIN/hero_dashboard_localhost/$TAG"
+        echo -e "hero-dashboard-alpha:\tnew version $TAG found"
+        mkdir -p "$TUE_BIN/hero_dashboard_alpha.d"
+        wget "$URL" -O- | tar -xzv --directory "$TUE_BIN/hero_dashboard_alpha.d"
+        ln -sf "$TUE_BIN/hero_dashboard_alpha.d/hero-dashboard" "$TUE_BIN/hero_dashboard_alpha"
+        touch "$TUE_BIN/hero_dashboard_alpha.d/$TAG"
     fi
 fi
