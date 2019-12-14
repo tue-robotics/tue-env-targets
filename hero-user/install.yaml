@@ -5,6 +5,9 @@
   name: robot-user
 
 - type: target
+  name: hero-demo-user
+
+- type: target
   name: ros-hero_bringup
 
 - type: target
