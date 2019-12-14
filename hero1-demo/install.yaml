@@ -1,5 +1,5 @@
 - type: target
-  name: hero
+  name: hero-demo
 
 - type: target
   name: hero-start
