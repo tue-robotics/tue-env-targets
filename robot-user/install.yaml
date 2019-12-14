@@ -1,14 +1,2 @@
 - type: target
-  name: ccache
-- type: target
-  name: gitsu
-- type: target
-  name: networking
-- type: target
-  name: vim
-- type: system
-  name: htop
-
-# Tele-operation
-- type: target
-  name: ros-tue_teleop_keyboard
+  name: robot-demo-user
