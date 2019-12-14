@@ -2,4 +2,4 @@
   source:
     type: git
     url: https://github.com/tue-robotics/ed_robocup.git
-    sub-dir: ed_robocup
+    sub-dir: ed_robocup_msgs

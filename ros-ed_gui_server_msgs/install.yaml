@@ -2,4 +2,4 @@
   source:
     type: git
     url: https://github.com/tue-robotics/ed_gui_server.git
-    sub-dir: ed_gui_server
+    sub-dir: ed_gui_server_msgs
