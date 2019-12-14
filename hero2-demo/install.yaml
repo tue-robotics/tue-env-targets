@@ -1,5 +1,5 @@
 - type: target
-  name: hero
+  name: hero-demo
 
 # RGBD server
 - type: target
