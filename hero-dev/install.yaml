@@ -31,6 +31,9 @@
   name: hero-dashboard
 
 - type: target
+  name: hero-display
+
+- type: target
   name: hero-user
 
 - type: target
