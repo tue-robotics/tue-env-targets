@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+alias hero-display='export NO_FULLSCREEN=1 && hero_display'
+alias hero-display='export NO_FULLSCREEN=1 && hero_display hero1.local'
