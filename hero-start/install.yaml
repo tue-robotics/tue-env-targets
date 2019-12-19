@@ -5,6 +5,9 @@
   name: ros-text_to_speech
 
 - type: target
+  name: ros-hero_bringup
+
+- type: target
   name: ros-hero_description
 
 - type: target
