@@ -6,6 +6,7 @@ do
     eval "export $line"
 done < /etc/opt/tmc/robot/version
 
+alias hero-sync-ubuntu-ntp="sudo ntpdate ntp.ubuntu.com"
 
 function _vbox_sleep
 {
@@ -27,11 +28,16 @@ function _vbox_sleep
 
 function _stop_vbox_services
 {
-    sudo systemctl stop hero1-windows-speech.service
-    sudo systemctl stop hero1-vboxautostart-service.service
-    sudo systemctl stop hero1-vboxweb-service.service
-    sudo systemctl stop hero1-vboxballoonctrl-service.service
-    sudo systemctl stop hero1-vboxdrv.service
+    sudo systemctl stop hero1-speech5-windows-speech.service
+    sudo systemctl stop hero1-speech4-vboxweb-service.service
+    sudo systemctl stop hero1-speech3-vboxdrv.service
+    sudo systemctl stop hero1-speech2-vboxballoonctrl-service.service
+    sudo systemctl stop hero1-speech1-vboxautostart-service.service
+    sudo systemctl stop hero1-demo-speech5-windows-speech.service
+    sudo systemctl stop hero1-demo-speech4-vboxweb-service.service
+    sudo systemctl stop hero1-demo-speech3-vboxdrv.service
+    sudo systemctl stop hero1-demo-speech2-vboxballoonctrl-service.service
+    sudo systemctl stop hero1-demo-speech1-vboxautostart-service.service
 }
 
 function hero-reboot
