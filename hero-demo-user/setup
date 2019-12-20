@@ -10,6 +10,15 @@ alias hero-show-rgbd='rosrun rgbd multitool --rgbd /hero/head_rgbd_sensor/rgbd'
 
 ####################
 #
+# SSH
+#
+####################
+alias sshhero1-demo='until ssh -qAo ConnectTimeout=1 demo@hero1.local; do echo waiting for hero1 to come online...; sleep 2; done'
+alias sshhero2-demo='until ssh -qAo ConnectTimeout=1 demo@hero2.local; do echo waiting for hero2 to come online...; sleep 2; done'
+alias hero-demo-copy-my-id="ssh-copy-id demo@hero1.local; ssh-copy-id demo@hero2.local"
+
+####################
+#
 # HERO ACTIONS
 #
 ####################
