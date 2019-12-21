@@ -31,11 +31,12 @@ then
     sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 fi
 
-if [ ! -f /tmp/rosdep_update_${USER} ]
+rosdep_update_file="/tmp/rosdep_update_${USER}"
+if [ ! -f "$rosdep_update_file" ]
 then
     tue-install-debug "Updating rosdep"
     rosdep update
-    touch /tmp/rosdep_update_${USER}
+    touch "$rosdep_update_file"
 fi
 
 source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
