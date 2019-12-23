@@ -28,14 +28,14 @@
 - type: ppa
   name: ppa:noobslab/icons
 - type: system
-  name: flatabulous-theme
+  name: vimix-gtk-themes
 - type: system
-  name: ultra-flat-theme
+  name: vimix-icon-theme
 - type: system
   name: ultra-flat-icons-orange
 
 - type: system
-  name: unity-tweak-tool
+  name: gnome-tweak-tool
 
 # swri
 - type: target
