@@ -20,6 +20,12 @@ do
         git config --global --replace-all "$option" "$value"
 done
 
+# Gnome scroll windows (all ubuntu versions newer than xenial(16.04))
+if [ "$(lsb_release -sc)" != "xenial" ]
+then
+    gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'
+fi
+
 # Shortcuts
 tue-install-cp shortcuts/pycharm-community.desktop ~/Desktop
 tue-install-cp shortcuts/qtcreator.desktop ~/Desktop
