@@ -29,9 +29,9 @@ do
     then
         for cmd in $cmds
         do
-            tue-install-debug "Running following command: $cmd"
-            cmd=${cmd//^/ }
-            cmd=($cmd)
+            tue-install-debug "Original command: $cmd"
+            mapfile -t cmd <<< "${cmd//^/ }"
+
             if [ "${cmd[0]}" != "tue-install-ros" ]
             then
                 TUE_INSTALL_CURRENT_TARGET=$parent_target
