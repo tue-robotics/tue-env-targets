@@ -30,7 +30,7 @@ do
         for cmd in $cmds
         do
             tue-install-debug "Original command: $cmd"
-            mapfile -t cmd <<< "${cmd//^/ }"
+            read -r -a cmd <<< "${cmd//^/ }"
 
             if [ "${cmd[0]}" != "tue-install-ros" ]
             then
