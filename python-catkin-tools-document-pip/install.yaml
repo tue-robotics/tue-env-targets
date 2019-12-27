@@ -1,2 +1,2 @@
 - type: pip
-  name: catkin_tools_document
+  name: git+https://github.com/tue-robotics/catkin_tools_document.git
