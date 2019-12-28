@@ -28,6 +28,13 @@ Add the following item to your `rosdoc` configuration:
   name: Python API
   output_dir: python # Only needed in case of multiple programming languages
 ```
+
+Also the following `<doc_depend>` need to be added to the `package.xml` of your package:
+```xml
+<doc_depend>python-sphinx</doc_depend>
+<doc_depend>python-sphinx-autoapi-pip</doc_depend>
+<doc_depend>python-sphinx-rtd-theme-pip</doc_depend>
+```
 To debug the generation of the python documentation, go to the location of the Sphinx configuration and run `make html`. Warnings will be shown in case of any missing imports or incorrect styling of docstrings.
 
 ## C++
