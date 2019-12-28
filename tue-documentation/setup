@@ -30,7 +30,7 @@ function tue-make-documentation
 export -f tue-make-documentation
 
 # Use complete function of tue-make
-complete -F _tue-make tue-make
+complete -F _tue-make tue-make-documentation
 
 # Export docs path to open with desiserd browser
 TUE_DOCS_PATH="$TUE_SYSTEM_DIR"/docs/index.html
