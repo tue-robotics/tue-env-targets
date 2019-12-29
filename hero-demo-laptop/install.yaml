@@ -11,7 +11,7 @@
   name: hero-user
 
 - type: target
-  name: hero-start
+  name: ros-hero_bringup
 
 # ED rviz plugin
 - type: target
