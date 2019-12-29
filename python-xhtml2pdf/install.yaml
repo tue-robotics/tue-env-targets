@@ -1,4 +1,2 @@
 - type: pip
   name: xhtml2pdf
-- type: pip
-  name: html5lib==1.0b8
