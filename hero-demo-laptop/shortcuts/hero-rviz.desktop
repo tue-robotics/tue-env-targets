@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=bash -ic hero-rviz
+Name=HERO-rviz
+GenericName=Open rviz with hero config
+X-KDE-StartupNotify=true
+Icon=/usr/share/pixmaps/tue/rviz.png
+StartupWMClass=rviz
+Terminal=false
+Categories=rviz;hero;
