@@ -21,8 +21,6 @@
 - type: target
   name: terminator
 - type: target
-  name: spot
-- type: target
   name: chrome
 - type: system
   name: geany
