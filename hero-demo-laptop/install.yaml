@@ -8,7 +8,7 @@
   name: hero-dashboard
 
 - type: target
-  name: hero-user
+  name: hero-demo-user
 
 - type: target
   name: ros-hero_bringup
