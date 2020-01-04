@@ -1,3 +1,6 @@
+- type: target
+  name: hsr-setup
+
 - type: ros
   source:
     type: system
