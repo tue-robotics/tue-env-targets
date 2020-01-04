@@ -1,15 +1,14 @@
 #! /usr/bin/env bash
 
-if [ ! -f /etc/apt/sources.list.d/gazebo-latest.list ]
+if [ ! -f /etc/apt/sources.list.d/gazebo-stable.list ]
 then
-    # Setup your computer to accept software from packages.osrfoundation.org.
-    sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu precise main" > /etc/apt/sources.list.d/gazebo-latest.list'
+    tue-install-debug "Adding Gazebo sources to apt-get"
+    sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 
-    # Retrieve and install the keys for the Gazebo repositories.
     wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
-    sudo apt-get update
+    sudo apt-get update -qq
+    tue-install-debug "Added Gazebo sources to apt-get successfully"
+else
+    tue-install-debug "Gazebo sources already added to apt-get"
 fi
-
-# install Gazebo
-tue-install-system gazebo
