@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function main
+function _main
 {
 local targets
 targets="$TUE_ENV_TARGETS_DIR/*"
@@ -99,6 +99,4 @@ do
 done
 }
 
-main
-
-#cmds=$("$TUE_INSTALL_SCRIPTS_DIR"/parse-install-yaml.py "$install_file".yaml)
+_main
