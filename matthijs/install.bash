@@ -30,3 +30,6 @@ fi
 tue-install-cp shortcuts/pycharm-community.desktop ~/Desktop
 tue-install-cp shortcuts/qtcreator.desktop ~/Desktop
 tue-install-cp shortcuts/terminator.desktop /usr/share/applications
+
+tue-install-cp shortcuts/whatsapp-webapp.desktop /usr/share/applications
+tue-install-cp shortcuts/icons/whatsapp.svg /usr/share/icons/hicolor/scalable/apps
