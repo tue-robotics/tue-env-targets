@@ -1,2 +1,5 @@
+- type: target
+  name: gazebo-setup
+
 - type: system
   name: gazebo
