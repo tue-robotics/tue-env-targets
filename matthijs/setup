@@ -1,8 +1,5 @@
 #! /usr/bin/env bash
 
-# Don't delete git user details on own computer
-touch /tmp/git-removed-user-details
-
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind '"\e[C": forward-char'
