@@ -29,7 +29,7 @@ Add the following item to your `rosdoc` configuration:
   output_dir: python # Only needed in case of multiple programming languages
 ```
 
-Also the following `<doc_depend>` need to be added to the `package.xml` of your package:
+Also the following `<doc_depend>` needs to be added to the `package.xml` of your package:
 ```xml
 <doc_depend>python-sphinx</doc_depend>
 <doc_depend>python-sphinx-autoapi-pip</doc_depend>
