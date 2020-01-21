@@ -2,7 +2,7 @@
 
 This targets provides the tools to generate documentation for all catkin packages in the system workspace. [catkin_tools_document](https://github.com/tue-robotics/catkin_tools_document.git) is used for this. It generates documentation per package, which can be configured according to [rosdoc_lite](http://wiki.ros.org/rosdoc_lite)([source](https://github.com/ros-infrastructure/rosdoc_lite.git)) and an overview page, which also includes messages, services, changelog, etc..
 
-By default [Doxygen](http://www.doxygen.org/) documentation is generated if no `rosdoc` configuration is provided. It will document both Python and C++ in one API documentation. This is undesired. Also it can lead to missing and/or unnecessary information. Therefore a `rosdoc` configuration is recommended.
+By default [Doxygen](http://www.doxygen.org/) documentation is generated if no `rosdoc` configuration is provided. It will document both Python and C++ in one API documentation. Also it can lead to missing and/or unnecessary information. These results are undesired. Therefore a `rosdoc` configuration is recommended.
 To do this create a yaml file in the main folder of your package, for consistency name it `rosdoc.yaml` Add the following lines to your `package.xml`:
 ```xml
 <export>
