@@ -1,18 +1,5 @@
 #! /usr/bin/env bash
 
-# check for git-extras
-if [ ! -f /usr/local/bin/git-extras ]
-then
-    # https://github.com/tj/git-extras
-    cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install
-fi
-
-# Unset old path, targets have moved
-if [[ $(git config --global core.excludesfile) == "$TUE_DIR/installer/targets/git/gitignore_global" ]]
-then
-    git config --global --unset core.excludesfile
-fi
-
 # Set global ignore file
 if [[ ! $(git config --global core.excludesfile) ]]
 then

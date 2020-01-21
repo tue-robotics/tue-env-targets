@@ -6,3 +6,5 @@
   name: gitk
 - type: system
   name: git-gui
+- type: system
+  name: git-extras
