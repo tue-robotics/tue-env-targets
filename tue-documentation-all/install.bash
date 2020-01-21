@@ -32,7 +32,8 @@ do
             tue-install-debug "Original command: $cmd"
             read -r -a cmd <<< "${cmd//^/ }"
 
-            if [ "${cmd[0]}" != "tue-install-ros" ]
+            local install_cmd=${cmd[0]}
+            if [ "$install_cmd" != "tue-install-ros" ]
             then
                 TUE_INSTALL_CURRENT_TARGET=$parent_target
                 continue
