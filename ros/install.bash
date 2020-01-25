@@ -25,7 +25,7 @@ then
 fi
 
 # TEMP fix for to only update the key
-if ! apt-key adv --list-public-keys | grep -q AB17C654
+if ! apt-key adv --list-public-keys 2>/dev/null | grep -q AB17C654
 then
     sudo apt-key del 421C365BD9FF1F717815A3895523BAEEB01FA116
     sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
