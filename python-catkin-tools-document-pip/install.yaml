@@ -1,0 +1,2 @@
+- type: pip
+  name: git+https://github.com/tue-robotics/catkin_tools_document.git
