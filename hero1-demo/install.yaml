@@ -18,7 +18,5 @@
 - type: target
   name: ros-test_tools
 
-- type: ros
-  source:
-    type: system
-    name: hsrb-full
+- type: target
+  name: hsrb-full
