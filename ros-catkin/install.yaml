@@ -2,3 +2,6 @@
   source:
     type: system
     name: catkin
+# For mem-limit usages during build:
+- type: system
+  name: python-psutil
