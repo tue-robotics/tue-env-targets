@@ -2,3 +2,8 @@
   source:
     type: git
     url: https://github.com/tue-robotics/telegram_ros.git
+# Fix pip ffi.h header missing error:
+- type: system
+  name: libffi-dev
+- type: system
+  name: libssl-dev
