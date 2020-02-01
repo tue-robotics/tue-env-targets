@@ -22,3 +22,8 @@ if ! groups "${USER}" | grep -q dialout
 then
     sudo gpasswd --add "${USER}" dialout
 fi
+### Allow user to access video interfaces ###
+if ! groups ${USER} | grep -q video
+then
+    sudo gpasswd --add ${USER} video
+fi
