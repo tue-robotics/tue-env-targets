@@ -1,4 +1,6 @@
 #! /usr/bin/env bash
+[[ "$CI" == "true" ]] && return 0
+
 
 ### Make sure remote launching works ###
 tue-install-cp ros-bash-and-run.sh ~/.ros-bash-and-run.sh
