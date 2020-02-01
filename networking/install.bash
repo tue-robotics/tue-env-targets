@@ -1,9 +1,13 @@
 #! /usr/bin/env bash
 
-# Install config file (mdns4_minimal is normally missing and should be present)
+. /etc/os-release
+if [ $UBUNTU_CODENAME = "xenial" ]
+then
+    # Install config file (mdns4_minimal is normally missing in xenial and should be present)
 
-# Replace nsswitch config file
-tue-install-cp nsswitch.conf /etc/nsswitch.conf
+    # Replace nsswitch config file
+    tue-install-cp nsswitch.conf /etc/nsswitch.conf
+fi
 
 # Prevent resolving to ipv6 addresses. We're not ready for that yet
 if [ ! -f /etc/avahi/avahi-daemon.conf ]
