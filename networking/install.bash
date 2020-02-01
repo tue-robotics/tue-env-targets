@@ -21,6 +21,12 @@ then
     sudo sed -i 's/use-ipv6=yes/use-ipv6=no/g' /etc/avahi/avahi-daemon.conf
 fi
 
+if grep -q '#publish-aaaa-on-ipv4' /etc/avahi/avahi-daemon.conf
+then
+    # Also change this setting by suggestion of this bug report: https://bugzilla.redhat.com/show_bug.cgi?id=669627
+    sudo sed -i 's/#publish-aaaa-on-ipv4=yes/publish-aaaa-on-ipv4=no/g' /etc/avahi/avahi-daemon.conf
+fi
+
 # Generate ssh keys when not on CI and file does not exist yet
 if [[ "$CI" != "true" && ! -f ~/.ssh/id_rsa ]]
 then
