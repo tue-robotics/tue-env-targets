@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        ".catkin_tools/": true,
+        "build*/": true,
+        "devel*/": true,
+        "install*/": true,
+        "logs*/": true
+    }
+}
