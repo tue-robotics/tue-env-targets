@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+[[ "$CI" == "true" ]] && return 0
 
 DIRECTORY='/opt/Qt'
 if [ ! -d "$DIRECTORY" ]; then
