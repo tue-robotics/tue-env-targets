@@ -1,6 +1,6 @@
 # Simulation
 - type: target
-  name: ros-tmc-desktop-full
+  name: ros-tmc_desktop_full
 
 # Middleware
 - type: target
