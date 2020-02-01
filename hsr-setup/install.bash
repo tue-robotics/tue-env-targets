@@ -2,6 +2,7 @@
 
 if [ ! -f "/etc/apt/sources.list.d/tmc.list" ]
 then
+    # shellcheck disable=SC1091
     source /etc/lsb-release
 
     if [ "$DISTRIB_RELEASE" = "16.04" ]
