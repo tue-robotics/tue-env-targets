@@ -8,4 +8,4 @@ if dpkg --compare-versions $(git --version | awk '{print $3}') lt 2.9; then
     sudo apt-get install --assume-yes git
 fi
 
-git config --global core.hooksPath $NOBLEO_DIR/installer/targets/git-hooks/git_hooks/
+git config --global core.hooksPath $TUE_DIR/installer/targets/git-hooks/git_hooks/
