@@ -53,3 +53,5 @@ function hero-shutdown
     _vbox_sleep
     sudo shutdown -h -t 0
 }
+
+alias demo-start="tmux new -A -s 'hero-start' 'bash -ic 'hero-start''"
