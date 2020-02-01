@@ -29,6 +29,10 @@
 - type: target
   name: ros-image_recognition_openpose
 
+# tmux
+- type: target
+  name: tmux
+
 # Dekstop tools
 - type: target
   name: terminator
