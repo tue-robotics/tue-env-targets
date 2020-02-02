@@ -19,12 +19,12 @@ then
 else
     tue-install-system-now jq
     jq -s add "${workspacefile}" "${TUE_INSTALL_CURRENT_TARGET_DIR}/workspace_settings.json" > "${workspacefile}.new"
-    [ $? -eq 0 ] && mv "${workspacefile}.new" "${workspacefile}"  # Doesn't work at once above
+    $? && mv "${workspacefile}.new" "${workspacefile}"  # Doesn't work at once above
 fi
 
 # Install and configure catkin tools extension
 code --install-extension betwo.b2-catkin-tools
-if ! catkin config --workspace ${TUE_SYSTEM_DIR} | grep -q "DCMAKE_EXPORT_COMPILE_COMMANDS"
+if ! catkin config --workspace "$TUE_SYSTEM_DIR" | grep -q "DCMAKE_EXPORT_COMPILE_COMMANDS"
 then
-    catkin config --workspace ${TUE_SYSTEM_DIR} --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+    catkin config --workspace "$TUE_SYSTEM_DIR" --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 fi
