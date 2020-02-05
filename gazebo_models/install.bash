@@ -6,16 +6,6 @@ then
     return 0
 fi
 
-tue-install-system-now mercurial
-
 model_path="$HOME/data/gazebo_models"
 url=https://bitbucket.org/osrf/gazebo_models
-if [ ! -d "$model_path" ]
-then
-    hg clone "$url" "$model_path"
-else
-    # shellcheck disable=SC2164
-    cd "$model_path"
-    hg pull -f
-    hg update
-fi
+tue-install-hg "$url" "$model_path"
