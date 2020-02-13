@@ -28,14 +28,24 @@
 - type: ppa
   name: ppa:noobslab/icons
 - type: system
-  name: vimix-gtk-themes
+  default:
+    name: vimix-gtk-themes
+  xenial:
+    name: ultra-flat-theme
 - type: system
-  name: vimix-icon-theme
+  default:
+    name: vimix-icon-theme
+  xenial:
+    name: null
 - type: system
   name: ultra-flat-icons-orange
 
 - type: system
-  name: gnome-tweak-tool
+  default:
+    name: gnome-tweak-tool
+  xenial:
+    name: unity-tweak-tool
+
 
 # swri
 - type: target
