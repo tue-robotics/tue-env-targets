@@ -27,10 +27,6 @@
 - type: target
   name: ros-telegram_ros
 
-# Robot Model for in ED
-- type: target
-  name: ros-hsrb_description
-
 # Openpose
 - type: target
   name: ros-image_recognition_openpose
