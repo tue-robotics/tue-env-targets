@@ -16,4 +16,4 @@
   name: ros-test_tools
 
 - type: target
-  name: hsrb-full
+  name: ros-hsrb_full
