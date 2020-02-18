@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=bash -ic hero-rviz
+Exec=bash -ic "cp $TUE_SYSTEM_DIR/src/hero_bringup/parameters/tools/rviz_config.rviz /tmp/rviz_config.rviz; hero-rviz; cp /tmp/rviz_config.rviz $TUE_SYSTEM_DIR/src/hero_bringup/parameters/tools/rviz_config.rviz"
 Name=HERO-rviz
 GenericName=Open rviz with hero config
 X-KDE-StartupNotify=true
