@@ -9,26 +9,10 @@ fi
 
 if [ ! -d /opt/ros/"$TUE_ROS_DISTRO" ]
 then
-
-    tue-install-system-now lsb wget
-
-    sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-
-    sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-
-    sudo apt-get update -qq
-
     # Install basic ROS packages.
-    tue-install-system-now ros-"$TUE_ROS_DISTRO"-ros build-essential python-catkin-tools
+    tue-install-system-now ros-"$TUE_ROS_DISTRO"-ros
 
     sudo rosdep init || true # make sure it always succeeds, even if rosdep init was already called
-fi
-
-# TEMP fix for to only update the key
-if ! apt-key adv --list-public-keys 2>/dev/null | grep -q AB17C654
-then
-    sudo apt-key del 421C365BD9FF1F717815A3895523BAEEB01FA116
-    sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 fi
 
 if [ ! -f /tmp/rosdep_update ]
