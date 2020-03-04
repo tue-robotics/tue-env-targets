@@ -6,6 +6,7 @@ then
     return 0
 fi
 
+# shellcheck disable=SC1091
 . /etc/os-release
 if [ "$UBUNTU_CODENAME" = "xenial" ]
 then
