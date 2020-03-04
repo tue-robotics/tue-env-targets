@@ -55,7 +55,7 @@ if [ $generate_ssh == "true" ]
 then
     tue-install-debug "Generating ssh key"
     yes | ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
-    rm -r $ssh_controlmasters_dir/* 2>/dev/null # close all connections, to prevent any possible weird behaviour
+    rm -r ${ssh_controlmasters_dir:?}/* 2>/dev/null # close all connections, to prevent any possible weird behaviour
 fi
 
 # Enable persistent connection multiplexing
