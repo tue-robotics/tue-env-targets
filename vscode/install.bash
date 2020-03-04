@@ -1,10 +1,7 @@
 #! /usr/bin/env bash
 
-# Install vscode via snap
-if [[ ! $(snap list) == *code* ]]
-then
-    tue-install-snap-now code
-fi
+tue-install-snap-now code
+
 tue-install-system-now default-jre
 
 # Install ros extension
