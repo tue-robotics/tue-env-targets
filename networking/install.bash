@@ -1,5 +1,11 @@
 #! /usr/bin/env bash
 
+# Skip this target in CI
+if [[ "$CI" == "true" ]]
+then
+    return 0
+fi
+
 # Install config file (mdns4_minimal is normally missing and should be present)
 
 # Replace nsswitch config file
@@ -17,20 +23,42 @@ then
     sudo sed -i 's/use-ipv6=yes/use-ipv6=no/g' /etc/avahi/avahi-daemon.conf
 fi
 
-# Generate ssh keys when not on CI and file does not exist yet
-if [[ "$CI" != "true" && ! -f ~/.ssh/id_rsa ]]
+
+## SSH
+ssh_config=~/.ssh/config
+ssh_controlmasters_dir=~/.ssh/controlmasters
+ssh_key=~/.ssh/id_rsa
+
+# Generate ssh key
+generate_ssh="false"
+# Generate ssh key when file does not exist yet
+if [ ! -f "$ssh_key" ]
 then
-    tue-install-debug "Generating ssh keys"
-    ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+    tue-install-debug "No ssh key exists yet"
+    generate_ssh="true"
+else
+    # Generate new ssh key if length < 4096
+    if [ "$(ssh-keygen -l -f "$ssh_key" | awk '{print $1}')" -lt 4096 ]
+    then
+        tue-install-info "Generating new ssh key as length < 4096, you might need to copy the new key to the robots, GitHub, etc."
+        generate_ssh="true"
+    else
+        tue-install-debug "ssh key available with length >= 4096"
+    fi
+fi
+
+if [ $generate_ssh == "true" ]
+then
+    tue-install-debug "Generating ssh key"
+    yes | ssh-keygen -t rsa -b 4096 -N "" -f "$ssh_key"
+    rm -r ${ssh_controlmasters_dir:?}/* 2>/dev/null # close all connections, to prevent any possible weird behaviour
 fi
 
 # Enable persistent connection multiplexing
-ssh_config=~/.ssh/config
 if [ ! -f $ssh_config ]
 then
     touch $ssh_config
 fi
-ssh_controlmasters_dir=~/.ssh/controlmasters
 if [ ! -d $ssh_controlmasters_dir ]
 then
     mkdir -p $ssh_controlmasters_dir
