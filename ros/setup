@@ -6,6 +6,10 @@ then
     return 1
 fi
 
+unset CMAKE_PREFIX_PATH
+# shellcheck disable=SC1090
+source "$TUE_DEV_DIR"/devel/setup.bash
+
 # shellcheck disable=SC2016
 ROSCONSOLE_FORMAT='[${severity}][${node}][${time}]: ${message}'
 export ROSCONSOLE_FORMAT
