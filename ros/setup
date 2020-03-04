@@ -3,16 +3,8 @@
 if [ -z "$TUE_ROS_DISTRO" ]
 then
     echo "[tue ros setup] TUE_ROS_DISTRO was not set"
-    return
+    return 1
 fi
-
-# shellcheck disable=SC2034,SC2153
-TUE_SYSTEM_DIR="$TUE_ENV_DIR"/system
-TUE_DEV_DIR="$TUE_ENV_DIR"/dev
-
-unset CMAKE_PREFIX_PATH
-# shellcheck disable=SC1090
-source "$TUE_DEV_DIR"/devel/setup.bash
 
 # shellcheck disable=SC2016
 ROSCONSOLE_FORMAT='[${severity}][${node}][${time}]: ${message}'
