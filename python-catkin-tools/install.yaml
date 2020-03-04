@@ -1,8 +1,5 @@
 - type: target
   name: ros-setup
 
-- type: system
-  name: python-catkin-tools
-
 - type: target
   name: build-essential
