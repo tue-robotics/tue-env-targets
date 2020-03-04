@@ -21,7 +21,7 @@ fi
 if [[ "$CI" != "true" && ! -f ~/.ssh/id_rsa ]]
 then
     tue-install-debug "Generating ssh keys"
-    ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+    ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
 fi
 
 # Enable persistent connection multiplexing
