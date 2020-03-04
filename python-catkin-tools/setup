@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+unset CMAKE_PREFIX_PATH
+# shellcheck disable=SC1090
+source "$TUE_DEV_DIR"/devel/setup.bash
