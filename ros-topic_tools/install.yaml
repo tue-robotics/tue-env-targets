@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: system
-    name: topic_tools
+    name: topic-tools
