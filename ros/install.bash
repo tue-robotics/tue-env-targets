@@ -22,14 +22,11 @@ then
     touch /tmp/rosdep_update
 fi
 
-source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
-
 if [ ! -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
 then
     mkdir -p "$TUE_SYSTEM_DIR"
     hash g++ 2> /dev/null || tue-install-system-now g++
     tue-make || tue-install-error "Error in building the system workspace"
-    source "$TUE_SYSTEM_DIR"/devel/setup.bash
 fi
 
 if [ ! -f "$TUE_DEV_DIR"/devel/setup.bash ]
@@ -37,5 +34,4 @@ then
     mkdir -p "$TUE_DEV_DIR"
     hash g++ 2> /dev/null || tue-install-system-now g++
     tue-make-dev || tue-install-error "Error in building the dev workspace"
-    source "$TUE_DEV_DIR"/devel/setup.bash
 fi
