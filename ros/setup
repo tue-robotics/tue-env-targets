@@ -7,7 +7,18 @@ then
 fi
 
 # shellcheck disable=SC1090
-source "$TUE_DEV_DIR"/devel/setup.bash
+if [ -f "$TUE_DEV_DIR"/devel/setup.bash ]
+then
+    source "$TUE_DEV_DIR"/devel/setup.bash
+
+elif [ -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
+then
+    source "$TUE_SYSTEM_DIR"/devel/setup.bash
+
+else
+    source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
+fi
+
 
 # shellcheck disable=SC2016
 ROSCONSOLE_FORMAT='[${severity}][${node}][${time}]: ${message}'
