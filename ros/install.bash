@@ -7,11 +7,11 @@ then
     return 1
 fi
 
-if [ ! -d /opt/ros/"$TUE_ROS_DISTRO" ]
-then
-    # Install basic ROS packages.
-    tue-install-system-now ros-"$TUE_ROS_DISTRO"-ros
+# Install basic ROS packages.
+tue-install-system-now ros-"$TUE_ROS_DISTRO"-ros
 
+if [ ! -d /etc/ros/rosdep ]
+then
     sudo rosdep init || true # make sure it always succeeds, even if rosdep init was already called
 fi
 
