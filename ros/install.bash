@@ -8,7 +8,7 @@ then
 fi
 
 # Install basic ROS packages.
-tue-install-system-now ros-"$TUE_ROS_DISTRO"-ros build_essential # build_essential needed right now
+tue-install-system-now ros-"$TUE_ROS_DISTRO"-ros build-essential # build-essential needed right now
 
 if [ ! -d /etc/ros/rosdep ]
 then
