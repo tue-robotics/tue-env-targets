@@ -22,16 +22,14 @@ then
     touch /tmp/rosdep_update
 fi
 
+mkdir -p "$TUE_SYSTEM_DIR" "$TUE_DEV_DIR"
+
 if [ ! -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
 then
-    mkdir -p "$TUE_SYSTEM_DIR"
-    hash g++ 2> /dev/null || tue-install-system-now g++
     tue-make || tue-install-error "Error in building the system workspace"
 fi
 
 if [ ! -f "$TUE_DEV_DIR"/devel/setup.bash ]
 then
-    mkdir -p "$TUE_DEV_DIR"
-    hash g++ 2> /dev/null || tue-install-system-now g++
     tue-make-dev || tue-install-error "Error in building the dev workspace"
 fi
