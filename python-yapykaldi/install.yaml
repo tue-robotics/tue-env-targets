@@ -1,4 +1,7 @@
 - type: target
+  name: kaldi
+
+- type: target
   name: pybind11
 
 - type: target
