@@ -1,5 +1,4 @@
 #! /usr/bin/env bash
-# shellcheck disable=SC2154
 
 _skip_in_ci || return 0
 
