@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 if [ -z "$TUE_ROS_DISTRO" ]
 then
@@ -6,9 +6,14 @@ then
     return
 fi
 
-#source /opt/ros/$TUE_ROS_DISTRO/setup.bash
+# shellcheck disable=SC2034,SC2153
+TUE_SYSTEM_DIR="$TUE_ENV_DIR"/system
+TUE_DEV_DIR="$TUE_ENV_DIR"/dev
 
-TUE_SYSTEM_DIR=$TUE_ENV_DIR/system
-TUE_DEV_DIR=$TUE_ENV_DIR/dev
+unset CMAKE_PREFIX_PATH
+# shellcheck disable=SC1090
+source "$TUE_DEV_DIR"/devel/setup.bash
 
-source $TUE_DEV_DIR/devel/setup.bash
+# shellcheck disable=SC2016
+ROSCONSOLE_FORMAT='[${severity}][${node}][${time}]: ${message}'
+export ROSCONSOLE_FORMAT

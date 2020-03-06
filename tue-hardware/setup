@@ -1,1 +1,5 @@
-export PATH=~/.tue/installer/targets/tue-hardware/scripts:$PATH
+#! /usr/bin/env bash
+
+# shellcheck disable=SC2123
+PATH=$(dirname "${BASH_SOURCE[0]}")/scripts${PATH:+:${PATH}}
+export PATH

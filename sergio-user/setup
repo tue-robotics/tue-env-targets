@@ -1,11 +1,13 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/sergio_bringup
 alias sergio-core='export ROS_MASTER_URI=http://sergio1.local:11311'
 
 # ----------------------------------------------------------------------------
 # - Add scripts directory to PATH
-export PATH=~/.tue/installer/targets/sergio-user/scripts:$PATH
+# shellcheck disable=SC2123
+PATH=$(dirname "${BASH_SOURCE[0]}")/scripts${PATH:+:${PATH}}
+export PATH
 
 ####################
 #
@@ -33,7 +35,7 @@ function sergio-audio-play
         return
     fi
 
-    rosrun text_to_speech play.py $1 /sergio/audio_player/play
+    rosrun text_to_speech play.py "$1" /sergio/audio_player/play
 }
 
 ####################
@@ -41,8 +43,8 @@ function sergio-audio-play
 # SSH
 #
 ####################
-alias sshsergio1='until ssh -qo ConnectTimeout=1 amigo@sergio1.local; do echo waiting for sergio1 to come online...; sleep 2; done'
-alias sshsergio2='until ssh -qo ConnectTimeout=1 amigo@sergio2.local; do echo waiting for sergio2 to come online...; sleep 2; done'
+alias sshsergio1='until ssh -qAo ConnectTimeout=1 amigo@sergio1.local; do echo waiting for sergio1 to come online...; sleep 2; done'
+alias sshsergio2='until ssh -qAo ConnectTimeout=1 amigo@sergio2.local; do echo waiting for sergio2 to come online...; sleep 2; done'
 
 #####################
 #
@@ -81,11 +83,11 @@ alias sergio-continui-gpsr='rosrun hmi_server continue_gui.py $TUE_SYSTEM_DIR/sr
 
 alias sergio-say='rostopic pub --once /sergio/text_to_speech/input std_msgs/String'
 function sergio-zeg() {
-        rosservice call /sergio/text_to_speech/speak "{language: 'nl', voice: 'david', character: 'default', emotion: 'neutral', sentence: '$@', blocking_call: false}"
+        rosservice call /sergio/text_to_speech/speak "{language: 'nl', voice: 'david', character: 'default', emotion: 'neutral', sentence: '$*', blocking_call: false}"
 }
 
 function sergio-hear() {
-    msg=$@
+    msg=$*
     echo "Sending trigger: $msg"
     rostopic pub --once /sergio/hmi/string std_msgs/String "data: '$msg'";
 }
@@ -100,15 +102,6 @@ alias reset-audio="amixer -- sset 'Master' -5dB && amixer -- sset 'Mic Boost' 10
 "
 
 alias sergio-action-server="rosrun action_server main.py sergio __ns:=sergio"
-
-function depcheck
-{
-  type -P $1 &>/dev/null && return
-  echo "Installing $2"
-  sudo apt-get -y install $2 && return
-  echo "Error installing $2"
-  exit 1
-}
 
 # --------------------------------------------------------------------------------
 
@@ -130,7 +123,7 @@ function sergio-torso-move-joints {
         echo "Note: knee-joint is calculated with use of the ankle_joint."
         return
     fi
-    
+
     ( rostopic pub /sergio/torso/references sensor_msgs/JointState "{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: ''}, name: ['ankle_joint', 'knee_joint', 'hip_joint'], position: [$1, $(echo "1.874*$1+0.1323" |bc) , $2], velocity: [0], effort: [0]}"  --once  &> /dev/null & )
 }
 
@@ -148,5 +141,17 @@ function sergio-torso-laser-move {
 }
 
 alias sergio-case='sergio-torso-move-joints 0.45 1.5'
+
+function sergio-top-kinect-record-avi {
+    filename=$1
+
+    if [ -z "$filename" ]
+    then
+        filename=sergio_top_kinect-$(date +"%Y-%m-%d-%H-%M-%S").avi
+    fi
+
+    # Lossless codec: FFV1
+    rosrun rgbd record_to_video rgb:=/sergio/top_kinect/rgb/image _fps:=30 _format:=DIVX _filename:="$filename" _size:=1
+}
 
 alias sergio-copy-my-id="ssh-copy-id amigo@sergio1.local; ssh-copy-id amigo@sergio2.local"

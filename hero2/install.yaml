@@ -1,0 +1,47 @@
+- type: target
+  name: hero
+
+- type: target
+  name: hero-chrony-client-pc
+
+- type: target
+  name: megasync
+
+# RGBD server
+- type: target
+  name: ros-rgbd
+
+# Laptop Battery Status
+- type: target
+  name: ros-upower_ros
+
+# Middleware
+- type: target
+  name: tue-middleware
+
+# RoboCup
+- type: target
+  name: tue-robocup-at-home
+
+# Telegram
+- type: target
+  name: ros-telegram_ros
+
+# Robot Model for in ED
+- type: target
+  name: ros-hsrb_description
+
+# Openpose
+- type: target
+  name: ros-image_recognition_openpose
+
+  #- type: target
+  #  name: cuda
+
+# Dekstop tools
+- type: target
+  name: terminator
+- type: system
+  name: geany
+- type: target
+  name: chrome

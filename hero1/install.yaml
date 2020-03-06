@@ -1,0 +1,24 @@
+- type: target
+  name: hero
+
+- type: target
+  name: hero-start
+
+- type: target
+  name: ros-laser_filters
+
+# RGBD server
+- type: target
+  name: ros-rgbd
+
+# Odometer
+- type: target
+  name: ros-test_tools
+
+- type: target
+  name: hsr-setup
+
+- type: ros
+  source:
+    type: system
+    name: hsrb-full

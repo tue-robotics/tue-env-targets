@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 pycharm="pycharm-community"
 if dpkg-query -W -f='${Status}' $pycharm 2>/dev/null | grep -q "ok installed"

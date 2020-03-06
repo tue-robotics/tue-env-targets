@@ -1,0 +1,8 @@
+- type: target
+  name: docker
+
+- type: target
+  name: nvidia-driver
+
+- type: system
+  name: nvidia-docker2
