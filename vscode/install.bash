@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
-[[ "$CI" == "true" ]] && return 0
+
+_skip_in_ci || return 0
 
 if [ ! -f /etc/apt/sources.list.d/vscode.list ]
 then
