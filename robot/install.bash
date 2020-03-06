@@ -1,4 +1,6 @@
 #! /usr/bin/env bash
+# shellcheck disable=SC2154
+
 [[ "$CI" == "true" ]] && return 0
 
 if [[ "$ROBOT_REAL" != "true" ]]
