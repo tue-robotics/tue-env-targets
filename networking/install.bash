@@ -1,10 +1,6 @@
 #! /usr/bin/env bash
 
-# Skip this target in CI
-if [[ "$CI" == "true" ]]
-then
-    return 0
-fi
+_skip_in_ci || return 0
 
 # shellcheck disable=SC1091
 . /etc/os-release
