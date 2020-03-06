@@ -1,2 +1,8 @@
 - type: pip
   name: python-telegram-bot
+
+# Fix pip ffi.h header missing error
+- type: system
+  name: libffi-dev
+- type: system
+  name: libssl-dev
