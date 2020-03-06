@@ -1,29 +1,33 @@
-export ED_PLUGIN_PATH=$TUE_ENV_DIR/dev/devel/lib:$TUE_ENV_DIR/system/devel/lib
+#! /usr/bin/env bash
+
+ED_PLUGIN_PATH=$TUE_ENV_DIR/dev/devel/lib:$TUE_ENV_DIR/system/devel/lib
+export ED_PLUGIN_PATH
 
 function ed
 {
-	if [ -z "$1" ]
-	then
-		echo """Usage: ed COMMAND [ARG1 ARG2 ... ]
+    if [ -z "$1" ]
+    then
+        # shellcheck disable=SC1078,SC1079
+        echo """Usage: ed COMMAND [ARG1 ARG2 ... ]
 
 Possible commands:
 
     run         Starts the ED server
     reset       Resets ED
 """
-		return
-	fi
+        return
+    fi
 
-	if [ "$1" == "run" ]
-	then
+    if [ "$1" == "run" ]
+    then
         shift
-		rosrun ed ed_server $@
-	elif [ "$1" == "reset" ]
-	then
-		rosservice call /ed/reset
-	else
-		echo "ED: Unknown command: '$1'"
-	fi
+        rosrun ed ed_server "$@"
+    elif [ "$1" == "reset" ]
+    then
+        rosservice call /ed/reset
+    else
+        echo "ED: Unknown command: '$1'"
+    fi
 }
 
 alias ed-reset='rosservice call /ed/reset "{}"'

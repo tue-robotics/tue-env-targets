@@ -1,0 +1,2 @@
+- type: pip
+  name: catkin-tools-document>=0.2.0

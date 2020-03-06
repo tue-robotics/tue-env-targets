@@ -1,23 +1,56 @@
 - type: target
   name: tue-dev
+- type: target
+  name: hero-dev
 
 # Handy shit
-- type: target
-  name: ack
 - type: target
   name: chrome-dev
 - type: target
   name: qtcreator
 - type: target
   name: pycharm
-  
+- type: target
+  name: terminator
+- type: target
+  name: vim
+
 - type: system
   name: geany
 - type: system
   name: gedit
+- type: system
+  name: silversearcher-ag
 
+# Styling
+- type: ppa
+  name: ppa:noobslab/themes
+- type: ppa
+  name: ppa:noobslab/icons
+- type: system
+  default:
+    name: vimix-gtk-themes
+  xenial:
+    name: ultra-flat-theme
+- type: system
+  default:
+    name: vimix-icon-theme
+  xenial:
+    name: null
+- type: system
+  name: ultra-flat-icons-orange
+
+- type: system
+  default:
+    name: gnome-tweak-tool
+  xenial:
+    name: unity-tweak-tool
+
+
+# swri
 - type: target
   name: ros-swri_console
 
+# Save gmapping map
 - type: target
   name: tue-save-map

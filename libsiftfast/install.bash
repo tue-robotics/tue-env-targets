@@ -1,7 +1,10 @@
+#! /usr/bin/env bash
+
 if [ ! -f /usr/local/lib/libsiftfast.so ]
 then
     svn co http://svn.code.sf.net/p/libsift/code/trunk /tmp/libsiftfast
-    mkdir /tmp/libsiftfast/build
+    mkdir -p /tmp/libsiftfast/build
+    # shellcheck disable=SC2164
     cd /tmp/libsiftfast/build
 
     #cd /tmp

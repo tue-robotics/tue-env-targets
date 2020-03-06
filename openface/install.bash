@@ -1,21 +1,27 @@
-if [ ! -d ~/openface ]; then
-    pushd .
-    mkdir ~/openface
-    cd ~/openface
-    git clone https://github.com/cmusatyalab/openface.git  ~/openface --recursive
-    sudo apt install python-numpy python-pandas python-scipy python-sklearn python-skimage
+#! /usr/bin/env bash
+
+if [ "$CI" == "true" ]
+then
+    tue-install-info "Not installing OpenFace in CI"
+    return 0
+fi
+
+if [ ! -d ~/openface ]
+then
+    tue-install-git https://github.com/cmusatyalab/openface.git  ~/openface
+    tue-install-system-now python-numpy python-pandas python-scipy python-sklearn python-skimage
 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-    bash $DIR/dlib.bash
+    # shellcheck disable=SC1090
+    source "$DIR"/dlib.bash
+    # shellcheck disable=SC1090
+    source "$DIR"/torch.bash
 
-    bash $DIR/torch.bash
-
+    # shellcheck disable=SC2164
     cd ~/openface
     sudo python2 setup.py install
 
     models/get-models.sh
-
-    popd
 
     if [[ $(python -c "import dlib") -eq 1 ]]; then
         echo "DLIB is not properly installed"
@@ -29,5 +35,4 @@ if [ ! -d ~/openface ]; then
         echo "openface is not properly installed"
     fi
 
-    luarocks install dpnn
 fi
