@@ -13,9 +13,11 @@ then
 
 elif [ -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
 then
+    echo -e "\033[33;5;1m[ros] dev workspace not found, sourcing system workspace\033[0m"
     source "$TUE_SYSTEM_DIR"/devel/setup.bash
 
 else
+    echo -e "\033[33;5;1m[ros] dev and system workspaces not found, sourcing /opt/ros\033[0m"
     source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
 fi
 
