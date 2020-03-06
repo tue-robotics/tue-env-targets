@@ -2,8 +2,10 @@
 # shellcheck disable=SC2034
 
 alias local-core='export ROS_MASTER_URI=http://localhost:11311'
-# shellcheck disable=SC2139
-alias hostname-core='export ROS_MASTER_URI=http://$(hostname).local:11311'
+function hostname-core
+{
+    export ROS_MASTER_URI=http://$(hostname).local:11311'
+}
 
 ####################
 #
