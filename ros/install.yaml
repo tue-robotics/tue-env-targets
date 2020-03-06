@@ -2,4 +2,4 @@
   name: ros-setup
 
 - type: target
-  name: python-catkin-tools
+  name: catkin
