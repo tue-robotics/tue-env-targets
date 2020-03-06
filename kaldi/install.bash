@@ -32,7 +32,7 @@ tue-install-system-now zlib1g-dev automake autoconf patch grep \
     flac graphviz
 
 # Numpy later than 1.15.0 is required
-pip2 install --user "numpy>=1.15.0"
+tue-install-pip2-now "numpy>=1.15.0"
 
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
@@ -93,4 +93,3 @@ then
 else
     tue-install-debug "kaldi_speech not updated, so not rebuilding"
 fi
-
