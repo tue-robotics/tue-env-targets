@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+alias demo-start="tmux new -A -s 'hero-start' 'bash -ic 'hero-start''"
