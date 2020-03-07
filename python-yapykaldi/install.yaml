@@ -1,0 +1,11 @@
+- type: target
+  name: kaldi
+
+- type: target
+  name: pybind11
+
+- type: target
+  name: python-pkgconfig
+
+- type: pip
+  name: git+https://github.com/tue-robotics/yapykaldi.git

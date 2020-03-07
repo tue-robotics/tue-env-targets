@@ -1,2 +1,2 @@
-- type: system
+- type: pip
   name: ipython

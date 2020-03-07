@@ -33,3 +33,7 @@ then
 fi
 
 "$DIR"/get-releases linux-x64 | "$DIR"/process-releases
+
+# Shortcuts
+tue-install-cp shortcuts/.hero-dashboard.desktop ~/Desktop
+tue-install-cp shortcuts/icons/hsr.png /usr/share/pixmaps/tue/hsr.png

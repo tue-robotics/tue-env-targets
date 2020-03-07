@@ -15,11 +15,12 @@ then
     sudo rosdep init || true # make sure it always succeeds, even if rosdep init was already called
 fi
 
-if [ ! -f /tmp/rosdep_update ]
+rosdep_update_file="/tmp/rosdep_update_${USER}"
+if [ ! -f "$rosdep_update_file" ]
 then
     tue-install-debug "Updating rosdep"
     rosdep update
-    touch /tmp/rosdep_update
+    touch "$rosdep_update_file"
 fi
 
 mkdir -p "$TUE_SYSTEM_DIR" "$TUE_DEV_DIR"
