@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-_skip_in_ci || return 0
+_skip_in_ci && return 0
 
 ### Make sure remote launching works ###
 tue-install-cp ros-bash-and-run.sh ~/.ros-bash-and-run.sh
