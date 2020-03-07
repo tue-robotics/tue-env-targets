@@ -32,7 +32,7 @@ tue-install-system-now zlib1g-dev automake autoconf patch grep \
     flac graphviz libopenblas-dev
 
 # Numpy later than 1.15.0 is required
-tue-install-pip2-now "numpy>=1.15.0" ninja
+tue-install-pip2-now "numpy>=1.15.0" ninja cmake
 
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
