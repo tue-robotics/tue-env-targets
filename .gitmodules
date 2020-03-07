@@ -1,0 +1,3 @@
+[submodule "hsr-setup"]
+	path = hsr-setup
+	url = git@gitlab.com:tue-robotics/hsr-setup.git
