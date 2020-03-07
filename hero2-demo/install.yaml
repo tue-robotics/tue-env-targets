@@ -1,11 +1,5 @@
 - type: target
-  name: hero
-
-- type: target
-  name: hero-chrony-client-pc
-
-- type: target
-  name: megasync
+  name: hero-demo
 
 # RGBD server
 - type: target
@@ -19,9 +13,9 @@
 - type: target
   name: tue-middleware
 
-# RoboCup
+# challenge_demo
 - type: target
-  name: tue-robocup-at-home
+  name: ros-challenge_demo
 
 # Telegram
 - type: target
@@ -30,6 +24,10 @@
 # Openpose
 - type: target
   name: ros-image_recognition_openpose
+
+# tmux
+- type: target
+  name: tmux
 
 # Dekstop tools
 - type: target

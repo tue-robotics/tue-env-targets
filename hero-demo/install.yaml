@@ -1,8 +1,5 @@
 - type: target
-  name: tue-common
-
-- type: target
-  name: robot-user
+  name: robot
 
 - type: target
   name: hero-demo-user
