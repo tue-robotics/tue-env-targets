@@ -1,15 +1,16 @@
 #! /usr/bin/env bash
 
-# Skip this target in CI
-if [[ "$CI" == "true" ]]
+_skip_in_ci && return 0
+
+# shellcheck disable=SC1091
+. /etc/os-release
+if [ "$UBUNTU_CODENAME" == "xenial" ]
 then
-    return 0
+    # Install config file (mdns4_minimal is normally missing in xenial and should be present)
+
+    # Replace nsswitch config file
+    tue-install-cp nsswitch.conf /etc/nsswitch.conf
 fi
-
-# Install config file (mdns4_minimal is normally missing and should be present)
-
-# Replace nsswitch config file
-tue-install-cp nsswitch.conf /etc/nsswitch.conf
 
 # Prevent resolving to ipv6 addresses. We're not ready for that yet
 if [ ! -f /etc/avahi/avahi-daemon.conf ]
@@ -17,12 +18,18 @@ then
     tue-install-system-now avahi-daemon
 fi
 
+# avahi-deamon
 if grep -q 'use-ipv6=yes' /etc/avahi/avahi-daemon.conf
 then
     echo "Disabling ipv6 in /etc/avahi/avahi-daemon.conf"
     sudo sed -i 's/use-ipv6=yes/use-ipv6=no/g' /etc/avahi/avahi-daemon.conf
 fi
 
+if grep -q '#publish-aaaa-on-ipv4' /etc/avahi/avahi-daemon.conf
+then
+    # Also change this setting by suggestion of this bug report: https://bugzilla.redhat.com/show_bug.cgi?id=669627
+    sudo sed -i 's/#publish-aaaa-on-ipv4=yes/publish-aaaa-on-ipv4=no/g' /etc/avahi/avahi-daemon.conf
+fi
 
 ## SSH
 ssh_config=~/.ssh/config
