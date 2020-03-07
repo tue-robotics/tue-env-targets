@@ -1,11 +1,11 @@
 - type: target
-  name: ros-dragonfly_speech_recognition
-
-- type: target
   name: ros-hmi
 
 - type: target
   name: ros-text_to_speech
+
+- type: target
+  name: ros-hero_bringup
 
 - type: target
   name: ros-hero_description

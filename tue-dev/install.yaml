@@ -55,7 +55,5 @@
 # Handy shit
 - type: target
   name: terminator
-- type: target
-  name: spot
 - type: system
   name: meld

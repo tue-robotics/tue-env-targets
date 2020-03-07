@@ -1,9 +1,16 @@
 #! /usr/bin/env bash
 
-# Install config file (mdns4_minimal is normally missing and should be present)
+_skip_in_ci && return 0
 
-# Replace nsswitch config file
-tue-install-cp nsswitch.conf /etc/nsswitch.conf
+# shellcheck disable=SC1091
+. /etc/os-release
+if [ "$UBUNTU_CODENAME" == "xenial" ]
+then
+    # Install config file (mdns4_minimal is normally missing in xenial and should be present)
+
+    # Replace nsswitch config file
+    tue-install-cp nsswitch.conf /etc/nsswitch.conf
+fi
 
 # Prevent resolving to ipv6 addresses. We're not ready for that yet
 if [ ! -f /etc/avahi/avahi-daemon.conf ]
@@ -11,26 +18,55 @@ then
     tue-install-system-now avahi-daemon
 fi
 
+# avahi-deamon
 if grep -q 'use-ipv6=yes' /etc/avahi/avahi-daemon.conf
 then
     echo "Disabling ipv6 in /etc/avahi/avahi-daemon.conf"
     sudo sed -i 's/use-ipv6=yes/use-ipv6=no/g' /etc/avahi/avahi-daemon.conf
 fi
 
-# Generate ssh keys when not on CI and file does not exist yet
-if [[ "$CI" != "true" && ! -f ~/.ssh/id_rsa ]]
+if grep -q '#publish-aaaa-on-ipv4' /etc/avahi/avahi-daemon.conf
 then
-    tue-install-debug "Generating ssh keys"
-    ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+    # Also change this setting by suggestion of this bug report: https://bugzilla.redhat.com/show_bug.cgi?id=669627
+    sudo sed -i 's/#publish-aaaa-on-ipv4=yes/publish-aaaa-on-ipv4=no/g' /etc/avahi/avahi-daemon.conf
+fi
+
+## SSH
+ssh_config=~/.ssh/config
+ssh_controlmasters_dir=~/.ssh/controlmasters
+ssh_key=~/.ssh/id_rsa
+
+# Generate ssh key
+generate_ssh="false"
+# Generate ssh key when file does not exist yet
+if [ ! -f "$ssh_key" ]
+then
+    tue-install-debug "No ssh key exists yet"
+    generate_ssh="true"
+else
+    # Generate new ssh key if length < 4096
+    if [ "$(ssh-keygen -l -f "$ssh_key" | awk '{print $1}')" -lt 4096 ]
+    then
+        tue-install-info "Generating new ssh key as length < 4096, you might need to copy the new key to the robots, GitHub, etc."
+        generate_ssh="true"
+    else
+        tue-install-debug "ssh key available with length >= 4096"
+    fi
+fi
+
+if [ $generate_ssh == "true" ]
+then
+    tue-install-debug "Generating ssh key"
+    yes | ssh-keygen -t rsa -b 4096 -N "" -f "$ssh_key"
+    rm -r ${ssh_controlmasters_dir:?}/* 2>/dev/null # close all connections, to prevent any possible weird behaviour
+    ssh-add # Start using the new key
 fi
 
 # Enable persistent connection multiplexing
-ssh_config=~/.ssh/config
 if [ ! -f $ssh_config ]
 then
     touch $ssh_config
 fi
-ssh_controlmasters_dir=~/.ssh/controlmasters
 if [ ! -d $ssh_controlmasters_dir ]
 then
     mkdir -p $ssh_controlmasters_dir
