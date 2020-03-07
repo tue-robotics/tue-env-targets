@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+_skip_in_ci && return 0
+
 if [ ! -f /etc/apt/sources.list.d/vscode.list ]
 then
 	wget "https://go.microsoft.com/fwlink/?LinkID=760868" -O /tmp/vscode.deb
