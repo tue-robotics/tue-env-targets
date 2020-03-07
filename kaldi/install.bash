@@ -28,12 +28,11 @@ prev="-1"
 # TODO: Change this to tue-install-targets --now $name_of_targets
 tue-install-system-now zlib1g-dev automake autoconf patch grep \
     bzip2 gzip wget sox libtool subversion gawk python python3 libatlas3-base \
-    swig zip p7zip-full python-six libglib2.0-dev \
-    libgstreamer1.0-dev gstreamer1.0-tools gstreamer1.0-pulseaudio \
-    gstreamer1.0-plugins-good flac graphviz
+    libatlas-base-dev swig zip p7zip-full python-six libglib2.0-dev \
+    flac graphviz
 
 # Numpy later than 1.15.0 is required
-pip install --user "numpy>=1.15.0"
+tue-install-pip2-now "numpy>=1.15.0"
 
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
@@ -94,4 +93,3 @@ then
 else
     tue-install-debug "kaldi_speech not updated, so not rebuilding"
 fi
-

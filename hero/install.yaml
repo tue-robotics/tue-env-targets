@@ -2,7 +2,7 @@
   name: robot
 
 - type: target
-  name: ros-hero_bringup
+  name: hero-demo
 
 - type: target
   name: hero-user

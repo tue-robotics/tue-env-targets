@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+_skip_in_ci && return 0
+
 tue-install-snap-now code
 
 tue-install-system-now default-jre
