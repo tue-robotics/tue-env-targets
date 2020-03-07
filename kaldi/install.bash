@@ -29,10 +29,10 @@ prev="-1"
 tue-install-system-now zlib1g-dev automake autoconf patch grep \
     bzip2 gzip wget sox libtool subversion gawk python python3 libatlas3-base \
     libatlas-base-dev swig zip p7zip-full python-six libglib2.0-dev \
-    flac graphviz
+    flac graphviz libopenblas-dev
 
 # Numpy later than 1.15.0 is required
-tue-install-pip2-now "numpy>=1.15.0"
+tue-install-pip2-now "numpy>=1.15.0" ninja cmake
 
 # If the directory already exists
 if [ -d "$KALDI_HOME" ]
