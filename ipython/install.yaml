@@ -1,2 +1,2 @@
 - type: pip
-  name: ipython
+  name: ipython<6.0
