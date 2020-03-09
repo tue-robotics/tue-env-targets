@@ -13,17 +13,20 @@
 #    gem install travis
 #    cd <REPOSITORY>
 #    travis encrypt-file ~/travis/deploy_key --pro --add
+#    ```
 #
-# 3. Commit the updated .travis.yml file and the generated file `deploy_key.enc`
+# 3. Change the value of `-out` option in `before_install: - openssl` to `./deploy_key`
 #
-# 4. Append the following lines to .travis.yml under `before_install`
+# 4. Commit the updated .travis.yml file and the generated file `deploy_key.enc`
+#
+# 5. Append the following lines to .travis.yml under `before_install`
 #    ```
 #    - eval "$(ssh-agent -s)"
 #    - chmod 600 ./deploy_key
 #    - ssh-add ./deploy_key
 #
 # On GITLAB
-# 5. In the repository Settings > CI/CD > Deploy Keys, add the public key from the file ~/travis/deploy_key.pub
+# 6. In the repository Settings > CI/CD > Deploy Keys, add the public key from the file ~/travis/deploy_key.pub
 
 os: linux
 dist: xenial
