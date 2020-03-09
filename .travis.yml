@@ -14,8 +14,8 @@
 #    cd <REPOSITORY>
 #    travis encrypt-file ~/travis/deploy_key --pro --add
 #    ```
-#    The last command will automatically generate and set two environment variables `encrypted_<STRING>_key` `encrypted_<STRING>_iv`in the repository settings
-#    of travis. There are not to be removed.
+#    The last command will automatically generate and set two environment variables `encrypted_<STRING>_key` and
+#    `encrypted_<STRING>_iv`in the repository settings of travis. They are not to be removed.
 #
 # 3. Change the value of `-out` option in `before_install: - openssl` to `./deploy_key`
 #
