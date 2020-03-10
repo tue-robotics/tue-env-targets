@@ -2,4 +2,4 @@
   source:
     type: git
     url: https://github.com/tue-robotics/tue_robocup.git
-    sub-dir: challenge_challenge_carry_my_luggage
+    sub-dir: challenge_carry_my_luggage
