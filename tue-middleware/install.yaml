@@ -15,10 +15,6 @@
 - type: target
   name: ros-dwa_local_planner
 
-# Manipulation
-- type: target
-  name: ros-tue_manipulation
-
 # SLAM
 - type: target
   name: ros-gmapping
