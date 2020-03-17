@@ -1,6 +1,6 @@
 # tue-documentation
 
-This targets provides the tools to generate documentation for all catkin packages in the system workspace. [catkin_tools_document](https://github.com/tue-robotics/catkin_tools_document.git) is used for this. It generates documentation per package, which can be configured according to [rosdoc_lite](http://wiki.ros.org/rosdoc_lite)([source](https://github.com/ros-infrastructure/rosdoc_lite.git)) and an overview page, which also includes messages, services, changelog, etc..
+This targets provides the tools to generate documentation for all catkin packages in the system workspace. [catkin_tools_document](https://github.com/mikepurvis/catkin_tools_document) is used for this. It generates documentation per package, which can be configured according to [rosdoc_lite](http://wiki.ros.org/rosdoc_lite)([source](https://github.com/ros-infrastructure/rosdoc_lite.git)) and an overview page, which also includes messages, services, changelog, etc..
 
 By default [Doxygen](http://www.doxygen.org/) documentation is generated if no `rosdoc` configuration is provided. It will document both Python and C++ in one API documentation. Also it can lead to missing and/or unnecessary information. These results are undesired. Therefore a `rosdoc` configuration is recommended.
 To do this create a yaml file in the main folder of your package, for consistency name it `rosdoc.yaml` Add the following lines to your `package.xml`:
@@ -9,9 +9,16 @@ To do this create a yaml file in the main folder of your package, for consistenc
   <rosdoc config="rosdoc.yaml" />
 </export>
 ```
-Check [Python](#Python) and [C++](#C++) for the configuration of the `rosdoc` configuration.
+Check [Python](#Python) and [C++](#c) for the configuration of the `rosdoc` configuration.
 
 The overview page is configured by the [catkin_tools_document_config.yaml](./catkin_tools_document_config.yaml) in this target. The image path is relative to the `$TUE_SYSTEM_DIR/build/docs`. It ends up here in this target. This is possible as the target location relative to the workspace is fixed.
+
+## Generation
+Make sure all documentation dependencies are installed by running `tue-get install/update` with the `--doc-depend` option. To generate the documetation run `tue-make-documentation` it wraps `catkin` and therefore accepts all `catkin` arguments. After generating the documentation, you can open the documentation in your browser:
+```bash
+<your-browser> $TUE_DOCS_PATH
+```
+Or copy the value of `$TUE_DOCS_PATH` into the urlbar.
 
 
 ## Python

@@ -10,15 +10,19 @@ function tue-make-documentation
 {
     if [ -n "$TUE_ROS_DISTRO" ] && [ -d "$TUE_SYSTEM_DIR" ]
     then
-        local build_tool
-        build_tool=$(cat "$TUE_SYSTEM_DIR"/devel/.built_by)
+        local build_tool=""
+        if [ -f "$TUE_SYSTEM_DIR"/devel/.built_by ]
+        then
+            build_tool=$(cat "$TUE_SYSTEM_DIR"/devel/.built_by)
+        fi
         case $build_tool in
         'catkin build')
             catkin document --workspace "$TUE_SYSTEM_DIR" "$@"
             ;;
         '')
-            catkin config --init --mkdirs --workspace "$TUE_SYSTEM_DIR" -DCMAKE_BUILD_TYPE=RelWithDebInfo "$@"
-            catkin document --workspace "$TUE_SYSTEM_DIR" "$@"
+            catkin config --init --mkdirs --workspace "$TUE_SYSTEM_DIR" --extend /opt/ros/"$TUE_ROS_DISTRO" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_ENABLE_TESTING=OFF
+            catkin build --workspace "$TUE_SYSTEM_DIR" "$@"
+            touch "$TUE_SYSTEM_DIR"/devel/.catkin # hack to allow overlaying to this ws while being empty
             ;;
         *)
             echo -e "\e$build_tool is not supported (anymore), use catkin tools\e[0m"
