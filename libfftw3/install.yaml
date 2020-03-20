@@ -1,0 +1,5 @@
+- type: system
+  name: libfftw3-3
+
+- type: system
+  name: libfftw3-dev
