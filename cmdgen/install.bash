@@ -13,7 +13,7 @@ then
     current_url=$(git config --get remote.origin.url) # get the remote
 
     # if the GSPRCmdGen is pointing to the wrong remote, correct it
-    if [ "$(_github_https "$current_url")" != "$github_url" ]
+    if [ "$(_git_https_or_ssh "$current_url")" != "$github_url" ]
     then
         tue-install-debug "The GPSRCmdGen is still pointing to old remote, will be changed to tue-fork"
         git remote set-url origin $github_url
