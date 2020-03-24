@@ -11,12 +11,14 @@ then
     # shellcheck disable=SC2164
     cd "$dest"
     current_url=$(git config --get remote.origin.url) # get the remote
+    current_url_corrected="$(_git_https_or_ssh "$current_url")"
+    github_url_corrected="$(_git_https_or_ssh "$github_url")"
 
     # if the GSPRCmdGen is pointing to the wrong remote, correct it
-    if [ "$(_git_https_or_ssh "$current_url")" != "$github_url" ]
+    if [ "$current_url_corrected" != "$github_url_corrected" ]
     then
         tue-install-debug "The GPSRCmdGen is still pointing to old remote, will be changed to tue-fork"
-        git remote set-url origin $github_url
+        git remote set-url origin "$github_url_corrected"
     fi
 
     # Git is set-up correctly, so record the previous commit
