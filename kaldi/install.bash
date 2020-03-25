@@ -42,7 +42,7 @@ then
     current_remote=$(git config --get remote.origin.url) # get the remote
 
     # If the kaldi_speech is pointing to the wrong Remote, correct it
-    if [ "$(_github_https "$current_remote")" != "$KALDI_REPO" ]
+    if [ "$(_git_https_or_ssh "$current_remote")" != "$KALDI_REPO" ]
     then
         tue-install-debug "Updated kaldi_speech remote from $REMOTE to $KALDI_REPO"
         git remote set-url origin "$KALDI_REPO"
