@@ -22,6 +22,9 @@
 - type: system
   name: silversearcher-ag
 
+- type: target
+  name: telegram-desktop
+
 # Styling
 - type: ppa
   name: ppa:noobslab/themes
