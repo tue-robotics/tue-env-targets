@@ -1,38 +1,39 @@
 #! /usr/bin/env bash
 
+# This entire file is temp
+
 SIP_version="4.15.5"
 
 if [ "$(lsb_release -sc)" == "trusty" ]
 then
-    tue-install-system python-sip-dev
+    tue-install-debug "Skipping, because Trusty"
+    return 0
+fi
+
+if ! command -v sip >/dev/null 2>&1
+then
+    # No SIP installed, so also nothing to remove
+    tue-install-debug "No SIP found, so nothing to remove"
+    return 0
+fi
+
+# We have SIP, let check its version
+SIP_installed=$(sip -V)
+if [[ "$SIP_installed" == "$SIP_version" ]]
+then
+    # SIP looks to be installed manually, remove it. So the debian version will be used
+    tue-install-debug "Removing SIP version ($SIP_version), so debian version will be used"
+    sudo rm -f /usr/bin/sip >/dev/null
+    sudo rm -f /usr/include/python2.7/sip.h >/dev/null
+    sudo rm -f /usr/lib/python2.7/dist-packages/sip.so >/dev/null
+    sudo rm -f /usr/lib/python2.7/dist-packages/sip.pyi >/dev/null
+    sudo rm -f /usr/lib/python2.7/dist-packages/sipconfig.py >/dev/null
+    sudo rm -f /usr/lib/python2.7/dist-packages/sipdistutils.py >/dev/null
+    tue-install-debug "Removing SIP finished"
+    tue-install-debug "Re-installing SIP from debian"
+    tue-install-debug "sudo apt-get install -qq python-sip python-sip-dev sip-dev --reinstall"
+    sudo apt-get install -qq python-sip python-sip-dev sip-dev --reinstall
+    tue-install-debug "Debian SIP restored"
 else
-
-    if command -v sip >/dev/null 2>&1
-    then
-        # We have SIP, let check is version
-        SIP_installed=$(sip -V)
-        if [[ "$SIP_installed" == "$SIP_version" ]]
-        then
-            # SIP is correct version, so don't need to install anything
-            tue-install-debug "Correct SIP version($SIP_version) is installed"
-            return
-        fi
-    fi
-    # We don't have SIP or not the correct version
-    SIP_file=$(dirname "${BASH_SOURCE[0]}")/sip-$SIP_version.tar.gz
-    if [ ! -f "$SIP_file" ]
-    then
-        url="https://downloads.sourceforge.net/project/pyqt/sip/sip-$SIP_version/sip-$SIP_version.tar.gz"
-        tue-install-error "Download $url and place it in $(dirname "${BASH_SOURCE[0]}")/"
-        return 1
-    fi
-
-    tue-install-info "Installing SIP version: $SIP_version"
-    cp "$SIP_file" /tmp/sip.tar.gz
-
-    tar xvzf /tmp/sip.tar.gz -C /tmp
-    cd /tmp/sip-"$SIP_version" || tue-install-error "Missing directory: /tmp/sip-$SIP_version "
-    python ./configure.py
-    make
-    sudo make install
+    tue-install-debug "SIP installed by debian"
 fi
