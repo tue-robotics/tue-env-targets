@@ -1,0 +1,11 @@
+- type: system
+  default:
+    name: python3-autobahn
+  xenial:
+    name: null
+
+- type: pip3
+  default:
+    name: null
+  xenial:
+    name: autobahn
