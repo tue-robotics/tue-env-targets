@@ -2,7 +2,6 @@ os: linux
 dist: bionic
 language: shell
 addons:
-  ssh_known_hosts: gitlab.com
   apt:
     packages:
       - python3-pip
