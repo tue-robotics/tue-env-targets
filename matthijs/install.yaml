@@ -8,8 +8,8 @@
   name: chrome-dev
 - type: target
   name: qtcreator
-- type: target
-  name: pycharm
+- type: type
+  name: pycharm-professional
 - type: target
   name: terminator
 - type: target
