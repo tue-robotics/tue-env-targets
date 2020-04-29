@@ -1,6 +1,9 @@
 [Desktop Entry]
 TryExec=gnome-terminal
+Name=HERO Dashboard
 Icon=/usr/share/pixmaps/tue/hsr.png
+Name[en_US]=HERO Dashboard
+Icon[en_US]=/usr/share/pixmaps/tue/hsr.png
 Type=Application
 X-GNOME-DocPath=gnome-terminal/index.html
 X-GNOME-Bugzilla-Bugzilla=GNOME
@@ -13,7 +16,6 @@ Keywords=Run;
 Actions=New
 X-Ubuntu-Gettext-Domain=gnome-terminal
 Terminal=false
-Exec=bash -ic hero-dashboard
-Icon[en_US]=/usr/share/pixmaps/tue/hsr.png
-Name[en_US]=HERO Dashboard
-Name=HERO Dashboard
+Exec=bash -c "source ~/.tue/setup.bash && hero-dashboard"
+StartupWMClass=hero-dashboard
+
