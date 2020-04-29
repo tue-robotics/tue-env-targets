@@ -1,3 +1,6 @@
 #! /usr/bin/env bash
 
-alias hero-dashboard='hero_dashboard hero1.local'
+function hero-dashboard
+{
+    hero_dashboard hero1.local
+}

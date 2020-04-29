@@ -21,6 +21,22 @@
   name: gedit
 - type: system
   name: silversearcher-ag
+- type: system
+  name: tree
+- type: ppa
+  default:
+    name: ppa:nathan-renniewaldock/flux
+  xenial:
+    name: null
+- type: system
+  default:
+    name: fluxgui
+  xenial:
+    name: null
+- type: system
+  name: shellcheck
+- type: system
+  name: yamllint
 
 - type: target
   name: telegram-desktop
