@@ -1,15 +1,5 @@
 #! /usr/bin/env bash
 
-# Geany config
-if [ ! -f ~/.config/geany/geany.conf ]
-then
-    tue-install-debug "geany config not existing"
-    mkdir -p ~/.config/geany
-    tue-install-cp geany.conf ~/.config/geany/geany.conf
-else
-    tue-install-debug "geany config does exists, so not copying matthijs config"
-fi
-
 # Git Settings
 git_config_items="pull.ff=true color.ui=always merge.tool=meld"
 for item in $git_config_items
