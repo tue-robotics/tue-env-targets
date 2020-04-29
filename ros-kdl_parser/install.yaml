@@ -1,6 +1,24 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/ros/kdl_parser.git
-    version: kinetic-devel
-    sub-dir: kdl_parser
+  default:
+    source:
+      type: git
+      url: https://github.com/ros/kdl_parser.git
+      sub-dir: kdl_parser
+  kinetic:
+    source:
+      type: git
+      url: https://github.com/ros/kdl_parser.git
+      version: kinetic-devel
+      sub-dir: kdl_parser
+  melodic:
+    source:
+      type: git
+      url: https://github.com/ros/kdl_parser.git
+      version: melodic-devel
+      sub-dir: kdl_parser
+  noetic:
+    source:
+      type: git
+      url: https://github.com/ros/kdl_parser.git
+      version: noetic-devel
+      sub-dir: kdl_parser
