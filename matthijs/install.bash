@@ -17,9 +17,18 @@ then
 fi
 
 # Shortcuts
-tue-install-cp shortcuts/pycharm-professional.desktop ~/Desktop
-tue-install-cp shortcuts/qtcreator.desktop ~/Desktop
-tue-install-cp shortcuts/terminator.desktop /usr/share/applications
+# PyCharm
+tue-install-cp shortcuts/pycharm-professional_pycharm-professional.desktop ~/.local/share/applications/pycharm-professional_pycharm-professional.desktop
+# Terminator
+tue-install-cp shortcuts/terminator.desktop ~/.local/share/applications/terminator.desktop
 
-tue-install-cp shortcuts/whatsapp-webapp.desktop /usr/share/applications
-tue-install-cp shortcuts/icons/whatsapp.svg /usr/share/icons/hicolor/scalable/apps
+# Qt Creator
+if [ -f ~/.local/share/applications/org.qt-project.qtcreator.desktop ] && ! grep -qi matthijs ~/.local/share/applications/org.qt-project.qtcreator.desktop
+then
+    mv -f ~/.local/share/applications/org.qt-project.qtcreator.desktop ~/.local/share/applications/org.qt-project.qtcreator.desktop.bk
+fi
+tue-install-cp shortcuts/org.qt-project.qtcreator.desktop ~/.local/share/applications/org.qt-project.qtcreator.desktop
+
+# WhatsApp
+tue-install-cp shortcuts/whatsapp-webapp.desktop ~/.local/share/applications/whatsapp-webapp.desktop
+tue-install-cp shortcuts/icons/whatsapp.svg /usr/share/icons/hicolor/scalable/apps/whatsapp.svg

@@ -1,9 +1,9 @@
+# Matthijs
 [Desktop Entry]
 Type=Application
-Exec=bash -ic qtcreator %F
+Exec=bash -c "source ~/.tue/setup.bash && qtcreator %F"
 Name=Qt Creator
 GenericName=C++ IDE for developing Qt applications
-X-KDE-StartupNotify=true
 Icon=QtProject-qtcreator
 StartupWMClass=qtcreator
 Terminal=false
