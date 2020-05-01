@@ -3,6 +3,11 @@ dist: bionic
 language: shell
 addons:
   ssh_known_hosts: gitlab.com
+  apt:
+    packages:
+      - python3-pip
+      - python3-setuptools
+      - python3-wheel
 git:
   submodules: false
 
@@ -17,8 +22,6 @@ install:
   - git submodule update --init --recursive
 
 before_script:
-  - sudo apt-get install python3-pip
-  - pip3 install --user --upgrade setuptools wheel
   - pip3 install --user --upgrade yamllint
 
 script:
