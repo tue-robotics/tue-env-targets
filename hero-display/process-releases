@@ -25,3 +25,5 @@ then
         touch "$TUE_BIN/hero_display.d/$TAG"
     fi
 fi
+
+set +e
