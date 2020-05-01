@@ -1,11 +1,8 @@
 os: linux
-dist: xenial
+dist: bionic
 language: shell
 addons:
   ssh_known_hosts: gitlab.com
-  apt:
-    packages:
-      - yamllint
 git:
   submodules: false
 
@@ -18,6 +15,11 @@ before_install:
 
 install:
   - git submodule update --init --recursive
+
+before_script:
+  - sudo apt-get install python3-pip
+  - pip3 install --user --upgrade setuptools wheel
+  - pip3 install --user --upgrade yamllint
 
 script:
   - bash -c 'shopt -s globstar; shellcheck ./**/*.bash ./**/*.sh ./**/setup'
