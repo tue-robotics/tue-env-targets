@@ -37,3 +37,5 @@ fi
 # Shortcuts
 tue-install-cp shortcuts/hero-dashboard.desktop ~/.local/share/applications/hero-dashboard.desktop
 tue-install-cp shortcuts/icons/hsr.png /usr/share/pixmaps/tue/hsr.png
+
+set +e

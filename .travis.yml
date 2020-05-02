@@ -1,11 +1,13 @@
 os: linux
-dist: xenial
+dist: bionic
 language: shell
 addons:
   ssh_known_hosts: gitlab.com
   apt:
     packages:
-      - yamllint
+      - python3-pip
+      - python3-setuptools
+      - python3-wheel
 git:
   submodules: false
 
@@ -19,6 +21,10 @@ before_install:
 install:
   - git submodule update --init --recursive
 
+before_script:
+  - pip3 install --user --upgrade yamllint
+
 script:
-  - bash -c 'shopt -s globstar; shellcheck **/*.bash **/*.sh **/setup'
+  - bash -c 'shopt -s globstar; shellcheck ./**/*.bash ./**/*.sh ./**/setup'
   - bash -c 'find ./ -iname '*.yaml' -or -iname '*.yml' | xargs yamllint'
+  - bash ./.check_set-e.bash

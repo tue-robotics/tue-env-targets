@@ -14,3 +14,5 @@ then
     # Restart chrony
     sudo service chrony restart
 fi
+
+set +e

@@ -45,3 +45,5 @@ then
         touch "$TUE_BIN/hero_dashboard_alpha.d/$TAG"
     fi
 fi
+
+set +e

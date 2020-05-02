@@ -52,3 +52,5 @@ then
         ln -s ~/openpose .
     fi
 fi
+
+set +e

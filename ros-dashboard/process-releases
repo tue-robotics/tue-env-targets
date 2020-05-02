@@ -45,3 +45,5 @@ then
         touch "$TUE_BIN/dashboard-alpha/$TAG"
     fi
 fi
+
+set +e
