@@ -20,6 +20,8 @@
 - type: system
   name: gedit
 - type: system
+  name: gthumb
+- type: system
   name: silversearcher-ag
 - type: system
   name: tree
