@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: https://git.hsr.io/tuathome/hsrb_moveit.git
+    url: git@github.com:tue-roboticshsrb_moveit.git
     sub-dir: hsrb_moveit_config
