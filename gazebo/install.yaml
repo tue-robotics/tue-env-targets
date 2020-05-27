@@ -2,4 +2,7 @@
   name: gazebo-setup
 
 - type: system
-  name: gazebo
+  default:
+    name: gazebo
+  xenial:
+    name: gazebo7
