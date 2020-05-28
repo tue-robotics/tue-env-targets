@@ -4,5 +4,11 @@
 - type: system
   default:
     name: gazebo
+  trusty:
+    name: gazebo2
   xenial:
     name: gazebo7
+  bionic:
+    name: gazebo9
+  focal:
+    name: gazebo11
