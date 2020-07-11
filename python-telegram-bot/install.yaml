@@ -1,5 +1,5 @@
 - type: pip
-  name: python-telegram-bot
+  name: python-telegram-bot<12.7
 
 # Fix pip ffi.h header missing error
 - type: system
