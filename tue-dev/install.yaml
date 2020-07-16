@@ -30,7 +30,7 @@
 # -------------------- ROBOTS ---------------------
 
 - type: target
-  name: ros-dashboard
+  name: dashboard
 
 - type: target
   name: amigo-user
