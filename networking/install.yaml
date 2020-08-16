@@ -8,3 +8,5 @@
   name: nmap # General debugging utility typically not easy to install during network troubles
 - type: system
   name: ssh # Used for logging into this computer
+- type: system
+  name: net-tools # Provides ifconfig
