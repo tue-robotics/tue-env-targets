@@ -16,6 +16,6 @@ Keywords=Run;
 Actions=New
 X-Ubuntu-Gettext-Domain=gnome-terminal
 Terminal=false
-Exec=bash -c "source ~/.tue/setup.bash && hero-dashboard"
+Exec=bash -c "shopt -s expand_aliases && source ~/.tue/setup.bash && hero-dashboard"
 StartupWMClass=hero-dashboard
 
