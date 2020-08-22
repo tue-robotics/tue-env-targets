@@ -3,7 +3,7 @@
 function _main
 {
 # shellcheck disable=SC2034
-local NO_ROS_DEPS="true"
+local TUE_INSTALL_SKIP_ROS_DEPS=normal
 local targets
 targets="$TUE_ENV_TARGETS_DIR/*"
 for target in $targets
