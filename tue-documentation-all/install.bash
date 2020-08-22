@@ -55,7 +55,7 @@ do
                 continue
             fi
 
-            echo "Executing ${cmd//^/ }"
+            # Executing the command
             ${cmd//^/ }
 
         done
