@@ -62,7 +62,7 @@ do
     else
         tue-install-error "Invalid install.yaml: $cmds"
     fi
-    TUE_INSTALL_CURRENT_TARGET=parent_target
+    TUE_INSTALL_CURRENT_TARGET=$parent_target
 done
 }
 
