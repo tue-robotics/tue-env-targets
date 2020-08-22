@@ -1,5 +1,2 @@
 - type: target
-  name: ros
-
-- type: target
   name: tue-documentation

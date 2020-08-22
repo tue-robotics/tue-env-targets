@@ -2,6 +2,8 @@
 
 function _main
 {
+# shellcheck disable=SC2034
+local NO_ROS_DEPS="true"
 local targets
 targets="$TUE_ENV_TARGETS_DIR/*"
 for target in $targets
@@ -53,49 +55,9 @@ do
                 continue
             fi
 
-            local sub_dir=${cmd[3]}
-            local version=${cmd[4]}
+            echo "Executing ${cmd//^/ }"
+            ${cmd//^/ }
 
-            local ros_pkg_name=${TUE_INSTALL_CURRENT_TARGET#ros-}
-
-            local ros_pkg_dir="$ROS_PACKAGE_INSTALL_DIR"/"$ros_pkg_name"
-            local repos_dir="$TUE_REPOS_DIR"/"$src"
-
-            local output
-            output=$(_git_split_url "$src")
-            local array
-            read -r -a array <<< "$output"
-            local domain_name=${array[0]}
-            local repo_address=${array[1]}
-            repos_dir="$TUE_REPOS_DIR"/"$domain_name"/"$repo_address"
-
-            tue-install-git "$src" "$repos_dir" "$version"
-
-            if [ -d "$repos_dir" ]
-            then
-                if [ ! -d "$repos_dir"/"$sub_dir" ]
-                then
-                    tue-install-error "Subdirectory '$sub_dir' does not exist for URL '$src'."
-                fi
-
-                if [ -L "$ros_pkg_dir" ]
-                then
-                    # Test if the current symbolic link points to the same repository dir. If not, give a warning
-                    # because it means the source URL has changed
-                    if [ ! "$ros_pkg_dir" -ef "$repos_dir"/"$sub_dir" ]
-                    then
-                        tue-install-info "URL has changed to $src/$sub_dir"
-                        rm "$ros_pkg_dir"
-                        ln -s "$repos_dir"/"$sub_dir" "$ros_pkg_dir"
-                    fi
-                elif [ ! -d "$ros_pkg_dir" ]
-                then
-                    # Create a symbolic link to the system workspace
-                    ln -s "$repos_dir"/"$sub_dir" "$ros_pkg_dir"
-                fi
-            else
-                tue-install-error "Checking out $src was not successful."
-            fi
         done
     else
         tue-install-error "Invalid install.yaml: $cmds"
