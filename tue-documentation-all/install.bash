@@ -60,10 +60,14 @@ do
 
             local ros_pkg_dir="$ROS_PACKAGE_INSTALL_DIR"/"$ros_pkg_name"
             local repos_dir="$TUE_REPOS_DIR"/"$src"
-            # replace spaces with underscores
-            repos_dir=${repos_dir// /_}
-            # now, clean out anything that's not alphanumeric or an underscore
-            repos_dir=${repos_dir//[^a-zA-Z0-9\/\.-]/_}
+
+            local output
+            output=$(_git_split_url "$src")
+            local array
+            read -r -a array <<< "$output"
+            local domain_name=${array[0]}
+            local repo_address=${array[1]}
+            repos_dir="$TUE_REPOS_DIR"/"$domain_name"/"$repo_address"
 
             tue-install-git "$src" "$repos_dir" "$version"
 
