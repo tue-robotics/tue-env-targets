@@ -32,23 +32,23 @@ do
         for cmd in $cmds
         do
             tue-install-debug "Original command: $cmd"
-            read -r -a cmd <<< "${cmd//^/ }"
+            read -r -a cmd_split <<< "${cmd//^/ }"
 
-            local install_cmd=${cmd[0]}
+            local install_cmd=${cmd_split[0]}
             if [ "$install_cmd" != "tue-install-ros" ]
             then
                 TUE_INSTALL_CURRENT_TARGET=$parent_target
                 continue
             fi
 
-            local install_type=${cmd[1]}
+            local install_type=${cmd_split[1]}
             if [ "$install_type" != "git" ]
             then
                 TUE_INSTALL_CURRENT_TARGET=$parent_target
                 continue
             fi
 
-            local src=${cmd[2]}
+            local src=${cmd_split[2]}
             if [[ "$src" != *"github.com/tue-robotics"* ]]
             then
                 TUE_INSTALL_CURRENT_TARGET=$parent_target
