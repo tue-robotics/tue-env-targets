@@ -1,5 +1,2 @@
 - type: system
-  name: doxygen
-
-- type: target
   name: graphviz
