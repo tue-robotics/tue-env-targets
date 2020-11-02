@@ -28,9 +28,6 @@ fi
 # tue-install-git will decide if clone or pull is needed
 tue-install-git $github_url "$dest"
 
-# install mono if not yet installed
-hash mono 2> /dev/null || tue-install-system-now mono-complete
-
 # make if needed
 # shellcheck disable=SC2164
 cd "$dest"
