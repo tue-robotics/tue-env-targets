@@ -30,3 +30,6 @@
 
 - type: target
   name: ros-emergency_speakup
+
+- type: target-now
+  name: chrony
