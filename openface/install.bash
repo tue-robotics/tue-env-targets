@@ -9,7 +9,6 @@ fi
 if [ ! -d ~/openface ]
 then
     tue-install-git https://github.com/cmusatyalab/openface.git  ~/openface
-    tue-install-system-now python-numpy python-pandas python-scipy python-sklearn python-skimage
 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     # shellcheck disable=SC1090
