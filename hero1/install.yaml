@@ -3,3 +3,6 @@
 
 - type: target
   name: hero
+
+- type: target-now
+  name: chrony
