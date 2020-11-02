@@ -2,10 +2,6 @@
 
 _skip_in_ci && return 0
 
-tue-install-snap-now code
-
-tue-install-system-now default-jre
-
 # Install ros extension
 code --install-extension ms-iot.vscode-ros
 
@@ -16,7 +12,6 @@ if [[ ! -f "${workspacefile}" ]]
 then
     tue-install-cp workspace_settings.json "${workspacefile}"
 else
-    tue-install-system-now jq
     jq -s add "${workspacefile}" "${TUE_INSTALL_CURRENT_TARGET_DIR}/workspace_settings.json" > "${workspacefile}.new"
     $? && mv "${workspacefile}.new" "${workspacefile}"  # Doesn't work at once above
 fi
