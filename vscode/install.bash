@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-_skip_in_ci && return 0
-
 # Install ros extension
 code --install-extension ms-iot.vscode-ros
 
