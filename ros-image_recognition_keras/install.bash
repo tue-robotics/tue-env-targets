@@ -1,5 +1,4 @@
 #! /usr/bin/env bash
-_skip_in_ci && return 0
 
 url="https://github.com/yu4u/age-gender-estimation/releases/download/v0.5/weights.28-3.73.hdf5"
 old_dest=~/src/keras_models/age_gender
