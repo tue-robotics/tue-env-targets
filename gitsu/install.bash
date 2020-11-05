@@ -1,7 +1,6 @@
 #! /usr/bin/env bash
 
 # gitsu is installed as a ruby gem
-hash gem 2> /dev/null || tue-install-system-now ruby
 hash git-su 2> /dev/null || sudo gem install gitsu
 
 gitsu_file=~/.gitsu

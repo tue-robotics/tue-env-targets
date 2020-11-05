@@ -1,2 +1,8 @@
 - type: target
   name: ros-setup
+
+- type: system
+  name: python-catkin-tools
+
+- type: pip
+  name: psutil

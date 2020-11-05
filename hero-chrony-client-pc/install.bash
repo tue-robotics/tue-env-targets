@@ -1,8 +1,6 @@
 #! /usr/bin/env bash
 set -e
 
-tue-install-system-now chrony
-
 # Check config file
 if ! cmp /etc/chrony/chrony.conf "$(dirname "${BASH_SOURCE[0]}")"/chrony.conf --quiet
 then
