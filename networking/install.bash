@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-_skip_in_ci && return 0
-
 # shellcheck disable=SC1091
 . /etc/os-release
 if [ "$UBUNTU_CODENAME" == "xenial" ]
