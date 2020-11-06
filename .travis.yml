@@ -15,7 +15,7 @@ install:
   - git submodule update --init --recursive
 
 before_script:
-  - pip install --user --upgrade yamllint
+  - pip install --upgrade yamllint
 
 script:
   - bash -c 'shopt -s globstar; shellcheck ./**/*.bash ./**/*.sh ./**/setup'
