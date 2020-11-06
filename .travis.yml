@@ -1,12 +1,6 @@
 os: linux
 dist: bionic
-language: shell
-addons:
-  apt:
-    packages:
-      - python3-pip
-      - python3-setuptools
-      - python3-wheel
+language: python
 git:
   submodules: false
 
@@ -21,7 +15,7 @@ install:
   - git submodule update --init --recursive
 
 before_script:
-  - pip3 install --user --upgrade yamllint
+  - pip install --user --upgrade yamllint
 
 script:
   - bash -c 'shopt -s globstar; shellcheck ./**/*.bash ./**/*.sh ./**/setup'
