@@ -3,6 +3,7 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-"$DIR"/get-releases | "$DIR"/process-releases
+# shellcheck disable=SC1090
+"$DIR"/get-releases | source "$DIR"/process-releases
 
 set +e

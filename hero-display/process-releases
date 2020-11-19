@@ -24,6 +24,8 @@ then
         ln -sf "$TUE_BIN/hero_display.d/hero-display.AppImage" "$TUE_BIN/hero_display"
         touch "$TUE_BIN/hero_display.d/$TAG"
     fi
+else
+    tue-install-debug "No matching release found"
 fi
 
 set +e
