@@ -27,6 +27,11 @@
 - type: target
   name: ros-telegram_ros
 
+
+# Suction control messages
+- type: target
+  name: ros-tmc_suction
+
 # Openpose
 - type: target
   name: ros-image_recognition_openpose
