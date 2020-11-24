@@ -1,6 +1,4 @@
 - type: target
-  name: tue-dev
-- type: target
   name: hero-dev
 
 # Handy shit
