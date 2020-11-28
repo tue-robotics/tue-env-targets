@@ -1,24 +1,24 @@
 #! /usr/bin/env bash
 
-if [ -z "$TUE_ROS_DISTRO" ]
+if [ -z "$IROHMS_ROS_DISTRO" ]
 then
-    echo "[tue ros setup] TUE_ROS_DISTRO was not set"
+    echo "[irohms ros setup] IROHMS_ROS_DISTRO was not set"
     return 1
 fi
 
 # shellcheck disable=SC1090
-if [ -f "$TUE_DEV_DIR"/devel/setup.bash ]
+if [ -f "$IROHMS_DEV_DIR"/devel/setup.bash ]
 then
-    source "$TUE_DEV_DIR"/devel/setup.bash
+    source "$IROHMS_DEV_DIR"/devel/setup.bash
 
-elif [ -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
+elif [ -f "$IROHMS_SYSTEM_DIR"/devel/setup.bash ]
 then
     echo -e "\033[33;5;1m[ros] dev workspace not found, sourcing system workspace\033[0m"
-    source "$TUE_SYSTEM_DIR"/devel/setup.bash
+    source "$IROHMS_SYSTEM_DIR"/devel/setup.bash
 
 else
     echo -e "\033[33;5;1m[ros] dev and system workspaces not found, sourcing /opt/ros\033[0m"
-    source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
+    source /opt/ros/"$IROHMS_ROS_DISTRO"/setup.bash
 fi
 
 
