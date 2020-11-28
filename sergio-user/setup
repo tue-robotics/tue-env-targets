@@ -52,7 +52,7 @@ alias sshsergio2='until ssh -qAo ConnectTimeout=1 amigo@sergio2.local; do echo w
 #
 #####################
 alias diag='rosrun robot_monitor robot_monitor'
-alias sergio-dashboard='tue-dashboard sergio1.local & sleep 1; disown; wmctrl -r ws://sergio1.local:9090 -b add,sticky'
+alias sergio-dashboard='irohms-dashboard sergio1.local & sleep 1; disown; wmctrl -r ws://sergio1.local:9090 -b add,sticky'
 
 alias sergio-show-fitter='rosrun rgbd multitool --rgbd /sergio/ed/viz/fitter'
 alias sergio-show-kinect='rosrun rgbd multitool --rgbd /sergio/top_kinect/rgbd'

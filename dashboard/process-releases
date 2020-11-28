@@ -24,7 +24,7 @@ then
         echo -e "dashboard:\t\tnew version $TAG found"
         mkdir -p "$TUE_BIN/dashboard"
         wget "$URL" -O- | tar -xzv --directory "$TUE_BIN/dashboard"
-        ln -sf "$TUE_BIN/dashboard/dashboard" "$TUE_BIN/tue-dashboard"
+        ln -sf "$TUE_BIN/dashboard/dashboard" "$TUE_BIN/irohms-dashboard"
         touch "$TUE_BIN/dashboard/$TAG"
     fi
 fi
@@ -41,7 +41,7 @@ then
         echo -e "dashboard-alpha:\tnew version $TAG found"
         mkdir -p "$TUE_BIN/dashboard-alpha"
         wget "$URL" -O- | tar -xzv --directory "$TUE_BIN/dashboard-alpha"
-        ln -sf "$TUE_BIN/dashboard-alpha/dashboard" "$TUE_BIN/tue-dashboard-alpha"
+        ln -sf "$TUE_BIN/dashboard-alpha/dashboard" "$TUE_BIN/irohms-dashboard-alpha"
         touch "$TUE_BIN/dashboard-alpha/$TAG"
     fi
 fi

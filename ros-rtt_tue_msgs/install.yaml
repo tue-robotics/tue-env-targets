@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/tue-robotics/rtt_tue_msgs.git
+    url: https://github.com/irohms-robotics/rtt_tue_msgs.git

@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/tue-robotics/qr_detector_zbar.git
+    url: https://github.com/irohms-robotics/qr_detector_zbar.git

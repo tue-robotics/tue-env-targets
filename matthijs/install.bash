@@ -6,7 +6,7 @@ for item in $git_config_items
 do
         option=${item%=*}
         value=${item#*=}
-        tue-install-debug "git config --global --replace-all $option $value"
+        irohms-install-debug "git config --global --replace-all $option $value"
         git config --global --replace-all "$option" "$value"
 done
 
@@ -18,17 +18,17 @@ fi
 
 # Shortcuts
 # PyCharm
-tue-install-cp shortcuts/pycharm-professional_pycharm-professional.desktop ~/.local/share/applications/pycharm-professional_pycharm-professional.desktop
+irohms-install-cp shortcuts/pycharm-professional_pycharm-professional.desktop ~/.local/share/applications/pycharm-professional_pycharm-professional.desktop
 # Terminator
-tue-install-cp shortcuts/terminator.desktop ~/.local/share/applications/terminator.desktop
+irohms-install-cp shortcuts/terminator.desktop ~/.local/share/applications/terminator.desktop
 
 # Qt Creator
 if [ -f ~/.local/share/applications/org.qt-project.qtcreator.desktop ] && ! grep -qi matthijs ~/.local/share/applications/org.qt-project.qtcreator.desktop
 then
     mv -f ~/.local/share/applications/org.qt-project.qtcreator.desktop ~/.local/share/applications/org.qt-project.qtcreator.desktop.bk
 fi
-tue-install-cp shortcuts/org.qt-project.qtcreator.desktop ~/.local/share/applications/org.qt-project.qtcreator.desktop
+irohms-install-cp shortcuts/org.qt-project.qtcreator.desktop ~/.local/share/applications/org.qt-project.qtcreator.desktop
 
 # WhatsApp
-tue-install-cp shortcuts/whatsapp-webapp.desktop ~/.local/share/applications/whatsapp-webapp.desktop
-tue-install-cp shortcuts/icons/whatsapp.svg /usr/share/icons/hicolor/scalable/apps/whatsapp.svg
+irohms-install-cp shortcuts/whatsapp-webapp.desktop ~/.local/share/applications/whatsapp-webapp.desktop
+irohms-install-cp shortcuts/icons/whatsapp.svg /usr/share/icons/hicolor/scalable/apps/whatsapp.svg

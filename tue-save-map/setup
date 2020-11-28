@@ -24,9 +24,9 @@ function _parse_yaml_map_server {
    }'
 }
 
-function tue-save-map {
+function irohms-save-map {
     if [ -z "$2" ]; then
-        echo "Usage: tue-save-map ROBOT_NAME MAP_NAME
+        echo "Usage: irohms-save-map ROBOT_NAME MAP_NAME
 
 The map will be stored in the package ed_object_models, in folder models/MAP_NAME/walls."
         return

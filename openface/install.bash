@@ -2,13 +2,13 @@
 
 if [ "$CI" == "true" ]
 then
-    tue-install-info "Not installing OpenFace in CI"
+    irohms-install-info "Not installing OpenFace in CI"
     return 0
 fi
 
 if [ ! -d ~/openface ]
 then
-    tue-install-git https://github.com/cmusatyalab/openface.git  ~/openface
+    irohms-install-git https://github.com/cmusatyalab/openface.git  ~/openface
 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     # shellcheck disable=SC1090

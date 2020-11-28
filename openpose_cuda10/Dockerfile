@@ -1,4 +1,4 @@
-FROM tuerobotics/tue-env-cuda:master
+FROM tuerobotics/irohms-env-cuda:master
 
 # Build time arguments and their default values
 ARG CI=false
@@ -15,13 +15,13 @@ RUN sudo apt-get update -qq && \
     export BRANCH=$BRANCH && \
     export PULL_REQUEST=$PULL_REQUEST && \
     export COMMIT=$COMMIT && \
-    # Make tue-env available to the intermediate image
+    # Make irohms-env available to the intermediate image
     # This step needs to be executed at every RUN step
     source ~/.bashrc && \
     # Install ros-image_recognition_openpose target
-    tue-get install ros-image_recognition_openpose --branch="$BRANCH" && \
+    irohms-get install ros-image_recognition_openpose --branch="$BRANCH" && \
     # Make workspace
-    tue-make && \
+    irohms-make && \
     source ~/.bashrc && \
     # Install openpose
-    tue-get install openpose_cuda10
+    irohms-get install openpose_cuda10

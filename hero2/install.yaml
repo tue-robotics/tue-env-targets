@@ -17,11 +17,11 @@
 
 # Middleware
 - type: target
-  name: tue-middleware
+  name: irohms-middleware
 
 # RoboCup
 - type: target
-  name: tue-robocup-at-home
+  name: irohms-robocup-at-home
 
 # Telegram
 - type: target

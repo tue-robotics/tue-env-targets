@@ -25,7 +25,7 @@ then
         touch "$TUE_BIN/hero_dashboard.d/$TAG"
     fi
 else
-    tue-install-debug "No matching release found"
+    irohms-install-debug "No matching release found"
 fi
 
 set +e

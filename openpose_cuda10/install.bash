@@ -10,7 +10,7 @@ then
     echo_and_run sudo apt purge opencv* libopencv* # Explicitly ask for confirmation
 fi
 
-tue-install-system-now ros-"$TUE_ROS_DISTRO"-opencv3 libopenblas-dev libgoogle-glog-dev \
+irohms-install-system-now ros-"$TUE_ROS_DISTRO"-opencv3 libopenblas-dev libgoogle-glog-dev \
     protobuf-compiler libatlas-base-dev
 
 symlink /opt/ros/"$TUE_ROS_DISTRO"/lib/x86_64-linux-gnu/libopencv_core3.so /usr/lib/libopencv_core.so
@@ -46,8 +46,8 @@ then
     then
         mkdir -p ~/openpose/build
         cd ~/openpose/build
-        cmake -DBUILD_PYTHON=ON .. || tue-install-error "CMake configuration error"
-        make -j "$(nproc)" || tue-install-error "Build error"
+        cmake -DBUILD_PYTHON=ON .. || irohms-install-error "CMake configuration error"
+        make -j "$(nproc)" || irohms-install-error "Build error"
         roscd image_recognition_openpose
         ln -s ~/openpose .
     fi

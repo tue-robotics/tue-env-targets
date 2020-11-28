@@ -22,7 +22,7 @@ def login():
 user, password = login()
 
 g = Github(user, password)
-org = g.get_organization('tue-robotics')
+org = g.get_organization('irohms-robotics')
 
 print("I'm going to create a repository named '%s' in '%s'" % (repo_name, org.name))
 org.create_repo(name=repo_name)

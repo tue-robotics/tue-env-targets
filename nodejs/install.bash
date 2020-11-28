@@ -8,4 +8,4 @@ then
     wget -qO- https://deb.nodesource.com/setup_4.x | sudo bash -
 fi
 
-tue-install-system-now nodejs
+irohms-install-system-now nodejs

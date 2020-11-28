@@ -8,7 +8,7 @@ workspacefile="${TUE_SYSTEM_DIR}/.vscode/settings.json"
 mkdir -p "${TUE_SYSTEM_DIR}/.vscode"
 if [[ ! -f "${workspacefile}" ]]
 then
-    tue-install-cp workspace_settings.json "${workspacefile}"
+    irohms-install-cp workspace_settings.json "${workspacefile}"
 else
     jq -s add "${workspacefile}" "${TUE_INSTALL_CURRENT_TARGET_DIR}/workspace_settings.json" > "${workspacefile}.new"
     $? && mv "${workspacefile}.new" "${workspacefile}"  # Doesn't work at once above

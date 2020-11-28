@@ -4,7 +4,7 @@
 
 # Middleware
 - type: target
-  name: tue-middleware
+  name: irohms-middleware
 - type: target
   name: ros-tue_mobile_ui
 
@@ -23,7 +23,7 @@
 # -------------------- ROBOCUP --------------------
 
 - type: target
-  name: tue-robocup-at-home
+  name: irohms-robocup-at-home
 
 # -------------------- ROBOTS ---------------------
 

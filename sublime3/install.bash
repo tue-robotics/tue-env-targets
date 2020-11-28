@@ -27,4 +27,4 @@ else
     echo "Error: unknown distribution: $DISTRIB_CODENAME"
 fi
 
-tue-install-system sublime-text-installer
+irohms-install-system sublime-text-installer

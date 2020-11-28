@@ -1,5 +1,5 @@
 - type: target
-  name: tue-common
+  name: irohms-common
 
 - type: target
   name: robot-user

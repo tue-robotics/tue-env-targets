@@ -17,6 +17,6 @@ fi
 
 if [ ! -f $dest/"$(basename "$url")" ]
 then
-    tue-install-debug "wget $url -P $dest"
+    irohms-install-debug "wget $url -P $dest"
     wget $url -P $dest
 fi

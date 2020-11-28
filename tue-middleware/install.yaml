@@ -1,6 +1,6 @@
 # Common
 - type: target
-  name: tue-common
+  name: irohms-common
 
 - type: target
   name: ros-diagnostic_aggregator

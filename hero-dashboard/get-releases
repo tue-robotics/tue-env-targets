@@ -5,7 +5,7 @@ import re
 import sys
 import urllib.request
 
-url = "https://api.github.com/repos/tue-robotics/hero-dashboard/releases"
+url = "https://api.github.com/repos/irohms-robotics/hero-dashboard/releases"
 rs = json.loads(urllib.request.urlopen(url).read())
 
 for r in rs:

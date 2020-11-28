@@ -9,7 +9,7 @@ targets="$TUE_ENV_TARGETS_DIR/*"
 for target in $targets
 do
     target="$(basename "$target")"
-    if [[ $target == "tue-documentation-all" ]] || [[ $target == "tue-documentation" ]]
+    if [[ $target == "irohms-documentation-all" ]] || [[ $target == "irohms-documentation" ]]
     then
         continue
     fi
@@ -31,11 +31,11 @@ do
     then
         for cmd in $cmds
         do
-            tue-install-debug "Original command: $cmd"
+            irohms-install-debug "Original command: $cmd"
             read -r -a cmd_split <<< "${cmd//^/ }"
 
             local install_cmd=${cmd_split[0]}
-            if [ "$install_cmd" != "tue-install-ros" ]
+            if [ "$install_cmd" != "irohms-install-ros" ]
             then
                 TUE_INSTALL_CURRENT_TARGET=$parent_target
                 continue
@@ -49,7 +49,7 @@ do
             fi
 
             local src=${cmd_split[2]}
-            if [[ "$src" != *"github.com/tue-robotics"* ]]
+            if [[ "$src" != *"github.com/irohms-robotics"* ]]
             then
                 TUE_INSTALL_CURRENT_TARGET=$parent_target
                 continue
@@ -60,7 +60,7 @@ do
 
         done
     else
-        tue-install-error "Invalid install.yaml: $cmds"
+        irohms-install-error "Invalid install.yaml: $cmds"
     fi
     TUE_INSTALL_CURRENT_TARGET=$parent_target
 done

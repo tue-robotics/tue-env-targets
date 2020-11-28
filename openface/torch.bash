@@ -3,14 +3,14 @@
 # shellcheck disable=SC2164
 pushd . > /dev/null
 
-tue-install-info "Installing Torch"
+irohms-install-info "Installing Torch"
 if [ -n "$TUE_CUDA" ]
 then
-    tue-install-debug "Installing torch with CUDA capabilities"
+    irohms-install-debug "Installing torch with CUDA capabilities"
     export TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__"
 fi
 
-tue-install-git https://github.com/torch/distro.git ~/torch
+irohms-install-git https://github.com/torch/distro.git ~/torch
 # shellcheck disable=SC2164
 cd ~/torch
 bash install-deps
@@ -36,7 +36,7 @@ luarocks install tds #(only for training a DNN)
 luarocks install torchx #(only for training a DNN)
 luarocks install optnet #(optional, only for training a DNN)
 
-tue-install-info "torch.bash finished"
+irohms-install-info "torch.bash finished"
 
 # shellcheck disable=SC2164
 popd > /dev/null

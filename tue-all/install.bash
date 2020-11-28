@@ -4,8 +4,8 @@ targets="$TUE_ENV_TARGETS_DIR/*"
 for target in $targets
 do
     target="$(basename "$target")"
-    if [[ $target != "tue-all" ]]
+    if [[ $target != "irohms-all" ]]
     then
-        tue-install-target "$target"
+        irohms-install-target "$target"
     fi
 done
