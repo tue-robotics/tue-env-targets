@@ -55,7 +55,7 @@ Make sure the hosts can be found ping from amigo1 to jetson and from jetson to a
 optionally: install service:
 
 ```
-sudo install $TUE_ENV_TARGETS_DIR/ros-image_recognition_openpose/image_recognition_openpose.service /etc/systemd/system/
+sudo install $IROHMS_ENV_TARGETS_DIR/ros-image_recognition_openpose/image_recognition_openpose.service /etc/systemd/system/
 sudo systemctl enable image_recognition_openpose
 sudo systemctl start image_recognition_openpose
 ```

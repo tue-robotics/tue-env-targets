@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/tue_manipulation_msgs.git
+    url: https://github.com/irohms-robotics/irohms_manipulation_msgs.git

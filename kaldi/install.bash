@@ -89,7 +89,7 @@ then
     fi
 
     irohms-install-debug "Building kaldi_speech"
-    ./install.bash --tue || irohms-install-error "Kaldi build error."
+    ./install.bash --irohms || irohms-install-error "Kaldi build error."
 else
     irohms-install-debug "kaldi_speech not updated, so not rebuilding"
 fi

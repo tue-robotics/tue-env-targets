@@ -4,7 +4,7 @@
 pushd . > /dev/null
 
 irohms-install-info "Installing Torch"
-if [ -n "$TUE_CUDA" ]
+if [ -n "$IROHMS_CUDA" ]
 then
     irohms-install-debug "Installing torch with CUDA capabilities"
     export TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__"
@@ -26,7 +26,7 @@ luarocks install dpnn
 luarocks install nn
 luarocks install optim
 luarocks install csvigo
-if [ -n "$TUE_CUDA" ]
+if [ -n "$IROHMS_CUDA" ]
 then
     luarocks install cutorch #(only with CUDA)
     luarocks install cunn #(only with CUDA)

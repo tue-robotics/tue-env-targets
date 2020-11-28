@@ -1,4 +1,4 @@
-FROM tuerobotics/irohms-env-cuda:master
+FROM irohmsrobotics/irohms-env-cuda:master
 
 # Build time arguments and their default values
 ARG CI=false

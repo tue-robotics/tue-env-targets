@@ -1,9 +1,9 @@
 [Desktop Entry]
 TryExec=gnome-terminal
 Name=HERO Dashboard
-Icon=/usr/share/pixmaps/tue/hsr.png
+Icon=/usr/share/pixmaps/irohms/hsr.png
 Name[en_US]=HERO Dashboard
-Icon[en_US]=/usr/share/pixmaps/tue/hsr.png
+Icon[en_US]=/usr/share/pixmaps/irohms/hsr.png
 Type=Application
 X-GNOME-DocPath=gnome-terminal/index.html
 X-GNOME-Bugzilla-Bugzilla=GNOME
@@ -16,6 +16,6 @@ Keywords=Run;
 Actions=New
 X-Ubuntu-Gettext-Domain=gnome-terminal
 Terminal=false
-Exec=bash -c "shopt -s expand_aliases && source ~/.tue/setup.bash && hero-dashboard"
+Exec=bash -c "shopt -s expand_aliases && source ~/.irohms/setup.bash && hero-dashboard"
 StartupWMClass=hero-dashboard
 

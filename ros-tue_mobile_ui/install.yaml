@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/tue_mobile_ui.git
+    url: https://github.com/irohms-robotics/irohms_mobile_ui.git

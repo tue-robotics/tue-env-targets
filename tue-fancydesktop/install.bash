@@ -11,7 +11,7 @@ then
 fi
 
 # copying shortcuts to desktop
-irohms-install-cp icons/*.png /usr/share/pixmaps/tue/
+irohms-install-cp icons/*.png /usr/share/pixmaps/irohms/
 
 # copying terminator config file
 [ -f ~/.config/terminator/config ] && cp ~/.config/terminator/config ~/.config/terminator/configbackup

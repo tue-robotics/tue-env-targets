@@ -8,7 +8,7 @@
 #- type: target
 #  name: irohms-middleware
 #- type: target
-#  name: ros-tue_mobile_ui
+#  name: ros-irohms_mobile_ui
 
 # Visualization
 - type: target

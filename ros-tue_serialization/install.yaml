@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/tue_serialization.git
+    url: https://github.com/irohms-robotics/irohms_serialization.git

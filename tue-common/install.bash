@@ -1,3 +1,3 @@
 #! /usr/bin/env bash
 
-irohms-install-cp rsettings_file "$TUE_DIR"/.rsettings
+irohms-install-cp rsettings_file "$IROHMS_DIR"/.rsettings

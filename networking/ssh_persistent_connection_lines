@@ -1,7 +1,7 @@
-# BEGIN TUE PERSISTENT CONNECTION
+# BEGIN IROHMS PERSISTENT CONNECTION
 Host *
   # Enable persistent connection multiplexing
   ControlMaster auto
   ControlPath ~/.ssh/controlmasters/-%r@%h:%p
   ControlPersist 600
-# END TUE PERSISTENT CONNECTION
+# END IROHMS PERSISTENT CONNECTION
