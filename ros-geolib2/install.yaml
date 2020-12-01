@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/geolib2.git
+    url: git@github.com:irohms-robotics/geolib2.git

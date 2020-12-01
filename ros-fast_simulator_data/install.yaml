@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/fast_simulator_data.git
+    url: git@github.com:irohms-robotics/fast_simulator_data.git

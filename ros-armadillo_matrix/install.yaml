@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/wire.git
+    url: git@github.com:irohms-robotics/wire.git
     sub-dir: armadillo_matrix

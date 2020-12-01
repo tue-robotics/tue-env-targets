@@ -1,6 +1,6 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/action_server.git
+    url: git@github.com:irohms-robotics/action_server.git
     sub-dir: action_server_msgs
 

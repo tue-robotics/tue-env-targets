@@ -1,6 +1,6 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/navigation.git
+    url: git@github.com:irohms-robotics/navigation.git
     sub-dir: robot_pose_ekf
     version: melodic-devel

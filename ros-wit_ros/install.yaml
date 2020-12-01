@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/LoyVanBeek/wit_ros.git
+    url: git@github.com:LoyVanBeek/wit_ros.git

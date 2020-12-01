@@ -1,7 +1,7 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/speech_recognition.git
+    url: git@github.com:irohms-robotics/speech_recognition.git
 
 - type: system-now
   name: curl

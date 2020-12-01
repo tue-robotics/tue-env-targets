@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/DLu/navigation_layers.git
+    url: git@github.com:DLu/navigation_layers.git
     sub-dir: range_sensor_layer

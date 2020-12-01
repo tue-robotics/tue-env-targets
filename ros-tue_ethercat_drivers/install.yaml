@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/irohms_ethercat_drivers.git
+    url: git@github.com:irohms-robotics/irohms_ethercat_drivers.git

@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/irohms-robotics/hero_bridge.git
+    url: git@github.com:irohms-robotics/hero_bridge.git

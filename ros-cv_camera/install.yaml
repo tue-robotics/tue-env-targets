@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/OTL/cv_camera.git
+    url: git@github.com:OTL/cv_camera.git

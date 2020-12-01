@@ -3,5 +3,5 @@
     type: system
     name: ocl
 #    type: git
-#    url: https://github.com/orocos-toolchain/ocl.git
+#    url: git@github.com:orocos-toolchain/ocl.git
 #    version: toolchain-2.9
