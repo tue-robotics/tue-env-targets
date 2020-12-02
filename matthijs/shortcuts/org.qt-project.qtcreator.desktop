@@ -3,7 +3,7 @@
 Type=Application
 Exec=bash -c "shopt -s expand_aliases && source ~/.tue/setup.bash && qtcreator %F"
 Name=Qt Creator
-GenericName=C++ IDE for developing Qt applications
+GenericName=The IDE of choice for Qt development.
 Icon=QtProject-qtcreator
 StartupWMClass=qtcreator
 Terminal=false
