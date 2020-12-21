@@ -1,6 +1,4 @@
 - type: ros
   source:
-    type: git
-    url: git@github.com:irohms-robotics/navigation.git
-    sub-dir: amcl
-    version: melodic-devel
+    type: system
+    name: amcl

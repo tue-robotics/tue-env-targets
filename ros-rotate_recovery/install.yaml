@@ -1,6 +1,4 @@
 - type: ros
   source:
-    type: git
-    url: git@github.com:irohms-robotics/navigation.git
-    sub-dir: rotate_recovery
-    version: melodic-devel
+    type: system
+    name: rotate-recovery

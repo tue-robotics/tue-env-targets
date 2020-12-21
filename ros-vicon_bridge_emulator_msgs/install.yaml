@@ -1,0 +1,5 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:KavrakiLab/vicon_bridge_emulator.git
+      sub-dir: vicon_bridge_emulator_msgs

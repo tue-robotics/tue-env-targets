@@ -1,6 +1,4 @@
 - type: ros
   source:
-    type: git
-    url: git@github.com:irohms-robotics/navigation.git
-    sub-dir: costmap_2d
-    version: melodic-devel
+    type: system
+    name: costmap-2d

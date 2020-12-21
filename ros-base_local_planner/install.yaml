@@ -1,6 +1,4 @@
 - type: ros
   source:
-    type: git
-    url: git@github.com:irohms-robotics/navigation.git
-    sub-dir: base_local_planner
-    version: melodic-devel
+    type: system
+    name: base-local-planner
