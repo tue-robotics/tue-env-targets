@@ -1,6 +1,4 @@
 - type: ros
   source:
-      type: git
-      url: git@github.com:KavrakiLab/moveit.git
-      version: melodic-devel-ompl-source
-      sub-dir: moveit_ros/perception
+    type: system
+    name: moveit-ros-perception

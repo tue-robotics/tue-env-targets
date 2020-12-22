@@ -1,6 +1,4 @@
 - type: ros
   source:
-      type: git
-      url: git@github.com:KavrakiLab/moveit.git
-      version: melodic-devel-ompl-source
-      sub-dir: moveit_plugins/moveit_fake_controller_manager
+    type: system
+    name: moveit-fake-controller-manager

@@ -1,5 +1,4 @@
 - type: ros
   source:
-    type: git
-    url: git@github.com:orocos/orocos_kinematics_dynamics.git
-    sub-dir: orocos_kdl
+      type: system
+      name: orocos-kdl
