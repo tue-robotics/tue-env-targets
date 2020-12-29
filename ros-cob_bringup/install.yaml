@@ -1,0 +1,6 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:ipa320/cob_robots.git
+      sub-dir: cob_bringup
+      version: kinetic_dev

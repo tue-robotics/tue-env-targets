@@ -1,0 +1,6 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:ipa320/cob_simulation.git
+      sub-dir: cob_bringup_sim
+      version: kinetic_dev
