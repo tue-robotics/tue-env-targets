@@ -17,8 +17,6 @@ then
 fi
 
 # Shortcuts
-# PyCharm
-tue-install-cp shortcuts/pycharm-professional_pycharm-professional.desktop ~/.local/share/applications/pycharm-professional_pycharm-professional.desktop
 # Terminator
 tue-install-cp shortcuts/terminator.desktop ~/.local/share/applications/terminator.desktop
 
