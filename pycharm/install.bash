@@ -8,3 +8,6 @@ then
 else
     tue-install-debug "Pycharm was not installed by apt"
 fi
+
+# Shortcut
+tue-install-cp pycharm-community_pycharm-community.desktop ~/.local/share/applications/pycharm-community_pycharm-community.desktop
