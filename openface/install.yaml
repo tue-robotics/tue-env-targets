@@ -12,3 +12,6 @@
 
 - type: target-now
   name: python-sklearn
+
+- type: target-now
+  name: python-dlib
