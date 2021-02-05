@@ -1,0 +1,5 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:juandhv/irohms_robots_mp_tests.git
+      sub-dir: tests_cob4/test_cob4_mp_desktop_bringup
