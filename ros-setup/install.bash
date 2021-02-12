@@ -7,7 +7,7 @@ then
 
     sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
-    sudo apt-get update -qq
+    tue-install-apt-get-update
     tue-install-debug "Added ROS sources to apt-get successfully"
 else
     tue-install-debug "ROS sources already added to apt-get"

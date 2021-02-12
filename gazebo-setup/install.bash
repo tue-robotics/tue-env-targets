@@ -7,7 +7,7 @@ then
 
     wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
-    sudo apt-get update -qq
+    tue-install-apt-get-update
     tue-install-debug "Added Gazebo sources to apt-get successfully"
 else
     tue-install-debug "Gazebo sources already added to apt-get"
