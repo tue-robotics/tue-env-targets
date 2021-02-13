@@ -2,5 +2,3 @@
   source:
       type: git
       url: git@github.com:srl-freiburg/pedsim_ros.git
-      sub-dir: pedsim_msgs
-
