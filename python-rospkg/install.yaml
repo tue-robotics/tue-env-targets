@@ -1,2 +1,5 @@
+- type: target
+  name: ros-setup
+
 - type: system
   name: python-rospkg
