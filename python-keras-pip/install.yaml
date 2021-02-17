@@ -1,2 +1,7 @@
 - type: pip
-  name: keras<2.4
+  default:
+    name: keras
+  bionic:
+    name: keras<2.4
+  xenial:
+    name: keras<2.4
