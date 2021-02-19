@@ -6,3 +6,6 @@
 
 - type: pip
   name: psutil
+
+- type: target
+  name: python-nose
