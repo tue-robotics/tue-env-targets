@@ -39,4 +39,12 @@
     name: python-sklearn
 
 - type: target-now
+  default:
+    name: python3-opencv
+  bionic:
+    name: python-opencv
+  xenial:
+    name: python-opencv
+
+- type: target-now
   name: python-dlib
