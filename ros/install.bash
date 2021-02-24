@@ -15,7 +15,7 @@ then
     sudo rosdep init || true # make sure it always succeeds, even if rosdep init was already called
 fi
 
-rosdep_update_file="/tmp/rosdep_update_${USER}"
+rosdep_update_file="/tmp/tue_rosdep_update_${USER}"
 if [ ! -f "$rosdep_update_file" ]
 then
     tue-install-debug "Updating rosdep"
