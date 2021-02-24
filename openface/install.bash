@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 pv=3
-if [ $TUE_ROS_DISTRO == melodic ] || [ $TUE_ROS_DISTRO == xenial ]
+if [ "$TUE_ROS_DISTRO" == "melodic" ] || [ "$TUE_ROS_DISTRO" == "xenial" ]
 then
     pv=2
 fi
