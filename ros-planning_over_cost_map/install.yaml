@@ -1,0 +1,4 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:juandhv/planning_over_cost_map.git

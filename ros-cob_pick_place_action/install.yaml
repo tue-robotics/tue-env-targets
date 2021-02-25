@@ -1,0 +1,6 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:ipa320/cob_manipulation.git
+      sub-dir: cob_pick_place_action
+      version: kinetic_dev
