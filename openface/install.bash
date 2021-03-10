@@ -6,18 +6,16 @@ then
     pv=2
 fi
 
-if [ ! -d "${HOME}"/openface ]
+if [ ! -d "${HOME}"/src/openface ]
 then
-    tue-install-git https://github.com/cmusatyalab/openface.git  ~/openface
+    tue-install-git https://github.com/cmusatyalab/openface.git  ~/src/openface
 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-    # shellcheck disable=SC1090
-    # source "$DIR"/dlib.bash
     # shellcheck disable=SC1090
     source "$DIR"/torch.bash
 
     # shellcheck disable=SC2164
-    cd "${HOME}"/openface
+    cd "${HOME}"/src/openface
     python${pv} setup.py install --user
 
     models/get-models.sh
