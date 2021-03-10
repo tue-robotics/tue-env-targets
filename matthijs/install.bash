@@ -16,6 +16,31 @@ then
     gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'
 fi
 
+# Styling
+themes_path=~/src/vimix-gtk-themes
+tue-install-git https://github.com/vinceliuice/vimix-gtk-themes.git $themes_path
+themes_commit_hash=$(git -C "$themes_path" rev-list HEAD -n 1)
+if [ ! -f $themes_path/last_install ] || [ "$(cat "$themes_path"/last_install)" != "$themes_commit_hash" ]
+then
+    tue-install-debug "Installing vimix-gtk-themes"
+    $themes_path/install.sh -c standard -t ruby -s laptop -f -o
+    echo "$themes_commit_hash" > $themes_path/last_install
+else
+    tue-install-debug "vimix-gtk-themes not updated"
+fi
+
+icon_path=~/src/vimix-icon-theme
+tue-install-git https://github.com/vinceliuice/vimix-icon-theme.git $icon_path
+icon_commit_hash=$(git -C "$icon_path" rev-list HEAD -n 1)
+if [ ! -f $icon_path/last_install ] || [ "$(cat "$icon_path"/last_install)" != "$icon_commit_hash" ]
+then
+    tue-install-debug "Installing vimix-icon-theme"
+    $icon_path/install.sh
+    echo "$icon_commit_hash" > $icon_path/last_install
+else
+    tue-install-debug "vimix-icon-theme not updated"
+fi
+
 # Shortcuts
 # Terminator
 tue-install-cp shortcuts/terminator.desktop ~/.local/share/applications/terminator.desktop
