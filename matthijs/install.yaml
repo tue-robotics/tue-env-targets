@@ -31,6 +31,8 @@
   name: yamllint
 
 - type: target
+  name: spotify
+- type: target
   name: telegram-desktop
 
 # Styling
