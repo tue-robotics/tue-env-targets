@@ -15,7 +15,7 @@ tue-install-git https://github.com/tue-robotics/torch-distro.git ~/src/torch
 cd ~/src/torch
 tue-install-debug "Installing Torch dependencies"
 bash install-deps
-tue-intall-debug "Installing Torch"
+tue-install-debug "Installing Torch"
 ./install.sh
 
 # shellcheck disable=SC1090
