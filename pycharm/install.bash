@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-_skip_in_ci && return 0
-
 pycharm="pycharm-community"
 if dpkg-query -W -f='${Status}' $pycharm 2>/dev/null | grep -q "ok installed"
 then
@@ -10,3 +8,6 @@ then
 else
     tue-install-debug "Pycharm was not installed by apt"
 fi
+
+# Shortcut
+tue-install-cp pycharm-community_pycharm-community.desktop ~/.local/share/applications/pycharm-community_pycharm-community.desktop

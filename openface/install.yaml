@@ -1,0 +1,17 @@
+- type: target-now
+  name: python-numpy
+
+- type: target-now
+  name: python-pandas
+
+- type: target-now
+  name: python-scipy
+
+- type: target-now
+  name: python-skimage
+
+- type: target-now
+  name: python-sklearn
+
+- type: target-now
+  name: python-dlib

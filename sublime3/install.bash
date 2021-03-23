@@ -1,30 +1,13 @@
 #! /usr/bin/env bash
 
-# shellcheck disable=SC1091
-source /etc/lsb-release
-
-if [[ $DISTRIB_CODENAME = trusty ]]
+if [ ! -f /etc/apt/sources.list.d/sublime-text.list ]
 then
+    tue-install-debug "Adding Sublime sources to apt-get"
+    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+    sudo sh -c 'echo "deb https://download.sublimetext.com/ apt/stable/" >> /etc/apt/sources.list.d/sublime-text.list'
 
-    if [[ ! -f /etc/apt/sources.list.d/webupd8team-sublime-text-3-$DISTRIB_CODENAME.list ]]
-    then
-        sudo add-apt-repository ppa:webupd8team/sublime-text-3
-        sudo apt-get update
-        "$(dirname "${BASH_SOURCE[0]}")"/sublime-package-control.py
-    fi
-
-elif [[ $DISTRIB_CODENAME = xenial ]]
-then
-
-    if [[ ! -f /etc/apt/sources.list.d/webupd8team-ubuntu-sublime-text-3-$DISTRIB_CODENAME.list ]]
-    then
-        sudo add-apt-repository ppa:webupd8team/sublime-text-3
-        sudo apt-get update
-        "$(dirname "${BASH_SOURCE[0]}")"/sublime-package-control.py
-    fi
-
-else
-    echo "Error: unknown distribution: $DISTRIB_CODENAME"
+    tue-install-apt-get-update
+    tue-install-debug "Added Sublime sources to apt-get successfully"
 fi
 
-tue-install-system sublime-text-installer
+tue-install-system sublime-text

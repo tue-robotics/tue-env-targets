@@ -1,8 +1,5 @@
 #! /usr/bin/env bash
 
-# Make sure curl is installed
-tue-install-system-now curl
-
 url=$(curl -s https://api.github.com/repos/tue-robotics/speech_recognition/releases/latest | \
     grep "browser_download_url.*model.tar.gz" | cut -d '"' -f 4)
 

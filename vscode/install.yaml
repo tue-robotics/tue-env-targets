@@ -1,2 +1,11 @@
 - type: target
   name: ros
+
+- type: snap-now
+  name: code
+
+- type: system-now
+  name: default-jre
+
+- type: system-now
+  name: jq

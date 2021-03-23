@@ -8,16 +8,14 @@ then
 fi
 
 # Install basic ROS packages.
-tue-install-system-now ros-"$TUE_ROS_DISTRO"-ros build-essential # build-essential needed right now
-
-hash rosdep 2> /dev/null || tue-install-system-now python-rosdep
+tue-install-system-now ros-"$TUE_ROS_DISTRO"-ros
 
 if [ ! -d /etc/ros/rosdep ]
 then
     sudo rosdep init || true # make sure it always succeeds, even if rosdep init was already called
 fi
 
-rosdep_update_file="/tmp/rosdep_update_${USER}"
+rosdep_update_file="/tmp/tue_rosdep_update_${USER}"
 if [ ! -f "$rosdep_update_file" ]
 then
     tue-install-debug "Updating rosdep"

@@ -36,6 +36,19 @@ luarocks install tds #(only for training a DNN)
 luarocks install torchx #(only for training a DNN)
 luarocks install optnet #(optional, only for training a DNN)
 
+#From http://serverfault.com/questions/201709/how-to-set-ld-library-path-in-ubuntu
+#To define this variable, simply use (on the shell prompt):
+export LD_LIBRARY_PATH=/usr/lib/openblas-base/${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+#To make it permanent, you can edit the ldconfig files. First, create a new file such as:
+sudo touch /etc/ld.so.conf.d/libopenblas-base.conf
+
+#Second, add the path in the created file
+sudo sh -c 'echo "/usr/lib/openblas-base/" > /etc/ld.so.conf.d/libopenblas-base.conf'
+
+#Finally, run ldconfig to update the cache.
+sudo ldconfig
+
 tue-install-info "torch.bash finished"
 
 # shellcheck disable=SC2164

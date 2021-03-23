@@ -1,6 +1,6 @@
 - type: system
   name: libnss-mdns # Allows for searching .local dns names
-- type: system
+- type: system-now
   name: avahi-daemon # Allows for exposing .local dns name
 - type: system
   name: avahi-dnsconfd # Listens on the network for announced DNS servers and passes them to resolvconf

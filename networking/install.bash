@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-_skip_in_ci && return 0
-
 # shellcheck disable=SC1091
 . /etc/os-release
 if [ "$UBUNTU_CODENAME" == "xenial" ]
@@ -13,12 +11,6 @@ then
 fi
 
 # Prevent resolving to ipv6 addresses. We're not ready for that yet
-if [ ! -f /etc/avahi/avahi-daemon.conf ]
-then
-    tue-install-system-now avahi-daemon
-fi
-
-# avahi-deamon
 if grep -q 'use-ipv6=yes' /etc/avahi/avahi-daemon.conf
 then
     echo "Disabling ipv6 in /etc/avahi/avahi-daemon.conf"

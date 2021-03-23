@@ -31,7 +31,7 @@ function tue-save-map {
 The map will be stored in the package ed_object_models, in folder models/MAP_NAME/walls."
         return
     fi
-    
+
     robot_name=$1
     map_name=$2
 
@@ -65,7 +65,7 @@ The map will be stored in the package ed_object_models, in folder models/MAP_NAM
     # create main model.yaml
     cat > "$MODEL_DIR"/model.yaml <<EOL
 composition:
-- type: "$1/walls"
+- type: "$2/walls"
   id: "walls"
   pose:
       x: 0
