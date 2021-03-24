@@ -14,9 +14,9 @@ tue-install-git https://github.com/tue-robotics/torch-distro.git ~/src/torch
 # shellcheck disable=SC2164
 cd ~/src/torch
 tue-install-debug "Installing Torch dependencies"
-bash install-deps
+bash install-deps || tue-install-error "Error during install of dependencies of torch, check output above"
 tue-install-debug "Installing Torch"
-./install.sh
+./install.sh || tue-install-error "Error during install of torch, check output above"
 
 # shellcheck disable=SC1090
 source ~/src/torch/install/bin/torch-activate
