@@ -17,8 +17,10 @@ if [[ ! -f "${workspacefile}" ]]
 then
     tue-install-cp workspace_settings.json "${workspacefile}"
 else
-    jq -s add "${workspacefile}" "${TUE_INSTALL_CURRENT_TARGET_DIR}/workspace_settings.json" > "${workspacefile}.new"
-    [ ! $? -eq 0 ] && mv "${workspacefile}.new" "${workspacefile}"  # Doesn't work at once above
+    if ! jq -s add "${workspacefile}" "${TUE_INSTALL_CURRENT_TARGET_DIR}/workspace_settings.json" > "${workspacefile}.new"
+    then
+        mv "${workspacefile}.new" "${workspacefile}"  # Doesn't work at once above
+    fi
 fi
 
 # Install and configure catkin tools extension
