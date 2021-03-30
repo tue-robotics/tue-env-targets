@@ -3,3 +3,4 @@
     type: git
     url: https://github.com/tue-robotics/tue_robocup.git
     sub-dir: sergio_skills
+    version: feature/separate-robot-skills
