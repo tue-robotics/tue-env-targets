@@ -1,6 +1,24 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/navigation.git
-    sub-dir: global_planner
-    version: melodic-devel
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: global_planner
+  kinetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: global_planner
+      version: kinetic-devel
+  melodic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: global_planner
+      version: melodic-devel
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: global_planner
+      version: noetic-devel

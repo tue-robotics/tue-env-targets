@@ -1,6 +1,24 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/navigation.git
-    sub-dir: rotate_recovery
-    version: melodic-devel
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: rotate_recovery
+  kinetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: rotate_recovery
+      version: kinetic-devel
+  melodic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: rotate_recovery
+      version: melodic-devel
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: rotate_recovery
+      version: noetic-devel

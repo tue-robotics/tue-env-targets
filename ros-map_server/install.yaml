@@ -1,6 +1,24 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/navigation.git
-    sub-dir: map_server
-    version: melodic-devel
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: map_server
+  kinetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: map_server
+      version: kinetic-devel
+  melodic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: map_server
+      version: melodic-devel
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: map_server
+      version: noetic-devel

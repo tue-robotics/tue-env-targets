@@ -1,6 +1,24 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/navigation.git
-    sub-dir: navfn
-    version: melodic-devel
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: navfn
+  kinetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: navfn
+      version: kinetic-devel
+  melodic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: navfn
+      version: melodic-devel
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: navfn
+      version: noetic-devel
