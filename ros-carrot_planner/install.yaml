@@ -4,18 +4,6 @@
       type: git
       url: https://github.com/tue-robotics/navigation.git
       sub-dir: carrot_planner
-  kinetic:
-    source:
-      type: git
-      url: https://github.com/tue-robotics/navigation.git
-      sub-dir: carrot_planner
-      version: kinetic-devel
-  melodic:
-    source:
-      type: git
-      url: https://github.com/tue-robotics/navigation.git
-      sub-dir: carrot_planner
-      version: melodic-devel
   noetic:
     source:
       type: git

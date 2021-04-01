@@ -4,18 +4,6 @@
       type: git
       url: https://github.com/tue-robotics/navigation.git
       sub-dir: navigation
-  kinetic:
-    source:
-      type: git
-      url: https://github.com/tue-robotics/navigation.git
-      sub-dir: navigation
-      version: kinetic-devel
-  melodic:
-    source:
-      type: git
-      url: https://github.com/tue-robotics/navigation.git
-      sub-dir: navigation
-      version: melodic-devel
   noetic:
     source:
       type: git
