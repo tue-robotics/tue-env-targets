@@ -26,6 +26,10 @@
 
 - type: target
   name: tue-robocup-at-home
+- type: target
+  name: ros-amigo_skills
+- type: target
+  name: ros-sergio_skills
 
 # -------------------- ROBOTS ---------------------
 
