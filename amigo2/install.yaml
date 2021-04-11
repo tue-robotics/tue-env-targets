@@ -14,3 +14,5 @@
 # RoboCup
 - type: target
   name: tue-robocup-at-home
+- type: target
+  name: ros-amigo_skills
