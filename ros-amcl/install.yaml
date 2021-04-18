@@ -1,6 +1,24 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/navigation.git
-    sub-dir: amcl
-    version: melodic-devel
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: amcl
+  kinetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: amcl
+      version: kinetic-devel
+  melodic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: amcl
+      version: melodic-devel
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/navigation.git
+      sub-dir: amcl
+      version: noetic-devel

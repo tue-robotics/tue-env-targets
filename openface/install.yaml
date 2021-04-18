@@ -1,17 +1,50 @@
 - type: target-now
-  name: python-numpy
+  default:
+    name: python3-numpy
+  bionic:
+    name: python-numpy
+  xenial:
+    name: python-numpy
 
 - type: target-now
-  name: python-pandas
+  default:
+    name: python3-pandas
+  bionic:
+    name: python-pandas
+  xenial:
+    name: python-pandas
 
 - type: target-now
-  name: python-scipy
+  default:
+    name: python3-scipy
+  bionic:
+    name: python-scipy
+  xenial:
+    name: python-scipy
 
 - type: target-now
-  name: python-skimage
+  default:
+    name: python3-skimage
+  bionic:
+    name: python-skimage
+  xenial:
+    name: python-skimage
 
 - type: target-now
-  name: python-sklearn
+  default:
+    name: python3-sklearn
+  bionic:
+    name: python-sklearn
+  xenial:
+    name: python-sklearn
+
+- type: target-now
+  default:
+    name: python3-opencv
+  bionic:
+    name: python-opencv
+  xenial:
+    name: python-opencv
 
 - type: target-now
   name: python-dlib

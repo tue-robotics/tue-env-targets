@@ -10,17 +10,18 @@ then
     export TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__"
 fi
 
-tue-install-git https://github.com/torch/distro.git ~/torch
+tue-install-git https://github.com/tue-robotics/torch-distro.git ~/src/torch
 # shellcheck disable=SC2164
-cd ~/torch
-bash install-deps
-./install.sh
+cd ~/src/torch
+tue-install-debug "Installing Torch dependencies"
+bash install-deps || tue-install-error "Error during install of dependencies of torch, check output above"
+tue-install-debug "Installing Torch"
+./install.sh || tue-install-error "Error during install of torch, check output above"
 
-# One time sourcing doesn't work. Why? Unknown.
 # shellcheck disable=SC1090
-source ~/.bashrc
-# shellcheck disable=SC1090
-source ~/.bashrc
+source ~/src/torch/install/bin/torch-activate
+
+tue-install-debug "Installing Torch Modules"
 
 luarocks install dpnn
 luarocks install nn

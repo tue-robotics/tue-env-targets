@@ -1,0 +1,14 @@
+- type: target
+  name: ros-setup
+
+- type: system
+  name: python3-catkin-tools
+
+- type: system # temp till catkin-tools is fixed for python3
+  name: python3-osrf-pycommon
+
+- type: pip
+  name: psutil
+
+- type: target
+  name: python3-nose

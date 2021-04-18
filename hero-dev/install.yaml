@@ -2,6 +2,10 @@
 - type: target
   name: ros-tmc_desktop_full
 
+# [TEMP] gazebo_plugin (PR #1143 (Optional: #1173) should be released)
+- type: target
+  name: ros-gazebo_plugins
+
 # Middleware
 - type: target
   name: tue-middleware

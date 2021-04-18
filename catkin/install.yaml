@@ -2,4 +2,9 @@
   name: ros-setup
 
 - type: target
-  name: python-catkin-tools
+  default:
+    name: python3-catkin-tools
+  bionic:
+    name: python-catkin-tools
+  xenial:
+    name: python-catkin-tools
