@@ -15,9 +15,9 @@ then
 
     if [[ -f "$TUE_BIN/hero_dashboard.d/$TAG" ]]
     then
-        echo -e "hero-dashboard:\t\tno updates found"
+        tue-install-echo "no updates found"
     else
-        echo -e "hero-dashboard:\t\tnew version $TAG found"
+        tue-install-echo "new version $TAG found"
         mkdir -p "$TUE_BIN/hero_dashboard.d"
         wget "$URL" -O "$TUE_BIN/hero_dashboard.d/hero-dashboard.AppImage"
         chmod +x "$TUE_BIN/hero_dashboard.d/hero-dashboard.AppImage"
