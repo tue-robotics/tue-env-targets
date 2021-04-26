@@ -3,7 +3,7 @@
 # .vimrc
 if [ ! -f ~/.vimrc ]
 then
-    echo "installing a basic vimrc..."
+    tue-install-echo "installing a basic vimrc..."
     # install a TU/e .vimrc
     tue-install-cp vimrc ~/.vimrc
 fi
@@ -22,7 +22,7 @@ fi
 # editorconfig
 if [ ! -d ~/.vim/bundle/editorconfig-vim ]
 then
-    echo "installing editorconfig..."
+    tue-install-echo "installing editorconfig..."
     tue-install-git https://github.com/editorconfig/editorconfig-vim.git ~/.vim/bundle/editorconfig-vim
 fi
 
@@ -35,7 +35,7 @@ then
     current=$(update-alternatives --query editor | grep Value | awk '{printf $2}')
     if [ "$current" = "/bin/nano" ]
     then
-        echo -e "\nYou are using nano, let's setup vim\n"
-        sudo update-alternatives --set editor $vimdir
+        tue-install-echo "You are using nano, let's setup vim"
+        tue-install-pipe sudo update-alternatives --set editor $vimdir
     fi
 fi

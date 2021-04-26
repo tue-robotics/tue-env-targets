@@ -89,7 +89,7 @@ then
     fi
 
     tue-install-debug "Building kaldi_speech"
-    ./install.bash --tue || tue-install-error "Kaldi build error."
+    tue-install-pipe ./install.bash --tue || tue-install-error "Kaldi build error."
 else
     tue-install-debug "kaldi_speech not updated, so not rebuilding"
 fi

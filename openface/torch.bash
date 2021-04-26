@@ -3,7 +3,7 @@
 # shellcheck disable=SC2164
 pushd . > /dev/null
 
-tue-install-info "Installing Torch"
+tue-install-echo "Installing Torch"
 if [ -n "$TUE_CUDA" ]
 then
     tue-install-debug "Installing torch with CUDA capabilities"
@@ -14,28 +14,28 @@ tue-install-git https://github.com/tue-robotics/torch-distro.git ~/src/torch
 # shellcheck disable=SC2164
 cd ~/src/torch
 tue-install-debug "Installing Torch dependencies"
-bash install-deps || tue-install-error "Error during install of dependencies of torch, check output above"
+tue-install-pipe bash install-deps || tue-install-error "Error during install of dependencies of torch, check output above"
 tue-install-debug "Installing Torch"
-./install.sh || tue-install-error "Error during install of torch, check output above"
+tue-install-pipe ./install.sh || tue-install-error "Error during install of torch, check output above"
 
 # shellcheck disable=SC1090
 source ~/src/torch/install/bin/torch-activate
 
 tue-install-debug "Installing Torch Modules"
 
-luarocks install dpnn
-luarocks install nn
-luarocks install optim
-luarocks install csvigo
+tue-install-pipe luarocks install dpnn
+tue-install-pipe luarocks install nn
+tue-install-pipe luarocks install optim
+tue-install-pipe luarocks install csvigo
 if [ -n "$TUE_CUDA" ]
 then
-    luarocks install cutorch #(only with CUDA)
-    luarocks install cunn #(only with CUDA)
+    tue-install-pipe luarocks install cutorch #(only with CUDA)
+    tue-install-pipe luarocks install cunn #(only with CUDA)
 fi
-luarocks install fblualib #(only for training a DNN)
-luarocks install tds #(only for training a DNN)
-luarocks install torchx #(only for training a DNN)
-luarocks install optnet #(optional, only for training a DNN)
+tue-install-pipe luarocks install fblualib #(only for training a DNN)
+tue-install-pipe luarocks install tds #(only for training a DNN)
+tue-install-pipe luarocks install torchx #(only for training a DNN)
+tue-install-pipe luarocks install optnet #(optional, only for training a DNN)
 
 #From http://serverfault.com/questions/201709/how-to-set-ld-library-path-in-ubuntu
 #To define this variable, simply use (on the shell prompt):
@@ -50,7 +50,7 @@ sudo sh -c 'echo "/usr/lib/openblas-base/" > /etc/ld.so.conf.d/libopenblas-base.
 #Finally, run ldconfig to update the cache.
 sudo ldconfig
 
-tue-install-info "torch.bash finished"
+tue-install-echo "torch.bash finished"
 
 # shellcheck disable=SC2164
 popd > /dev/null

@@ -19,9 +19,9 @@ then
 
     if [[ -f "$TUE_BIN/dashboard/$TAG" ]]
     then
-        echo -e "dashboard:\t\tno updates found"
+        tue-install-echo "no updates found"
     else
-        echo -e "dashboard:\t\tnew version $TAG found"
+        tue-install-echo "new version $TAG found"
         mkdir -p "$TUE_BIN/dashboard"
         wget "$URL" -O- | tar -xzv --directory "$TUE_BIN/dashboard"
         ln -sf "$TUE_BIN/dashboard/dashboard" "$TUE_BIN/tue-dashboard"
@@ -36,9 +36,9 @@ then
 
     if [[ -f "$TUE_BIN/dashboard-alpha/$TAG" ]]
     then
-        echo -e "dashboard-alpha:\tno updates found"
+        tue-install-echo "[alpha]: no updates found"
     else
-        echo -e "dashboard-alpha:\tnew version $TAG found"
+        tue-install-echo "[alpha]: new version $TAG found"
         mkdir -p "$TUE_BIN/dashboard-alpha"
         wget "$URL" -O- | tar -xzv --directory "$TUE_BIN/dashboard-alpha"
         ln -sf "$TUE_BIN/dashboard-alpha/dashboard" "$TUE_BIN/tue-dashboard-alpha"
