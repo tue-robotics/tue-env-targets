@@ -1,6 +1,11 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/ros-simulation/gazebo_ros_pkgs.git
-    sub-dir: gazebo_plugins
-    version: noetic-devel
+  default:
+    source:
+      type: system
+      name: gazebo-plugins
+  melodic:
+    source:
+      type: git
+      url: https://github.com/ros-simulation/gazebo_ros_pkgs.git
+      sub-dir: gazebo_plugins
+      version: noetic-devel
