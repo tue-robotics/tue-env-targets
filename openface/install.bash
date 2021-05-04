@@ -6,6 +6,18 @@ then
     pv=2
 fi
 
+# Remove old folders
+if [ -d "${HOME}"/openface ]
+then
+    tue-install-debug "Removing old openface folder"
+    sudo rm -rf "${HOME}"/openface
+fi
+if [ -d "${HOME}"/torch ]
+then
+    tue-install-debug "Removing old torch folder"
+    sudo rm -rf "${HOME}"/torch
+fi
+
 if [ ! -d "${HOME}"/src/openface ]
 then
     tue-install-git https://github.com/cmusatyalab/openface.git  ~/src/openface
