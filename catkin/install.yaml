@@ -2,4 +2,11 @@
   name: ros-setup
 
 - type: target
-  name: python-catkin-tools
+  default:
+    name: python-catkin-tools
+  kinetic:
+    name: python-catkin-tools
+  melodic:
+    name: python-catkin-tools
+  noetic:
+    name: python3-catkin-tools

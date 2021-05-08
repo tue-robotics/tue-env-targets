@@ -2,4 +2,11 @@
   name: ros-setup
 
 - type: system
-  name: python-rosdep
+  default:
+    name: python-rosdep
+  kinetic:
+    name: python-rosdep
+  melodic:
+    name: python-rosdep
+  noetic:
+    name: python3-rosdep

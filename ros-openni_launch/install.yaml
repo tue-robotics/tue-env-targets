@@ -1,4 +1,18 @@
 - type: ros
-  source:
-    type: system
-    name: openni-launch
+  default:
+    source:
+      type: system
+      name: openni-launch
+  kinetic:
+    source:
+      type: system
+      name: openni-launch
+  melodic:
+    source:
+      type: system
+      name: openni-launch
+  noetic:
+    source:
+      type: system
+      name: openni2-launch
+    

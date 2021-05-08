@@ -1,0 +1,11 @@
+- type: target
+  name: ros-setup
+
+- type: system
+  name: python3-osrf-pycommon
+
+- type: system
+  name: python3-catkin-tools
+
+- type: pip
+  name: psutil

@@ -1,4 +1,13 @@
 - type: ros
-  source:
+  kinetic:
+    source:
       type: system
       name: orocos-kdl
+  melodic:
+    source:
+      type: system
+      name: orocos-kdl
+
+- type: system
+  noetic:
+    name: liborocos-kdl-dev
