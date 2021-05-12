@@ -7,7 +7,7 @@ jobs:
     name: Linting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
         with:
           submodules: recursive
           ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
