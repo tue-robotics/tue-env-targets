@@ -2,9 +2,12 @@
 - type: target
   name: ros-tmc_desktop_full
 
-# [TEMP] gazebo_plugin (PR #1143 (Optional: #1173) should be released)
+# [TEMP] gazebo_plugins for melodic support
 - type: target
-  name: ros-gazebo_plugins
+  default:
+    name: ros-gazebo_plugins # Leave here temporarily to make sure the source version is removed from the workspace
+  bionic:
+    name: ros-gazebo_plugins
 
 # Middleware
 - type: target
