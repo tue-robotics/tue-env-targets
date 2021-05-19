@@ -4,9 +4,9 @@
 - type: system
   default:
     name: python-rosdep
-  kinetic:
+  xenial:
     name: python-rosdep
-  melodic:
+  bionic:
     name: python-rosdep
-  noetic:
+  focal:
     name: python3-rosdep

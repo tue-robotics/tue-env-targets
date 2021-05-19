@@ -2,7 +2,14 @@
   name: ros-setup
 
 - type: system
-  name: python-catkin-tools
+  default:
+    name: python-catkin-tools
+  xenial:
+    name: python-catkin-tools
+  bionic:
+    name: python-catkin-tools
+  focal:
+    name: python3-catkin-tools
 
 - type: pip
   name: psutil
