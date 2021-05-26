@@ -2,7 +2,7 @@
 
 if [ -z "$TUE_ROS_DISTRO" ]
 then
-    echo "[tue ros setup] TUE_ROS_DISTRO was not set"
+    echo -e "\e[31;1m[ros] TUE_ROS_DISTRO was not set\e[0m"
     return 1
 fi
 
@@ -13,15 +13,15 @@ then
 
 elif [ -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
 then
-    echo -e "\033[33;5;1m[ros] dev workspace not found, sourcing system workspace\033[0m"
+    echo -e "\e[33;1m[ros] dev workspace not found, sourcing system workspace\e[0m"
     source "$TUE_SYSTEM_DIR"/devel/setup.bash
 
 else
-    echo -e "\033[33;5;1m[ros] dev and system workspaces not found, sourcing /opt/ros\033[0m"
+    echo -e "\e[33;1m[ros] dev and system workspaces not found, sourcing /opt/ros\e[0m"
     source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
 fi
 
-
+# Set ROSCONSOLE_FORMAT
 # shellcheck disable=SC2016
 ROSCONSOLE_FORMAT='[${severity}][${node}][${time}]: ${message}'
 export ROSCONSOLE_FORMAT

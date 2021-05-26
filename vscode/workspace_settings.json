@@ -1,10 +1,14 @@
 {
+    "files.associations": {
+        "*.bmr": "python"
+    },
     "files.exclude": {
         ".catkin_tools/": true,
         "build*/": true,
         "devel*/": true,
         "docs*/": true,
         "install*/": true,
-        "logs*/": true
+        "logs*/": true,
+        "**/*pyc": true
     }
 }
