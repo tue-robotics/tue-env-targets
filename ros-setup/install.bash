@@ -14,7 +14,7 @@ else
 fi
 
 # Check for expired key and update
-if sudo apt-key adv --list-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 2>/dev/null | grep -q expired
+if apt-key adv --list-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 2>/dev/null | grep -q expired
 then
     tue-install-echo "Updating expired GPG key"
     tue-install-pipe sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
