@@ -19,7 +19,7 @@ rosdep_update_file="/tmp/tue_rosdep_update_${USER}"
 if [ ! -f "$rosdep_update_file" ]
 then
     tue-install-debug "Updating rosdep"
-    tue-install-pipe rosdep update
+    tue-install-pipe rosdep update --rosdistro "$TUE_ROS_DISTRO"
     touch "$rosdep_update_file"
 fi
 
