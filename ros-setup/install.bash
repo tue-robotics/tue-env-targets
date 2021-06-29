@@ -58,6 +58,6 @@ fi
 
 if [[ "${FORCE_UPDATE}" == "true" ]]
 then
-    sudo apt-get update -qq
+    tue-install-apt-get-update
     tue-install-debug "Successfully updated ROS sources"
 fi
