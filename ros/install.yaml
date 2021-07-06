@@ -5,12 +5,7 @@
   name: build-essential
 
 - type: target-now
-  default:
-    name: python3-rosdep
-  bionic:
-    name: python-rosdep
-  xenial:
-    name: python-rosdep
+  name: python3-rosdep
 
 - type: target-now
   name: catkin

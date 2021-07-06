@@ -4,18 +4,6 @@
       type: git
       url: https://github.com/tue-robotics/navigation.git
       sub-dir: move_slow_and_clear
-  kinetic:
-    source:
-      type: git
-      url: https://github.com/tue-robotics/navigation.git
-      sub-dir: move_slow_and_clear
-      version: kinetic-devel
-  melodic:
-    source:
-      type: git
-      url: https://github.com/tue-robotics/navigation.git
-      sub-dir: move_slow_and_clear
-      version: melodic-devel
   noetic:
     source:
       type: git
