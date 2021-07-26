@@ -9,3 +9,6 @@
 
 - type: target-now
   name: catkin
+
+- type: target-now
+  name: python3-catkin-tools

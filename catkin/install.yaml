@@ -1,5 +1,7 @@
 - type: target
   name: ros-setup
 
-- type: target
-  name: python3-catkin-tools
+- type: ros
+  source:
+    type: system
+    name: catkin
