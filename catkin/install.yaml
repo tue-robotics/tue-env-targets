@@ -1,6 +1,6 @@
 - type: target
   name: ros-setup
-  
+
 - type: ros
   source:
     type: system
