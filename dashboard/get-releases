@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 import urllib2
@@ -18,4 +18,4 @@ for r in rs:
     except ValueError:
         continue
     url = new['browser_download_url']
-    print r['tag_name'], url
+    print(r['tag_name'], url)
