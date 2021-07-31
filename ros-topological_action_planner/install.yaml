@@ -2,4 +2,3 @@
   source:
     type: git
     url: https://github.com/tue-robotics/topological_action_planner
-    sub-dir: robot_smach_states
