@@ -1,2 +1,2 @@
 - type: pip
-  name: catkin-tools-document>=0.2.0
+  name: catkin-tools-document>=0.3.0
