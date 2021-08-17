@@ -15,17 +15,17 @@ then
     models/get-models.sh
 fi
 
-if [[ $(python3 -c "import dlib") -eq 1 ]]
+if [[ $(python3 -c "import dlib") -ne 0 ]]
 then
     tue-install-error "DLIB is not properly installed"
 fi
 
-if [[ $(python3 -c "import cv2") -eq 1 ]]
+if [[ $(python3 -c "import cv2") -ne 0 ]]
 then
     tue-install-error "opencv2 is not properly installed"
 fi
 
-if [[ $(python3 -c "import openface") -eq 1 ]]
+if [[ $(python3 -c "import openface") -ne 0 ]]
 then
     tue-install-error "openface is not properly installed"
 fi
