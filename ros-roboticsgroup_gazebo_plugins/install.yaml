@@ -1,0 +1,4 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:roboticsgroup/roboticsgroup_gazebo_plugins.git
