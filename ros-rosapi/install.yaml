@@ -3,3 +3,4 @@
     type: git
     url: https://github.com/RobotWebTools/rosbridge_suite.git
     sub-dir: rosapi
+    version: ros1
