@@ -1,0 +1,5 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:SalvoVirga/iiwa_stack_examples.git
+      sub-dir: iiwa_tool/iiwa_tool_examples
