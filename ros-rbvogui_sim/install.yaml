@@ -1,0 +1,6 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:RobotnikAutomation/rbvogui_sim.git
+      sub-dir: rbvogui_sim
+      verions: melodic-master

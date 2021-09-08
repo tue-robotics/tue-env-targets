@@ -1,0 +1,5 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:juandhv/irohms_robots_tests.git
+      sub-dir: tests_rbvogui/test_rbvogui_desktop_bringup

@@ -1,0 +1,6 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:RobotnikAutomation/rbvogui_common.git 
+      sub-dir: moveit/rbvogui_moveit_ur10
+      version: melodic-master
