@@ -171,6 +171,8 @@
 - type: target
   name: ros-problib
 - type: target
+  name: ros-pykdl_ros
+- type: target
   name: ros-python_orocos_kdl
 - type: target
   name: ros-rgbd
@@ -204,6 +206,8 @@
   name: ros-test_tools
 - type: target
   name: ros-text_to_speech
+- type: target
+  name: ros-tf2_pykdl_ros
 - type: target
   name: ros-tue_config
 - type: target
