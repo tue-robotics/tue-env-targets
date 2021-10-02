@@ -23,7 +23,7 @@ themes_commit_hash=$(git -C "$themes_path" rev-list HEAD -n 1)
 if [ ! -f $themes_path/last_install ] || [ "$(cat "$themes_path"/last_install)" != "$themes_commit_hash" ]
 then
     tue-install-debug "Installing vimix-gtk-themes"
-    tue-install-pipe $themes_path/install.sh -c standard -t ruby -s laptop -f -g
+    tue-install-pipe $themes_path/install.sh -c standard -t ruby -s compact -f -g
     echo "$themes_commit_hash" > $themes_path/last_install
 else
     tue-install-debug "vimix-gtk-themes not updated"
