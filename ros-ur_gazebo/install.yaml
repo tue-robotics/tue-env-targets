@@ -1,5 +1,7 @@
 - type: ros
   source:
       type: git
-      url: git@github.com:KavrakiLab/universal_robot.git
-      sub-dir: ur_gazebo
+      #url: git@github.com:KavrakiLab/universal_robot.git
+      url: git@github.com:RobotnikAutomation/universal_robot.git
+      sub-dir: robotiq_force_torque_sensor
+      version: calibration_devel

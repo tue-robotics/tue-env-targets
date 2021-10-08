@@ -1,0 +1,6 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:RobotnikAutomation/robotnik_pad.git
+      sub-dir: robotnik_pad_plugins
+      version: master
