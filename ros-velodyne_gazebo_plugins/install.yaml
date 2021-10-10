@@ -2,4 +2,5 @@
   source:
       type: git
       url: git@github.com:RobotnikAutomation/velodyne_simulator.git 
-      sub-dir: velodyne_gazebo_plugins 
+      sub-dir: velodyne_gazebo_plugins
+      version: 1.0.0

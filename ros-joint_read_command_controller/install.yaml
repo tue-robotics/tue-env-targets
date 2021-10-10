@@ -2,3 +2,4 @@
   source:
       type: git
       url: git@github.com:RobotnikAutomation/joint_read_command_controller.git
+      version: v1.0.0

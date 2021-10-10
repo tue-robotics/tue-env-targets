@@ -2,3 +2,4 @@
   source:
       type: git
       url: git@github.com:RobotnikAutomation/robotnik_msgs.git
+      version: melodic-1.0.0

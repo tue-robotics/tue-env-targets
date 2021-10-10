@@ -2,4 +2,4 @@
   source:
       type: git
       url: git@github.com:RobotnikAutomation/rcomponent.git
-      version: master
+      version: eca8716c73509b2676b3e5b290b1311b9f6fe081

@@ -3,3 +3,4 @@
       type: git
       url: git@github.com:RobotnikAutomation/velodyne_simulator.git 
       sub-dir: velodyne_description 
+      version: 1.0.0

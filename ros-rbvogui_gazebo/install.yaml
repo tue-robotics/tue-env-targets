@@ -3,4 +3,4 @@
       type: git
       url: git@github.com:RobotnikAutomation/rbvogui_sim.git
       sub-dir: rbvogui_gazebo
-      verions: melodic-master
+      version: e9d4354a2b16ab97cd421757f3927c241d180bd5
