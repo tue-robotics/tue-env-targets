@@ -2,7 +2,7 @@
 
 # Robot environment
 #export ROBOT_ENV=reo2016
-export ROBOT_ENV=robotics_testlabs
+#export ROBOT_ENV=robotics_testlabs
 #export ROBOT_ENV=rgo2017
 #export ROBOT_ENV=rgo2018
 #export ROBOT_ENV=rgo2019
@@ -10,6 +10,7 @@ export ROBOT_ENV=robotics_testlabs
 #export ROBOT_ENV=rwc2018
 #export ROBOT_ENV=rwc2019
 #export ROBOT_ENV=biestheuvel
+export ROBOT_ENV=impuls
 
 # Set Robot initial pose based on environment
 
@@ -74,5 +75,12 @@ elif [ $ROBOT_ENV == biestheuvel ]; then
     export ROBOT_INIT_X=3
     export ROBOT_INIT_Y=-1
     export ROBOT_INIT_PHI=1.57
+
+elif [ $ROBOT_ENV == impuls ]; then
+
+    # Robot initial pose
+    export ROBOT_INIT_X=0.1
+    export ROBOT_INIT_Y=0.5
+    export ROBOT_INIT_PHI=0.0
 
 fi
