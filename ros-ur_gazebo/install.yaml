@@ -2,6 +2,7 @@
   source:
       type: git
       #url: git@github.com:KavrakiLab/universal_robot.git
-      url: git@github.com:RobotnikAutomation/universal_robot.git
+      #url: git@github.com:RobotnikAutomation/universal_robot.git
+      url: git@github.com:fmauch/universal_robot.git
       sub-dir: ur_gazebo
-      version: calibration_devel
+      version: 1ffdd69181389b14b7d6342f0c5bad3b45c5e32f 

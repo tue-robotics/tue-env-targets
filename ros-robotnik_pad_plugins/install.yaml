@@ -3,4 +3,4 @@
       type: git
       url: git@github.com:RobotnikAutomation/robotnik_pad.git
       sub-dir: robotnik_pad_plugins
-      version: master
+      version: bc1683e20ec7f109ff9540b65de03b182516bfc9 

@@ -3,4 +3,4 @@
       type: git
       url: git@github.com:RobotnikAutomation/rbvogui_sim.git
       sub-dir: rbvogui_sim_bringup
-      version: e9d4354a2b16ab97cd421757f3927c241d180bd5
+      version: 78c6d34c4407d1eb998604b51df2f4c5cded8a06 

@@ -2,4 +2,4 @@
   source:
       type: git
       url: git@github.com:RobotnikAutomation/robotnik_sensors.git
-      version: 03c2918d09f579b35a5aa654207e7dec0d0996d2
+      version: 03c2918d09f579b35a5aa654207e7dec0d0996d2 

@@ -2,4 +2,4 @@
   source:
       type: git
       url: git@github.com:RobotnikAutomation/ewellix_description.git
-      version: d21c40e5fcbe86cdddbecbf320a92717fc895cdc
+      version: d21c40e5fcbe86cdddbecbf320a92717fc895cdc 

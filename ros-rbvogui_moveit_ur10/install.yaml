@@ -3,4 +3,4 @@
       type: git
       url: git@github.com:RobotnikAutomation/rbvogui_common.git 
       sub-dir: moveit/rbvogui_moveit_ur10
-      version: ade379057200194449a73bcdd6d2d8d3ecfaa6c1
+      version: f8fe7ce840893e391a46319bca5fe0a471431388 
