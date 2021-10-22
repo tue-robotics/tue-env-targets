@@ -13,3 +13,11 @@ then
     tue-install-pipe sudo /tmp/qt-open-source-installer
 fi
 
+# Shortcut
+if [ -f ~/.local/share/applications/org.qt-project.qtcreator.desktop ] && ! grep -qi tue_robotics ~/.local/share/applications/org.qt-project.qtcreator.desktop
+then
+    tue-install-debug "Creating back-up of QtCreator desktop file"
+    tue-install-pipe mv -f ~/.local/share/applications/org.qt-project.qtcreator.desktop ~/.local/share/applications/org.qt-project.qtcreator.desktop.bk
+fi
+
+tue-install-cp shortcut/org.qt-project.qtcreator.desktop ~/.local/share/applications/org.qt-project.qtcreator.desktop
