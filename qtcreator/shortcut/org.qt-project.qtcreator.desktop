@@ -1,4 +1,4 @@
-# Matthijs
+# tue_robotics
 [Desktop Entry]
 Type=Application
 Exec=bash -c "shopt -s expand_aliases && source ~/.tue/setup.bash && qtcreator %F"
