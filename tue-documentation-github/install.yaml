@@ -99,6 +99,8 @@
 - type: target
   name: ros-ed_perception_msgs
 - type: target
+  name: ros-ed_python
+- type: target
   name: ros-ed_robocup
 - type: target
   name: ros-ed_robocup_msgs
