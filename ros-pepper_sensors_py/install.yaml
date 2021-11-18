@@ -1,0 +1,7 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:awesomebytes/pepper_robot.git
+      sub-dir: pepper_sensors_py
+      version: correct_chain_model_and_gazebo_enabled
+
