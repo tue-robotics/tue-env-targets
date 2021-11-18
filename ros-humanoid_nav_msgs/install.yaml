@@ -1,0 +1,6 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:ahornung/humanoid_msgs.git
+      sub-dir: humanoid_nav_msgs
+

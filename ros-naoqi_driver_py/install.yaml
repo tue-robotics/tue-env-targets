@@ -1,0 +1,6 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:ros-naoqi/naoqi_bridge.git
+      sub-dir: naoqi_driver_py
+
