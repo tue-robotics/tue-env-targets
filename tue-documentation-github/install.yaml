@@ -163,8 +163,6 @@
 - type: target
   name: ros-orocos_kdl
 - type: target
-  name: ros-people_msgs
-- type: target
   name: ros-people_recognition
 - type: target
   name: ros-people_recognition_2d
