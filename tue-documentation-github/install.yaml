@@ -173,6 +173,8 @@
 - type: target
   name: ros-problib
 - type: target
+  name: ros-problib_msgs
+- type: target
   name: ros-pykdl_ros
 - type: target
   name: ros-python_orocos_kdl
