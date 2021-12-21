@@ -4,7 +4,7 @@ export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/hero_bringup
 
 alias hero='export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/hero_bringup'
 
-alias hero-core='export ROS_MASTER_URI=http://hero1.local:11311'
+alias hero-core='_robot-core hero1'
 
 alias hero-show-rgbd='rosrun rgbd multitool --rgbd /hero/head_rgbd_sensor/rgbd'
 

@@ -1,7 +1,17 @@
 #! /usr/bin/env bash
 # shellcheck disable=SC2034
 
-alias local-core='export ROS_MASTER_URI=http://localhost:11311'
+function _any-core
+{
+    export ROS_MASTER_URI="http://$1:11311"
+}
+
+function _robot-core
+{
+    _any-core "$1.local"
+}
+
+alias local-core='_any-core localhost'
 
 ####################
 #
