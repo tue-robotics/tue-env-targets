@@ -1,4 +1,10 @@
 version: 2
+registries:
+  github-octocat:
+    type: git
+    url: https://github.com
+    username: tue-robotics-robots
+    password: ${{secrets.DEPENDABOT_TOKEN}}
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -6,5 +12,7 @@ updates:
       interval: "daily"
   - package-ecosystem: "gitsubmodule"
     directory: "/"
+    registries:
+      - github-octocat
     schedule:
       interval: "daily"
