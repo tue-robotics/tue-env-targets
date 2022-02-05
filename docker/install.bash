@@ -1,22 +1,30 @@
 #! /usr/bin/env bash
 
-if [ ! -f /etc/apt/sources.list.d/docker.list ]
+arch="$(dpkg-architecture -q DEB_HOST_ARCH)"
+
+if [[ -z "${arch}" ]]
 then
-    wget https://get.docker.com -O /tmp/docker-install && sudo sh /tmp/docker-install
+    tue-install-warning "Could not retrieve the system architecture, so not installing package"
+else
+    # Add stable docker repository source
+    if ! apt-key adv --fingerprint 0EBFCD88 &> /dev/null
+    then
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    fi
 
-    # Add the docker group if it doesn't already exist.
-    sudo groupadd docker
+    ppa="deb [arch=${arch}] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    tue-install-ppa-now "${ppa// /^}"  # tue-install-ppa-now needs spaces to be replaced with ^
 
-    # Add the connected user "${USER}" to the docker group.
-    # Change the user name to match your preferred user.
-    # You may have to logout and log back in again for
-    # this to take effect.
-    sudo gpasswd -a "${USER}" docker
+    # Install and add user to docker group
+    tue-install-system-now docker-ce docker-ce-cli containerd.io
 
-    # Activate group permissions for this terminal
-    newgrp docker
+    if [[ $(groups) != *"docker"* ]]
+    then
+        sudo usermod -aG docker "${USER}"
 
-    # Restart the Docker daemon.
-    # If you are in Ubuntu 14.04, use docker.io instead of docker
-    sudo service docker restart
+        # Restart the Docker daemon
+        sudo service docker restart
+
+        tue-install-info "Added user '${USER}' to docker group. A new login may be required to use docker without sudo."
+    fi
 fi
