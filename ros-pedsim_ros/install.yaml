@@ -1,4 +1,4 @@
 - type: ros
   source:
       type: git
-      url: git@github.com:srl-freiburg/pedsim_ros.git
+      url: git@github.com:sasilva1998/pedsim_ros.git
