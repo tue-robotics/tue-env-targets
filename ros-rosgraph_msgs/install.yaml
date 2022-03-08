@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: system
-    name: rosgraph_msgs
+    name: rosgraph-msgs
