@@ -1,4 +1,4 @@
 - type: ros
   source:
-    type: system
-    name: naoqi-driver
+    type: git
+    url: git@github.com:sasilva1998/naoqi_driver.git

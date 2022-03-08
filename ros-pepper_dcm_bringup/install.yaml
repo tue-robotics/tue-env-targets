@@ -1,0 +1,5 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:ros-naoqi/pepper_dcm_robot.git
+      sub-dir: pepper_dcm_bringup
