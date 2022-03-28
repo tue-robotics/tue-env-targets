@@ -1,0 +1,6 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:RobotnikAutomation/velodyne_simulator.git
+      version: 1.0.0
+

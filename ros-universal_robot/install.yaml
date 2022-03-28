@@ -1,0 +1,5 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:fmauch/universal_robot.git
+      version: 1ffdd69181389b14b7d6342f0c5bad3b45c5e32f

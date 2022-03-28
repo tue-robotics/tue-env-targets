@@ -1,0 +1,5 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:RobotnikAutomation/rg2_gripper_common.git
+      version: 681336ae6f2c83de637668c7437438eca3c00859

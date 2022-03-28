@@ -1,6 +1,6 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/navigation.git
+    url: git@github.com:ros-planning/navigation.git
     sub-dir: nav_core
     version: melodic-devel

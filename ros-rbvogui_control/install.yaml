@@ -3,4 +3,4 @@
       type: git
       url: git@github.com:RobotnikAutomation/rbvogui_common.git 
       sub-dir: rbvogui_control
-      version: f8fe7ce840893e391a46319bca5fe0a471431388 
+      version: 32cd39272cb5142db421801b6eb21a8dae370684 
