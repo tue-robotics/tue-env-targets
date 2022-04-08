@@ -2,4 +2,4 @@
   source:
       type: git
       url: git@github.com:sasilva1998/pozyx_bridge.git
-      sub-dir: pozyx_bridge
+      sub-dir: pozyx_msgs
