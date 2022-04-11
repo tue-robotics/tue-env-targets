@@ -1,6 +1,6 @@
 - type: ros
   source:
       type: git
-      url: git@github.com:KavrakiLab/fetch_move_base.git
+      url: git@github.com:juandhv/sampling_based_move_base.git
       sub-dir: fetch_move_base_planning
       version: melodic-devel
