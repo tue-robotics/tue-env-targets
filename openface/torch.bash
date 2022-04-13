@@ -20,8 +20,9 @@ cd ~/src/torch
 tue-install-debug "Installing Torch dependencies"
 tue-install-pipe bash install-deps || tue-install-error "Error during install of dependencies of torch, check output above"
 tue-install-debug "Installing Torch"
-tue-install-pipe ./install.sh || tue-install-error "Error during install of torch, check output above"
+tue-install-pipe ./install.sh -s || tue-install-error "Error during install of torch, check output above"
 
+tue-install-debug "source ~/src/torch/install/bin/torch-activate"
 # shellcheck disable=SC1090
 source ~/src/torch/install/bin/torch-activate
 
