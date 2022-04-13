@@ -3,6 +3,10 @@
 # shellcheck disable=SC2164
 pushd . > /dev/null
 
+# GitHub has disabled the 'git:// 'protocol, https://github.blog/2021-09-01-improving-git-protocol-security-github/
+# This is safe to do for other repos as those are also not working anymore
+git config --global url.https://github.com/.insteadOf git://github.com
+
 tue-install-echo "Installing Torch"
 if [ -n "$TUE_CUDA" ]
 then
