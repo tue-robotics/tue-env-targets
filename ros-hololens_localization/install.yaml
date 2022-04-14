@@ -1,0 +1,5 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:sasilva1998/HoloLensNavigationForRobots.git
+      sub-dir: linux/HoloLens_Localization
