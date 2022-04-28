@@ -47,12 +47,10 @@ Add the following item to your `rosdoc` configuration:
 Also the following `<doc_depend>` needs to be added to the `package.xml` of your package:
 
 ```xml
-<doc_depend condition="$ROS_PYTHON_VERSION == 2">python-sphinx</doc_depend>
-<doc_depend condition="$ROS_PYTHON_VERSION == 3">python3-sphinx</doc_depend>
+<doc_depend>python3-sphinx</doc_depend>
 <doc_depend>python-sphinx-autoapi-pip</doc_depend>
 <doc_depend>python-sphinx-rtd-theme-pip</doc_depend>
-<doc_depend condition="$ROS_PYTHON_VERSION == 2">python-yaml</doc_depend>
-<doc_depend condition="$ROS_PYTHON_VERSION == 3">python3-yaml</doc_depend>
+<doc_depend>python3-yaml</doc_depend>
 ```
 
 **_Note_: This requires package format 2 or 3**
