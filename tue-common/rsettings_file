@@ -79,7 +79,7 @@ elif [ $ROBOT_ENV == biestheuvel ]; then
 elif [ $ROBOT_ENV == impuls ]; then
 
     # Robot initial pose
-    export ROBOT_INIT_X=0.1
+    export ROBOT_INIT_X=0.2
     export ROBOT_INIT_Y=0.5
     export ROBOT_INIT_PHI=0.0
 
