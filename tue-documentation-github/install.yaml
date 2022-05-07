@@ -129,6 +129,8 @@
 - type: target
   name: ros-hmi_msgs
 - type: target
+  name: ros-hmi_picovoice
+- type: target
   name: ros-hmi_telegram
 - type: target
   name: ros-image_recognition
