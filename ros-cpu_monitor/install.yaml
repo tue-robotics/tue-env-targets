@@ -1,4 +1,10 @@
 - type: ros
-  source:
+  noetic:
+    source:
+      type: git
+      url: git@github.com:sasilva1998/cpu_monitor.git
+      version: noetic-devel
+  default:
+    source:
       type: git
       url: git@github.com:alspitz/cpu_monitor.git

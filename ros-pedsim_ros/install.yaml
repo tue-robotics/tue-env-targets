@@ -1,4 +1,10 @@
 - type: ros
-  source:
+  noetic:
+    source:
+      type: git
+      url: git@github.com:sasilva1998/pedsim_ros.git
+      version: noetic-devel
+  default:
+    source:
       type: git
       url: git@github.com:sasilva1998/pedsim_ros.git

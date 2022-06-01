@@ -1,5 +1,11 @@
 - type: ros
-  source:
+  noetic:
+    source:
       type: git
       url: git@github.com:sasilva1998/sfm_diff_drive.git
+      version: noetic-devel
 
+  default:
+    source:
+      type: git
+      url: git@github.com:sasilva1998/sfm_diff_drive.git

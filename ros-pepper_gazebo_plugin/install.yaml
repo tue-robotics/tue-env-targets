@@ -1,5 +1,12 @@
 - type: ros
-  source:
+  noetic:
+    source:
+      type: git
+      url: git@github.com:sasilva1998/pepper_virtual.git
+      sub-dir: pepper_gazebo_plugin
+      version: noetic-devel
+  default:
+    source:
       type: git
       url: git@github.com:awesomebytes/pepper_virtual.git
       sub-dir: pepper_gazebo_plugin

@@ -1,6 +1,12 @@
 - type: ros
-  source:
+  noetic:
+    source:
+      type: git
+      url: git@github.com:sasilva1998/naoqi_bridge.git
+      sub-dir: naoqi_driver_py
+      version: noetic-devel
+  default:
+    source:
       type: git
       url: git@github.com:ros-naoqi/naoqi_bridge.git
       sub-dir: naoqi_driver_py
-

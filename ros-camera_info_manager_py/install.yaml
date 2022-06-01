@@ -1,4 +1,10 @@
 - type: ros
-  source:
+  noetic:
+    source:
+      type: git
+      url: git@github.com:sasilva1998/camera_info_manager_py.git
+      version: noetic-devel
+  default:
+    source:
       type: system
       name: camera-info-manager-py

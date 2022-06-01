@@ -1,4 +1,9 @@
 - type: ros
-  source:
+  noetic:
+    source:
+      type: git
+      url: git@github.com:sasilva1998/pepper_meshes.git
+  default:
+    source:
       type: system
       name: pepper-meshes
