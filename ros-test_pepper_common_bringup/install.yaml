@@ -1,6 +1,6 @@
 - type: ros
   source:
       type: git
-      url: git@github.com:juandhv/cucr_robots_tests.git
+      url: git@github.com:CardiffUniversityComputationalRobotics/cucr_robots_tests.git
       sub-dir: tests_pepper/test_pepper_common_bringup
 

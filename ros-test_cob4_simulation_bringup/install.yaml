@@ -1,5 +1,5 @@
 - type: ros
   source:
       type: git
-      url: git@github.com:juandhv/cucr_robots_tests.git
+      url: git@github.com:CardiffUniversityComputationalRobotics/cucr_robots_tests.git
       sub-dir: tests_cob4/test_cob4_simulation_bringup
