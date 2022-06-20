@@ -2,7 +2,7 @@
 
 import os, re
 
-cucr_dir = os.getenv('IROHMS_DIR', '$/.cucr')
+cucr_dir = os.getenv('CUCR_DIR', '$/.cucr')
 authorsFile = os.path.join(os.path.expanduser(cucr_dir), 'installer/targets/amigo-user/scripts/git-authors.txt')
 
 author_re = re.compile(r'(\w+)\s*=\s*([^<]+?)\s*<([^>]*)>')

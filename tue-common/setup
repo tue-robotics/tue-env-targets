@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
-alias trunk='cd $IROHMS_ENV_DIR/system/src'
-alias dev='cd $IROHMS_ENV_DIR/dev/src'
+alias trunk='cd $CUCR_ENV_DIR/system/src'
+alias dev='cd $CUCR_ENV_DIR/dev/src'
 
 alias todo="ssh -t amigo@roboticssrv.local 'vim /home/amigo/www/todo.html'"
 
@@ -36,7 +36,7 @@ alias sergio-trigger-command="robot-trigger-command sergio"
 
 function rsettings
 {
-    rsettings_file="$IROHMS_DIR"/.rsettings
+    rsettings_file="$CUCR_DIR"/.rsettings
 
     if [ ! -f "$rsettings_file" ]
     then

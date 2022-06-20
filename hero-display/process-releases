@@ -13,16 +13,16 @@ then
     TAG=$(echo "$LATEST" | awk '{print $1}')
     URL=$(echo "$LATEST" | awk '{print $2}')
 
-    if [[ -f "$IROHMS_BIN/hero_display.d/$TAG" ]]
+    if [[ -f "$CUCR_BIN/hero_display.d/$TAG" ]]
     then
         echo -e "hero-display:\t\tno updates found"
     else
         echo -e "hero-display:\t\tnew version $TAG found"
-        mkdir -p "$IROHMS_BIN/hero_display.d"
-        wget "$URL" -O "$IROHMS_BIN/hero_display.d/hero-display.AppImage"
-        chmod +x "$IROHMS_BIN/hero_display.d/hero-display.AppImage"
-        ln -sf "$IROHMS_BIN/hero_display.d/hero-display.AppImage" "$IROHMS_BIN/hero_display"
-        touch "$IROHMS_BIN/hero_display.d/$TAG"
+        mkdir -p "$CUCR_BIN/hero_display.d"
+        wget "$URL" -O "$CUCR_BIN/hero_display.d/hero-display.AppImage"
+        chmod +x "$CUCR_BIN/hero_display.d/hero-display.AppImage"
+        ln -sf "$CUCR_BIN/hero_display.d/hero-display.AppImage" "$CUCR_BIN/hero_display"
+        touch "$CUCR_BIN/hero_display.d/$TAG"
     fi
 else
     cucr-install-debug "No matching release found"

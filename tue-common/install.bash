@@ -1,3 +1,3 @@
 #! /usr/bin/env bash
 
-cucr-install-cp rsettings_file "$IROHMS_DIR"/.rsettings
+cucr-install-cp rsettings_file "$CUCR_DIR"/.rsettings

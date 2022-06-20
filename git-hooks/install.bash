@@ -10,4 +10,4 @@ then
     sudo apt-get install --assume-yes git
 fi
 
-git config --global core.hooksPath "$IROHMS_DIR"/installer/targets/git-hooks/git_hooks/
+git config --global core.hooksPath "$CUCR_DIR"/installer/targets/git-hooks/git_hooks/

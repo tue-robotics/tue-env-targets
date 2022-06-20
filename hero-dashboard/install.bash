@@ -1,10 +1,10 @@
 #! /usr/bin/env bash
 set -e
 
-if [ -f "$IROHMS_BIN"/hero_dashboard.d/hero-dashboard ]
+if [ -f "$CUCR_BIN"/hero_dashboard.d/hero-dashboard ]
 then
     cucr-install-debug "Removing old release folder"
-    rm -rf "$IROHMS_BIN"/hero_dashboard.d
+    rm -rf "$CUCR_BIN"/hero_dashboard.d
 fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

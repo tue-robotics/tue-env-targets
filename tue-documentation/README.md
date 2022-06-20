@@ -11,14 +11,14 @@ To do this create a yaml file in the main folder of your package, for consistenc
 ```
 Check [Python](#Python) and [C++](#c) for the configuration of the `rosdoc` configuration.
 
-The overview page is configured by the [catkin_tools_document_config.yaml](./catkin_tools_document_config.yaml) in this target. The image path is relative to the `$IROHMS_SYSTEM_DIR/build/docs`. It ends up here in this target. This is possible as the target location relative to the workspace is fixed.
+The overview page is configured by the [catkin_tools_document_config.yaml](./catkin_tools_document_config.yaml) in this target. The image path is relative to the `$CUCR_SYSTEM_DIR/build/docs`. It ends up here in this target. This is possible as the target location relative to the workspace is fixed.
 
 ## Generation
 Make sure all documentation dependencies are installed by running `cucr-get install/update` with the `--doc-depend` option. To generate the documetation run `cucr-make-documentation` it wraps `catkin` and therefore accepts all `catkin` arguments. After generating the documentation, you can open the documentation in your browser:
 ```bash
-<your-browser> $IROHMS_DOCS_PATH
+<your-browser> $CUCR_DOCS_PATH
 ```
-Or copy the value of `$IROHMS_DOCS_PATH` into the urlbar.
+Or copy the value of `$CUCR_DOCS_PATH` into the urlbar.
 
 
 ## Python

@@ -8,21 +8,21 @@ export CATKIN_TOOLS_DOCUMENT_CONFIG_FILE
 # Function to generate doucmentation of current workspace
 function cucr-make-documentation
 {
-    if [ -n "$IROHMS_ROS_DISTRO" ] && [ -d "$IROHMS_SYSTEM_DIR" ]
+    if [ -n "$CUCR_ROS_DISTRO" ] && [ -d "$CUCR_SYSTEM_DIR" ]
     then
         local build_tool=""
-        if [ -f "$IROHMS_SYSTEM_DIR"/devel/.built_by ]
+        if [ -f "$CUCR_SYSTEM_DIR"/devel/.built_by ]
         then
-            build_tool=$(cat "$IROHMS_SYSTEM_DIR"/devel/.built_by)
+            build_tool=$(cat "$CUCR_SYSTEM_DIR"/devel/.built_by)
         fi
         case $build_tool in
         'catkin build')
-            catkin document --workspace "$IROHMS_SYSTEM_DIR" "$@"
+            catkin document --workspace "$CUCR_SYSTEM_DIR" "$@"
             ;;
         '')
-            catkin config --init --mkdirs --workspace "$IROHMS_SYSTEM_DIR" --extend /opt/ros/"$IROHMS_ROS_DISTRO" -DCMAKE_BUILD_TYPE=RelWithDebInfo
-            catkin build --workspace "$IROHMS_SYSTEM_DIR" "$@"
-            touch "$IROHMS_SYSTEM_DIR"/devel/.catkin # hack to allow overlaying to this ws while being empty
+            catkin config --init --mkdirs --workspace "$CUCR_SYSTEM_DIR" --extend /opt/ros/"$CUCR_ROS_DISTRO" -DCMAKE_BUILD_TYPE=RelWithDebInfo
+            catkin build --workspace "$CUCR_SYSTEM_DIR" "$@"
+            touch "$CUCR_SYSTEM_DIR"/devel/.catkin # hack to allow overlaying to this ws while being empty
             ;;
         *)
             echo -e "\e$build_tool is not supported (anymore), use catkin tools\e[0m"
@@ -37,5 +37,5 @@ export -f cucr-make-documentation
 complete -F _cucr-make cucr-make-documentation
 
 # Export docs path to open with desiserd browser
-IROHMS_DOCS_PATH="$IROHMS_SYSTEM_DIR"/docs/index.html
-export IROHMS_DOCS_PATH
+CUCR_DOCS_PATH="$CUCR_SYSTEM_DIR"/docs/index.html
+export CUCR_DOCS_PATH

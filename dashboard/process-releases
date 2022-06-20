@@ -17,15 +17,15 @@ then
     TAG=$(echo "$LATEST" | awk '{print $1}')
     URL=$(echo "$LATEST" | awk '{print $2}')
 
-    if [[ -f "$IROHMS_BIN/dashboard/$TAG" ]]
+    if [[ -f "$CUCR_BIN/dashboard/$TAG" ]]
     then
         echo -e "dashboard:\t\tno updates found"
     else
         echo -e "dashboard:\t\tnew version $TAG found"
-        mkdir -p "$IROHMS_BIN/dashboard"
-        wget "$URL" -O- | tar -xzv --directory "$IROHMS_BIN/dashboard"
-        ln -sf "$IROHMS_BIN/dashboard/dashboard" "$IROHMS_BIN/cucr-dashboard"
-        touch "$IROHMS_BIN/dashboard/$TAG"
+        mkdir -p "$CUCR_BIN/dashboard"
+        wget "$URL" -O- | tar -xzv --directory "$CUCR_BIN/dashboard"
+        ln -sf "$CUCR_BIN/dashboard/dashboard" "$CUCR_BIN/cucr-dashboard"
+        touch "$CUCR_BIN/dashboard/$TAG"
     fi
 fi
 
@@ -34,15 +34,15 @@ then
     TAG=$(echo "$LATEST_ALPHA" | awk '{print $1}')
     URL=$(echo "$LATEST_ALPHA" | awk '{print $2}')
 
-    if [[ -f "$IROHMS_BIN/dashboard-alpha/$TAG" ]]
+    if [[ -f "$CUCR_BIN/dashboard-alpha/$TAG" ]]
     then
         echo -e "dashboard-alpha:\tno updates found"
     else
         echo -e "dashboard-alpha:\tnew version $TAG found"
-        mkdir -p "$IROHMS_BIN/dashboard-alpha"
-        wget "$URL" -O- | tar -xzv --directory "$IROHMS_BIN/dashboard-alpha"
-        ln -sf "$IROHMS_BIN/dashboard-alpha/dashboard" "$IROHMS_BIN/cucr-dashboard-alpha"
-        touch "$IROHMS_BIN/dashboard-alpha/$TAG"
+        mkdir -p "$CUCR_BIN/dashboard-alpha"
+        wget "$URL" -O- | tar -xzv --directory "$CUCR_BIN/dashboard-alpha"
+        ln -sf "$CUCR_BIN/dashboard-alpha/dashboard" "$CUCR_BIN/cucr-dashboard-alpha"
+        touch "$CUCR_BIN/dashboard-alpha/$TAG"
     fi
 fi
 

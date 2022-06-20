@@ -1,24 +1,24 @@
 #! /usr/bin/env bash
 
-if [ -z "$IROHMS_ROS_DISTRO" ]
+if [ -z "$CUCR_ROS_DISTRO" ]
 then
-    echo "[cucr ros setup] IROHMS_ROS_DISTRO was not set"
+    echo "[cucr ros setup] CUCR_ROS_DISTRO was not set"
     return 1
 fi
 
 # shellcheck disable=SC1090
-if [ -f "$IROHMS_DEV_DIR"/devel/setup.bash ]
+if [ -f "$CUCR_DEV_DIR"/devel/setup.bash ]
 then
-    source "$IROHMS_DEV_DIR"/devel/setup.bash
+    source "$CUCR_DEV_DIR"/devel/setup.bash
 
-elif [ -f "$IROHMS_SYSTEM_DIR"/devel/setup.bash ]
+elif [ -f "$CUCR_SYSTEM_DIR"/devel/setup.bash ]
 then
     echo -e "\033[33;5;1m[ros] dev workspace not found, sourcing system workspace\033[0m"
-    source "$IROHMS_SYSTEM_DIR"/devel/setup.bash
+    source "$CUCR_SYSTEM_DIR"/devel/setup.bash
 
 else
     echo -e "\033[33;5;1m[ros] dev and system workspaces not found, sourcing /opt/ros\033[0m"
-    source /opt/ros/"$IROHMS_ROS_DISTRO"/setup.bash
+    source /opt/ros/"$CUCR_ROS_DISTRO"/setup.bash
 fi
 
 

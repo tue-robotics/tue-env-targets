@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-ED_PLUGIN_PATH=$IROHMS_ENV_DIR/dev/devel/lib:$IROHMS_ENV_DIR/system/devel/lib
+ED_PLUGIN_PATH=$CUCR_ENV_DIR/dev/devel/lib:$CUCR_ENV_DIR/system/devel/lib
 export ED_PLUGIN_PATH
 
 function ed
