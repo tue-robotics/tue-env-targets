@@ -1,7 +1,7 @@
 # Matthijs
 [Desktop Entry]
 Type=Application
-Exec=bash -c "shopt -s expand_aliases && source ~/.irohms/setup.bash && qtcreator %F"
+Exec=bash -c "shopt -s expand_aliases && source ~/.cucr/setup.bash && qtcreator %F"
 Name=Qt Creator
 GenericName=C++ IDE for developing Qt applications
 Icon=QtProject-qtcreator

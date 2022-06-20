@@ -25,7 +25,7 @@ then
         touch "$IROHMS_BIN/hero_display.d/$TAG"
     fi
 else
-    irohms-install-debug "No matching release found"
+    cucr-install-debug "No matching release found"
 fi
 
 set +e

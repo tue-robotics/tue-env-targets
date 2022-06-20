@@ -9,8 +9,8 @@
 
 # Middleware
 - type: target
-  name: irohms-middleware
+  name: cucr-middleware
 
 # RoboCup
 - type: target
-  name: irohms-robocup-at-home
+  name: cucr-robocup-at-home

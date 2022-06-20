@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/head_ref.git
+    url: git@github.com:cucr-robotics/head_ref.git
     sub-dir: head_ref

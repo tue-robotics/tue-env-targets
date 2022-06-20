@@ -6,9 +6,9 @@
 
 # Middleware
 - type: target
-  name: irohms-middleware
+  name: cucr-middleware
 - type: target
-  name: ros-irohms_mobile_ui
+  name: ros-cucr_mobile_ui
 
 # Visualization
 - type: target
@@ -25,7 +25,7 @@
 # -------------------- ROBOCUP --------------------
 
 - type: target
-  name: irohms-robocup-at-home
+  name: cucr-robocup-at-home
 
 # -------------------- ROBOTS ---------------------
 

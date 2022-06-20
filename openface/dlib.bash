@@ -3,14 +3,14 @@
 # shellcheck disable=SC2164
 pushd . > /dev/null
 
-irohms-install-info "Installing DLib"
+cucr-install-info "Installing DLib"
 
 mkdir -p /tmp/dlib
 # shellcheck disable=SC2164
 cd /tmp/dlib
 wget https://github.com/davisking/dlib/releases/download/v18.16/dlib-18.16.tar.bz2
 tar xf dlib-18.16.tar.bz2
-cd dlib-18.16/python_examples || irohms-install-error "Missing directory: /tmp/dlib/dlib-18.16/python_examples"
+cd dlib-18.16/python_examples || cucr-install-error "Missing directory: /tmp/dlib/dlib-18.16/python_examples"
 mkdir build
 # shellcheck disable=SC2164
 cd build
@@ -35,7 +35,7 @@ sudo ldconfig
 #Remove source files
 sudo rm -rf /tmp/dlib
 
-irohms-install-info "dlib.bash finished"
+cucr-install-info "dlib.bash finished"
 
 # shellcheck disable=SC2164
 popd > /dev/null

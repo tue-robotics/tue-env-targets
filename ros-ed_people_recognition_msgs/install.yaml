@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/ed_people_recognition.git
+    url: git@github.com:cucr-robotics/ed_people_recognition.git
     sub-dir: ed_people_recognition_msgs

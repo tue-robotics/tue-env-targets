@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/leg_tracker.git
+    url: git@github.com:cucr-robotics/leg_tracker.git

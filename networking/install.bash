@@ -7,7 +7,7 @@ then
     # Install config file (mdns4_minimal is normally missing in xenial and should be present)
 
     # Replace nsswitch config file
-    irohms-install-cp nsswitch.conf /etc/nsswitch.conf
+    cucr-install-cp nsswitch.conf /etc/nsswitch.conf
 fi
 
 # Prevent resolving to ipv6 addresses. We're not ready for that yet
@@ -33,22 +33,22 @@ generate_ssh="false"
 # Generate ssh key when file does not exist yet
 if [ ! -f "$ssh_key" ]
 then
-    irohms-install-debug "No ssh key exists yet"
+    cucr-install-debug "No ssh key exists yet"
     generate_ssh="true"
 else
     # Generate new ssh key if length < 4096
     if [ "$(ssh-keygen -l -f "$ssh_key" | awk '{print $1}')" -lt 4096 ]
     then
-        irohms-install-info "Generating new ssh key as length < 4096, you might need to copy the new key to the robots, GitHub, etc."
+        cucr-install-info "Generating new ssh key as length < 4096, you might need to copy the new key to the robots, GitHub, etc."
         generate_ssh="true"
     else
-        irohms-install-debug "ssh key available with length >= 4096"
+        cucr-install-debug "ssh key available with length >= 4096"
     fi
 fi
 
 if [ $generate_ssh == "true" ]
 then
-    irohms-install-debug "Generating ssh key"
+    cucr-install-debug "Generating ssh key"
     yes | ssh-keygen -t rsa -b 4096 -N "" -f "$ssh_key"
     rm -r ${ssh_controlmasters_dir:?}/* 2>/dev/null # close all connections, to prevent any possible weird behaviour
     ssh-add # Start using the new key
@@ -63,4 +63,4 @@ if [ ! -d $ssh_controlmasters_dir ]
 then
     mkdir -p $ssh_controlmasters_dir
 fi
-irohms-install-add-text ssh_persistent_connection_lines $ssh_config
+cucr-install-add-text ssh_persistent_connection_lines $ssh_config

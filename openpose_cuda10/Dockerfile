@@ -1,4 +1,4 @@
-FROM irohmsrobotics/irohms-env-cuda:master
+FROM cucrrobotics/cucr-env-cuda:master
 
 # Build time arguments and their default values
 ARG CI=false
@@ -15,13 +15,13 @@ RUN sudo apt-get update -qq && \
     export BRANCH=$BRANCH && \
     export PULL_REQUEST=$PULL_REQUEST && \
     export COMMIT=$COMMIT && \
-    # Make irohms-env available to the intermediate image
+    # Make cucr-env available to the intermediate image
     # This step needs to be executed at every RUN step
     source ~/.bashrc && \
     # Install ros-image_recognition_openpose target
-    irohms-get install ros-image_recognition_openpose --branch="$BRANCH" && \
+    cucr-get install ros-image_recognition_openpose --branch="$BRANCH" && \
     # Make workspace
-    irohms-make && \
+    cucr-make && \
     source ~/.bashrc && \
     # Install openpose
-    irohms-get install openpose_cuda10
+    cucr-get install openpose_cuda10

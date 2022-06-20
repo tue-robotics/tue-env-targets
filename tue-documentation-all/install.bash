@@ -9,7 +9,7 @@ targets="$IROHMS_ENV_TARGETS_DIR/*"
 for target in $targets
 do
     target="$(basename "$target")"
-    if [[ $target == "irohms-documentation-all" ]] || [[ $target == "irohms-documentation" ]]
+    if [[ $target == "cucr-documentation-all" ]] || [[ $target == "cucr-documentation" ]]
     then
         continue
     fi
@@ -31,11 +31,11 @@ do
     then
         for cmd in $cmds
         do
-            irohms-install-debug "Original command: $cmd"
+            cucr-install-debug "Original command: $cmd"
             read -r -a cmd_split <<< "${cmd//^/ }"
 
             local install_cmd=${cmd_split[0]}
-            if [ "$install_cmd" != "irohms-install-ros" ]
+            if [ "$install_cmd" != "cucr-install-ros" ]
             then
                 IROHMS_INSTALL_CURRENT_TARGET=$parent_target
                 continue
@@ -49,7 +49,7 @@ do
             fi
 
             local src=${cmd_split[2]}
-            if [[ "$src" != *"github.com/irohms-robotics"* ]]
+            if [[ "$src" != *"github.com/cucr-robotics"* ]]
             then
                 IROHMS_INSTALL_CURRENT_TARGET=$parent_target
                 continue
@@ -60,7 +60,7 @@ do
 
         done
     else
-        irohms-install-error "Invalid install.yaml: $cmds"
+        cucr-install-error "Invalid install.yaml: $cmds"
     fi
     IROHMS_INSTALL_CURRENT_TARGET=$parent_target
 done

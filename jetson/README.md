@@ -32,15 +32,15 @@ sudo update-ca-certificates
 
 ```
 ssh-keygen
-source <(wget -O- https://raw.githubusercontent.com/irohms-robotics/irohms-env/master/installer/bootstrap.bash)
-irohms-get install ros
-irohms-get install openpose
-irohms-get install ros-image_recognition_openpose
-irohms-make
+source <(wget -O- https://raw.githubusercontent.com/cucr-robotics/cucr-env/master/installer/bootstrap.bash)
+cucr-get install ros
+cucr-get install openpose
+cucr-get install ros-image_recognition_openpose
+cucr-make
 source ~/.bashrc
 roscd image_recognition_openpose
 ln -s ~/openpose
-irohms-make --pre-clean image_recognition_openpose
+cucr-make --pre-clean image_recognition_openpose
 ```
 
 test with:
@@ -62,5 +62,5 @@ sudo systemctl start image_recognition_openpose
 
 For use on amigo:
 ```
-irohms-get install amigo4
+cucr-get install amigo4
 ```

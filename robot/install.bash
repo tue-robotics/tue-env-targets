@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 ### Make sure remote launching works ###
-irohms-install-cp ros-bash-and-run.sh ~/.ros-bash-and-run.sh
+cucr-install-cp ros-bash-and-run.sh ~/.ros-bash-and-run.sh
 chmod +x ~/.ros-bash-and-run.sh
 
 ### Allow user to access serial interfaces ###

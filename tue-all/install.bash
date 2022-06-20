@@ -4,8 +4,8 @@ targets="$IROHMS_ENV_TARGETS_DIR/*"
 for target in $targets
 do
     target="$(basename "$target")"
-    if [[ $target != "irohms-all" ]]
+    if [[ $target != "cucr-all" ]]
     then
-        irohms-install-target "$target"
+        cucr-install-target "$target"
     fi
 done

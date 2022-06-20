@@ -205,23 +205,23 @@
 - type: target
   name: ros-text_to_speech
 - type: target
-  name: ros-irohms_config
+  name: ros-cucr_config
 - type: target
-  name: ros-irohms_filesystem
+  name: ros-cucr_filesystem
 - type: target
-  name: ros-irohms_manipulation
+  name: ros-cucr_manipulation
 - type: target
-  name: ros-irohms_manipulation_msgs
+  name: ros-cucr_manipulation_msgs
 - type: target
-  name: ros-irohms_mobile_ui
+  name: ros-cucr_mobile_ui
 - type: target
-  name: ros-irohms_msgs
+  name: ros-cucr_msgs
 - type: target
-  name: ros-irohms_robocup
+  name: ros-cucr_robocup
 - type: target
-  name: ros-irohms_serialization
+  name: ros-cucr_serialization
 - type: target
-  name: ros-irohms_teleop_keyboard
+  name: ros-cucr_teleop_keyboard
 - type: target
   name: ros-upower_ros
 - type: target
@@ -242,4 +242,4 @@
   name: ros-yapykaldi_ros
 
 - type: target
-  name: irohms-documentation
+  name: cucr-documentation

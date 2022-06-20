@@ -1,4 +1,4 @@
 html_theme: sphinx_rtd_theme
-project: irohms-robotics
+project: cucr-robotics
 copyright: Tech United Eindhoven
-html_logo: ../../../.env/targets/irohms-documentation/techunited.png
+html_logo: ../../../.env/targets/cucr-documentation/techunited.png

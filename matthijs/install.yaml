@@ -64,4 +64,4 @@
 
 # Save gmapping map
 - type: target
-  name: irohms-save-map
+  name: cucr-save-map

@@ -24,7 +24,7 @@ then
         echo -e "dashboard:\t\tnew version $TAG found"
         mkdir -p "$IROHMS_BIN/dashboard"
         wget "$URL" -O- | tar -xzv --directory "$IROHMS_BIN/dashboard"
-        ln -sf "$IROHMS_BIN/dashboard/dashboard" "$IROHMS_BIN/irohms-dashboard"
+        ln -sf "$IROHMS_BIN/dashboard/dashboard" "$IROHMS_BIN/cucr-dashboard"
         touch "$IROHMS_BIN/dashboard/$TAG"
     fi
 fi
@@ -41,7 +41,7 @@ then
         echo -e "dashboard-alpha:\tnew version $TAG found"
         mkdir -p "$IROHMS_BIN/dashboard-alpha"
         wget "$URL" -O- | tar -xzv --directory "$IROHMS_BIN/dashboard-alpha"
-        ln -sf "$IROHMS_BIN/dashboard-alpha/dashboard" "$IROHMS_BIN/irohms-dashboard-alpha"
+        ln -sf "$IROHMS_BIN/dashboard-alpha/dashboard" "$IROHMS_BIN/cucr-dashboard-alpha"
         touch "$IROHMS_BIN/dashboard-alpha/$TAG"
     fi
 fi

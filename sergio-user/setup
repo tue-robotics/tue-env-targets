@@ -52,7 +52,7 @@ alias sshsergio2='until ssh -qAo ConnectTimeout=1 amigo@sergio2.local; do echo w
 #
 #####################
 alias diag='rosrun robot_monitor robot_monitor'
-alias sergio-dashboard='irohms-dashboard sergio1.local & sleep 1; disown; wmctrl -r ws://sergio1.local:9090 -b add,sticky'
+alias sergio-dashboard='cucr-dashboard sergio1.local & sleep 1; disown; wmctrl -r ws://sergio1.local:9090 -b add,sticky'
 
 alias sergio-show-fitter='rosrun rgbd multitool --rgbd /sergio/ed/viz/fitter'
 alias sergio-show-kinect='rosrun rgbd multitool --rgbd /sergio/top_kinect/rgbd'
@@ -94,7 +94,7 @@ function sergio-hear() {
 
 alias sergio-head-straight='sergio-head-move 0.0 0.0'
 alias move-straight="rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'"
-alias sergio-teleop='rosrun irohms_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/sergio/base/references'
+alias sergio-teleop='rosrun cucr_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/sergio/base/references'
 
 alias sergio-base-reset-odom='rostopic pub --once /sergio/base/reset_odometry std_msgs/Bool 1'
 alias sergio-top-kinect-show='rosrun image_view image_view image:=/sergio/top_kinect/rgb/image_rect_color'

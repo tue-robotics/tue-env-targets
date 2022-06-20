@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/cb_base_navigation_msgs.git
+    url: git@github.com:cucr-robotics/cb_base_navigation_msgs.git

@@ -2,7 +2,7 @@
 
 if [ -z "$IROHMS_ROS_DISTRO" ]
 then
-    echo "[irohms ros setup] IROHMS_ROS_DISTRO was not set"
+    echo "[cucr ros setup] IROHMS_ROS_DISTRO was not set"
     return 1
 fi
 

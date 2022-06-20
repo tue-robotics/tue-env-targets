@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/ed_robocup.git
+    url: git@github.com:cucr-robotics/ed_robocup.git
     sub-dir: ed_robocup_msgs

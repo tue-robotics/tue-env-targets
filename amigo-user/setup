@@ -60,7 +60,7 @@ function connect-to-amigo-subnet
 #
 #####################
 alias diag='rosrun robot_monitor robot_monitor'
-alias amigo-dashboard='irohms-dashboard amigo1.local & sleep 1; disown; wmctrl -r ws://amigo1.local:9090 -b add,sticky'
+alias amigo-dashboard='cucr-dashboard amigo1.local & sleep 1; disown; wmctrl -r ws://amigo1.local:9090 -b add,sticky'
 
 alias amigo-show-fitter='rosrun rgbd multitool --rgbd /amigo/ed/viz/fitter'
 alias amigo-show-kinect='rosrun rgbd multitool --rgbd /amigo/top_kinect/rgbd'
@@ -108,11 +108,11 @@ alias amigo-case='amigo-torso-move-joints 0.13'
 
 alias amigo-head-straight='amigo-head-move 0.0 0.0'
 alias move-straight="rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'"
-alias openleftgripper='rostopic pub --once /amigo/left_arm/gripper/references irohms_msgs/GripperCommand -- -1 100'
-alias openrightgripper='rostopic pub --once /amigo/right_arm/gripper/references irohms_msgs/GripperCommand -- -1 100'
-alias closeleftgripper='rostopic pub --once /amigo/left_arm/gripper/references irohms_msgs/GripperCommand -- 1 100'
-alias closerightgripper='rostopic pub --once /amigo/right_arm/gripper/references irohms_msgs/GripperCommand -- 1 100'
-alias amigo-teleop='rosrun irohms_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/amigo/base/references'
+alias openleftgripper='rostopic pub --once /amigo/left_arm/gripper/references cucr_msgs/GripperCommand -- -1 100'
+alias openrightgripper='rostopic pub --once /amigo/right_arm/gripper/references cucr_msgs/GripperCommand -- -1 100'
+alias closeleftgripper='rostopic pub --once /amigo/left_arm/gripper/references cucr_msgs/GripperCommand -- 1 100'
+alias closerightgripper='rostopic pub --once /amigo/right_arm/gripper/references cucr_msgs/GripperCommand -- 1 100'
+alias amigo-teleop='rosrun cucr_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/amigo/base/references'
 
 alias amigo-base-reset-odom='rostopic pub --once /amigo/base/reset_odometry std_msgs/Bool 1'
 alias amigo-top-kinect-show='rosrun image_view image_view image:=/amigo/top_kinect/rgb/image_rect_color'
@@ -197,25 +197,25 @@ function amigo-arms-move-idle {
 # --------------------------------------------------------------------------------
 
 function amigo-left-gripper-open {
-    ( rostopic pub /amigo/left_arm/gripper/references irohms_msgs/GripperCommand "{direction: -1, max_torque: 100.0}" --once  &> /dev/null & )
+    ( rostopic pub /amigo/left_arm/gripper/references cucr_msgs/GripperCommand "{direction: -1, max_torque: 100.0}" --once  &> /dev/null & )
 }
 
 # --------------------------------------------------------------------------------
 
 function amigo-left-gripper-close {
-    ( rostopic pub /amigo/left_arm/gripper/references irohms_msgs/GripperCommand "{direction: 1, max_torque: 100.0}" --once  &> /dev/null & )
+    ( rostopic pub /amigo/left_arm/gripper/references cucr_msgs/GripperCommand "{direction: 1, max_torque: 100.0}" --once  &> /dev/null & )
 }
 
 # --------------------------------------------------------------------------------
 
 function amigo-right-gripper-open {
-    ( rostopic pub /amigo/right_arm/gripper/references irohms_msgs/GripperCommand "{direction: -1, max_torque: 100.0}" --once  &> /dev/null & )
+    ( rostopic pub /amigo/right_arm/gripper/references cucr_msgs/GripperCommand "{direction: -1, max_torque: 100.0}" --once  &> /dev/null & )
 }
 
 # --------------------------------------------------------------------------------
 
 function amigo-right-gripper-close {
-    ( rostopic pub /amigo/right_arm/gripper/references irohms_msgs/GripperCommand "{direction: 1, max_torque: 100.0}" --once  &> /dev/null & )
+    ( rostopic pub /amigo/right_arm/gripper/references cucr_msgs/GripperCommand "{direction: 1, max_torque: 100.0}" --once  &> /dev/null & )
 }
 
 # --------------------------------------------------------------------------------

@@ -2,7 +2,7 @@
 
 [Desktop Entry]
 TryExec=gnome-terminal
-Icon=/usr/share/pixmaps/irohms/sergiodashboardsmall.png
+Icon=/usr/share/pixmaps/cucr/sergiodashboardsmall.png
 Type=Application
 X-GNOME-DocPath=gnome-terminal/index.html
 X-GNOME-Bugzilla-Bugzilla=GNOME
@@ -16,7 +16,7 @@ Actions=New
 X-Ubuntu-Gettext-Domain=gnome-terminal
 Terminal=false
 Exec=bash -i -c sergio-dashboard
-Icon[en_US]=/usr/share/pixmaps/irohms/sergiodashboardsmall.png
+Icon[en_US]=/usr/share/pixmaps/cucr/sergiodashboardsmall.png
 Name[en_US]=.SERGIO Dashboard
 Name=AMIGO Dashboard
 

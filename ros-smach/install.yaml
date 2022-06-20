@@ -1,6 +1,6 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/executive_smach.git
+    url: git@github.com:cucr-robotics/executive_smach.git
     sub-dir: smach
 

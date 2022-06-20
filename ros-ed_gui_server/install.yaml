@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/ed_gui_server.git
+    url: git@github.com:cucr-robotics/ed_gui_server.git
     sub-dir: ed_gui_server

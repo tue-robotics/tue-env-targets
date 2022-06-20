@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/ar_marker_detector.git
+    url: git@github.com:cucr-robotics/ar_marker_detector.git

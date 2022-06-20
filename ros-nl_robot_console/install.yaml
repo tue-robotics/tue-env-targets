@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/nl_robot_console.git
+    url: git@github.com:cucr-robotics/nl_robot_console.git

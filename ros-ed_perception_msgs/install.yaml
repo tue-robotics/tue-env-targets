@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/ed_perception.git
+    url: git@github.com:cucr-robotics/ed_perception.git
     sub-dir: ed_perception_msgs

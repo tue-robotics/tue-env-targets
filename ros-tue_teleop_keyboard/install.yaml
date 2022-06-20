@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/irohms_teleop_keyboard.git
+    url: git@github.com:cucr-robotics/cucr_teleop_keyboard.git

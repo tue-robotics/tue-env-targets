@@ -5,7 +5,7 @@
 - type: target
   name: ros-rtt_control_components
 - type: target
-  name: ros-irohms_ethercat_drivers
+  name: ros-cucr_ethercat_drivers
 - type: target
   name: ros-amigo_hardware
 - type: target

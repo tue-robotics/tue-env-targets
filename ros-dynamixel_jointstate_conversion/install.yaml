@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:irohms-robotics/dynamixel_jointstate_conversion.git
+    url: git@github.com:cucr-robotics/dynamixel_jointstate_conversion.git

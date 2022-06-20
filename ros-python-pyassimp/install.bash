@@ -1,1 +1,1 @@
-irohms-install-system python-pyassimp
+cucr-install-system python-pyassimp

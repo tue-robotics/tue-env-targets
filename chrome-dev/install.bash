@@ -7,4 +7,4 @@ then
     sudo apt-get update
 fi
 
-irohms-install-system google-chrome-unstable
+cucr-install-system google-chrome-unstable

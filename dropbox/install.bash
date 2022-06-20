@@ -7,4 +7,4 @@ then
     sudo apt-get update
 fi
 
-irohms-install-system dropbox
+cucr-install-system dropbox

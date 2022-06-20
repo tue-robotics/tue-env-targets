@@ -17,7 +17,7 @@
   name: ros-rosbridge_server
 
 - type: target
-  name: ros-irohms_mobile_ui
+  name: ros-cucr_mobile_ui
 
 - type: target
   name: ros-node_alive

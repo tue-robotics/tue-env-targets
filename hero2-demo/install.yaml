@@ -11,7 +11,7 @@
 
 # Middleware
 - type: target
-  name: irohms-middleware
+  name: cucr-middleware
 
 # challenge_demo
 - type: target

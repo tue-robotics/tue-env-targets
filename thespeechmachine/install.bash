@@ -13,7 +13,7 @@ fi
 mkdir -p ~/.vbox_images
 if [ ! -d ~/.vbox_images/thespeechmachine ]
 then
-    wget --no-check-certificate http://roboticssrv.wtb.irohms.nl/vbox_images/thespeechmachine.tar.gz -O- | tar -xzv --directory ~/.vbox_images
+    wget --no-check-certificate http://roboticssrv.wtb.cucr.nl/vbox_images/thespeechmachine.tar.gz -O- | tar -xzv --directory ~/.vbox_images
     vboxmanage registervm ~/.vbox_images/thespeechmachine/thespeechmachine.vbox
 fi
 

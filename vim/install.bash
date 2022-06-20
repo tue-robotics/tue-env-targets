@@ -5,7 +5,7 @@ if [ ! -f ~/.vimrc ]
 then
     echo "installing a basic vimrc..."
     # install a TU/e .vimrc
-    irohms-install-cp vimrc ~/.vimrc
+    cucr-install-cp vimrc ~/.vimrc
 fi
 
 # install pathogen for automatic vim plugin loading
@@ -23,10 +23,10 @@ fi
 if [ ! -d ~/.vim/bundle/editorconfig-vim ]
 then
     echo "installing editorconfig..."
-    irohms-install-git https://github.com/editorconfig/editorconfig-vim.git ~/.vim/bundle/editorconfig-vim
+    cucr-install-git https://github.com/editorconfig/editorconfig-vim.git ~/.vim/bundle/editorconfig-vim
 fi
 
-irohms-install-system-now vim
+cucr-install-system-now vim
 
 # set the default editor to vim
 vimdir="/usr/bin/vim.basic"

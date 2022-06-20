@@ -1,1 +1,1 @@
-irohms-install-system libconsole-bridge-dev
+cucr-install-system libconsole-bridge-dev

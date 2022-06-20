@@ -11,4 +11,4 @@
 
 # Tele-operation
 - type: target
-  name: ros-irohms_teleop_keyboard
+  name: ros-cucr_teleop_keyboard

@@ -1,5 +1,5 @@
 - type: target
-  name: irohms-dev
+  name: cucr-dev
 
 - type: target
-  name: irohms-tools
+  name: cucr-tools
