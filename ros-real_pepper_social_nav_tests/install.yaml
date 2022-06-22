@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:CardiffUniversityComputationalRobotics/social-rrt-demo.git
-    sub-dir: real_pepper_pipeline
+    url: git@github.com:CardiffUniversityComputationalRobotics/pepper_social_nav_tests.git
+    sub-dir: real_pepper_social_nav_tests

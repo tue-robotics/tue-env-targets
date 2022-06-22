@@ -2,11 +2,11 @@
   noetic:
     source:
       type: git
-      url: git@github.com:CardiffUniversityComputationalRobotics/social-rrt-demo.git
+      url: git@github.com:CardiffUniversityComputationalRobotics/esc_nav_stack.git
       version: noetic-devel
-      sub-dir: pepper_move_base/pepper_move_base_mapping
+      sub-dir: esc_move_base_mapping
   default:
     source:
       type: git
-      url: git@github.com:CardiffUniversityComputationalRobotics/social-rrt-demo.git
-      sub-dir: pepper_move_base/pepper_move_base_mapping
+      url: git@github.com:CardiffUniversityComputationalRobotics/esc_nav_stack.git
+      sub-dir: esc_move_base_mapping

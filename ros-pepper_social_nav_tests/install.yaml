@@ -2,11 +2,11 @@
   noetic:
     source:
       type: git
-      url: git@github.com:CardiffUniversityComputationalRobotics/social-rrt-demo.git
-      sub-dir: pepper_pipeline
+      url: git@github.com:CardiffUniversityComputationalRobotics/social-robot-nav-tests.git
+      sub-dir: pepper_social_nav_tests
       version: noetic-devel
   default:
     source:
       type: git
-      url: git@github.com:CardiffUniversityComputationalRobotics/social-rrt-demo.git
-      sub-dir: pepper_pipeline
+      url: git@github.com:CardiffUniversityComputationalRobotics/social-robot-nav-tests.git
+      sub-dir: pepper_social_nav_tests
