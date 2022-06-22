@@ -2,11 +2,11 @@
   noetic:
     source:
       type: git
-      url: git@github.com:CardiffUniversityComputationalRobotics/esc_nav_stack.git
+      url: git@github.com:CardiffUniversityComputationalRobotics/esc-nav-stack.git
       version: noetic-devel
       sub-dir: esc_move_base_planning
   default:
     source:
       type: git
-      url: git@github.com:CardiffUniversityComputationalRobotics/esc_nav_stack.git
+      url: git@github.com:CardiffUniversityComputationalRobotics/esc-nav-stack.git
       sub-dir: esc_move_base_planning
