@@ -1,0 +1,10 @@
+- type: ros
+  noetic:
+    source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/ros_maps_to_pedsim.git
+      version: noetic-devel
+  default:
+    source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/ros_maps_to_pedsim.git
