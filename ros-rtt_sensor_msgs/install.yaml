@@ -1,8 +1,8 @@
 - type: ros
   #default:
-    #source:
-      #type: system
-      #name: rtt-sensor-msgs
+  #  source:
+  #    type: system
+  #    name: rtt-sensor-msgs
   default:
     source:
       type: git

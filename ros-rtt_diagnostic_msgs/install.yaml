@@ -1,8 +1,8 @@
 - type: ros
   #default:
-    #source:
-      #type: system
-      #name: rtt-diagnostic-msgs
+  #  source:
+  #    type: system
+  #    name: rtt-diagnostic-msgs
   default:
     source:
       type: git

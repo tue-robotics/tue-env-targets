@@ -1,8 +1,8 @@
 - type: ros
   #default:
-    #source:
-      #type: system
-      #name: rtt-rosclock
+  #  source:
+  #    type: system
+  #    name: rtt-rosclock
   default:
     source:
       type: git
