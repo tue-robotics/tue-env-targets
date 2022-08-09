@@ -1,8 +1,8 @@
 - type: ros
   #default:
-    #source:
-      #type: system
-      #name: rtt-nav-msgs
+  #  source:
+  #    type: system
+  #    name: rtt-nav-msgs
   default:
     source:
       type: git

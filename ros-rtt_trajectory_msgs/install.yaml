@@ -1,8 +1,8 @@
 - type: ros
   #default:
-    #source:
-      #type: system
-      #name: rtt-trajectory-msgs
+  #  source:
+  #    type: system
+  #    name: rtt-trajectory-msgs
   default:
     source:
       type: git

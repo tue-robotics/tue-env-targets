@@ -1,8 +1,8 @@
 - type: ros
   #default:
-    #source:
-      #type: system
-      #name: rtt-std-srvs
+  #  source:
+  #    type: system
+  #    name: rtt-std-srvs
   default:
     source:
       type: git

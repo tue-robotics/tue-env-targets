@@ -1,8 +1,8 @@
 - type: ros
   #default:
-    #source:
-      #type: system
-      #name: rtt-rosnode
+  #  source:
+  #    type: system
+  #    name: rtt-rosnode
   default:
     source:
       type: git

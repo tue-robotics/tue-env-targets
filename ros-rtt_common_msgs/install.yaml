@@ -1,8 +1,8 @@
 - type: ros
   #default:
-    #source:
-      #type: system
-      #name: rtt-common-msgs
+  #  source:
+  #    type: system
+  #    name: rtt-common-msgs
   default:
     source:
       type: git
