@@ -1,9 +1,9 @@
 - type: ros
+  #default:
+    #source:
+      #type: system
+      #name: rtt-geometry-msgs
   default:
-    source:
-      type: system
-      name: rtt-geometry-msgs
-  melodic:
     source:
       type: git
       url: https://github.com/orocos/rtt_ros_integration.git

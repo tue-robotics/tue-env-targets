@@ -1,9 +1,9 @@
 - type: ros
+  #default:
+    #source:
+      #type: system
+      #name: ocl
   default:
-    source:
-      type: system
-      name: ocl
-  melodic:
     source:
       type: git
       url: https://github.com/orocos-toolchain/ocl.git

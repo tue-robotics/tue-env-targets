@@ -1,9 +1,9 @@
 - type: ros
+  #default:
+    #source:
+      #type: system
+      #name: rtt-rospack
   default:
-    source:
-      type: system
-      name: rtt-rospack
-  melodic:
     source:
       type: git
       url: https://github.com/orocos/rtt_ros_integration.git
