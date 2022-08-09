@@ -1,9 +1,9 @@
 - type: ros
+  #default:
+    #source:
+      #type: system
+      #name: rtt-common-msgs
   default:
-    source:
-      type: system
-      name: rtt-common-msgs
-  melodic:
     source:
       type: git
       url: https://github.com/orocos/rtt_ros_integration.git
