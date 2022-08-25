@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+alias hero2-test-rgbd-shm="rosrun rgbd rgbd_test_client_shm --headless test:=/hero/head_rgbd_sensor/rgbd"
