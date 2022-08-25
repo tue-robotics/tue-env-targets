@@ -63,5 +63,4 @@ if [ ! -d $ssh_controlmasters_dir ]
 then
     mkdir -p $ssh_controlmasters_dir
 fi
-# TEMP: disabled for rwc2022
-# tue-install-add-text ssh_persistent_connection_lines $ssh_config
+tue-install-add-text ssh_persistent_connection_lines $ssh_config
