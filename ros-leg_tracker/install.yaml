@@ -1,4 +1,10 @@
 - type: ros
-  source:
-    type: git
-    url: git@github.com:cucr-robotics/leg_tracker.git
+  melodic:
+    source:
+      type: git
+      url: git@github.com:angusleigh/leg_tracker.git
+      version: melodic
+  default:
+    source:
+      type: git
+      url: git@github.com:angusleigh/leg_tracker.git
