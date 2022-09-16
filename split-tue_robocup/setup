@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-funtion split-tue-robocup
+function split-tue-robocup
 {
     if [ -z "$1" ]
     then
@@ -33,7 +33,8 @@ funtion split-tue-robocup
     echo -e "args: '${args}'"
 
     echo -e "git split-branch -b origin/master -r ${robocup_env}_remainder ${robocup_env} ${args}\n\n\n"
-    git split-branch -b origin/master -r ${robocup_env}_remainder ${robocup_env} ${args}
+    # shellcheck disable=SC2086
+    git split-branch -b origin/master -r "${robocup_env}"_remainder "${robocup_env}" ${args}
 
     for branch in $(git branch --format='%(refname:short)')
     do
