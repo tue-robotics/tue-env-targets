@@ -1,0 +1,55 @@
+#! /usr/bin/env bash
+
+funtion split-tue-robocup
+{
+    if [ -z "$1" ]
+    then
+        echo -e "Provide robocup environment"
+        exit 1
+    fi
+
+    robocup_env=$1
+
+    args=
+
+    # shellcheck disable=SC2044
+    for pkg in $(find . -path './[^.]*' -prune -type d -printf '%P\n')
+    do
+        echo "${pkg}"
+        if [[ "${pkg}" != "challenge"* ]]
+        then
+            echo "Skipping ${pkg}"
+            continue
+        fi
+
+        # Splitting the args
+        if [ -n "${args}" ]
+        then
+            args="${args} -- "
+        fi
+        args="${args}${robocup_env}_${pkg} ${pkg} robocup_knowledge/src/robocup_knowledge/environments/*/${pkg}.py"
+    done
+
+    echo -e "args: '${args}'"
+
+    echo -e "git split-branch -b origin/master -r ${robocup_env}_remainder ${robocup_env} ${args}\n\n\n"
+    git split-branch -b origin/master -r ${robocup_env}_remainder ${robocup_env} ${args}
+
+    for branch in $(git branch --format='%(refname:short)')
+    do
+        if [[ "${branch}" != "${robocup_env}_challenge_"* ]] && [[ "${branch}" != "${robocup_env}_remainder" ]]
+        then
+            # echo "Skipping ${branch}"
+            continue
+        fi
+
+        echo "branch: ${branch}"
+        if git diff --exit-code --quiet origin/master "${branch}"
+        then
+            echo "Empty diff, skipping: ${branch}"
+            continue
+        fi
+
+        git push -u origin "${branch}"
+    done
+}
