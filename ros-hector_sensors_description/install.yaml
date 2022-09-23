@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: system
-    name: dwa-local-planner
+    name: hector-sensors-description
