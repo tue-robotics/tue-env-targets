@@ -1,0 +1,4 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/unity_social_navigation.git
