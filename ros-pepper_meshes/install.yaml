@@ -1,9 +1,4 @@
 - type: ros
-  noetic:
-    source:
-      type: git
-      url: git@github.com:CardiffUniversityComputationalRobotics/pepper_meshes.git
-  default:
-    source:
-      type: system
-      name: pepper-meshes
+  source:
+    type: system
+    name: pepper-meshes
