@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/dragonfly_speech_recognition.git
+    url: git@github.com:tue-robotics/dragonfly_speech_recognition.git
