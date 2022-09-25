@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/hero_bringup.git
+    url: git@github.com:tue-robotics/hero_bringup.git

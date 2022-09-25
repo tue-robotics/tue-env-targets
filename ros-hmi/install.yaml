@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/hmi.git
+    url: git@github.com:tue-robotics/hmi.git
     sub-dir: hmi
