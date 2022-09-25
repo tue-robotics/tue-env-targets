@@ -5,6 +5,12 @@
       url: git@github.com:CardiffUniversityComputationalRobotics/esc-nav-stack.git
       version: noetic-devel
       sub-dir: esc_move_base_control
+  melodic:
+    source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/esc-nav-stack.git
+      version: melodic-devel
+      sub-dir: esc_move_base_control
   default:
     source:
       type: git

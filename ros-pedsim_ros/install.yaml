@@ -4,6 +4,11 @@
       type: git
       url: git@github.com:CardiffUniversityComputationalRobotics/pedsim_ros.git
       version: noetic-devel
+  melodic:
+    source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/pedsim_ros.git
+      version: melodic-devel
   default:
     source:
       type: git

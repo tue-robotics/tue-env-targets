@@ -4,7 +4,11 @@
       type: git
       url: git@github.com:CardiffUniversityComputationalRobotics/sfm_diff_drive.git
       version: noetic-devel
-
+  melodic:
+    source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/sfm_diff_drive.git
+      version: melodic-devel
   default:
     source:
       type: git
