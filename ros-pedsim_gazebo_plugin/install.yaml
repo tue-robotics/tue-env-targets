@@ -4,15 +4,15 @@
       type: git
       url: git@github.com:CardiffUniversityComputationalRobotics/pedsim_ros.git
       version: noetic-devel
-      sub-dir: pedsim_ros
+      sub-dir: pedsim_gazebo_plugin
   melodic:
     source:
       type: git
       url: git@github.com:CardiffUniversityComputationalRobotics/pedsim_ros.git
       version: melodic-devel
-      sub-dir: pedsim_ros
+      sub-dir: pedsim_gazebo_plugin
   default:
     source:
       type: git
       url: git@github.com:CardiffUniversityComputationalRobotics/pedsim_ros.git
-      sub-dir: pedsim_ros
+      sub-dir: pedsim_gazebo_plugin
