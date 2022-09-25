@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/ed_tutorials.git
+    url: git@github.com:tue-robotics/ed_tutorials.git
