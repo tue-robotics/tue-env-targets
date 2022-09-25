@@ -49,7 +49,7 @@ do
             fi
 
             local src=${cmd_split[2]}
-            if [[ "$src" != *"github.com/cucr-robotics"* ]]
+            if [[ "$src" != *"github.com/CardiffUniversityComputationalRobotics"* ]]
             then
                 CUCR_INSTALL_CURRENT_TARGET=$parent_target
                 continue

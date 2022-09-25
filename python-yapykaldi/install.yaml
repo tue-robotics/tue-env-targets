@@ -17,4 +17,4 @@
   name: portaudio19-dev
 
 - type: pip
-  name: git+https://github.com/cucr-robotics/yapykaldi.git
+  name: git+https://github.com/tue-robotics/yapykaldi.git
