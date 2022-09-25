@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/rtt_control_components.git
+    url: git@github.com:tue-robotics/rtt_control_components.git

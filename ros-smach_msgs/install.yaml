@@ -1,5 +1,4 @@
 - type: ros
   source:
-    type: git
-    url: git@github.com:cucr-robotics/executive_smach.git
-    sub-dir: smach_msgs
+    type: system
+    name: smach_msgs

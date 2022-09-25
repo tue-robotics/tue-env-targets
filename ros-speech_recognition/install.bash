@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-url=$(curl -s https://api.github.com/repos/cucr-robotics/speech_recognition/releases/latest | \
+url=$(curl -s https://api.github.com/repos/tue-robotics/speech_recognition/releases/latest | \
     grep "browser_download_url.*model.tar.gz" | cut -d '"' -f 4)
 
 version=$(echo "$url" | sed -e 's|/| |g' | awk '{print $7}')

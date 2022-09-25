@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/slack_ros.git
+    url: git@github.com:tue-robotics/slack_ros.git
