@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/ethercat_interface.git
+    url: git@github.com:tue-robotics/ethercat_interface.git

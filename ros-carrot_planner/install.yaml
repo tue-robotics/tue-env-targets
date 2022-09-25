@@ -1,12 +1,4 @@
 - type: ros
-  melodic:
-    source:
-      type: git
-      url: git@github.com:tue-robotics/navigation.git
-      sub-dir: carrot_planner
-      version: melodic-devel
-  default:
-    source:
-      type: git
-      url: git@github.com:tue-robotics/navigation.git
-      sub-dir: carrot_planner
+  source:
+    type: system
+    name: carrot_planner

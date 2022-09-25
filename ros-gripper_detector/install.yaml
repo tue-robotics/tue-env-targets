@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/gripper_detector.git
+    url: git@github.com:tue-robotics/gripper_detector.git

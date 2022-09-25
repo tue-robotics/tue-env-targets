@@ -1,6 +1,4 @@
 - type: ros
   source:
-    type: git
-    url: git@github.com:cucr-robotics/navigation.git
-    sub-dir: fake_localization
-    version: melodic-devel
+    type: system
+    name: fake_localization
