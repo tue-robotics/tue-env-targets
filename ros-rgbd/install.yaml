@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/rgbd.git
+    url: git@github.com:tue-robotics/rgbd.git
     sub-dir: rgbd
