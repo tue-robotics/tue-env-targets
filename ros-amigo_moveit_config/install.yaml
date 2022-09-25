@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/amigo_moveit_config.git
+    url: git@github.com:tue-robotics/amigo_moveit_config.git
