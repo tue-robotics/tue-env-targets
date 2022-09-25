@@ -1,5 +1,5 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/wire.git
+    url: git@github.com:tue-robotics/wire.git
     sub-dir: wire_tutorials
