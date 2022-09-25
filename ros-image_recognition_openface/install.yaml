@@ -1,7 +1,7 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:cucr-robotics/image_recognition.git
+    url: git@github.com:tue-robotics/image_recognition.git
     sub-dir: image_recognition_openface
 - type: target
   name: openface
