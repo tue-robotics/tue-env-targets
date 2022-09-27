@@ -23,14 +23,10 @@ then
     touch "$rosdep_update_file"
 fi
 
-mkdir -p "$TUE_SYSTEM_DIR" "$TUE_DEV_DIR"
+mkdir -p "$TUE_SYSTEM_DIR"
 
 if [ ! -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
 then
-    tue-make || tue-install-error "Error in building the system workspace"
-fi
-
-if [ ! -f "$TUE_DEV_DIR"/devel/setup.bash ]
-then
-    tue-make-dev || tue-install-error "Error in building the dev workspace"
+    [[ -z "${TUE_ROS_VERSION}" ]] && { tue-install-warning "tue-env variable TUE_ROS_VERSION is not set. This will not be allowed in the future.\nSetting TUE_ROS_VERSION=1 temporarily."; }
+    TUE_ROS_VERSION=1 tue-make || tue-install-error "Error in building the system workspace"
 fi

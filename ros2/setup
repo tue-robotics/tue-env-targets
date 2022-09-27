@@ -1,0 +1,43 @@
+#! /usr/bin/env bash
+
+if [ -z "$TUE_ROS_DISTRO" ]
+then
+    echo "[ros2] TUE_ROS_DISTRO was not set"
+    return 1
+fi
+
+# shellcheck disable=SC1090
+# Add ROS sourcing to the shell startup script
+if [ -f "/opt/ros/${TUE_ROS_DISTRO}/setup.bash" ]
+then
+    source "/opt/ros/${TUE_ROS_DISTRO}/setup.bash"
+else
+    echo -e "\033[33;1m[ros2] ROS 2 ${TUE_ROS_DISTRO} setup.bash not found. \033[0m"
+fi
+
+# shellcheck disable=SC1090
+if [ -f "${TUE_SYSTEM_DIR}/install/local_setup.bash" ]
+then
+    source "${TUE_SYSTEM_DIR}/install/local_setup.bash"
+else
+    echo -e "\033[33;1m[ros2] ${TUE_SYSTEM_DIR}/install/local_setup.bash not found. \033[0m"
+fi
+
+# Add Colcon sourcing to the shell startup script
+if [ -f "/usr/share/colcon_cd/function/colcon_cd.sh" ]
+then
+    # shellcheck disable=SC1091
+    source /usr/share/colcon_cd/function/colcon_cd.sh
+    # shellcheck disable=SC2016
+    export _colcon_cd_root="${TUE_SYSTEM_DIR}"
+else
+    echo -e "\033[33;5;1m[ros2] colcon_cd setup not found. colcon_cd command disabled. \033[0m"
+fi
+
+# shellcheck disable=SC2016
+ROSCONSOLE_FORMAT='[${severity}][${node}][${time}]: ${message}'
+export ROSCONSOLE_FORMAT
+
+# shellcheck disable=SC2016
+# Make eProsima DDS implementation default
+export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
