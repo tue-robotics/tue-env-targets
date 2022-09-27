@@ -31,7 +31,7 @@ then
     then
         tue-install-debug "No existing GPG key of ROS repository found, adding a new one"
         ADD_ROS_GPG_KEY=true
-    elif gpg --import --import-options show-only "${keyfile}" 2> /dev/null | grep -q expired
+    elif tue-install-pipe gpg --import --import-options show-only "${keyfile}" 2> /dev/null | grep -q expired
     then
         tue-install-debug "Updating expired GPG key of ROS repository"
         ADD_ROS_GPG_KEY=true
@@ -42,7 +42,7 @@ fi
 
 if [[ "${ADD_ROS_GPG_KEY}" == "true" ]]
 then
-    sudo curl -sSL "${keyurl}" -o "${keyfile}"
+    tue-install-pipe sudo curl -sSL "${keyurl}" -o "${keyfile}"
     tue-install-debug "Successfully added/updated ROS repository GPG key"
 
     FORCE_UPDATE=true
