@@ -7,17 +7,11 @@ then
 fi
 
 # shellcheck disable=SC1090
-if [ -f "$TUE_DEV_DIR"/devel/setup.bash ]
+if [ -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
 then
-    source "$TUE_DEV_DIR"/devel/setup.bash
-
-elif [ -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
-then
-    echo -e "\e[33;1m[ros] dev workspace not found, sourcing system workspace\e[0m"
     source "$TUE_SYSTEM_DIR"/devel/setup.bash
-
 else
-    echo -e "\e[33;1m[ros] dev and system workspaces not found, sourcing /opt/ros\e[0m"
+    echo -e "\e[33;1m[ros] system workspaces not found, sourcing /opt/ros\e[0m"
     source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
 fi
 
