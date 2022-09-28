@@ -13,6 +13,7 @@ done
 # Gnome scroll windows (all ubuntu versions newer than xenial(16.04))
 if [ "$(lsb_release -sc)" != "xenial" ]
 then
+    tue-install-debug "gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'"
     gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'
 fi
 
