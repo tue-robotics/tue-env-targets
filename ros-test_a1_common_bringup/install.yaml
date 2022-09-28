@@ -1,0 +1,5 @@
+- type: ros
+  source:
+    type: git
+    url: git@github.com:CardiffUniversityComputationalRobotics/cucr_robots_tests.git
+    sub-dir: tests_a1/test_a1_common_bringup
