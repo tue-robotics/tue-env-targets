@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Git Settings
-git_config_items="pull.ff=true color.ui=always merge.tool=meld"
+git_config_items="pull.ff=true color.ui=always merge.tool=meld url.ssh://git@github.com/.insteadOf=https://github.com/"
 for item in $git_config_items
 do
         option=${item%=*}
@@ -13,6 +13,7 @@ done
 # Gnome scroll windows (all ubuntu versions newer than xenial(16.04))
 if [ "$(lsb_release -sc)" != "xenial" ]
 then
+    tue-install-debug "gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'"
     gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'
 fi
 
