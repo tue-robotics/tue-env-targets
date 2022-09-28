@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Git Settings
-git_config_items="pull.ff=true color.ui=always merge.tool=meld"
+git_config_items="pull.ff=true color.ui=always merge.tool=meld url.ssh://git@github.com/.insteadOf=https://github.com/"
 for item in $git_config_items
 do
         option=${item%=*}
