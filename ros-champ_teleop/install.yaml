@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: git@github.com:chvmp/champ_teleop.git
+    url: git@github.com:CardiffUniversityComputationalRobotics/champ_teleop.git
