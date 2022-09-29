@@ -3,3 +3,4 @@
     type: git
     url: git@github.com:CardiffUniversityComputationalRobotics/unitree_ros_to_real.git
     sub-dir: unitree_legged_msgs
+    version: 3c0fe3c97d048464869074c90719997731333841
