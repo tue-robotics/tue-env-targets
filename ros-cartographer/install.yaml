@@ -1,0 +1,9 @@
+- type: ros
+  noetic:
+    source:
+      type: git
+      url: git@github.com:cartographer-project/cartographer.git
+  default:
+    source:
+      type: system
+      name: cartographer
