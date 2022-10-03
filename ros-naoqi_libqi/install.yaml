@@ -1,10 +1,4 @@
 - type: ros
-  noetic:
-    source:
-      type: git
-      url: git@github.com:ros-naoqi/libqi.git
-      version: noetic-devel
-  default:
-    source:
-      type: system
-      name: naoqi-libqi
+  source:
+    type: system
+    name: naoqi-libqi

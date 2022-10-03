@@ -1,9 +1,4 @@
 - type: ros
-  noetic:
-    source:
-      type: git
-      url: git@github.com:ros-naoqi/naoqi_bridge_msgs.git
-  default:
-    source:
-      type: system
-      name: naoqi-bridge-msgs
+  source:
+    type: system
+    name: naoqi-bridge-msgs
