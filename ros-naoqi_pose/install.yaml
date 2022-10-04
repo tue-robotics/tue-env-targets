@@ -1,5 +1,12 @@
 - type: ros
-  source:
+  noetic:
+    source:
       type: git
-      url: git@github.com:ros-naoqi/naoqi_bridge.git
+      url: git@github.com:CardiffUniversityComputationalRobotics/naoqi_bridge.git
+      sub-dir: naoqi_pose
+      version: noetic-devel
+  default:
+    source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/naoqi_bridge.git
       sub-dir: naoqi_pose

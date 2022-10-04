@@ -1,4 +1,10 @@
 - type: ros
-  source:
-    type: git
-    url: git@github.com:CardiffUniversityComputationalRobotics/naoqi_dcm_driver.git
+  noetic:
+    source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/naoqi_dcm_driver.git
+      version: noetic-devel
+  default:
+    source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/naoqi_dcm_driver.git
