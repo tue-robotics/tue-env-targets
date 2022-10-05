@@ -2,7 +2,7 @@
   noetic:
     source:
       type: git
-      url: git@github.com:cartographer-project/cartographer.git
+      url: git@github.com:CardiffUniversityComputationalRobotics/cartographer.git
   default:
     source:
       type: system
