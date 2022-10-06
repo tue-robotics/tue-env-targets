@@ -2,4 +2,4 @@
   source:
     type: git
     url: git@github.com:CardiffUniversityComputationalRobotics/unitree_ros_to_real.git
-    sub-dir: unitree_legged_msgs
+    sub-dir: unitree_legged_real
