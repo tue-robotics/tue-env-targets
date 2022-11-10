@@ -62,7 +62,7 @@ then
 fi
 
 # tue-install-git will decide if clone or pull is needed
-tue-install-git "$KALDI_REPO" "$KALDI_HOME" "$KALDI_REPO_BRANCH"
+tue-install-git "$KALDI_REPO" --target-dir="$KALDI_HOME" --version="$KALDI_REPO_BRANCH"
 
 # Build toolkit if needed
 # shellcheck disable=SC2164

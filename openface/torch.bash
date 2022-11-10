@@ -14,7 +14,7 @@ then
     export TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__"
 fi
 
-tue-install-git https://github.com/tue-robotics/torch-distro.git ~/src/torch
+tue-install-git https://github.com/tue-robotics/torch-distro.git --target-dir=~/src/torch
 # shellcheck disable=SC2164
 cd ~/src/torch
 tue-install-debug "Installing Torch dependencies"

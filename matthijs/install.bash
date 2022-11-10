@@ -19,7 +19,7 @@ fi
 
 # Styling
 themes_path=~/src/vimix-gtk-themes
-tue-install-git https://github.com/vinceliuice/vimix-gtk-themes.git $themes_path
+tue-install-git https://github.com/vinceliuice/vimix-gtk-themes.git --target-dir=$themes_path
 themes_commit_hash=$(git -C "$themes_path" rev-list HEAD -n 1)
 if [ ! -f $themes_path/last_install ] || [ "$(cat "$themes_path"/last_install)" != "$themes_commit_hash" ]
 then
@@ -31,7 +31,7 @@ else
 fi
 
 icon_path=~/src/vimix-icon-theme
-tue-install-git https://github.com/vinceliuice/vimix-icon-theme.git $icon_path
+tue-install-git https://github.com/vinceliuice/vimix-icon-theme.git --target-dir=$icon_path
 icon_commit_hash=$(git -C "$icon_path" rev-list HEAD -n 1)
 if [ ! -f $icon_path/last_install ] || [ "$(cat "$icon_path"/last_install)" != "$icon_commit_hash" ]
 then

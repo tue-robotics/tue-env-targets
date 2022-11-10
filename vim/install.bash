@@ -23,7 +23,7 @@ fi
 if [ ! -d ~/.vim/bundle/editorconfig-vim ]
 then
     tue-install-echo "installing editorconfig..."
-    tue-install-git https://github.com/editorconfig/editorconfig-vim.git ~/.vim/bundle/editorconfig-vim
+    tue-install-git https://github.com/editorconfig/editorconfig-vim.git --target-dir=~/.vim/bundle/editorconfig-vim
 fi
 
 tue-install-system-now vim
