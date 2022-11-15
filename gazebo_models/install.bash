@@ -12,4 +12,4 @@ fi
 # temp; end
 
 url=https://github.com/osrf/gazebo_models.git
-tue-install-git "$url" "$model_path"
+tue-install-git "$url" --target-dir="$model_path"

@@ -26,7 +26,7 @@ then
 fi
 
 # tue-install-git will decide if clone or pull is needed
-tue-install-git $github_url "$dest"
+tue-install-git $github_url --target-dir="$dest"
 
 # make if needed
 # shellcheck disable=SC2164
