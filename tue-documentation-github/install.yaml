@@ -173,6 +173,8 @@
 - type: target
   name: ros-people_recognition_msgs
 - type: target
+  name: ros-picovoice_msgs
+- type: target
   name: ros-problib
 - type: target
   name: ros-problib_msgs
