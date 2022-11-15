@@ -27,7 +27,7 @@ do
     fi
 
     local cmds
-    if cmds=$("$TUE_INSTALL_SCRIPTS_DIR"/parse-install-yaml.py "$target_yaml_file")
+    if cmds=$("$TUE_INSTALL_SCRIPTS_DIR"/parse_install_yaml.py "$target_yaml_file")
     then
         for cmd in $cmds
         do
