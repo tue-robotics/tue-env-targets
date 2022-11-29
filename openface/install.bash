@@ -2,7 +2,7 @@
 
 if [ ! -d "${HOME}"/src/openface ]
 then
-    tue-install-git https://github.com/cmusatyalab/openface.git  --target-dir=~/src/openface
+    tue-install-git https://github.com/cmusatyalab/openface.git --target-dir=~/src/openface
 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     # shellcheck disable=SC1090
