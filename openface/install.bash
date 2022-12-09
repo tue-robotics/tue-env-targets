@@ -5,7 +5,7 @@ then
     tue-install-git https://github.com/cmusatyalab/openface.git --target-dir=~/src/openface
 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-    # shellcheck disable=SC1090
+    # shellcheck disable=SC1091
     source "$DIR"/torch.bash
 
     # shellcheck disable=SC2164

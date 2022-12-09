@@ -6,12 +6,13 @@ then
     return 1
 fi
 
-# shellcheck disable=SC1090
 if [ -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
 then
+    # shellcheck disable=SC1091
     source "$TUE_SYSTEM_DIR"/devel/setup.bash
 else
     echo -e "\e[33;1m[ros] system workspaces not found, sourcing /opt/ros\e[0m"
+    # shellcheck disable=SC1090
     source /opt/ros/"$TUE_ROS_DISTRO"/setup.bash
 fi
 
