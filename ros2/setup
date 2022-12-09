@@ -6,18 +6,18 @@ then
     return 1
 fi
 
-# shellcheck disable=SC1090
 # Add ROS sourcing to the shell startup script
 if [ -f "/opt/ros/${TUE_ROS_DISTRO}/setup.bash" ]
 then
+    # shellcheck disable=SC1090
     source "/opt/ros/${TUE_ROS_DISTRO}/setup.bash"
 else
     echo -e "\033[33;1m[ros2] ROS 2 ${TUE_ROS_DISTRO} setup.bash not found. \033[0m"
 fi
 
-# shellcheck disable=SC1090
 if [ -f "${TUE_SYSTEM_DIR}/install/local_setup.bash" ]
 then
+    # shellcheck disable=SC1091
     source "${TUE_SYSTEM_DIR}/install/local_setup.bash"
 else
     echo -e "\033[33;1m[ros2] ${TUE_SYSTEM_DIR}/install/local_setup.bash not found. \033[0m"
