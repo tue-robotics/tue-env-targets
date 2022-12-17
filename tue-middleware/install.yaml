@@ -14,6 +14,9 @@
 
 - type: target
   name: ros-dwa_local_planner
+  
+- type: target
+  name: ros-depthimage_to_navscan_rgbd
 
 # SLAM
 - type: target
