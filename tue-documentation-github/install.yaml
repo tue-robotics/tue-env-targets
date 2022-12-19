@@ -189,6 +189,8 @@
 - type: target
   name: ros-rgbd
 - type: target
+  name: ros-rgbd_image_buffer
+- type: target
   name: ros-rgbd_msgs
 - type: target
   name: ros-robocup_knowledge
