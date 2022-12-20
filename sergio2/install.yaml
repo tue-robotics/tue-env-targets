@@ -28,6 +28,6 @@
 
 # RoboCup
 - type: target
-  name: tue-robocup-at-home
+  name: ros-tue_robocup
 - type: target
   name: ros-sergio_skills
