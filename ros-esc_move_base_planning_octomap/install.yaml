@@ -1,0 +1,6 @@
+- type: ros
+  source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/esc-nav-stack.git
+      version: octomap
+      sub-dir: esc_move_base_planning
