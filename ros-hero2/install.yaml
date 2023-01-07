@@ -1,0 +1,6 @@
+- type: ros
+  source:
+    type: git
+    url: https://github.com/tue-robotics/tue_metapackages.git
+    sub-dir: hero2
+
