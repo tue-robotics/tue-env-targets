@@ -31,7 +31,7 @@ then
     then
         tue-install-debug "No existing GPG key of ROS repository found, adding a new one"
         ADD_ROS_GPG_KEY=true
-    elif tue-install-pipe gpg --import --import-options show-only "${keyfile}" 2> /dev/null | grep -q expired
+    elif tue-install-pipe gpg --import --import-options show-only ${keyfile} 2> /dev/null; echo -e "${TUE_INSTALL_PIPE_STDOUT}" | grep -q expired
     then
         tue-install-debug "Updating expired GPG key of ROS repository"
         ADD_ROS_GPG_KEY=true
