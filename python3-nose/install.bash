@@ -1,5 +1,10 @@
 #! /usr/bin/env bash
 
+function version_gt()
+{
+    test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1";
+}
+
 desired_version="1.3.8"
 installed_version=$(python3 -c 'import nose; print(nose.__version__)')
 if version_gt "$desired_version" "$installed_version"
