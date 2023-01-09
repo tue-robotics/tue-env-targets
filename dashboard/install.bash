@@ -2,7 +2,8 @@
 set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-"$DIR"/get-releases linux64 | "$DIR"/process-releases
+releases=$("$DIR"/get-releases linux64)
+"$DIR"/process-releases "${releases}"
 
 # shellcheck disable=SC1091
 source /etc/lsb-release
