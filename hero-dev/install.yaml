@@ -10,7 +10,7 @@
 
 # Visualization
 - type: target
-  name: ros-rviz
+  name: rviz
 
 # DATA
 - type: target
@@ -18,7 +18,7 @@
 
 # Diagnostics
 - type: target
-  name: ros-viz
+  name: viz
 
 # -------------------- ROBOCUP --------------------
 
