@@ -1,10 +1,10 @@
-name: CI
+name: Linting
 
 on: [push, pull_request]
 
 jobs:
-  linting:
-    name: Linting
+  yamllint:
+    name: YamlLint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,9 +17,25 @@ jobs:
           python-version: '3.x'
       - name: Install YamlLint
         run: pip install --upgrade yamllint
-      - name: ShellCheck
-        run: bash -c 'shopt -s globstar; shellcheck ./**/*.bash ./**/*.sh ./**/setup'
       - name: YamlLint
         run: bash -c 'find ./ -iname '*.yaml' -or -iname '*.yml' | xargs yamllint'
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
+      - name: ShellCheck
+        run: bash -c 'shopt -s globstar; shellcheck ./**/*.bash ./**/*.sh ./**/setup'
+  bash_set_error:
+    name: Set -e/+e Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
       - name: Check set -e/+e
         run: ./.check_set-e.bash
