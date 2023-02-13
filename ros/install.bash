@@ -28,5 +28,7 @@ mkdir -p "$TUE_SYSTEM_DIR"
 if [ ! -f "$TUE_SYSTEM_DIR"/devel/setup.bash ]
 then
     [[ -z "${TUE_ROS_VERSION}" ]] && { tue-install-warning "tue-env variable TUE_ROS_VERSION is not set. This will not be allowed in the future.\nSetting TUE_ROS_VERSION=1 temporarily."; }
-    TUE_ROS_VERSION=1 tue-make || tue-install-error "Error in building the system workspace"
+    [[ "$CI" == "true" ]] && status_args=" --no-status"
+    # shellcheck disable=SC2086
+    TUE_ROS_VERSION=1 tue-make${status_args} || tue-install-error "Error in building the system workspace"
 fi
