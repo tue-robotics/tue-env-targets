@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC1090
 
-if [  -z "$COPPELIASIM_ROOT" ]
+if [ ! -d ~/CoppeliaSim_Edu_V4_1_0_Ubuntu20_04/ ]
 then
 	cucr-install-debug "Installing CoppeliaSim"
 	wget -P ~/ https://www.coppeliarobotics.com/files/CoppeliaSim_Edu_V4_1_0_Ubuntu20_04.tar.xz &&  tar -xJf ~/CoppeliaSim_Edu_V4_1_0_Ubuntu20_04.tar.xz -C ~/
