@@ -2,6 +2,3 @@
   source:
       type: git
       url: git@github.com:PickNikRobotics/boost_sml.git
-      version: master
-
-    
