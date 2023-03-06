@@ -35,10 +35,15 @@
 - type: target
   name: telegram-desktop
 
+# Hero Electron apps
+- type: target
+  name: hero-dashboard-dev
+- type: target
+  name: hero-display-dev
+
 # Styling
 - type: system
   name: gnome-tweak-tool
-
 
 # swri
 - type: target
