@@ -1,6 +1,9 @@
 - type: target
   name: hero-dev
 
+- type: target
+  name: tue-documentation
+
 # Handy shit
 - type: target
   name: chrome-dev
