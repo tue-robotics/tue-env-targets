@@ -1,5 +1,0 @@
-- type: pip
-  name: "torch==1.13.1+cu117 -f https://download.pytorch.org/whl/cu117/torch_stable.html"
-
-- type: pip
-  name: "torchvision==0.14.1+cu117 -f https://download.pytorch.org/whl/cu117/torch_stable.html"
