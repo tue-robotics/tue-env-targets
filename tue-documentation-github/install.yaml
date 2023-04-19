@@ -9,6 +9,10 @@
 - type: target
   name: ros-cb_base_navigation_msgs
 - type: target
+  name: ros-challenge_carry_my_luggage
+- type: target
+  name: ros-challenge_clean_the_table
+- type: target
   name: ros-challenge_cleanup
 - type: target
   name: ros-challenge_demo
@@ -42,6 +46,8 @@
   name: ros-challenge_restaurant
 - type: target
   name: ros-challenge_rips
+- type: target
+  name: ros-challenge_serve_breakfast
 - type: target
   name: ros-challenge_serving_drinks
 - type: target
