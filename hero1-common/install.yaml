@@ -4,8 +4,12 @@
 - type: target
   name: ros-laser_filters
 
+# Speech recognition
 - type: target
   name: ros-dragonfly_speech_recognition
+
+- type: target
+  name: ros-picovoice_driver
 
 # RGBD server
 - type: target
