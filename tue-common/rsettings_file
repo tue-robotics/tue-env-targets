@@ -79,7 +79,7 @@ elif [ $ROBOT_ENV == rwc2022 ]; then
     export ROBOT_INIT_Y=3.25
     export ROBOT_INIT_PHI=0.0
 
-elif [ $ROBOT_ENV == rwc2022 ]; then
+elif [ $ROBOT_ENV == rpo2022 ]; then
 
     # Robot initial pose
     export ROBOT_INIT_X=6.05
