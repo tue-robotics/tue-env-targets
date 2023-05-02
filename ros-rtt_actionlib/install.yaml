@@ -1,11 +1,9 @@
 - type: ros
-  #default:
-  #  source:
-  #    type: system
-  #    name: rtt-actionlib
-  default:
-    source:
-      type: git
-      url: https://github.com/orocos/rtt_ros_integration.git
-      sub-dir: rtt_actionlib
-      version: toolchain-2.9
+  #source:
+  #  type: system
+  #  name: rtt-actionlib
+  source:
+    type: git
+    url: https://github.com/orocos/rtt_ros_integration.git
+    sub-dir: rtt_actionlib
+    version: toolchain-2.9

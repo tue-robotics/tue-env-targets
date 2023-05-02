@@ -1,11 +1,9 @@
 - type: ros
-  #default:
-  #  source:
-  #    type: system
-  #    name: rtt-diagnostic-msgs
-  default:
-    source:
-      type: git
-      url: https://github.com/orocos/rtt_ros_integration.git
-      sub-dir: typekits/rtt_diagnostic_msgs
-      version: toolchain-2.9
+  #source:
+  #  type: system
+  #  name: rtt-diagnostics_msgs
+  source:
+    type: git
+    url: https://github.com/orocos/rtt_ros_integration.git
+    sub-dir: typekits/rtt_diagnostic_msgs
+    version: toolchain-2.9
