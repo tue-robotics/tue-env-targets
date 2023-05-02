@@ -1,11 +1,9 @@
 - type: ros
-  #default:
-  #  source:
-  #    type: system
-  #    name: rtt-std-srvs
-  default:
-    source:
-      type: git
-      url: https://github.com/orocos/rtt_ros_integration.git
-      sub-dir: typekits/rtt_std_srvs
-      version: toolchain-2.9
+  #source:
+  #  type: system
+  #  name: rtt-stds-srvs
+  source:
+    type: git
+    url: https://github.com/orocos/rtt_ros_integration.git
+    sub-dir: typekits/rtt_std_srvs
+    version: toolchain-2.9

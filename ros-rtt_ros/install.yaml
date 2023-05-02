@@ -1,11 +1,9 @@
 - type: ros
-  #default:
-  #  source:
-  #    type: system
-  #    name: rtt-ros
-  default:
-    source:
-      type: git
-      url: https://github.com/orocos/rtt_ros_integration.git
-      sub-dir: rtt_ros
-      version: toolchain-2.9
+  #source:
+  #  type: system
+  #  name: rtt-ros
+  source:
+    type: git
+    url: https://github.com/orocos/rtt_ros_integration.git
+    sub-dir: rtt_ros
+    version: toolchain-2.9

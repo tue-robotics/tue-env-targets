@@ -1,11 +1,9 @@
 - type: ros
-  #default:
-  #  source:
-  #    type: system
-  #    name: rtt-rosgraph-msgs
-  default:
-    source:
-      type: git
-      url: https://github.com/orocos/rtt_ros_integration.git
-      sub-dir: typekits/rtt_rosgraph_msgs
-      version: toolchain-2.9
+  #source:
+  #  type: system
+  #  name: rtt-rosgraph-msgs
+  source:
+    type: git
+    url: https://github.com/orocos/rtt_ros_integration.git
+    sub-dir: typekits/rtt_rosgraph_msgs
+    version: toolchain-2.9
