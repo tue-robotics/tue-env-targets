@@ -1,2 +1,2 @@
 - type: pip
-  name: python-telegram-bot>=12.0.0
+  name: python-telegram-bot>=12.0.0,<20.0.0
