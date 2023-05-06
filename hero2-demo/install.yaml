@@ -11,7 +11,7 @@
 
 # Middleware
 - type: target
-  name: tue-middleware
+  name: hero-middleware
 
 # challenge_demo
 - type: target

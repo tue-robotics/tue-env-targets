@@ -4,7 +4,7 @@
 
 # Middleware
 - type: target
-  name: tue-middleware
+  name: hero-middleware
 - type: target
   name: ros-tue_mobile_ui
 
