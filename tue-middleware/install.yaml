@@ -8,6 +8,10 @@
 - type: target
   name: ros-node_alive
 
+# Sensor data
+- type: target
+  name: ros-depthimage_to_laserscan
+
 # Navigation
 - type: target
   name: ros-cb_base_navigation
