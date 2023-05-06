@@ -8,12 +8,15 @@ function split-tue-robocup
         exit 1
     fi
 
-    robocup_env=$1
+    local robocup_env=$1
 
-    args=
+    local args=
+
+    local repo_path
+    repo_path=$(dirname "$(realpath _ros_location_find tue_robocup)")
 
     # shellcheck disable=SC2044
-    for pkg in $(find . -path './[^.]*' -prune -type d -printf '%P\n')
+    for pkg in $(find "${repo_path}" -path './[^.]*' -prune -type d -printf '%P\n')
     do
         echo "${pkg}"
         if [[ "${pkg}" != "challenge"* ]]
@@ -40,7 +43,6 @@ function split-tue-robocup
     do
         if [[ "${branch}" != "${robocup_env}_challenge_"* ]] && [[ "${branch}" != "${robocup_env}_remainder" ]]
         then
-            # echo "Skipping ${branch}"
             continue
         fi
 
