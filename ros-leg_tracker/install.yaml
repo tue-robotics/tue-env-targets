@@ -2,9 +2,9 @@
   melodic:
     source:
       type: git
-      url: git@github.com:angusleigh/leg_tracker.git
+      url: git@github.com:CardiffUniversityComputationalRobotics/leg_tracker.git
       version: melodic
   default:
     source:
       type: git
-      url: git@github.com:angusleigh/leg_tracker.git
+      url: git@github.com:CardiffUniversityComputationalRobotics/leg_tracker.git

@@ -1,4 +1,4 @@
-DIR="/home/${USER}/ros/${ROS_DISTRO}/system/src/abseil-cpp"
+DIR="/home/${USER}/ros/${ROS_DISTRO}/system/src/abseil-cpp/build/lib"
 if [ -d "$DIR" ]; then
  :
 else
