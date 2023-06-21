@@ -1,0 +1,6 @@
+- type: ros
+  source:
+    type: git
+    url: git@github.com:CardiffUniversityComputationalRobotics/pepper_moveit_config.git
+    version: feature/moveit_config_updates
+    sub-dir: stretch_moveit_config
