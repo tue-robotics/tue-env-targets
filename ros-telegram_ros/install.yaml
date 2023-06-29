@@ -2,4 +2,4 @@
   source:
     type: git
     url: https://github.com/tue-robotics/telegram_ros.git
-    version: telegram_lt_20
+    sub-dir: telegram_ros
