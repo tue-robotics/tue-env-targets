@@ -54,3 +54,6 @@ function hero-shutdown
     sudo shutdown -h -t 0
 }
 
+unset ROS_HOSTNAME
+export ROS_IP=192.168.44.51
+export ROS_MASTER_URI=http://192.168.44.51:11311
