@@ -83,6 +83,6 @@ then
 elif [ "${ROBOT_ENV}" == rwc2023 ]
 then
     export ROBOT_INIT_X=0.0
-    export ROBOT_INIT_Y=0.0
+    export ROBOT_INIT_Y=4.0
     export ROBOT_INIT_PHI=0.0
 fi
