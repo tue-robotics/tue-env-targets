@@ -22,3 +22,5 @@ function sb
 alias ag='ag -fi'
 
 alias ccat='pygmentize -g -O style=colorful'
+
+alias ssh-del-cm='rm ~/.ssh/controlmasters/*'
