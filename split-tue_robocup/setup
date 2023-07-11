@@ -1,5 +1,8 @@
 #! /usr/bin/env bash
 
+export -f _rossed
+export -f _ros_location_find
+
 function split-tue-robocup
 {
     if [ -z "$1" ]
