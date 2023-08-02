@@ -6,5 +6,5 @@ function qtcreator
 }
 
 # Make sure packages can be build by QT
-CURRENT_CMAKE_BUILD_DIR=$(catkin locate --workspace "$TUE_SYSTEM_DIR" --build)
+CURRENT_CMAKE_BUILD_DIR=$(catkin locate --workspace "$TUE_SYSTEM_DIR" --build 2>/dev/null)
 export CURRENT_CMAKE_BUILD_DIR
