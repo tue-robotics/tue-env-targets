@@ -3,3 +3,9 @@
 
 - type: system
   name: python3-colcon-common-extensions
+
+- type: system
+  name: python3-colcon-clean
+
+- type: system
+  name: python3-colcon-mixin
