@@ -3,8 +3,10 @@
 arch="$(dpkg-architecture -q DEB_HOST_ARCH)"
 
 key_file="/etc/apt/keyrings/docker.gpg"
+key_folder=$(dirname ${key_file})
 key_fingerprint="0EBFCD88"
 key_needs_to_be_added="false"
+key_url="https://download.docker.com/linux/ubuntu/gpg"
 
 source_file="/etc/apt/sources.list.d/docker.list"
 source_needs_to_be_added="false"
@@ -27,10 +29,10 @@ else
 
     if [[ "${key_needs_to_be_added}" == "true" ]]
     then
-        tue-install-debug "Make sure /etc/apt/keyrings folder exists with the correct permissions."
-        tue-install-pipe sudo install -m 0755 -d /etc/apt/keyrings
+        tue-install-debug "Make sure '${key_folder}' folder exists with the correct permissions."
+        tue-install-pipe sudo install -m 0755 -d "${key_folder}"
         tue-install-debug "Downloading gpg key of docker repo with fingerprint '${key_fingerprint}'."
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o "${key_file}"
+        curl -fsSL ${key_url} | sudo gpg --dearmor --yes -o "${key_file}"
     else
         tue-install-debug "GPG key of docker repo with fingerprint '${key_fingerprint}' already exists, so not installing it."
     fi
