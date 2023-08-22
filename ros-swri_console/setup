@@ -1,3 +1,8 @@
 #! /usr/bin/env bash
 
-alias swri="rosrun swri_console swri_console"
+if [ "${TUE_ROS_VERSION}" == 1 ]
+then
+    alias swri="rosrun swri_console swri_console"
+else
+    alias swri="ros2 run swri_console swri_console"
+fi

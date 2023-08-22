@@ -5,6 +5,12 @@ function qtcreator
     /opt/Qt/Tools/QtCreator/bin/qtcreator.sh
 }
 
-# Make sure packages can be build by QT
-CURRENT_CMAKE_BUILD_DIR=$(catkin locate --workspace "$TUE_SYSTEM_DIR" --build)
+if [ "$TUE_ROS_VERSION" == 1 ]
+then
+    # Make sure packages can be build by QT
+    CURRENT_CMAKE_BUILD_DIR=$(catkin locate --workspace "$TUE_SYSTEM_DIR" --build 2>/dev/null)
+else
+    CURRENT_CMAKE_BUILD_DIR="$TUE_SYSTEM_DIR"/build
+fi
+
 export CURRENT_CMAKE_BUILD_DIR

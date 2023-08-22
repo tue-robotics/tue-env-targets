@@ -2,21 +2,56 @@
 
 arch="$(dpkg-architecture -q DEB_HOST_ARCH)"
 
+key_file="/etc/apt/keyrings/docker.gpg"
+key_fingerprint="0EBFCD88"
+key_needs_to_be_added="false"
+
+source_file="/etc/apt/sources.list.d/docker.list"
+source_needs_to_be_added="false"
+source_url="deb [arch=${arch} signed-by=${key_file}] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
 if [[ -z "${arch}" ]]
 then
-    tue-install-warning "Could not retrieve the system architecture, so not installing package"
+    tue-install-warning "Could not retrieve the system architecture, so not installing package."
 else
     # Add stable docker repository source
-    if ! apt-key adv --fingerprint 0EBFCD88 &> /dev/null
+    if [[ ! -f "${key_file}" ]]
     then
-        tue-install-debug "Downloading gpg key of docker repo with fingerprint 0EBFCD88..."
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    else
-        tue-install-debug "GPG key of docker repo with fingerprint 0EBFCD88 already exists, so not installing it."
+        tue-install-debug "Keyring '${key_file}' doesn't exist yet."
+        key_needs_to_be_added=true
+    elif ! gpg --show-keys "${key_file}" | grep -q "${key_fingerprint}" &> /dev/null
+    then
+        tue-install-debug "Keyring '${key_file}' doesn't match the fingerprint '${key_fingerprint}'."
+        key_needs_to_be_added=true
     fi
 
-    ppa="deb [arch=${arch}] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-    tue-install-ppa-now "${ppa// /^}"  # tue-install-ppa-now needs spaces to be replaced with ^
+    if [[ "${key_needs_to_be_added}" == "true" ]]
+    then
+        tue-install-debug "Make sure /etc/apt/keyrings folder exists with the correct permissions."
+        tue-install-pipe sudo install -m 0755 -d /etc/apt/keyrings
+        tue-install-debug "Downloading gpg key of docker repo with fingerprint '${key_fingerprint}'."
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o "${key_file}"
+    else
+        tue-install-debug "GPG key of docker repo with fingerprint '${key_fingerprint}' already exists, so not installing it."
+    fi
+
+    if [[ ! -f "${source_file}" ]]
+    then
+        tue-install-debug "Adding Docker sources to apt-get"
+        source_needs_to_be_added=true
+    elif [[ $(cat "${source_file}") != "${source_url}" ]]
+    then
+        tue-install-debug "Updating Docker sources to apt-get"
+        source_needs_to_be_added=true
+    else
+        tue-install-debug "Docker sources already added to apt-get"
+    fi
+
+    if [[ "${source_needs_to_be_added}" == "true" ]]
+    then
+        echo "${source_url}" | sudo tee ${source_file} > /dev/null
+        tue-install-apt-get-update
+    fi
 
     # Install and add user to docker group
     tue-install-system-now docker-ce docker-ce-cli containerd.io

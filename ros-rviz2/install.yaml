@@ -1,7 +1,7 @@
 - type: ros
   default:
-    source: null
-  noetic:
     source:
       type: system
-      name: rviz
+      name: rviz2
+  noetic:
+    source: null
