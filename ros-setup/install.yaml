@@ -1,0 +1,5 @@
+- type: target
+  default:
+    name: ros2-setup
+  noetic:
+    name: ros1-setup
