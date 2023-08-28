@@ -1,0 +1,7 @@
+- type: ros
+  default:
+    source:
+      type: system
+      name: ament-cmake-lint-cmake
+  noetic:
+    source: null
