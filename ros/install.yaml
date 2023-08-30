@@ -1,5 +1,5 @@
 - type: target
   default:
     name: ros2
-  noetic:
+  focal:
     name: ros1
