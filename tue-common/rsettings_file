@@ -15,6 +15,7 @@ export ROBOT_ENV=impuls
 #export ROBOT_ENV=rwc2018
 #export ROBOT_ENV=rwc2019
 #export ROBOT_ENV=rwc2022
+#export ROBOT_ENV=rwc2023
 
 # Set Robot initial pose based on environment
 
@@ -78,5 +79,10 @@ elif [ "${ROBOT_ENV}" == rwc2022 ]
 then
     export ROBOT_INIT_X=-0.5
     export ROBOT_INIT_Y=3.25
+    export ROBOT_INIT_PHI=0.0
+elif [ "${ROBOT_ENV}" == rwc2023 ]
+then
+    export ROBOT_INIT_X=0.0
+    export ROBOT_INIT_Y=4.0
     export ROBOT_INIT_PHI=0.0
 fi
