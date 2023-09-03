@@ -1,0 +1,8 @@
+- type: ros
+  default:
+    source:
+      type: system
+      name: python-cmake-module
+  noetic:
+    source:
+      type: null
