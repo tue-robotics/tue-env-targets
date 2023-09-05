@@ -1,5 +1,12 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/pykdl_ros.git
-    sub-dir: pykdl_ros
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/pykdl_ros.git
+      sub-dir: pykdl_ros
+      version: ros2
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/pykdl_ros.git
+      sub-dir: pykdl_ros
