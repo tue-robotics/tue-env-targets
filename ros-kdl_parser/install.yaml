@@ -1,9 +1,8 @@
 - type: ros
   default:
     source:
-      type: git
-      url: https://github.com/tue-robotics/kdl_parser.git
-      sub-dir: kdl_parser
+      type: system
+      name: kdl-parser
   noetic:
     source:
       type: git
