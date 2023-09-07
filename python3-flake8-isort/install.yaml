@@ -1,2 +1,2 @@
-- type: system
-  name: python3-flake8-isort
+- type: pip
+  name: flake8-isort
