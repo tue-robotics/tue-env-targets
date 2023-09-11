@@ -30,8 +30,7 @@ jobs:
           ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
       - name: ShellCheck
         run: |
-          find . -type f \( -iname "setup" -o -iname "*.bash" -o -iname "*.sh" \) -print0 |
-          xargs -0  -r shellcheck
+          find . -type f \( -iname "setup" -o -iname "*.bash" -o -iname "*.sh" \) -print0 | xargs -0  -r shellcheck
   bash_set_error:
     name: Set -e/+e Check
     runs-on: ubuntu-latest
