@@ -18,7 +18,8 @@ jobs:
       - name: Install YamlLint
         run: pip install --upgrade yamllint
       - name: YamlLint
-        run: find . -type f \( -iname "*.yaml" -o -iname "*.yml" \) -print0 | xargs -0  -r -n1 yamllint
+        run: |
+          find . -type f \( -iname "*.yaml" -o -iname "*.yml" \) -print0 | xargs -0  -r yamllint
   shellcheck:
     name: ShellCheck
     runs-on: ubuntu-latest
@@ -30,7 +31,7 @@ jobs:
       - name: ShellCheck
         run: |
           find . -type f \( -iname "setup" -o -iname "*.bash" -o -iname "*.sh" \) -print0 |
-          xargs -0  -r -n1 shellcheck
+          xargs -0  -r shellcheck
   bash_set_error:
     name: Set -e/+e Check
     runs-on: ubuntu-latest
