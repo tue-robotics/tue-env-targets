@@ -5,4 +5,4 @@
   default:
     source:
     type: system
-    name: ament-lint-pep257
+    name: ament-pep257

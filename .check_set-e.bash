@@ -2,9 +2,8 @@
 
 # Check if either both 'set -e' and 'set +e' are used or none
 
-shopt -s globstar
 bad_files=""
-files=$(echo ./**/*.bash ./**/*.sh ./**/setup)
+files=$(find . -type f \( -iname "setup" -o -iname "*.bash" -o -iname "*.sh" \))
 for file in $files
 do
   if ! grep -Eqz ".*set -e.*set \+e.*" "$file" && (grep -Eqz "set -e" "$file" || grep -Eqz "set \+e" "$file")
