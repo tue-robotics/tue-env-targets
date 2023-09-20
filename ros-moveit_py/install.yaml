@@ -1,0 +1,9 @@
+- type: ros
+  default:
+    source:
+      type: system
+      name: moveit-py
+  humble:
+    source: null
+  noetic:
+    source: null
