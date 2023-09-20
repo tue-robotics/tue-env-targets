@@ -1,0 +1,17 @@
+- type: ros
+  default:
+    source:
+      type: git
+      url: https://github.com/ros-planning/moveit_task_constructor.git
+      sub-dir: rviz_marker_tools
+      version: ros2
+  humble:
+    source:
+      type: git
+      url: https://github.com/ros-planning/moveit_task_constructor.git
+      sub-dir: rviz_marker_tools
+      version: humble
+  noetic:
+    source:
+      type: system
+      name: rviz-marker-tools
