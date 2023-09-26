@@ -1,0 +1,15 @@
+- type: ros
+  default:
+    source:
+      type: git
+      url: https://github.com/ros-planning/moveit2_tutorials.git
+  humble:
+    source:
+      type: git
+      url: https://github.com/ros-planning/moveit2_tutorials.git
+      version: humble
+  iron:
+    source:
+      type: git
+      url: https://github.com/ros-planning/moveit2_tutorials.git
+      version: iron

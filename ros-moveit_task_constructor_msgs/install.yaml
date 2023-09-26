@@ -1,0 +1,17 @@
+- type: ros
+  default:
+    source:
+      type: git
+      url: https://github.com/ros-planning/moveit_task_constructor.git
+      sub-dir: msgs
+      version: ros2
+  humble:
+    source:
+      type: git
+      url: https://github.com/ros-planning/moveit_task_constructor.git
+      sub-dir: msgs
+      version: humble
+  noetic:
+    source:
+      type: system
+      name: moveit-task-constructor-msgs
