@@ -1,5 +1,5 @@
 - type: ros
-  default
+  default:
     source:
       type: system
       name: ros-testing
