@@ -1,0 +1,10 @@
+- type: ros
+  source:
+    type: git
+    url: https://github.com/PetervDooren/box_packing.git
+    sub-dir: my_franka_description
+- type: ros
+  source:
+    type: git
+    url: https://github.com/PetervDooren/box_packing.git
+    sub-dir: my_franka_description
