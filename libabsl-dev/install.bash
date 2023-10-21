@@ -19,5 +19,4 @@ else
   sudo ninja install
   cd /usr/local/stow
   sudo stow absl
-  source ~/.bashrc
 fi
