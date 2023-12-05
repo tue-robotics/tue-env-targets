@@ -12,7 +12,7 @@ then
     tue-install-debug "Source pkg found in the workspace, removing it, so the system installed version is used"
     tue-install-pipe rm "$TUE_SYSTEM_DIR/src/${pkg}"
 
-    tue-install-pipe catkin clean --workspace "${TUE_SYSTEM_DIR}" --orphans
+    tue-install-pipe python3 "$(command -v catkin)" clean --workspace "${TUE_SYSTEM_DIR}" --orphans
 else
     tue-install-debug "Source pkg already removed"
 fi
