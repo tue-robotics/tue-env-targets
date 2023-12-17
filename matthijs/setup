@@ -24,3 +24,21 @@ alias ag='ag -fi'
 alias ccat='pygmentize -g -O style=colorful'
 
 alias ssh-del-cm='rm ~/.ssh/controlmasters/*'
+
+function update-apt
+{
+    sudo apt-get update
+    touch /tmp/tue_get_apt_get_updated
+    sudo apt-get upgrade --with-new-pkgs --autoremove
+}
+
+function remove-old-snaps
+{
+    # shellcheck disable=SC2162
+    LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |
+    while read snapname revision
+    do
+        echo "Removing ${snapname} (${revision})"
+        sudo snap remove "${snapname}" --revision="${revision}"
+    done
+}
