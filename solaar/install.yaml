@@ -1,0 +1,5 @@
+- type: ppa
+  name: ppa:solaar-unifying/ppa
+
+- type: system
+  name: solaar
