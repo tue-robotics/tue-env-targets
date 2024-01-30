@@ -6,11 +6,13 @@
 
 # Handy shit
 - type: target
-  name: chrome-dev
+  name: chrome-beta
 - type: target
   name: qtcreator
 - type: target
   name: pycharm-professional
+- type: target
+  name: solaar
 - type: target
   name: terminator
 - type: target
