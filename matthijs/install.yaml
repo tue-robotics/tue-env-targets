@@ -6,7 +6,7 @@
 
 # Handy shit
 - type: target
-  name: chrome-dev
+  name: chrome-beta
 - type: target
   name: qtcreator
 - type: target
