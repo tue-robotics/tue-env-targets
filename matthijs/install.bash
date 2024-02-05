@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Git Settings
-git_config_items="advice.skippedCherryPicks=false color.ui=always merge.tool=meld pull.ff=true url.ssh://git@github.com/.insteadOf=https://github.com/"
+git_config_items="advice.skippedCherryPicks=false rebase.autoStash=true color.ui=always merge.tool=meld pull.ff=true url.ssh://git@github.com/.insteadOf=https://github.com/ blame.ignoreRevsFile=.git-blame-ignore-revs"
 for item in $git_config_items
 do
         option=${item%=*}
