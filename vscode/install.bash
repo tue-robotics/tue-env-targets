@@ -24,9 +24,9 @@ else
 fi
 
 # Install and configure catkin tools extension
-if ! catkin config --workspace "$TUE_SYSTEM_DIR" | grep -q "DCMAKE_EXPORT_COMPILE_COMMANDS"
+if ! python3 "$(command -v catkin)" config --workspace "$TUE_SYSTEM_DIR" | grep -q "DCMAKE_EXPORT_COMPILE_COMMANDS"
 then
-    catkin config --workspace "$TUE_SYSTEM_DIR" --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+    python3 "$(command -v catkin)" config --workspace "$TUE_SYSTEM_DIR" --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 fi
 
 # Configure to build only active package
