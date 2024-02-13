@@ -1,0 +1,5 @@
+- type: pip
+  name: torch
+
+- type: pip
+  name: torchvision
