@@ -25,7 +25,7 @@ function main
 
     tue-install-pipe wget --no-verbose https://developer.download.nvidia.com/compute/cuda/repos/"${distro}"/"${arch}"/cuda-keyring_1.1-1_all.deb -O ${tmp_keyring_file}
     tue-install-dpkg ${tmp_keyring_file}
-    
+
     tue-install-apt-get-update
 }
 
