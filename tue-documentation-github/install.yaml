@@ -161,6 +161,8 @@
 - type: target
   name: ros-image_recognition_openpose
 - type: target
+  name: ros-image_recognition_pose_estimation
+- type: target
   name: ros-image_recognition_rqt
 - type: target
   name: ros-image_recognition_skybiometry
