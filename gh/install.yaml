@@ -1,0 +1,5 @@
+- type: target
+  name: gh-setup
+
+- type: system
+  name: gh
