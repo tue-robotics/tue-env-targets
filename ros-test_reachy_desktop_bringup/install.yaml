@@ -1,0 +1,7 @@
+- type: ros
+  humble:
+    source:
+      type: git
+      url: git@github.com:CardiffUniversityComputationalRobotics/cucr_robots_tests.git
+      sub-dir: tests_reachy/test_reachy_desktop_bringup
+
