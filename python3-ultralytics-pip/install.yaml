@@ -1,2 +1,2 @@
 - type: pip
-  name: ultralytics
+  name: ultralytics>=8.1.3
