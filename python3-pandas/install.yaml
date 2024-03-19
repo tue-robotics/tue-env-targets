@@ -1,2 +1,5 @@
 - type: system
   name: python3-pandas
+
+- type: pip
+  name: numexpr>=2.7.3
