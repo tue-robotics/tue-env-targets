@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Git Settings
-git_config_items="advice.skippedCherryPicks=false color.ui=always merge.tool=meld pull.ff=true rebase.autoStash=true rerere.enabled=true url.ssh://git@github.com/.insteadOf=https://github.com/"
+git_config_items="advice.skippedCherryPicks=false color.ui=always merge.tool=meld pull.ff=true rebase.autoStash=true rebase.updateRefs=true rerere.enabled=true url.ssh://git@github.com/.insteadOf=https://github.com/"
 for item in $git_config_items
 do
         option=${item%=*}
