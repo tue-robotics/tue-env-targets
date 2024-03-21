@@ -1,0 +1,5 @@
+- type: target
+  name: grub-customizer-setup
+
+- type: system
+  name: grub-customizer
