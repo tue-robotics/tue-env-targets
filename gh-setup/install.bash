@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 arch="$(dpkg --print-architecture)"
 
 key_file="/usr/share/keyrings/githubcli-archive-keyring.gpg"
