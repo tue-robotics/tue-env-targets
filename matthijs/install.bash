@@ -45,7 +45,3 @@ fi
 # Shortcuts
 # Terminator
 tue-install-cp shortcuts/terminator.desktop ~/.local/share/applications/terminator.desktop
-
-# WhatsApp
-tue-install-cp shortcuts/whatsapp-webapp.desktop ~/.local/share/applications/whatsapp-webapp.desktop
-tue-install-cp shortcuts/icons/whatsapp.svg /usr/share/icons/hicolor/scalable/apps/whatsapp.svg
