@@ -23,9 +23,18 @@
 - type: target
   name: ros-telegram_ros
 
-# Openpose
+# Pose estimation
 - type: target
-  name: ros-image_recognition_openpose
+  name: cuda-setup
+
+- type: system
+  name: cuda-12-3
+
+- type: system
+  name: libcudnn9-cuda-12
+
+- type: target
+  name: ros-image_recognition_pose_estimation
 
 # tmux
 - type: target
