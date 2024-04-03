@@ -4,7 +4,7 @@ DATA_DIR="$HOME/MEGA"
 if [ ! -d "$DATA_DIR" ]
 then
     # Download mega sync
-    UBUNTU_VERSION=$(lsb_release -r | sed 's/Release:\s*\(.*\)/\1/')
+    UBUNTU_VERSION=$(lsb_release -sr)
     tue-install-debug "Ubuntu version: $UBUNTU_VERSION"
 
     LINK="https://mega.nz/linux/MEGAsync/xUbuntu_""$UBUNTU_VERSION""/amd64/megasync-xUbuntu_""$UBUNTU_VERSION""_amd64.deb"
