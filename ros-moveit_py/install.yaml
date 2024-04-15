@@ -7,3 +7,14 @@
     source: null
   noetic:
     source: null
+
+- type: ros-remove-source
+  default:
+    source:
+      type: git
+      url: https://github.com/MatthijsBurgh/moveit2.git
+      eol: 2024-08-13
+  humble:
+    source: null
+  noetic:
+    source: null
