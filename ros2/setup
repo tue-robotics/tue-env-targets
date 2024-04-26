@@ -1,26 +1,31 @@
 #! /usr/bin/env bash
 
-if [ -z "$TUE_ROS_DISTRO" ]
+if [[ ! -v TUE_ENV_ROS_DISTRO && -v TUE_ROS_DISTRO ]]
 then
-    echo "[ros2] TUE_ROS_DISTRO was not set"
+    TUE_ENV_ROS_DISTRO=${TUE_ROS_DISTRO}
+    >&2 echo "Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'"
+fi
+if [[ -z "${TUE_ENV_ROS_DISTRO}" ]]
+then
+    echo "[ros2] TUE_ENV_ROS_DISTRO was not set"
     return 1
 fi
 
 # Add ROS sourcing to the shell startup script
-if [ -f "/opt/ros/${TUE_ROS_DISTRO}/setup.bash" ]
+if [[ -f "/opt/ros/${TUE_ENV_ROS_DISTRO}/setup.bash" ]]
 then
     # shellcheck disable=SC1090
-    source "/opt/ros/${TUE_ROS_DISTRO}/setup.bash"
+    source "/opt/ros/${TUE_ENV_ROS_DISTRO}/setup.bash"
 else
-    echo -e "\033[33;1m[ros2] ROS 2 ${TUE_ROS_DISTRO} setup.bash not found. \033[0m"
+    echo -e "\033[33;1m[ros2] ROS 2 ${TUE_ENV_ROS_DISTRO} setup.bash not found. \033[0m"
 fi
 
-if [ -f "${TUE_SYSTEM_DIR}/install/local_setup.bash" ]
+if [[ -f "${TUE_ENV_WS_DIR}/install/local_setup.bash" ]]
 then
     # shellcheck disable=SC1091
-    source "${TUE_SYSTEM_DIR}/install/local_setup.bash"
+    source "${TUE_ENV_WS_DIR}/install/local_setup.bash"
 else
-    echo -e "\033[33;1m[ros2] ${TUE_SYSTEM_DIR}/install/local_setup.bash not found. \033[0m"
+    echo -e "\033[33;1m[ros2] ${TUE_ENV_WS_DIR}/install/local_setup.bash not found. \033[0m"
 fi
 
 # Add Colcon sourcing to the shell startup script
@@ -29,7 +34,7 @@ then
     # shellcheck disable=SC1091
     source /usr/share/colcon_cd/function/colcon_cd.sh
     # shellcheck disable=SC2016
-    export _colcon_cd_root="${TUE_SYSTEM_DIR}"
+    export _colcon_cd_root="${TUE_ENV_WS_DIR}"
 else
     echo -e "\033[33;5;1m[ros2] colcon_cd setup not found. colcon_cd command disabled. \033[0m"
 fi
