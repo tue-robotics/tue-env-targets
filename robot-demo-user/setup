@@ -29,7 +29,13 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="auto git"
 
 function _ROS_MASTER_NAME {
-    [[ "${TUE_ROS_VERSION}" -ne 1 ]] && return
+    # TODO(anyone): remove when tue-env is updated to new variable names
+    if [[ ! -v TUE_ENV_ROS_VERSION && -v TUE_ROS_VERSION ]]
+    then
+        TUE_ENV_ROS_VERSION=${TUE_ROS_VERSION}
+        >&2 echo "Change the config of your environment to use 'TUE_ENV_ROS_VERSION' instead of 'TUE_ROS_VERSION'"
+    fi
+    [[ "${TUE_ENV_ROS_VERSION}" -ne 1 ]] && return
     # shellcheck disable=SC2001
     ROS_MASTER=$(echo "$ROS_MASTER_URI" | sed 's#http://\(.*\):.*#\1#')
     if [ "$ROS_MASTER" == "localhost" ] || [ "$ROBOT_REAL" == "true" ]; then
@@ -40,7 +46,13 @@ function _ROS_MASTER_NAME {
 }
 
 function _ROS2_DISCOVERY {
-    [[ "${TUE_ROS_VERSION}" -ne 2 ]] && return
+    # TODO(anyone): remove when tue-env is updated to new variable names
+    if [[ ! -v TUE_ENV_ROS_VERSION && -v TUE_ROS_VERSION ]]
+    then
+        TUE_ENV_ROS_VERSION=${TUE_ROS_VERSION}
+        >&2 echo "Change the config of your environment to use 'TUE_ENV_ROS_VERSION' instead of 'TUE_ROS_VERSION'"
+    fi
+    [[ "${TUE_ENV_ROS_VERSION}" -ne 2 ]] && return
     # shellcheck disable=SC2153
     local ros_domain_id=${ROS_DOMAIN_ID}
     [[ -n "${ros_domain_id}" ]] || ros_domain_id=0 # default

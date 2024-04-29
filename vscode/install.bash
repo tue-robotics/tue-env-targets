@@ -10,9 +10,12 @@ code --install-extension ms-iot.vscode-ros\
      --install-extension tyriar.sort-lines\
      --force
 
+# TODO(anyone): remove when tue-env is updated to new variable names
+[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
+
 # Configure workspace
-workspacefile="${TUE_SYSTEM_DIR}/.vscode/settings.json"
-mkdir -p "${TUE_SYSTEM_DIR}/.vscode"
+workspacefile="${TUE_ENV_WS_DIR}/.vscode/settings.json"
+mkdir -p "${TUE_ENV_WS_DIR}/.vscode"
 if [[ ! -f "${workspacefile}" ]]
 then
     tue-install-cp workspace_settings.json "${workspacefile}"
@@ -23,14 +26,17 @@ else
     fi
 fi
 
-# Install and configure catkin tools extension
-if ! catkin config --workspace "$TUE_SYSTEM_DIR" | grep -q "DCMAKE_EXPORT_COMPILE_COMMANDS"
+if [[ "${TUE_ENV_ROS_VERSION}" == "1" ]]
 then
-    catkin config --workspace "$TUE_SYSTEM_DIR" --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+    # Install and configure catkin tools extension
+    if ! catkin config --workspace "${TUE_ENV_WS_DIR}" | grep -q "DCMAKE_EXPORT_COMPILE_COMMANDS"
+    then
+        catkin config --workspace "${TUE_ENV_WS_DIR}" --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+    fi
 fi
 
 # Configure to build only active package
-tasksfile="${TUE_SYSTEM_DIR}/.vscode/tasks.json"
+tasksfile="${TUE_ENV_WS_DIR}/.vscode/tasks.json"
 if [[ ! -f "${tasksfile}" ]]  # If user already has one, don't overwrite
 then
     tue-install-cp tasks.json "${tasksfile}"

@@ -19,7 +19,7 @@ function sb
     source ~/.bashrc
 }
 
-alias ag='ag -fi'
+alias ag='ag -f'
 
 alias ccat='pygmentize -g -O style=colorful'
 

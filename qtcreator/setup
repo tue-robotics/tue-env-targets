@@ -5,12 +5,18 @@ function qtcreator
     /opt/Qt/Tools/QtCreator/bin/qtcreator.sh
 }
 
-if [[ "${TUE_ROS_VERSION}" -eq 1 ]]
+# TODO(anyone): remove when tue-env is updated to new variable names
+if [[ ! -v TUE_ENV_ROS_VERSION && -v TUE_ROS_VERSION ]]
+then
+    TUE_ENV_ROS_VERSION=${TUE_ROS_VERSION}
+    >&2 echo "Change the config of your environment to use 'TUE_ENV_ROS_VERSION' instead of 'TUE_ROS_VERSION'"
+fi
+if [[ "${TUE_ENV_ROS_VERSION}" -eq 1 ]]
 then
     # Make sure packages can be build by QT
-    CURRENT_CMAKE_BUILD_DIR=$(catkin locate --workspace "${TUE_SYSTEM_DIR}" --build 2>/dev/null)
+    CURRENT_CMAKE_BUILD_DIR=$(catkin locate --workspace "${TUE_ENV_WS_DIR}" --build 2>/dev/null)
 else
-    CURRENT_CMAKE_BUILD_DIR="${TUE_SYSTEM_DIR}"/build
+    CURRENT_CMAKE_BUILD_DIR="${TUE_ENV_WS_DIR}"/build
 fi
 
 export CURRENT_CMAKE_BUILD_DIR
