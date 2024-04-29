@@ -1,6 +1,9 @@
 #! /usr/bin/env bash
 
-export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/sergio_bringup
+# TODO(anyone): remove when tue-env is updated to new variable names
+[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
+
+export ROBOT_BRINGUP_PATH=${TUE_ENV_WS_DIR}/src/sergio_bringup
 alias sergio-core='_robot-core sergio1'
 
 # ----------------------------------------------------------------------------
@@ -70,10 +73,10 @@ alias sergio-show-ed-kinect='rosrun rgbd multitool --rgbd /sergio/ed/kinect/viz/
 #
 ####################
 
-alias sergio='export ROBOT_BRINGUP_PATH=$TUE_SYSTEM_DIR/src/sergio_bringup'
+alias sergio='[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}; export ROBOT_BRINGUP_PATH=${TUE_ENV_WS_DIR}/src/sergio_bringup'
 
 alias sergio-continui='rosrun hmi_server continue_gui.py __ns:=sergio/hmi'
-alias sergio-continui-gpsr='rosrun hmi_server continue_gui.py $TUE_SYSTEM_DIR/src/challenge_gpsr/src/grammar_gui.fcfg __ns:=sergio/hmi'
+alias sergio-continui-gpsr='[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}; rosrun hmi_server continue_gui.py ${TUE_ENV_WS_DIR}/src/challenge_gpsr/src/grammar_gui.fcfg __ns:=sergio/hmi'
 
 ####################
 #
