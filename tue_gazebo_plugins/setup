@@ -1,7 +1,10 @@
 #! /usr/bin/env bash
 
-export GAZEBO_PLUGIN_PATH=~/ros/$TUE_ROS_DISTRO/system/devel/lib:$GAZEBO_PLUGIN_PATH
+# TODO(anyone): remove when tue-env is updated to new variable names
+[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
 
-export GAZEBO_MODEL_PATH=~/ros/$TUE_ROS_DISTRO/system/src/tue_gazebo_models/database:$GAZEBO_MODEL_PATH
+export GAZEBO_PLUGIN_PATH=~/${TUE_ENV_WS_DIR}/devel/lib:${GAZEBO_PLUGIN_PATH}
 
-export GAZEBO_RESOURCE_PATH=~/ros/$TUE_ROS_DISTRO/system/src/tue_gazebo_models/database:$GAZEBO_RESOURCE_PATH
+export GAZEBO_MODEL_PATH=~/${TUE_ENV_WS_DIR}/src/tue_gazebo_models/database:${GAZEBO_MODEL_PATH}
+
+export GAZEBO_RESOURCE_PATH=~/${TUE_ENV_WS_DIR}/src/tue_gazebo_models/database:${GAZEBO_RESOURCE_PATH}
