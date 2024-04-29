@@ -5,7 +5,7 @@
 if [[ ! -v TUE_ENV_ROS_DISTRO && -v TUE_ROS_DISTRO ]]
 then
     TUE_ENV_ROS_DISTRO=${TUE_ROS_DISTRO}
-    >&2 echo "Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'"
+    tue-install-warning "Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'"
 fi
 if [[ -z "${TUE_ENV_ROS_DISTRO}" ]]
 then
