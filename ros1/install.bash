@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
 # shellcheck disable=SC1090
 
+# TODO(anyone): remove when tue-env is updated to new variable names
 if [[ ! -v TUE_ENV_ROS_DISTRO && -v TUE_ROS_DISTRO ]]
 then
     TUE_ENV_ROS_DISTRO=${TUE_ROS_DISTRO}
@@ -28,9 +29,12 @@ then
     touch "$rosdep_update_file"
 fi
 
+# TODO(anyone): remove when tue-env is updated to new variable names
+[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
+
 mkdir -p "${TUE_ENV_WS_DIR}"
 
-if [ ! -f "${TUE_ENV_WS_DIR}"/devel/setup.bash ]
+if [[ ! -f "${TUE_ENV_WS_DIR}"/devel/setup.bash ]]
 then
     [[ -z "${TUE_ENV_ROS_VERSION}" ]] && { tue-install-warning "tue-env variable TUE_ENV_ROS_VERSION is not set. This will not be allowed in the future.\nSetting TUE_ENV_ROS_VERSION=1 temporarily."; }
     [[ "$CI" == "true" ]] && status_args=" --no-status"
