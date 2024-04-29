@@ -10,6 +10,9 @@ code --install-extension ms-iot.vscode-ros\
      --install-extension tyriar.sort-lines\
      --force
 
+# TODO(anyone): remove when tue-env is updated to new variable names
+[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
+
 # Configure workspace
 workspacefile="${TUE_ENV_WS_DIR}/.vscode/settings.json"
 mkdir -p "${TUE_ENV_WS_DIR}/.vscode"
@@ -26,9 +29,9 @@ fi
 if [[ "${TUE_ENV_ROS_VERSION}" == "1" ]]
 then
     # Install and configure catkin tools extension
-    if ! catkin config --workspace "$TUE_ENV_WS_DIR" | grep -q "DCMAKE_EXPORT_COMPILE_COMMANDS"
+    if ! catkin config --workspace "${TUE_ENV_WS_DIR}" | grep -q "DCMAKE_EXPORT_COMPILE_COMMANDS"
     then
-        catkin config --workspace "$TUE_ENV_WS_DIR" --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+        catkin config --workspace "${TUE_ENV_WS_DIR}" --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
     fi
 fi
 
