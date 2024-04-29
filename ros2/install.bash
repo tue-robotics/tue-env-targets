@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
 # shellcheck disable=SC1090
 
+# TODO(anyone): remove when tue-env is updated to new variable names
 if [[ ! -v TUE_ENV_ROS_DISTRO && -v TUE_ROS_DISTRO ]]
 then
     TUE_ENV_ROS_DISTRO=${TUE_ROS_DISTRO}
@@ -15,10 +16,13 @@ fi
 # Install basic ROS packages and eProsima DDS implementation.
 tue-install-system-now ros-"${TUE_ENV_ROS_DISTRO}"-ros-core ros-"${TUE_ENV_ROS_DISTRO}"-rmw-fastrtps-cpp
 
+# TODO(anyone): remove when tue-env is updated to new variable names
+[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
+
 # Setup the build environment
 mkdir -p "${TUE_ENV_WS_DIR}"
 
-if [ ! -f "$TUE_ENV_WS_DIR"/install/setup.bash ]
+if [[ ! -f "${TUE_ENV_WS_DIR}"/install/setup.bash ]]
 then
     [[ -v TUE_ENV_ROS_VERSION || -v TUE_ROS_VERSION ]] || { TUE_ENV_ROS_VERSION=${TUE_ROS_VERSION}; tue-install-warning "Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'"; }
     [[ -z "${TUE_ENV_ROS_VERSION}" ]] && { tue-install-warning "tue-env variable TUE_ENV_ROS_VERSION is not set. This will not be allowed in the future.\nSetting TUE_ENV_ROS_VERSION=2 temporarily."; }
