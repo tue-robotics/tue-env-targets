@@ -13,7 +13,7 @@ To do this create a yaml file in the main folder of your package, for consistenc
 
 Check [Python](#Python) and [C++](#c) for the configuration of the `rosdoc` configuration.
 
-The overview page is configured by the [catkin_tools_document_config.yaml](./catkin_tools_document_config.yaml) in this target. The image path is relative to the `$TUE_SYSTEM_DIR/build/docs`. It ends up here in this target. This is possible as the target location relative to the workspace is fixed.
+The overview page is configured by the [catkin_tools_document_config.yaml](./catkin_tools_document_config.yaml) in this target. The image path is relative to the `${TUE_ENV_WS_DIR}/build/docs`. It ends up here in this target. This is possible as the target location relative to the workspace is fixed.
 
 ## Generation
 
