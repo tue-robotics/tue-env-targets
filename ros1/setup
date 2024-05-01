@@ -4,11 +4,11 @@
 if [[ ! -v TUE_ENV_ROS_DISTRO && -v TUE_ROS_DISTRO ]]
 then
     TUE_ENV_ROS_DISTRO=${TUE_ROS_DISTRO}
-    >&2 echo "Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'"
+    >&2 echo -e "\e[33;1m[ros1] Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'.\e[0m"
 fi
 if [[ -z "${TUE_ENV_ROS_DISTRO}" ]]
 then
-    echo -e "\e[31;1m[ros] TUE_ENV_ROS_DISTRO was not set\e[0m"
+    >&2 echo -e "\e[31;1m[ros] TUE_ENV_ROS_DISTRO was not set.\e[0m"
     return 1
 fi
 
@@ -20,7 +20,7 @@ then
     # shellcheck disable=SC1091
     source "${TUE_ENV_WS_DIR}"/devel/setup.bash
 else
-    echo -e "\e[33;1m[ros] system workspaces not found, sourcing /opt/ros\e[0m"
+    >&2 echo -e "\e[33;1m[ros] system workspaces not found, sourcing /opt/ros\e[0m"
     # shellcheck disable=SC1090
     source /opt/ros/"${TUE_ENV_ROS_DISTRO}"/setup.bash
 fi
