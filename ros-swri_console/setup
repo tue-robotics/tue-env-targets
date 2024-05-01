@@ -4,7 +4,7 @@
 if [[ ! -v TUE_ENV_ROS_VERSION && -v TUE_ROS_VERSION ]]
 then
     TUE_ENV_ROS_VERSION=${TUE_ROS_VERSION}
-    >&2 echo "Change the config of your environment to use 'TUE_ENV_ROS_VERSION' instead of 'TUE_ROS_VERSION'"
+    >&2 echo -e "\e[33;1m[ros-swri_console] Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'.\e[0m"
 fi
 if [[ "${TUE_ENV_ROS_VERSION}" -eq 1 ]]
 then
