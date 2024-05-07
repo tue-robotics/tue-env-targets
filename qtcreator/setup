@@ -9,7 +9,7 @@ function qtcreator
 if [[ ! -v TUE_ENV_ROS_VERSION && -v TUE_ROS_VERSION ]]
 then
     TUE_ENV_ROS_VERSION=${TUE_ROS_VERSION}
-    >&2 echo -e "\e[33;1m[qtcreator] Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'.\e[0m"
+    >&2 echo -e "\e[33;1m[qtcreator] Change the config of your environment to use 'TUE_ENV_ROS_VERSION' instead of 'TUE_ENV_ROS_VERSION'.\e[0m"
 fi
 
 # TODO(anyone): remove when tue-env is updated to new variable names
