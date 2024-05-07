@@ -8,7 +8,7 @@ then
 fi
 if [[ -z "${TUE_ENV_ROS_DISTRO}" ]]
 then
-    >&2 echo -e "\e[31;1m[ros] TUE_ENV_ROS_DISTRO was not set.\e[0m"
+    >&2 echo -e "\e[31;1m[ros1] TUE_ENV_ROS_DISTRO was not set.\e[0m"
     return 1
 fi
 
