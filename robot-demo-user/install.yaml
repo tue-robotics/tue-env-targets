@@ -9,6 +9,9 @@
 - type: system
   name: htop
 
+- type: target
+  name: git-ps1
+
 # Tele-operation
 - type: target
   name: ros-tue_teleop_keyboard
