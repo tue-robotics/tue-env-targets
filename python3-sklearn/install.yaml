@@ -1,2 +1,2 @@
-- type: system
-  name: python3-sklearn
+- type: pip
+  name: scikit-learn>=1.0.0
