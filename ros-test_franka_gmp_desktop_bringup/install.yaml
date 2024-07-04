@@ -2,4 +2,4 @@
   source:
       type: git
       url: git@github.com:CardiffUniversityComputationalRobotics/cucr_robots_tests.git
-      sub-dir: tests_franka/test_franka_gmp_desktop_bringup
+      sub-dir: tests_franka_gmp/test_franka_gmp_desktop_bringup
