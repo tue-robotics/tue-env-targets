@@ -3,4 +3,4 @@
       type: git
       url: git@github.com:CardiffUniversityComputationalRobotics/robowflex.git
       sub-dir: robowflex_library
-      version: master-franka-agr
+      version: master-gmp
