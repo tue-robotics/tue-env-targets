@@ -7,8 +7,8 @@ then
 	git clone git@github.com:CardiffUniversityComputationalRobotics/ContactGraspNet.git ~/dev/ContactGraspNet
 fi
 
-if [ ! -d ~/dev/UoisSegmentation/ ]
-then
-	cucr-install-debug "Installing UoisSegmentation"
-	git clone git@github.com:CardiffUniversityComputationalRobotics/UoisSegmentation.git ~/dev/UoisSegmentation
-fi
+# if [ ! -d ~/dev/UoisSegmentation/ ]
+# then
+# 	cucr-install-debug "Installing UoisSegmentation"
+# 	git clone git@github.com:CardiffUniversityComputationalRobotics/UoisSegmentation.git ~/dev/UoisSegmentation
+# fi
