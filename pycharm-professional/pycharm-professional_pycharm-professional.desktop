@@ -4,7 +4,7 @@ Version=1.0
 Type=Application
 Name=PyCharm Professional Edition
 Icon=/snap/pycharm-professional/current/bin/pycharm.png
-Exec=env BAMF_DESKTOP_FILE_HINT=~/.local/applications/pycharm-professional_pycharm-professional.desktop bash -c "shopt -s expand_aliases && source ~/.tue/setup.bash && pycharm-professional %F"
+Exec=env BAMF_DESKTOP_FILE_HINT=~/.local/share/applications/pycharm-professional_pycharm-professional.desktop bash -c "shopt -s expand_aliases && source ~/.tue/setup.bash && pycharm-professional %F"
 Comment=Python IDE for Professional Developers
 Categories=Development;IDE;
 Terminal=false
