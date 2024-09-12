@@ -4,7 +4,7 @@ Version=1.0
 Type=Application
 Name=PyCharm Community Edition
 Icon=/snap/pycharm-community/current/bin/pycharm.png
-Exec=env BAMF_DESKTOP_FILE_HINT=~/.local/applications/pycharm-community_pycharm-community.desktop bash -c "shopt -s expand_aliases && source ~/.tue/setup.bash && pycharm-community %F"
+Exec=env BAMF_DESKTOP_FILE_HINT=~/.local/share/applications/pycharm-community_pycharm-community.desktop bash -c "shopt -s expand_aliases && source ~/.tue/setup.bash && pycharm-community %F"
 Comment=Python IDE for Professional Developers
 Categories=Development;IDE;
 Terminal=false
