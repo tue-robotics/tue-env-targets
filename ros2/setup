@@ -44,8 +44,8 @@ else
 fi
 
 # shellcheck disable=SC2016
-ROSCONSOLE_FORMAT='[${severity}][${node}][${time}]: ${message}'
-export ROSCONSOLE_FORMAT
+RCUTILS_CONSOLE_OUTPUT_FORMAT='[{severity}] [{name}] [{time}]: {message}'
+export RCUTILS_CONSOLE_OUTPUT_FORMAT
 
 # shellcheck disable=SC2016
 # Make eProsima DDS implementation default
