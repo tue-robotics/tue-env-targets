@@ -8,7 +8,7 @@ done < /etc/opt/tmc/robot/version
 
 alias hero-sync-ubuntu-ntp="sudo ntpdate ntp.ubuntu.com"
 
-if [[ "${TUE_ROS_USE_IP}" == "true" ]]
+if [[ "${TUE_ENV_ROS_USE_IP}" == "true" ]]
 then
     unset ROS_HOSTNAME
     export ROS_IP=192.168.44.51
