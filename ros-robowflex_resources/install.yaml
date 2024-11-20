@@ -3,5 +3,3 @@
       type: git
       url: git@github.com:CardiffUniversityComputationalRobotics/robowflex_resources.git
       version: master-franka-dev
-
-      
