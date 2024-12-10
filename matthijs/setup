@@ -42,3 +42,10 @@ function remove-old-snaps
         sudo snap remove "${snapname}" --revision="${revision}"
     done
 }
+
+function update-snap
+{
+    sudo snap refresh
+    remove-old-snaps
+}
+
