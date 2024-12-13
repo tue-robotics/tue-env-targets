@@ -1,0 +1,14 @@
+- type: target
+  name: gazebo-setup
+
+- type: system
+  default:
+    name: null
+  noble:
+    name: gz-harmonic
+  jammy:
+    name: gz-harmonic
+  focal:
+    name: gz-garden
+  bionic:
+    name: gz-citadel
