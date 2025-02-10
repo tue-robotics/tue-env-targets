@@ -1,2 +1,2 @@
 - type: pip
-  name: sphinx-autoapi<3.4.0
+  name: sphinx-autoapi
