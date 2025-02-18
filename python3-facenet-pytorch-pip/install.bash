@@ -6,4 +6,4 @@ then
     args+=("--extra-index-url" "https://download.pytorch.org/whl/cpu")
 fi
 
-tue-install-pip3 facenet-pytorch "${args[@]}"
+tue-install-pip3 git+https://github.com/tue-robotics/facenet-pytorch.git "${args[@]}"
