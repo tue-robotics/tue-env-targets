@@ -3,7 +3,7 @@
 DIRECTORY='/opt/Qt'
 if [ ! -d "$DIRECTORY" ]
 then
-    tue-install-pipe wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O /tmp/qt-open-source-installer
+    tue-install-pipe wget https://download.qt.io/official_releases/online_installers/qt-online-installer-linux-x64-online.run -O /tmp/qt-open-source-installer
     tue-install-pipe chmod +x /tmp/qt-open-source-installer
 
     tue-install-tee ""
