@@ -1,0 +1,5 @@
+- type: target
+  name: sublime-setup
+
+- type: system
+  name: sublime-text
