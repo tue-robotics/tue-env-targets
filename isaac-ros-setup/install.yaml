@@ -1,0 +1,8 @@
+- type: apt-key-source
+  distribution-extensions: [""]
+  key-file: /usr/share/keyrings/isaac-ros.key
+  key-fingerprint: DE681BCAB
+  key-url: https://isaac.download.nvidia.com/isaac-ros/repos.key
+  repo-components: [release-3.0]
+  repo-url: https://isaac.download.nvidia.com/isaac-ros/release-3
+  source-file: isaac-ros.sources.list
