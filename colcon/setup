@@ -1,15 +1,6 @@
 #! /usr/bin/env bash
 
-ubuntu_version=$(lsb_release -rs)
-# shellcheck disable=SC2034
-IFS=. read -r major minor patch <<< "${ubuntu_version}"
-
 # Enable tab completion
-if [[ ${major} -le 22 ]]
-then
-    # shellcheck disable=SC1091
-    source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
-else
-    # shellcheck disable=SC1091
-    source /usr/share/bash-completion/completions/colcon
-fi
+# shellcheck disable=SC1091
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+source /usr/share/colcon_cd/function/colcon_cd-argcomplete.bash
