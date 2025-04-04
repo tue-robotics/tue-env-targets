@@ -1,2 +1,8 @@
-- type: system-now
-  name: curl
+- type: apt-key-source-now
+  include-distribution: false
+  key-file: /usr/share/keyrings/githubcli-archive-keyring.gpg
+  key-fingerprint: 23F3D4EA75716059
+  key-url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
+  repo-components: [stable, main]
+  repo-url: https://cli.github.com/packages
+  source-file: github-cli.list

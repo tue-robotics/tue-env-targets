@@ -1,0 +1,11 @@
+- type: target-now
+  name: docker-setup
+
+- type: system-now
+  name: containerd.io
+
+- type: system-now
+  name: docker-ce
+
+- type: system-now
+  name: docker-ce-cli

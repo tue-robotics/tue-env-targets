@@ -1,0 +1,8 @@
+- type: apt-key-source-now
+  include-distribution: false
+  key-file: /etc/apt/trusted.gpg.d/chrome.gpg
+  key-fingerprint: D38B4796
+  key-url: https://dl.google.com/linux/linux_signing_key.pub
+  repo-components: [stable, main]
+  repo-url: https://dl.google.com/linux/chrome/deb/
+  source-file: google-chrome.list
