@@ -1,0 +1,7 @@
+- type: apt-key-source-now
+  key-file: /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+  key-fingerprint: AF249743
+  key-url: https://packages.osrfoundation.org/gazebo.gpg
+  repo-components: [main]
+  repo-url: http://packages.osrfoundation.org/gazebo/ubuntu-stable
+  source-file: gazebo-stable.list
