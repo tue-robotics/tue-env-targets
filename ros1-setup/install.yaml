@@ -3,5 +3,5 @@
   key-fingerprint: AB17C654
   key-url: https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
   repo-components: [main]
-  repo-url: http://packages.ros.org/ros2/ubuntu
-  source-file: ros2.list
+  repo-url: http://packages.ros.org/ros/ubuntu
+  source-file: ros.list
