@@ -1,8 +1,6 @@
 #! /usr/bin/env bash
 
-# Install and add user to docker group
-tue-install-system-now docker-ce docker-ce-cli containerd.io
-
+# Add user to docker group
 if [[ $(groups) != *"docker"* ]]
 then
     tue-install-debug "Adding user ${USER} to docker group and restarting services..."
