@@ -1,5 +1,4 @@
 - type: apt-key-source-now
-  distribution-extensions: [""]
   key-file: /etc/apt/keyrings/docker.gpg
   key-fingerprint: 0EBFCD88
   key-url: https://download.docker.com/linux/ubuntu/gpg
