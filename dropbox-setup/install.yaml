@@ -1,0 +1,7 @@
+- type: apt-key-source-now
+  key-file: /usr/share/keyrings/dropbox.gpg
+  key-fingerprint: 5044912E
+  key-url: https://linux.dropbox.com/fedora/rpm-public-key.asc
+  repo-components: [main]
+  repo-url: http://linux.dropbox.com/ubuntu
+  source-file: dropbox.list
