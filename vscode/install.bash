@@ -10,9 +10,6 @@ code --install-extension ms-iot.vscode-ros\
      --install-extension tyriar.sort-lines\
      --force
 
-# TODO(anyone): remove when tue-env is updated to new variable names
-[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
-
 # Configure workspace
 workspacefile="${TUE_ENV_WS_DIR}/.vscode/settings.json"
 mkdir -p "${TUE_ENV_WS_DIR}/.vscode"

@@ -1,11 +1,5 @@
 #! /usr/bin/env bash
 
-# TODO(anyone): remove when tue-env is updated to new variable names
-if [[ ! -v TUE_ENV_ROS_VERSION && -v TUE_ROS_VERSION ]]
-then
-    TUE_ENV_ROS_VERSION=${TUE_ROS_VERSION}
-    >&2 echo -e "\e[33;1m[ros-swri_console] Change the config of your environment to use 'TUE_ENV_ROS_VERSION' instead of 'TUE_ROS_VERSION'.\e[0m"
-fi
 if [[ "${TUE_ENV_ROS_VERSION}" -eq 1 ]]
 then
     alias swri="rosrun swri_console swri_console"

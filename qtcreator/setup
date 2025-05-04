@@ -5,16 +5,6 @@ function qtcreator
     /opt/Qt/Tools/QtCreator/bin/qtcreator.sh
 }
 
-# TODO(anyone): remove when tue-env is updated to new variable names
-if [[ ! -v TUE_ENV_ROS_VERSION && -v TUE_ROS_VERSION ]]
-then
-    TUE_ENV_ROS_VERSION=${TUE_ROS_VERSION}
-    >&2 echo -e "\e[33;1m[qtcreator] Change the config of your environment to use 'TUE_ENV_ROS_VERSION' instead of 'TUE_ENV_ROS_VERSION'.\e[0m"
-fi
-
-# TODO(anyone): remove when tue-env is updated to new variable names
-[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
-
 if [[ "${TUE_ENV_ROS_VERSION}" -eq 1 ]]
 then
     # Make sure packages can be build by QT
