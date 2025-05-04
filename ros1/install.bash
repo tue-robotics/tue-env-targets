@@ -1,12 +1,6 @@
 #! /usr/bin/env bash
 # shellcheck disable=SC1090
 
-# TODO(anyone): remove when tue-env is updated to new variable names
-if [[ ! -v TUE_ENV_ROS_DISTRO && -v TUE_ROS_DISTRO ]]
-then
-    TUE_ENV_ROS_DISTRO=${TUE_ROS_DISTRO}
-    tue-install-warning "Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'"
-fi
 if [[ -z "${TUE_ENV_ROS_DISTRO}" ]]
 then
     tue-install-error "TUE_ENV_ROS_DISTRO was not set"
@@ -28,9 +22,6 @@ then
     tue-install-pipe rosdep update --rosdistro "${TUE_ENV_ROS_DISTRO}"
     touch "$rosdep_update_file"
 fi
-
-# TODO(anyone): remove when tue-env is updated to new variable names
-[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
 
 mkdir -p "${TUE_ENV_WS_DIR}"
 

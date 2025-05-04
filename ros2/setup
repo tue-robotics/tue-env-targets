@@ -1,11 +1,5 @@
 #! /usr/bin/env bash
 
-# TODO(anyone): remove when tue-env is updated to new variable names
-if [[ ! -v TUE_ENV_ROS_DISTRO && -v TUE_ROS_DISTRO ]]
-then
-    TUE_ENV_ROS_DISTRO=${TUE_ROS_DISTRO}
-    >&2 echo -e "\e[33;1m[ros2] Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'.\e[0m"
-fi
 if [[ -z "${TUE_ENV_ROS_DISTRO}" ]]
 then
     >&2 echo -e "\e[31;1m[ros2] TUE_ENV_ROS_DISTRO was not set.\e[0m"
@@ -20,9 +14,6 @@ then
 else
     >&2 echo -e "\e[33;1m[ros2] ROS 2 ${TUE_ENV_ROS_DISTRO} setup.bash not found.\e[0m"
 fi
-
-# TODO(anyone): remove when tue-env is updated to new variable names
-[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
 
 if [[ -f "${TUE_ENV_WS_DIR}/install/local_setup.bash" ]]
 then

@@ -20,10 +20,10 @@ The overview page is configured by the [catkin_tools_document_config.yaml](./cat
 Make sure all documentation dependencies are installed by running `tue-get install/update` with the `--doc-depend` option. To generate the documetation run `tue-make-documentation` it wraps `catkin` and therefore accepts all `catkin` arguments. After generating the documentation, you can open the documentation in your browser:
 
 ```bash
-<your-browser> $TUE_DOCS_PATH
+<your-browser> ${TUE_ENV_DOCS_PATH}
 ```
 
-Or copy the value of `$TUE_DOCS_PATH` into the urlbar.
+Or copy the value of `${TUE_ENV_DOCS_PATH}` into the urlbar.
 
 ## Python
 

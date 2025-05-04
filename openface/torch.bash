@@ -8,7 +8,7 @@ pushd . > /dev/null
 git config --global url.https://github.com/.insteadOf git://github.com/
 
 tue-install-echo "Installing Torch"
-if [ -n "$TUE_CUDA" ]
+if [[ -n "${TUE_ENV_CUDA}" ]]
 then
     tue-install-debug "Installing torch with CUDA capabilities"
     export TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__"
@@ -32,7 +32,7 @@ tue-install-pipe luarocks install dpnn
 tue-install-pipe luarocks install nn
 tue-install-pipe luarocks install optim
 tue-install-pipe luarocks install csvigo
-if [ -n "$TUE_CUDA" ]
+if [[ -n "${TUE_ENV_CUDA}" ]]
 then
     tue-install-pipe luarocks install cutorch #(only with CUDA)
     tue-install-pipe luarocks install cunn #(only with CUDA)

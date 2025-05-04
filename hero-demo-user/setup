@@ -1,11 +1,8 @@
 #! /usr/bin/env bash
 
-# TODO(anyone): remove when tue-env is updated to new variable names
-[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
-
 export ROBOT_BRINGUP_PATH=${TUE_ENV_WS_DIR}/src/hero_bringup
 
-alias hero='[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}; export ROBOT_BRINGUP_PATH=${TUE_ENV_WS_DIR}/src/hero_bringup'
+alias hero='export ROBOT_BRINGUP_PATH=${TUE_ENV_WS_DIR}/src/hero_bringup'
 
 alias hero-core='_robot-core hero1'
 

@@ -8,16 +8,6 @@ export CATKIN_TOOLS_DOCUMENT_CONFIG_FILE
 # Function to generate doucmentation of current workspace
 function tue-make-documentation
 {
-    # TODO(anyone): remove when tue-env is updated to new variable names
-    [[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
-
-        # TODO(anyone): remove when tue-env is updated to new variable names
-    if [[ ! -v TUE_ENV_ROS_DISTRO && -v TUE_ROS_DISTRO ]]
-    then
-        TUE_ENV_ROS_DISTRO=${TUE_ROS_DISTRO}
-        >&2 echo "Change the config of your environment to use 'TUE_ENV_ROS_DISTRO' instead of 'TUE_ROS_DISTRO'"
-    fi
-
     if [[ -n "${TUE_ENV_ROS_DISTRO}" ]] && [[ -d "${TUE_ENV_WS_DIR}" ]]
     then
         local build_tool=""
@@ -46,9 +36,6 @@ export -f tue-make-documentation
 # Use complete function of tue-make
 complete -F _tue-make tue-make-documentation
 
-# TODO(anyone): remove when tue-env is updated to new variable names
-[[ -v TUE_ENV_WS_DIR || ! -v TUE_WS_DIR ]] || TUE_ENV_WS_DIR=${TUE_WS_DIR}
-
 # Export docs path to open with desiserd browser
-TUE_DOCS_PATH="${TUE_ENV_WS_DIR}"/docs/index.html
-export TUE_DOCS_PATH
+TUE_ENV_DOCS_PATH="${TUE_ENV_WS_DIR}"/docs/index.html
+export TUE_ENV_DOCS_PATH
