@@ -3,11 +3,10 @@
 
 ####################
 #
-# git prompt
+# git PS1
 #
 ####################
 
-# source ~/Documents/tools/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -45,13 +44,13 @@ function _ROS2_DISCOVERY {
 
 function _VIRTUAL_ENV_NAME {
     local virtual_env_name
-    virtual_env_name=$(basename "${VIRTUAL_ENV}")
+    { [[ -v VIRTUAL_ENV_PROMPT ]] && virtual_env_name="${VIRTUAL_ENV_PROMPT}" ; } || virtual_env_name=$(basename "${VIRTUAL_ENV}")
     [[ -n ${virtual_env_name} ]] && echo "(${virtual_env_name}) " || echo ""
 }
 
 # shellcheck disable=SC2154
-PS1='$(_VIRTUAL_ENV_NAME)[\[\033[01;34m\]\w\[\033[00m\]]$(__git_ps1)\n'\
-'$(_ROS_MASTER_NAME)$(_ROS2_DISCOVERY)${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \$ '
+PS1='$(_VIRTUAL_ENV_NAME)[\[\e[01;34m\]\w\[\e[00m\]]$(__git_ps1)\n'\
+'$(_ROS_MASTER_NAME)$(_ROS2_DISCOVERY)${debian_chroot:+($debian_chroot)}\[\e[01;32m\]\u@\h\[\e[00m\] \$ '
 # shellcheck disable=SC2016
-_OLD_VIRTUAL_PS1='[\[\033[01;34m\]\w\[\033[00m\]]$(__git_ps1)\n'\
-'$(_ROS_MASTER_NAME)$(_ROS2_DISCOVERY)${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \$ '
+_OLD_VIRTUAL_PS1='[\[\e[01;34m\]\w\[\e[00m\]]$(__git_ps1)\n'\
+'$(_ROS_MASTER_NAME)$(_ROS2_DISCOVERY)${debian_chroot:+($debian_chroot)}\[\e[01;32m\]\u@\h\[\e[00m\] \$ '
