@@ -2,3 +2,11 @@
   source:
     type: git
     url: https://github.com/tue-robotics/tue_mobile_ui.git
+
+- type: pip
+  default:
+    name: null
+  focal:
+    name: "pyOpenSSL>=22.0"
+  jammy:
+    name: "pyOpenSSL>=22.0"
