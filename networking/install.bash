@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-if [ "$(lsb-release -cs)" == "xenial" ]
+if [ "$(lsb_release -cs)" == "xenial" ]
 then
     # Install config file (mdns4_minimal is normally missing in xenial and should be present)
 
