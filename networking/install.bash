@@ -1,8 +1,6 @@
 #! /usr/bin/env bash
 
-# shellcheck disable=SC1091
-. /etc/os-release
-if [ "$UBUNTU_CODENAME" == "xenial" ]
+if [ "$(lsb-release -cs)" == "xenial" ]
 then
     # Install config file (mdns4_minimal is normally missing in xenial and should be present)
 
