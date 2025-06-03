@@ -1,7 +1,0 @@
-- type: apt-key-source-now
-  key-file: /usr/share/keyrings/ros-archive-keyring.gpg
-  key-fingerprint: AB17C654
-  key-url: https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
-  repo-components: [main]
-  repo-url: http://packages.ros.org/ros/ubuntu
-  source-file: ros.list
