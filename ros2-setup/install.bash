@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 if [[ -f /etc/apt/sources.list.d/ros2.list ]]
 then
     tue-install-echo "Removing the old ROS2 apt sources"
@@ -8,10 +10,30 @@ else
     tue-install-debug "Old ROS2 apt sources do not exist"
 fi
 
-ubuntu_name=$(lsb_release -cs)
-
 # Check whether universe is enabled
-if ! grep -h ^deb /etc/apt/sources.list 2>/dev/null | grep "${ubuntu_name} universe" -q
+ubuntu_name=$(lsb_release -cs)
+ubuntu_version=$(lsb_release -rs)
+needs_enabling_universe=true
+# Check whether on ubuntu >= 24.04
+if dpkg --compare-versions "${ubuntu_version}" ge "24.04"
+then
+    if ! "${SCRIPT_DIR}"/read_sources_files.py /etc/apt/sources.list.d/ubuntu.sources | jq -e 'all(.[]; .Components | index("universe") != null)' &>/dev/null
+    then
+        tue-install-debug "Not all sources have the universe repository enabled yet, going to enabled it"
+    else
+        tue-install-debug "All sources have the universe repository enabled"
+        needs_enabling_universe=false
+    fi
+else
+    if ! grep -h ^deb /etc/apt/sources.list 2>/dev/null | grep "${ubuntu_name} (?:[a-z ]*(?:[a-z]+(?: [a-z]+)*)) universe" -q
+    then
+        tue-install-debug "No universe found in the sources.list, going to enable the universe repository"
+    else
+        tue-install-debug "Universe found in the sources.list, no need to enable it"
+    fi
+fi
+
+if [[ ${needs_enabling_universe} == true ]]
 then
     tue-install-echo "Enabling universe repository"
     tue-install-pipe sudo add-apt-repository universe || tue-install-error "Failed to enable universe repository"
