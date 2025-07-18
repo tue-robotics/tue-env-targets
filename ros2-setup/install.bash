@@ -25,11 +25,12 @@ then
         needs_enabling_universe=false
     fi
 else
-    if ! grep -h ^deb /etc/apt/sources.list 2>/dev/null | grep "${ubuntu_name} (?:[a-z ]*(?:[a-z]+(?: [a-z]+)*)) universe" -q
+    if ! grep -h ^deb /etc/apt/sources.list 2>/dev/null | grep -P "${ubuntu_name}[a-z\-]* (?:[a-z ]*(?:[a-z]+(?: [a-z]+)*)) universe" -q
     then
         tue-install-debug "No universe found in the sources.list, going to enable the universe repository"
     else
         tue-install-debug "Universe found in the sources.list, no need to enable it"
+        needs_enabling_universe=false
     fi
 fi
 
@@ -45,7 +46,19 @@ fi
 ros_apt_source_pkg_name="ros2-apt-source"
 
 installed_version=$(dpkg -s ${ros_apt_source_pkg_name} 2>/dev/null | grep -F "Version" | awk '{print $2}')
-newest_version=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
+
+CURL_ARGS=("-H" "Accept: application/vnd.github+json")
+if [[ -n ${GITHUB_TOKEN} ]]
+then
+    CURL_ARGS+=("-H" "Authorization: Bearer ${GITHUB_TOKEN}")
+fi
+newest_version=$(curl "${CURL_ARGS[@]}" -sL https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | jq -r '.tag_name')
+
+if [[ ${newest_version} == "null" ]]
+then
+    tue-install-error "Failed to get the newest version of '${ros_apt_source_pkg_name}'"
+fi
+
 needs_install=true
 if [[ -n ${installed_version} ]]
 then
