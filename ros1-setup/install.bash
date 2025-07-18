@@ -11,7 +11,7 @@ fi
 ubuntu_name=$(lsb_release -cs)
 
 # Check whether universe is enabled
-if ! grep -h ^deb /etc/apt/sources.list 2>/dev/null | grep "${ubuntu_name} universe" -q
+if ! grep -h ^deb /etc/apt/sources.list 2>/dev/null | grep -P "${ubuntu_name}[a-z\-]* (?:[a-z ]*(?:[a-z]+(?: [a-z]+)*)) universe" -q
 then
     tue-install-echo "Enabling universe repository"
     tue-install-pipe sudo add-apt-repository universe || tue-install-error "Failed to enable universe repository"
