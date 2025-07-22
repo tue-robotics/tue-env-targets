@@ -1,0 +1,4 @@
+- type: ros
+  source:
+    type: git
+    url: git@github.com:CardiffUniversityComputationalRobotics/human_traj_predictor.git
