@@ -1,0 +1,6 @@
+- type: ros
+  source:
+    type: git
+    url: git@github.com:rst-tu-dortmund/costmap_converter.git
+    sub-dir: costmap_converter
+    version: ros2
