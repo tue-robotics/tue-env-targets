@@ -6,3 +6,6 @@
 
 - type: target-now
   name: python3-catkin-tools
+
+- type: target-now
+  name: yq
