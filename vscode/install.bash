@@ -26,9 +26,9 @@ fi
 if [[ "${TUE_ENV_ROS_VERSION}" == "1" ]]
 then
     # Install and configure catkin tools extension
-    if ! python3 "$(command -v catkin)" config --workspace "${TUE_ENV_WS_DIR}" | grep -q "DCMAKE_EXPORT_COMPILE_COMMANDS"
+    if ! /usr/bin/python3 "$(command -v catkin)" config --workspace "${TUE_ENV_WS_DIR}" | grep -q "DCMAKE_EXPORT_COMPILE_COMMANDS"
     then
-        python3 "$(command -v catkin)" config --workspace "${TUE_ENV_WS_DIR}" --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+        /usr/bin/python3 "$(command -v catkin)" config --workspace "${TUE_ENV_WS_DIR}" --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
     fi
 fi
 
