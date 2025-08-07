@@ -47,3 +47,7 @@ fi
 # Shortcuts
 # Terminator
 tue-install-cp shortcuts/terminator.desktop ~/.local/share/applications/terminator.desktop
+
+# Configs
+tue-install-cp configs/gammastep.ini "${XDG_CONFIG_HOME:-~/.config}"/gammastep/config.ini
+tue-install-cp configs/99-beacondb.conf /etc/geoclue/conf.d/99-beacondb.conf

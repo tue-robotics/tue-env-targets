@@ -34,7 +34,7 @@
 - type: system
   name: tree
 - type: system
-  name: redshift-gtk
+  name: gammastep
 - type: system
   name: shellcheck
 - type: system
