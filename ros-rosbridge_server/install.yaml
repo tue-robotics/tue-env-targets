@@ -2,14 +2,3 @@
   source:
     type: system
     name: rosbridge-server
-
-# temp; start
-# should be removed not later then 2023-04-13
-# this is to force removal of source version of the following packages
-- type: target
-  name: ros-rosapi
-- type: target
-  name: ros-rosbridge_library
-- type: target
-  name: ros-rosbridge_msgs
-# temp; end
