@@ -34,7 +34,15 @@
 - type: system
   name: tree
 - type: system
-  name: gammastep
+  default:
+    name: gammastep
+  focal:
+    name: null
+- type: system
+  default:
+    name: null
+  focal:
+    name: redshift
 - type: system
   name: shellcheck
 - type: system
