@@ -49,5 +49,8 @@ fi
 tue-install-cp shortcuts/terminator.desktop ~/.local/share/applications/terminator.desktop
 
 # Configs
-tue-install-cp configs/gammastep.ini "${XDG_CONFIG_HOME:-~/.config}"/gammastep/config.ini
+if [ "$(lsb_release -sc)" != "focal" ]
+then
+    tue-install-cp configs/gammastep.ini "${XDG_CONFIG_HOME:-~/.config}"/gammastep/config.ini
+fi
 tue-install-cp configs/99-beacondb.conf /etc/geoclue/conf.d/99-beacondb.conf
