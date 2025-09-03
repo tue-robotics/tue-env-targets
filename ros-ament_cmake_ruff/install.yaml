@@ -1,0 +1,5 @@
+- type: ros
+  source:
+    type: git
+    url: https://github.com/swri-robotics/ament_ruff.git
+    sub-dir: ament_cmake_ruff
