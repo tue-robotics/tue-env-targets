@@ -27,7 +27,10 @@ alias ssh-del-cm='rm ~/.ssh/controlmasters/*'
 
 function update-apt
 {
-    sudo apt-get update
+    if [[ ! -f /tmp/tue_get_apt_get_updated ]]
+    then
+        sudo apt-get update
+    fi
     touch /tmp/tue_get_apt_get_updated
     sudo apt-get upgrade --with-new-pkgs --autoremove
 }
