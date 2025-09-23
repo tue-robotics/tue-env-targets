@@ -53,7 +53,7 @@ fi
 if [[ ${needs_install} == true ]]
 then
     tue-install-debug "Going to install ${ros_apt_source_pkg_name}"
-    tue-install-pipe curl -L -o /tmp/${ros_apt_source_pkg_name}.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${newest_version}/${ros_apt_source_pkg_name}_${newest_version}.${ubuntu_name}_all.deb" || tue-install-error "Failed to download ROS apt source debian"
+    tue-install-pipe curl -fL -o /tmp/${ros_apt_source_pkg_name}.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${newest_version}/${ros_apt_source_pkg_name}_${newest_version}.${ubuntu_name}_all.deb" || tue-install-error "Failed to download ROS apt source debian"
     tue-install-dpkg /tmp/${ros_apt_source_pkg_name}.deb
     tue-install-apt-get-update
 fi
