@@ -38,7 +38,7 @@ icon_commit_hash=$(git -C "$icon_path" rev-list HEAD -n 1)
 if [ ! -f $icon_path/last_install ] || [ "$(cat "$icon_path"/last_install)" != "$icon_commit_hash" ]
 then
     tue-install-debug "Installing vimix-icon-theme"
-    tue-install-pipe $icon_path/install.sh
+    tue-install-pipe ${icon_path}/install.sh -n Vimix-dark
     echo "$icon_commit_hash" > $icon_path/last_install
 else
     tue-install-debug "vimix-icon-theme not updated"
