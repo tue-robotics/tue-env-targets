@@ -1,4 +1,5 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/tue-robotics/kdl_parser_py.git
+    url: https://github.com/tue-robotics/kdl_parser.git
+    sub-dir: kdl_parser_py
