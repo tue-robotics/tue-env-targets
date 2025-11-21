@@ -7,7 +7,7 @@ jobs:
     name: YamlLint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: recursive
           ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
@@ -24,7 +24,7 @@ jobs:
     name: ShellCheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: recursive
           ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
@@ -35,7 +35,7 @@ jobs:
     name: Set -e/+e Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: recursive
           ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
