@@ -1,6 +1,11 @@
-- type: ros
+- type: ros-remove-source
   source:
     type: git
     url: https://github.com/MatthijsBurgh/ament_ruff.git
+    eol: 2025-11-30
+
+- type: ros
+  source:
+    type: git
+    url: https://github.com/swri-robotics/ament_ruff.git
     sub-dir: ament_cmake_ruff
-    version: patch-1
