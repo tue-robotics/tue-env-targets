@@ -7,6 +7,7 @@ if dpkg --compare-versions "${installed_version}" lt "${desired_version}"
 then
     tue-install-echo "Need to upgrade git>=${desired_version} to use the sparse features"
     # install.yaml already depends on git-setup, which is parsed before executing this file.
+    tue-install-apt-wait-for-lock
     tue-install-pipe sudo apt-get install --assume-yes git
 else
     tue-install-debug "git version(${installed_version}) >= ${desired_version}"
