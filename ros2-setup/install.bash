@@ -25,7 +25,7 @@ then
         needs_enabling_universe=false
     fi
 else
-    if ! grep -h ^deb /etc/apt/sources.list 2>/dev/null | grep -P "${ubuntu_name}[a-z\-]* (?:[a-z ]*(?:[a-z]+(?: [a-z]+)*)) universe" -q
+    if ! grep -h ^deb /etc/apt/sources.list 2>/dev/null | grep -P "${ubuntu_name}[a-z\-]* (?:[a-z ]*(?:[a-z]+(?: [a-z]+)*) )?universe" -q
     then
         tue-install-debug "No universe found in the sources.list, going to enable the universe repository"
     else
