@@ -2,5 +2,5 @@
 
 function hero-dashboard
 {
-    hero_dashboard hero1.local
+    hero_dashboard --host=hero1.local
 }
