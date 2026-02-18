@@ -1,0 +1,9 @@
+- type: apt-key-source
+  distribution-extensions: ["llvm-toolchain-${DIST}-21"]
+  include-distribution: true
+  key-file: /etc/apt/trusted.gpg.d/apt.llvm.org.gpg
+  key-fingerprint: AF4F7421
+  key-url: https://apt.llvm.org/llvm-snapshot.gpg.key
+  repo-components: [main]
+  repo-url: http://apt.llvm.org/${DIST}/
+  source-file: llvm-21.list
