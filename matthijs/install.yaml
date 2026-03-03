@@ -69,6 +69,10 @@
 - type: target
   name: ros-swri_console
 
+# bash commands
+- type: target
+  name: matthijs-cmds
+
 # Save gmapping map
 - type: target
   name: tue-save-map

@@ -51,4 +51,3 @@ function update-snap
     sudo snap refresh
     remove-old-snaps
 }
-
