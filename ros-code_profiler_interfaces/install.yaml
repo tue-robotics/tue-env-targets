@@ -1,6 +1,9 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/code_profiler.git
-    sub-dir: code_profiler_interfaces
-    version: refactor
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/code_profiler.git
+      sub-dir: code_profiler_interfaces
+      version: refactor
+  noetic:
+    source: null
