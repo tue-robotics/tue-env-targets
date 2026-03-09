@@ -1,2 +1,5 @@
+- type: target
+  name: keepassxc-setup
+
 - type: system
   name: keepassxc
