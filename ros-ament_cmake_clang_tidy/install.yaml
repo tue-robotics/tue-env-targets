@@ -1,4 +1,5 @@
 - type: ros
   source:
-    type: system
-    name: ament-cmake-clang-tidy
+    type: git
+    url: https://github.com/tue-robotics/ament_lint.git
+    sub-dir: ament_cmake_clang_tidy
