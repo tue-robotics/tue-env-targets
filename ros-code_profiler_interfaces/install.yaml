@@ -4,6 +4,6 @@
       type: git
       url: https://github.com/tue-robotics/code_profiler.git
       sub-dir: code_profiler_interfaces
-      version: refactor
+      version: ros2_working
   noetic:
     source: null
