@@ -1,4 +1,11 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/tue_serialization.git
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/tue_serialization.git
+      sub-dir: tue_serialization
+      version: ros2
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/tue_serialization.git
