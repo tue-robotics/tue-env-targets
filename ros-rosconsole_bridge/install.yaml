@@ -1,4 +1,9 @@
 - type: ros
-  source:
-    type: system
-    name: rosconsole-bridge
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/rosconsole_bridge.git
+  noetic:
+    source:
+      type: system
+      name: rosconsole-bridge
