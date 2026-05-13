@@ -1,0 +1,8 @@
+- type: ros
+  source:
+    type: git
+    url: https://github.com/tue-robotics/rgbd.git
+    sub-dir: rgbd_interfaces
+    version: ros2
+  noetic:
+    source: null
