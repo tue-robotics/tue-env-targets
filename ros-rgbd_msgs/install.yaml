@@ -1,5 +1,12 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/rgbd.git
-    sub-dir: rgbd_msgs
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/rgbd.git
+      sub-dir: rgbd_msgs
+      version: ros2
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/rgbd.git
+      sub-dir: rgbd_msgs
