@@ -3,8 +3,8 @@
     source:
       type: git
       url: https://github.com/tue-robotics/geolib2.git
-      version: ros2
   noetic:
     source:
       type: git
       url: https://github.com/tue-robotics/geolib2.git
+      version: ros1
