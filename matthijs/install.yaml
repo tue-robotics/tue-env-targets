@@ -10,7 +10,7 @@
 - type: target
   name: qtcreator
 - type: target
-  name: pycharm-professional
+  name: pycharm
 - type: target
   name: solaar
 - type: target
