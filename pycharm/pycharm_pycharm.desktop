@@ -1,0 +1,12 @@
+[Desktop Entry]
+X-SnapInstanceName=pycharm
+Version=1.0
+Type=Application
+Name=PyCharm
+Icon=/snap/pycharm/current/bin/pycharm.png
+Exec=env BAMF_DESKTOP_FILE_HINT=~/.local/share/applications/pycharm_pycharm.desktop bash -c "shopt -s expand_aliases && source ~/.tue/setup.bash && pycharm %F"
+Comment=The Only Python IDE you need
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-pycharm
+StartupNotify=true
