@@ -1,4 +1,10 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/upower_ros.git
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/upower_ros.git
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/upower_ros.git
+      version: ros1
