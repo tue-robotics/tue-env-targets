@@ -3,8 +3,8 @@
     source:
       type: git
       url: https://github.com/tue-robotics/tue_config.git
-      version: ros2
   noetic:
     source:
       type: git
       url: https://github.com/tue-robotics/tue_config.git
+      version: ros1
