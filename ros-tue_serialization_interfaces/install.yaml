@@ -4,6 +4,5 @@
       type: git
       url: https://github.com/tue-robotics/tue_serialization.git
       sub-dir: tue_serialization_interfaces
-      version: ros2
   noetic:
     source: null
