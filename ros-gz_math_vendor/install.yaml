@@ -1,0 +1,10 @@
+- type: ros
+  default:
+    source:
+      type: system
+      name: gz-math-vendor
+  humble:
+    source:
+      type: git
+      url: https://github.com/gazebo-release/gz_math_vendor.git
+      version: jazzy
