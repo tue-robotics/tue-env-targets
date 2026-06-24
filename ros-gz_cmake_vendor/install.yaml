@@ -1,0 +1,10 @@
+- type: ros
+  default:
+    source:
+      type: system
+      name: gz-cmake-vendor
+  humble:
+    source:
+      type: git
+      url: https://github.com/gazebo-release/gz_cmake_vendor.git
+      version: jazzy
