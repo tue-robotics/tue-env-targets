@@ -1,0 +1,8 @@
+- type: apt-key-source-now
+  distribution-extensions: [stable]
+  key-file: /usr/share/keyrings/claude-desktop-archive-keyring.asc
+  key-fingerprint: 29FF1A7ECACE
+  key-url: https://downloads.claude.ai/claude-desktop/key.asc
+  repo-components: [main]
+  repo-url: https://downloads.claude.ai/claude-desktop/apt/stable
+  source-file: claude-desktop.list
