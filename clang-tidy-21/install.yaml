@@ -3,3 +3,6 @@
 
 - type: system
   name: clang-tidy-21
+
+- type: target
+  name: libomp-21-dev
