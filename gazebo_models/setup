@@ -4,4 +4,7 @@ model_path=$HOME/data/gazebo_models
 
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH:+${GAZEBO_MODEL_PATH}:}$model_path
 export GAZEBO_RESOURCE_PATH=${GAZEBO_RESOURCE_PATH:+${GAZEBO_RESOURCE_PATH}:}$model_path
+# GZ_SIM_RESOURCE_PATH is the new Gazebo's equivalent of GAZEBO_MODEL_PATH; harmless to export on
+# Gazebo classic / Noetic too, since nothing there reads it.
+export GZ_SIM_RESOURCE_PATH=${GZ_SIM_RESOURCE_PATH:+${GZ_SIM_RESOURCE_PATH}:}$model_path
 
