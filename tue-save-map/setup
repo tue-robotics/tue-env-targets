@@ -35,7 +35,12 @@ The map will be stored in the package ed_object_models, in folder models/MAP_NAM
     robot_name=$1
     map_name=$2
 
-    MODELS_DIR=$(rospack find ed_object_models)/models
+    if [[ "${TUE_ENV_ROS_VERSION}" -eq 1 ]]
+    then
+        MODELS_DIR=$(rospack find ed_object_models)/models
+    else
+        MODELS_DIR=$(ros2 pkg prefix --share ed_object_models)/models
+    fi
     MODEL_DIR="$MODELS_DIR"/$map_name
 
     if [ -d "$MODEL_DIR" ]; then
@@ -51,6 +56,9 @@ The map will be stored in the package ed_object_models, in folder models/MAP_NAM
 
 
     # store the map in /tmp
+    # TODO(ros2): map_server has no ROS 2 build yet (tracked in robot_launch_files' ros2_migration.md);
+    # its replacement is nav2_map_server, e.g.:
+    # ros2 run nav2_map_server map_saver_cli -f /tmp/temp_map -t /"$robot_name"/gmapping/map
     rosrun map_server map_saver -f /tmp/temp_map /map:=/"$robot_name"/gmapping/map
 
     # parse yaml from gmapping
