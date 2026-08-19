@@ -1,4 +1,10 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/robot_launch_files.git
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/robot_launch_files.git
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/robot_launch_files.git
+      version: ros1
