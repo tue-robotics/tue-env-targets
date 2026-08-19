@@ -1,4 +1,10 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/ed_object_models.git
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/ed_object_models.git
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/ed_object_models.git
+      version: ros1
