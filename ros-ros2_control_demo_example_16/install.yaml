@@ -1,0 +1,5 @@
+- type: ros
+  source:
+    type: git
+    url: https://github.com/ros-controls/ros2_control_demos.git
+    sub-dir: example_16
