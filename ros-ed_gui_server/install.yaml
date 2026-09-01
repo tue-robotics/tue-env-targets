@@ -1,5 +1,12 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/ed_gui_server.git
-    sub-dir: ed_gui_server
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/ed_gui_server.git
+      sub-dir: ed_gui_server
+      version: ros2
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/ed_gui_server.git
+      sub-dir: ed_gui_server
