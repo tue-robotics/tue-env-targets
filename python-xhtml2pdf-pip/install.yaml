@@ -3,5 +3,19 @@
 - type: system
   name: libcairo2-dev
 
+# xhtml2pdf pulls in lxml via svglib. On focal (Python 3.8) pip falls back to building the
+# lxml sdist whenever no cp38 wheel is available on the index, which needs these headers.
+- type: system
+  default:
+    name: null
+  focal:
+    name: libxml2-dev
+
+- type: system
+  default:
+    name: null
+  focal:
+    name: libxslt1-dev
+
 - type: pip
   name: xhtml2pdf
