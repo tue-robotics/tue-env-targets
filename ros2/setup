@@ -35,9 +35,12 @@ else
 fi
 
 # shellcheck disable=SC2016
-RCUTILS_CONSOLE_OUTPUT_FORMAT='[{severity}] [{name}] [{time}]: {message}'
+# Make this the default log format, so that an overlay, such as a workspace's environment hook, or
+# the user can still pick another one
+RCUTILS_CONSOLE_OUTPUT_FORMAT=${RCUTILS_CONSOLE_OUTPUT_FORMAT:-'[{severity}] [{name}] [{time}]: {message}'}
 export RCUTILS_CONSOLE_OUTPUT_FORMAT
 
 # shellcheck disable=SC2016
-# Make eProsima DDS implementation default
-export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+# Make eProsima DDS implementation the default, so that an overlay, such as a workspace's
+# environment hook, or the user can still pick another one
+export RMW_IMPLEMENTATION=${RMW_IMPLEMENTATION:-rmw_fastrtps_cpp}
