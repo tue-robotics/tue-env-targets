@@ -1,5 +1,12 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/orocos/orocos_kinematics_dynamics.git
-    sub-dir: python_orocos_kdl
+  default:
+    source:
+      type: git
+      url: https://github.com/orocos/orocos_kinematics_dynamics.git
+      sub-dir: python_orocos_kdl
+  noetic:
+    source:
+      type: git
+      url: https://github.com/orocos/orocos_kinematics_dynamics.git
+      sub-dir: python_orocos_kdl
+      version: release-1.5
