@@ -2,6 +2,12 @@
   name: hsr-setup
 
 - type: ros
-  source:
-    type: system
-    name: tmc-manipulation-msgs
+  default:
+    source:
+      type: git
+      url: https://github.com/hsr-project/tmc_common_msgs.git
+      sub-dir: tmc_manipulation_msgs
+  noetic:
+    source:
+      type: system
+      name: tmc-manipulation-msgs
