@@ -1,10 +1,6 @@
 - type: ros
   default:
-    source:
-      type: git
-      url: https://github.com/tue-robotics/ed_tmc_collision.git
-      sub-dir: ed_tmc_collision
-      version: migration_ros2
+    source: null
   noetic:
     source:
       type: git
