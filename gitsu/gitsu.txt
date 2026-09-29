@@ -1,7 +1,5 @@
 j.elfring@tue.nl : Jos Elfring
 MatthijsBurgh@outlook.com : Matthijs van der Burgh
-ar13pit@gmail.com : Arpit Aggarwal
-pepevandooren@hotmail.com : Peter van Dooren
-elektrak21@gmail.com : Elektra Katsikis
 iasonth95@gmail.com: Iason Theodorou
-
+y.chen17@student.tue.nl : Yixuan Chen
+maraburghelea06@gmail.com : Mara-Ioana Burghelea
