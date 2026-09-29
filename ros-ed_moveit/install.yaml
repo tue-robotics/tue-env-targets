@@ -1,4 +1,10 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/ed_moveit.git
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/ed_moveit.git
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/ed_moveit.git
+      version: ros1
