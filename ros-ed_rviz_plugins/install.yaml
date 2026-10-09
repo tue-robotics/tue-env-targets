@@ -1,4 +1,11 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/ed_rviz_plugins.git
+  default:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/ed_rviz_plugins.git
+      version: ros2
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/ed_rviz_plugins.git
+      version: master

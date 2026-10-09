@@ -1,0 +1,7 @@
+- type: ros
+  default:
+    source:
+      type: system
+      name: rviz_ogre_vendor
+  noetic:
+    source: null
