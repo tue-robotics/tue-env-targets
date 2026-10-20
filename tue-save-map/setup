@@ -25,7 +25,8 @@ function _parse_yaml_map_server {
 }
 
 function tue-save-map {
-    if [ -z "$2" ]; then
+    if [ -z "$2" ]
+    then
         echo "Usage: tue-save-map ROBOT_NAME MAP_NAME
 
 The map will be stored in the package ed_object_models, in folder models/MAP_NAME/walls."
@@ -43,7 +44,8 @@ The map will be stored in the package ed_object_models, in folder models/MAP_NAM
     fi
     MODEL_DIR="$MODELS_DIR"/$map_name
 
-    if [ -d "$MODEL_DIR" ]; then
+    if [ -d "$MODEL_DIR" ]
+    then
         echo "$map_name already exists"
         return
     fi
@@ -63,7 +65,8 @@ The map will be stored in the package ed_object_models, in folder models/MAP_NAM
         ros2 run nav2_map_server map_saver_cli -f /tmp/temp_map -t /"$robot_name"/slam/map
     fi
 
-    if [ ! -f /tmp/temp_map.yaml ] || [ ! -f /tmp/temp_map.pgm ]; then
+    if [ ! -f /tmp/temp_map.yaml ] || [ ! -f /tmp/temp_map.pgm ]
+    then
         echo "Failed to save the map"
         return 1
     fi
