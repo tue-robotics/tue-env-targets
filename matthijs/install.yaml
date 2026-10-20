@@ -63,7 +63,7 @@
 
 # Styling
 - type: system
-  name: gnome-tweak-tool
+  name: gnome-tweaks
 
 # swri
 - type: target
