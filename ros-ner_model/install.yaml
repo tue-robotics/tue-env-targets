@@ -1,4 +1,4 @@
 - type: ros
   source:
     type: git
-    url: https://github.com/tue-robotics/bert_ner.git
+    url: https://github.com/tue-robotics/ner_model.git
