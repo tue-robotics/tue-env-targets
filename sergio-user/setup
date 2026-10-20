@@ -94,7 +94,12 @@ function sergio-hear() {
 
 alias sergio-head-straight='sergio-head-move 0.0 0.0'
 alias move-straight="rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'"
-alias sergio-teleop='rosrun tue_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/sergio/base/references'
+if [[ "${TUE_ENV_ROS_VERSION}" -eq 1 ]]
+then
+    alias sergio-teleop='rosrun tue_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/sergio/base/references'
+else
+    alias sergio-teleop='ros2 run tue_teleop_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/sergio/base/references'
+fi
 
 alias sergio-base-reset-odom='rostopic pub --once /sergio/base/reset_odometry std_msgs/Bool 1'
 alias sergio-top-kinect-show='rosrun image_view image_view image:=/sergio/top_kinect/rgb/image_rect_color'
