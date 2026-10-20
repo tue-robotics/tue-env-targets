@@ -1,5 +1,5 @@
-# - type: target
-#   name: hero-dev
+- type: target
+  name: hero-dev
 
 - type: target
   name: tue-documentation
@@ -74,5 +74,5 @@
   name: matthijs-cmds
 
 # Save gmapping map
-#- type: target
-  #name: tue-save-map
+- type: target
+  name: tue-save-map

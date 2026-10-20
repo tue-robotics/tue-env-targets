@@ -1,10 +1,4 @@
 - type: ros
-  default:
-    source:
-      type: git
-      url: https://github.com/tue-robotics/ed_localization.git
-  noetic:
-    source:
-      type: git
-      url: https://github.com/tue-robotics/ed_localization.git
-      version: ros1
+  source:
+    type: git
+    url: https://github.com/tue-robotics/ed_localization.git
