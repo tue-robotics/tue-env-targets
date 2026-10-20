@@ -112,7 +112,12 @@ alias openleftgripper='rostopic pub --once /amigo/left_arm/gripper/references tu
 alias openrightgripper='rostopic pub --once /amigo/right_arm/gripper/references tue_msgs/GripperCommand -- -1 100'
 alias closeleftgripper='rostopic pub --once /amigo/left_arm/gripper/references tue_msgs/GripperCommand -- 1 100'
 alias closerightgripper='rostopic pub --once /amigo/right_arm/gripper/references tue_msgs/GripperCommand -- 1 100'
-alias amigo-teleop='rosrun tue_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/amigo/base/references'
+if [[ "${TUE_ENV_ROS_VERSION}" -eq 1 ]]
+then
+    alias amigo-teleop='rosrun tue_teleop_keyboard teleop_twist_keyboard.py /cmd_vel:=/amigo/base/references'
+else
+    alias amigo-teleop='ros2 run tue_teleop_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/amigo/base/references'
+fi
 
 alias amigo-base-reset-odom='rostopic pub --once /amigo/base/reset_odometry std_msgs/Bool 1'
 alias amigo-top-kinect-show='rosrun image_view image_view image:=/amigo/top_kinect/rgb/image_rect_color'
