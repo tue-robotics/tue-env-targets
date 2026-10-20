@@ -3,5 +3,5 @@
     type: git
     url: https://github.com/tue-robotics/ner_model.git
 
-- type: target
+- type: target-now
   name: wget
