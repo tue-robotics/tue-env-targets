@@ -2,6 +2,9 @@
   name: ros-map_server
 
 - type: target
+  name: ros-nav2_map_server
+
+- type: target
   name: gimp
 
 - type: target

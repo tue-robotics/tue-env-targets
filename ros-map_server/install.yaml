@@ -1,9 +1,6 @@
 - type: ros
   default:
-    source:
-      type: git
-      url: https://github.com/tue-robotics/navigation.git
-      sub-dir: map_server
+    source: null
   noetic:
     source:
       type: git

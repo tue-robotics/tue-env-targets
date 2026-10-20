@@ -56,12 +56,19 @@ The map will be stored in the package ed_object_models, in folder models/MAP_NAM
 
 
     # store the map in /tmp
-    # TODO(ros2): map_server has no ROS 2 build yet (tracked in robot_launch_files' ros2_migration.md);
-    # its replacement is nav2_map_server, e.g.:
-    # ros2 run nav2_map_server map_saver_cli -f /tmp/temp_map -t /"$robot_name"/gmapping/map
-    rosrun map_server map_saver -f /tmp/temp_map /map:=/"$robot_name"/gmapping/map
+    if [[ "${TUE_ENV_ROS_VERSION}" -eq 1 ]]
+    then
+        rosrun map_server map_saver -f /tmp/temp_map /map:=/"$robot_name"/gmapping/map
+    else
+        ros2 run nav2_map_server map_saver_cli -f /tmp/temp_map -t /"$robot_name"/slam/map
+    fi
 
-    # parse yaml from gmapping
+    if [ ! -f /tmp/temp_map.yaml ] || [ ! -f /tmp/temp_map.pgm ]; then
+        echo "Failed to save the map"
+        return 1
+    fi
+
+    # parse yaml from the map saver
     eval "$(_parse_yaml_map_server /tmp/temp_map.yaml)"
     # seperate origin offset into an array, because ED requires three seperate values.
     origin=$(echo "$origin" | tr -d "[]")

@@ -1,0 +1,7 @@
+- type: ros
+  default:
+    source:
+      type: system
+      name: nav2-map-server
+  noetic:
+    source: null
