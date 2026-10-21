@@ -47,12 +47,13 @@ ros_apt_source_pkg_name="ros2-apt-source"
 
 installed_version=$(dpkg -s ${ros_apt_source_pkg_name} 2>/dev/null | grep -F "Version" | awk '{print $2}')
 
-CURL_ARGS=("-H" "Accept: application/vnd.github+json")
+# Pass the token to curl via a config on stdin (-K -), so it doesn't show up in the command logged by tue-install-pipe
+GITHUB_CURL_CONFIG=""
 if [[ -n ${GITHUB_TOKEN} ]]
 then
-    CURL_ARGS+=("-H" "Authorization: Bearer ${GITHUB_TOKEN}")
+    GITHUB_CURL_CONFIG="header = \"Authorization: Bearer ${GITHUB_TOKEN}\""
 fi
-newest_version=$(curl "${CURL_ARGS[@]}" -sL https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | jq -r '.tag_name')
+newest_version=$(curl -K - -H "Accept: application/vnd.github+json" -sL https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest <<< "${GITHUB_CURL_CONFIG}" | jq -r '.tag_name')
 
 if [[ ${newest_version} == "null" ]]
 then
@@ -76,7 +77,7 @@ fi
 if [[ ${needs_install} == true ]]
 then
     tue-install-debug "Going to install ${ros_apt_source_pkg_name}"
-    tue-install-pipe curl -fL -o /tmp/${ros_apt_source_pkg_name}.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${newest_version}/${ros_apt_source_pkg_name}_${newest_version}.${ubuntu_name}_all.deb" || tue-install-error "Failed to download ROS2 apt source debian"
+    tue-install-pipe curl -K - -fL -o /tmp/${ros_apt_source_pkg_name}.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${newest_version}/${ros_apt_source_pkg_name}_${newest_version}.${ubuntu_name}_all.deb" <<< "${GITHUB_CURL_CONFIG}" || tue-install-error "Failed to download ROS2 apt source debian"
     tue-install-dpkg /tmp/${ros_apt_source_pkg_name}.deb
     tue-install-apt-get-update
 fi
