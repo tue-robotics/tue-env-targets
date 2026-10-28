@@ -1,0 +1,33 @@
+#! /usr/bin/env bash
+
+# colcon has the system interpreter in its shebang, and it builds Python packages with its own
+# interpreter, so their console scripts get the system interpreter in their shebang. Those can't import
+# packages that are only installed in the tue-env venv. Run the next colcon on PATH with the venv
+# interpreter instead. Unlike an alias, this also works in scripts and non-interactive shells.
+
+self_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+colcon_exe=
+IFS=: read -r -a path_dirs <<< "${PATH}"
+for dir in "${path_dirs[@]}"
+do
+    [[ -z "${dir}" || "$(cd "${dir}" 2>/dev/null && pwd)" == "${self_dir}" ]] && continue
+    if [[ -x "${dir}/colcon" ]]
+    then
+        colcon_exe="${dir}/colcon"
+        break
+    fi
+done
+
+if [[ -z "${colcon_exe}" ]]
+then
+    >&2 echo -e "\e[31;1m[colcon] No colcon executable found on PATH.\e[0m"
+    exit 127
+fi
+
+if [[ -n "${VIRTUAL_ENV}" && -x "${VIRTUAL_ENV}/bin/python3" ]]
+then
+    exec "${VIRTUAL_ENV}/bin/python3" "${colcon_exe}" "$@"
+fi
+
+exec "${colcon_exe}" "$@"
