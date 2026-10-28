@@ -1,0 +1,14 @@
+- type: system
+  default:
+    name: 7zip
+  focal:
+    name: p7zip-full
+  jammy:
+    name: p7zip-full
+- type: system
+  default:
+    name: 7zip-rar
+  focal:
+    name: p7zip-rar
+  jammy:
+    name: p7zip-rar

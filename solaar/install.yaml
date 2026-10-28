@@ -1,5 +1,8 @@
 - type: ppa
-  name: ppa:solaar-unifying/ppa
+  default:
+    name: ppa:solaar-unifying/ppa
+  resolute:
+    name: null
 
 - type: system
   name: solaar
