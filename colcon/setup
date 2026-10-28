@@ -15,3 +15,11 @@ do
     fi
 done
 unset candidate
+
+# Run colcon with the venv interpreter, see bin/colcon
+colcon_bin_dir="${TUE_ENV_TARGETS_DIR}/colcon/bin"
+if [[ :$PATH: != *:${colcon_bin_dir}:* ]]
+then
+    export PATH=${colcon_bin_dir}${PATH:+:${PATH}}
+fi
+unset colcon_bin_dir
