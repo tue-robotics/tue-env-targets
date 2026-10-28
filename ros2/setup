@@ -24,15 +24,28 @@ else
 fi
 
 # Add Colcon sourcing to the shell startup script
-if [ -f "/usr/share/colcon_cd/function/colcon_cd.sh" ]
+# The ROS apt repo installs colcon_cd in /usr/share/colcon_cd, the Ubuntu package (>= 26.04) in /etc/profile.d
+colcon_cd_script=
+for candidate in /usr/share/colcon_cd/function/colcon_cd.sh /etc/profile.d/colcon_cd.sh
+do
+    if [[ -f "${candidate}" ]]
+    then
+        colcon_cd_script="${candidate}"
+        break
+    fi
+done
+unset candidate
+
+if [[ -n "${colcon_cd_script}" ]]
 then
-    # shellcheck disable=SC1091
-    source /usr/share/colcon_cd/function/colcon_cd.sh
+    # shellcheck disable=SC1090
+    source "${colcon_cd_script}"
     # shellcheck disable=SC2016
     export _colcon_cd_root="${TUE_ENV_WS_DIR}"
 else
     >&2 echo -e "\e[33;1m[ros2] colcon_cd setup not found. colcon_cd command disabled.\e[0m"
 fi
+unset colcon_cd_script
 
 # shellcheck disable=SC2016
 # Make this the default log format, so that an overlay, such as a workspace's environment hook, or

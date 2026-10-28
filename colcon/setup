@@ -3,4 +3,15 @@
 # Enable tab completion
 # shellcheck disable=SC1091
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
-source /usr/share/colcon_cd/function/colcon_cd-argcomplete.bash
+
+# The ROS apt repo installs colcon_cd in /usr/share/colcon_cd, the Ubuntu package (>= 26.04) in /etc/profile.d
+for candidate in /usr/share/colcon_cd/function/colcon_cd-argcomplete.bash /etc/profile.d/colcon_cd-argcomplete.bash
+do
+    if [[ -f "${candidate}" ]]
+    then
+        # shellcheck disable=SC1090
+        source "${candidate}"
+        break
+    fi
+done
+unset candidate
