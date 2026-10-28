@@ -47,6 +47,14 @@ else
 fi
 unset colcon_cd_script
 
+# Run the ROS 2 CLI with the venv interpreter, see bin/ros2. Added after sourcing ROS, so it comes first on PATH.
+ros2_bin_dir="${TUE_ENV_TARGETS_DIR}/ros2/bin"
+if [[ :$PATH: != *:${ros2_bin_dir}:* ]]
+then
+    export PATH=${ros2_bin_dir}${PATH:+:${PATH}}
+fi
+unset ros2_bin_dir
+
 # shellcheck disable=SC2016
 # Make this the default log format, so that an overlay, such as a workspace's environment hook, or
 # the user can still pick another one

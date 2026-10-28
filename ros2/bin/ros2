@@ -1,0 +1,32 @@
+#! /usr/bin/env bash
+
+# The ROS 2 CLI has the system interpreter in its shebang, so launch files and other CLI plugins can't
+# import packages that are only installed in the tue-env venv. Run the next ros2 on PATH with the venv
+# interpreter instead. Unlike an alias, this also works in scripts and non-interactive shells.
+
+self_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+ros2_exe=
+IFS=: read -r -a path_dirs <<< "${PATH}"
+for dir in "${path_dirs[@]}"
+do
+    [[ -z "${dir}" || "$(cd "${dir}" 2>/dev/null && pwd)" == "${self_dir}" ]] && continue
+    if [[ -x "${dir}/ros2" ]]
+    then
+        ros2_exe="${dir}/ros2"
+        break
+    fi
+done
+
+if [[ -z "${ros2_exe}" ]]
+then
+    >&2 echo -e "\e[31;1m[ros2] No ros2 executable found on PATH.\e[0m"
+    exit 127
+fi
+
+if [[ -n "${VIRTUAL_ENV}" && -x "${VIRTUAL_ENV}/bin/python3" ]]
+then
+    exec "${VIRTUAL_ENV}/bin/python3" "${ros2_exe}" "$@"
+fi
+
+exec "${ros2_exe}" "$@"
