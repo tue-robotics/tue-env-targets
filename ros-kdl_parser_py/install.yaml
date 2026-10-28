@@ -1,5 +1,15 @@
 - type: ros
-  source:
-    type: git
-    url: https://github.com/tue-robotics/kdl_parser.git
-    sub-dir: kdl_parser_py
+  default:
+    source:
+      type: system
+      name: kdl-parser-py
+  noetic:
+    source:
+      type: git
+      url: https://github.com/tue-robotics/kdl_parser.git
+      version: noetic-devel
+      sub-dir: kdl_parser_py
+  jazzy:
+    source:
+      type: git
+      url: https://github.com/ros/kdl_parser_py.git
