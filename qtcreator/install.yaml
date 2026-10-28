@@ -2,3 +2,5 @@
   name: libxcb-cursor0
 - type: system-now
   name: libxcb-xinerama0
+- type: system-now
+  name: libxkbcommon-x11-0
