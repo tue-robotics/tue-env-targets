@@ -2,6 +2,6 @@
   default:
     source:
       type: system
-      name: rviz_common
+      name: rviz-common
   noetic:
     source: null
