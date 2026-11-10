@@ -53,12 +53,43 @@ if [[ -n ${GITHUB_TOKEN} ]]
 then
     GITHUB_CURL_CONFIG="header = \"Authorization: Bearer ${GITHUB_TOKEN}\""
 fi
-newest_version=$(curl -K - -H "Accept: application/vnd.github+json" -sL https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest <<< "${GITHUB_CURL_CONFIG}" | jq -r '.tag_name')
+releases_api_url="https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest"
+curl_tmp_dir=$(mktemp -d)
+http_code=$(curl -K - -sSL -H "Accept: application/vnd.github+json" -D "${curl_tmp_dir}/headers" -o "${curl_tmp_dir}/body" -w "%{http_code}" "${releases_api_url}" <<< "${GITHUB_CURL_CONFIG}" 2> "${curl_tmp_dir}/stderr")
+curl_exit_code=$?
+newest_version=$(jq -r '.tag_name // empty' "${curl_tmp_dir}/body" 2>/dev/null)
 
-if [[ ${newest_version} == "null" ]]
+if [[ ${curl_exit_code} -ne 0 ]] || [[ ${http_code} != "200" ]] || [[ -z ${newest_version} ]]
 then
-    tue-install-error "Failed to get the newest version of '${ros_apt_source_pkg_name}'"
+    error_msg="Failed to get the newest version of '${ros_apt_source_pkg_name}' from '${releases_api_url}'"
+    if [[ ${curl_exit_code} -ne 0 ]]
+    then
+        error_msg+="\n    curl exited with code ${curl_exit_code}: $(<"${curl_tmp_dir}/stderr")"
+    else
+        error_msg+="\n    HTTP status: ${http_code}"
+        github_message=$(jq -r '.message // empty' "${curl_tmp_dir}/body" 2>/dev/null)
+        if [[ -n ${github_message} ]]
+        then
+            error_msg+="\n    GitHub message: ${github_message}"
+        elif [[ -z ${newest_version} ]]
+        then
+            error_msg+="\n    No 'tag_name' found in the response: $(head -c 500 "${curl_tmp_dir}/body")"
+        fi
+        ratelimit_remaining=$(grep -i "^x-ratelimit-remaining:" "${curl_tmp_dir}/headers" | tail -n 1 | awk '{print $2}' | tr -d '\r')
+        if [[ ${ratelimit_remaining} == "0" ]]
+        then
+            ratelimit_reset=$(grep -i "^x-ratelimit-reset:" "${curl_tmp_dir}/headers" | tail -n 1 | awk '{print $2}' | tr -d '\r')
+            error_msg+="\n    GitHub API rate limit exceeded, resets at $(date -d "@${ratelimit_reset}" 2>/dev/null || echo "unknown")"
+            if [[ -z ${GITHUB_TOKEN} ]]
+            then
+                error_msg+="\n    Set GITHUB_TOKEN to get a higher rate limit"
+            fi
+        fi
+    fi
+    rm -rf "${curl_tmp_dir}"
+    tue-install-error "${error_msg}"
 fi
+rm -rf "${curl_tmp_dir}"
 
 needs_install=true
 if [[ -n ${installed_version} ]]
