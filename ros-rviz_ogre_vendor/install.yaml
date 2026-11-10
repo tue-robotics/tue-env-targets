@@ -2,6 +2,6 @@
   default:
     source:
       type: system
-      name: rviz_ogre_vendor
+      name: rviz-ogre-vendor
   noetic:
     source: null
