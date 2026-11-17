@@ -8,3 +8,10 @@ then
     export ROS_IP=192.168.44.52
     export ROS_MASTER_URI=http://192.168.44.51:11311
 fi
+
+# CUDA is installed via the cuda-12-3 apt package, which doesn't put nvcc on the PATH.
+# Without it, CMake's enable_language(CUDA) can't find the compiler.
+if [[ -d /usr/local/cuda/bin && :$PATH: != *:/usr/local/cuda/bin:* ]]
+then
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+fi
