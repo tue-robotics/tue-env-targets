@@ -23,7 +23,18 @@ alias ag='ag -f'
 
 alias ccat='pygmentize -g -O style=colorful'
 
-alias ssh-del-cm='rm ~/.ssh/controlmasters/*'
+function ssh-del-cm
+{
+    # Stop all ssh control masters, e.g. to force new connections after changing ssh keys or config.
+    # Dead connections are cleaned up automatically, see ServerAliveInterval in the networking target.
+    local socket
+    for socket in ~/.ssh/controlmasters/*
+    do
+        [[ -S "${socket}" ]] || continue
+        # Remove the socket when the master does not respond
+        timeout 5 ssh -o ControlPath="${socket}" -O exit _ 2>/dev/null || rm -f "${socket}"
+    done
+}
 
 function update-apt
 {
