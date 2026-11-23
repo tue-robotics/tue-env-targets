@@ -4,6 +4,10 @@ Host bitbucket.???  # .org and .com
 Host *
   # Enable persistent connection multiplexing
   ControlMaster auto
-  ControlPath ~/.ssh/controlmasters/-%r@%h:%p
+  ControlPath ~/.ssh/controlmasters/%C
   ControlPersist 600
+  # Detect dead connections, e.g. after a suspend or a network change. Otherwise the master keeps its socket and new
+  # connections hang on it. After 3 unanswered keepalives (45s) the master exits and removes its socket.
+  ServerAliveInterval 15
+  ServerAliveCountMax 3
 # END TUE PERSISTENT CONNECTION
